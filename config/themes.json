@@ -1,5 +1,5 @@
 {
-  "_comment": "Themes the weekly snapshot looks for. A news item counts toward a theme when its title, summary or tags contain any keyword (case-insensitive, whole word). Edit freely. Keywords written in capitals (AI) match only in capitals.",
+  "_comment": "Themes the weekly snapshot looks for. A news item counts toward a theme when its title, summary or tags contain any keyword (case-insensitive, whole word). Edit freely. Keywords written in capitals (AI) match only in capitals. indicators lists the ids (from config/sources.json) shown in the Country context block when that theme is the week's top theme.",
   "themes": [
     {
       "id": "russia-ukraine",
@@ -13,6 +13,11 @@
         "zelensky",
         "ukraine war",
         "black sea"
+      ],
+      "indicators": [
+        "battle_deaths",
+        "conflict_displacement",
+        "military"
       ]
     },
     {
@@ -25,6 +30,11 @@
         "hormuz",
         "iran war",
         "irgc"
+      ],
+      "indicators": [
+        "battle_deaths",
+        "fuel_exports",
+        "inflation"
       ]
     },
     {
@@ -42,6 +52,11 @@
         "houthi",
         "houthis",
         "yemen"
+      ],
+      "indicators": [
+        "battle_deaths",
+        "conflict_displacement",
+        "military"
       ]
     },
     {
@@ -56,6 +71,11 @@
         "xi jinping",
         "great power competition",
         "indo-pacific"
+      ],
+      "indicators": [
+        "hightech_exports",
+        "trade",
+        "military"
       ]
     },
     {
@@ -69,6 +89,11 @@
         "hybrid warfare",
         "baltic",
         "shadow fleet"
+      ],
+      "indicators": [
+        "military",
+        "arms_imports",
+        "energy_imports"
       ]
     },
     {
@@ -84,6 +109,11 @@
         "africa corps",
         "sudan",
         "west africa"
+      ],
+      "indicators": [
+        "battle_deaths",
+        "conflict_displacement",
+        "fdi"
       ]
     },
     {
@@ -94,6 +124,11 @@
         "kashmir",
         "pakistan",
         "sindoor"
+      ],
+      "indicators": [
+        "military",
+        "arms_imports",
+        "battle_deaths"
       ]
     },
     {
@@ -108,6 +143,11 @@
         "trade war",
         "supply chains",
         "russia sanctions"
+      ],
+      "indicators": [
+        "trade",
+        "fdi",
+        "fuel_exports"
       ]
     },
     {
@@ -124,6 +164,11 @@
         "critical minerals",
         "rare earths",
         "energy"
+      ],
+      "indicators": [
+        "fuel_exports",
+        "fuel_imports",
+        "energy_imports"
       ]
     },
     {
@@ -140,6 +185,11 @@
         "drone warfare",
         "procurement",
         "shipbuilding"
+      ],
+      "indicators": [
+        "military",
+        "arms_imports",
+        "battle_deaths"
       ]
     },
     {
@@ -153,6 +203,11 @@
         "biosecurity",
         "semiconductor",
         "semiconductors"
+      ],
+      "indicators": [
+        "internet",
+        "hightech_exports",
+        "rnd"
       ]
     },
     {
@@ -167,6 +222,11 @@
         "protest",
         "protests",
         "independence"
+      ],
+      "indicators": [
+        "voice",
+        "rule_of_law",
+        "pol_stability"
       ]
     }
   ]

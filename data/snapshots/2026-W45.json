@@ -1,10 +1,10 @@
 {
  "schema": 1,
  "week": "2026-W45",
- "generated_at": "2026-11-06T21:29:39.688Z",
+ "generated_at": "2026-11-06T21:59:24.240Z",
  "window": {
-  "start": "2026-10-30T21:29:34.233Z",
-  "end": "2026-11-06T21:29:34.233Z",
+  "start": "2026-10-30T21:59:17.757Z",
+  "end": "2026-11-06T21:59:17.757Z",
   "days": 7,
   "widened": false
  },
@@ -561,6 +561,10 @@
    "n": 4
   },
   {
+   "iso3": "AFG",
+   "n": 3
+  },
+  {
    "iso3": "ESH",
    "n": 3
   },
@@ -574,10 +578,6 @@
   },
   {
    "iso3": "BFA",
-   "n": 2
-  },
-  {
-   "iso3": "CHN",
    "n": 2
   }
  ],
@@ -594,6 +594,11 @@
    "iso3": "IRN",
    "n": 2
   }
+ ],
+ "context_indicators": [
+  "battle_deaths",
+  "conflict_displacement",
+  "military"
  ],
  "mentions": {
   "BFA": 2,
@@ -636,19 +641,19 @@
   "IDN": 1,
   "ESP": 2,
   "GBR": 1,
+  "AFG": 3,
+  "COG": 2,
+  "COD": 2,
   "SDN": 2,
   "NPL": 1,
   "YEM": 4,
-  "KOR": 2,
-  "COG": 1,
-  "COD": 1,
+  "KOR": 1,
   "LBN": 1,
   "ESH": 3,
   "PSE": 1,
   "OMN": 0.5,
   "ARE": 0.5,
   "SYR": 1,
-  "AFG": 2,
   "MOZ": 1,
   "MMR": 1,
   "ETH": 1,
@@ -815,6 +820,18 @@
    "name": "United Kingdom",
    "numeric": "826"
   },
+  "AFG": {
+   "name": "Afghanistan",
+   "numeric": "004"
+  },
+  "COG": {
+   "name": "Republic of the Congo",
+   "numeric": "178"
+  },
+  "COD": {
+   "name": "DR Congo",
+   "numeric": "180"
+  },
   "SDN": {
    "name": "Sudan",
    "numeric": "729"
@@ -830,14 +847,6 @@
   "KOR": {
    "name": "South Korea",
    "numeric": "410"
-  },
-  "COG": {
-   "name": "Republic of the Congo",
-   "numeric": "178"
-  },
-  "COD": {
-   "name": "DR Congo",
-   "numeric": "180"
   },
   "LBN": {
    "name": "Lebanon",
@@ -863,10 +872,6 @@
    "name": "Syria",
    "numeric": "760"
   },
-  "AFG": {
-   "name": "Afghanistan",
-   "numeric": "004"
-  },
   "MOZ": {
    "name": "Mozambique",
    "numeric": "508"
@@ -885,6 +890,19 @@
   }
  },
  "news": [
+  {
+   "type": "news",
+   "title": "Elon Musk appears to signal the end of the road for Cybertruck",
+   "link": "https://www.bbc.co.uk/news/articles/cq1j33w7d232o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T21:49:50.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "Musk said it was to make room for production of its Cybercabs - autonomous taxis without a driver.",
+   "tags": [],
+   "themes": [],
+   "countries": []
+  },
   {
    "type": "news",
    "title": "AI stocks climb after trillions wiped from market values",
@@ -1114,6 +1132,37 @@
   },
   {
    "type": "news",
+   "title": "Afghanistan faces deepening humanitarian crisis amid sweeping rights restrictions",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168758",
+   "date": "2026-11-06T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "Afghanistan stands at a “difficult crossroad” more than five years after the Taliban returned to power, a senior UN official said on Friday. Relative stability and security are being undercut by a fragile economy, sweeping curbs on rights and acute humanitarian need.",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "AFG"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "World News in Brief: Civilians killed in DR Congo, Ukrainians wrestle with return, Guterres calls out ‘normalisation’ of force",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168757",
+   "date": "2026-11-06T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "At least 30 civilians were killed overnight on Thursday in Beni Territory, North Kivu in the Democratic Republic of the Congo, according to local sources cited by the UN aid coordination office (OCHA).",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "COG",
+    "COD"
+   ]
+  },
+  {
+   "type": "news",
    "title": "From a ship frozen into Arctic ice, a warning to world leaders: Trust the science",
    "link": "https://news.un.org/feed/view/en/story/2026/11/1168751",
    "date": "2026-11-06T12:00:00.000Z",
@@ -1186,19 +1235,6 @@
    "countries": [
     "IDN"
    ]
-  },
-  {
-   "type": "news",
-   "title": "Elon Musk appears to signal the end of the road for Cybertruck",
-   "link": "https://www.bbc.co.uk/news/articles/cq1j33w7d232o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-06T09:57:04.000Z",
-   "source": "bbc-world",
-   "publisher": "BBC News",
-   "author": "",
-   "summary": "Musk said it was to make room for production of its Cybercabs - autonomous taxis without a driver.",
-   "tags": [],
-   "themes": [],
-   "countries": []
   },
   {
    "type": "news",
@@ -1999,34 +2035,6 @@
    "countries": [
     "YEM"
    ]
-  },
-  {
-   "type": "news",
-   "title": "Samarkand: A ‘living museum’ on the Silk Road grapples with a tourism boom",
-   "link": "https://news.un.org/feed/view/en/story/2026/10/1168711",
-   "date": "2026-10-31T12:00:00.000Z",
-   "source": "un-news",
-   "publisher": "United Nations",
-   "author": "",
-   "summary": "As the sun sets over Samarkand’s majestic Registan, its last rays glint across the turquoise mosaics. Dusk settles on the ancient square where great trade routes have crossed for centuries.",
-   "tags": [],
-   "themes": [],
-   "countries": []
-  },
-  {
-   "type": "news",
-   "title": "DPR Korea: Isolation deepens even as the country changes, says UN rights official",
-   "link": "https://news.un.org/feed/view/en/story/2026/10/1168690",
-   "date": "2026-10-31T12:00:00.000Z",
-   "source": "un-news",
-   "publisher": "United Nations",
-   "author": "",
-   "summary": "The Democratic People’s Republic of Korea (DPRK) is building factories and hospitals, rolling out smartphones and mobile banking, and passing new laws at an unprecedented rate. But its people are more cut off from the outside world than at any point in the country’s history.",
-   "tags": [],
-   "themes": [],
-   "countries": [
-    "KOR"
-   ]
   }
  ],
  "indicators": [
@@ -2041,6 +2049,66 @@
    "publisher": "World Bank, Worldwide Governance Indicators",
    "role": "risk",
    "values": [
+    {
+     "iso3": "AFG",
+     "year": 2025,
+     "value": -2.0427057
+    },
+    {
+     "iso3": "AFG",
+     "year": 2024,
+     "value": -2.2157507
+    },
+    {
+     "iso3": "AFG",
+     "year": 2023,
+     "value": -2.4007188
+    },
+    {
+     "iso3": "AFG",
+     "year": 2022,
+     "value": -2.4608265
+    },
+    {
+     "iso3": "AFG",
+     "year": 2021,
+     "value": -2.4628747
+    },
+    {
+     "iso3": "AFG",
+     "year": 2020,
+     "value": -2.5982174
+    },
+    {
+     "iso3": "AFG",
+     "year": 2019,
+     "value": -2.5977844
+    },
+    {
+     "iso3": "AFG",
+     "year": 2018,
+     "value": -2.5906799
+    },
+    {
+     "iso3": "AFG",
+     "year": 2017,
+     "value": -2.6155108
+    },
+    {
+     "iso3": "AFG",
+     "year": 2016,
+     "value": -2.4899595
+    },
+    {
+     "iso3": "AFG",
+     "year": 2015,
+     "value": -2.4886987
+    },
+    {
+     "iso3": "AFG",
+     "year": 2014,
+     "value": -2.3322691
+    },
     {
      "iso3": "BFA",
      "year": 2025,
@@ -2100,66 +2168,6 @@
      "iso3": "BFA",
      "year": 2014,
      "value": -0.7116285
-    },
-    {
-     "iso3": "CHN",
-     "year": 2025,
-     "value": 0.022475
-    },
-    {
-     "iso3": "CHN",
-     "year": 2024,
-     "value": -0.0668337
-    },
-    {
-     "iso3": "CHN",
-     "year": 2023,
-     "value": -0.1890204
-    },
-    {
-     "iso3": "CHN",
-     "year": 2022,
-     "value": -0.2543528
-    },
-    {
-     "iso3": "CHN",
-     "year": 2021,
-     "value": -0.2746899
-    },
-    {
-     "iso3": "CHN",
-     "year": 2020,
-     "value": -0.3106264
-    },
-    {
-     "iso3": "CHN",
-     "year": 2019,
-     "value": -0.1573357
-    },
-    {
-     "iso3": "CHN",
-     "year": 2018,
-     "value": -0.2586305
-    },
-    {
-     "iso3": "CHN",
-     "year": 2017,
-     "value": -0.2246607
-    },
-    {
-     "iso3": "CHN",
-     "year": 2016,
-     "value": -0.5160209
-    },
-    {
-     "iso3": "CHN",
-     "year": 2015,
-     "value": -0.5519697
-    },
-    {
-     "iso3": "CHN",
-     "year": 2014,
-     "value": -0.5330071
     },
     {
      "iso3": "IRN",
@@ -2596,6 +2604,61 @@
    "publisher": "World Bank, World Development Indicators",
    "values": [
     {
+     "iso3": "AFG",
+     "year": 2024,
+     "value": 1.87319280045979
+    },
+    {
+     "iso3": "AFG",
+     "year": 2023,
+     "value": 2.26694373649188
+    },
+    {
+     "iso3": "AFG",
+     "year": 2022,
+     "value": -6.24017199240269
+    },
+    {
+     "iso3": "AFG",
+     "year": 2021,
+     "value": -20.7388393676343
+    },
+    {
+     "iso3": "AFG",
+     "year": 2020,
+     "value": -2.35110067203466
+    },
+    {
+     "iso3": "AFG",
+     "year": 2019,
+     "value": 3.91160341625552
+    },
+    {
+     "iso3": "AFG",
+     "year": 2018,
+     "value": 1.18922812944517
+    },
+    {
+     "iso3": "AFG",
+     "year": 2017,
+     "value": 2.6470032027451
+    },
+    {
+     "iso3": "AFG",
+     "year": 2016,
+     "value": 2.26031420279821
+    },
+    {
+     "iso3": "AFG",
+     "year": 2015,
+     "value": 1.45131466066431
+    },
+    {
+     "iso3": "AFG",
+     "year": 2014,
+     "value": 2.72454336219565
+    },
+    {
      "iso3": "BFA",
      "year": 2025,
      "value": 5.29461839319283
@@ -2654,66 +2717,6 @@
      "iso3": "BFA",
      "year": 2014,
      "value": 4.32684561452976
-    },
-    {
-     "iso3": "CHN",
-     "year": 2025,
-     "value": 4.95994886240992
-    },
-    {
-     "iso3": "CHN",
-     "year": 2024,
-     "value": 4.95830378788091
-    },
-    {
-     "iso3": "CHN",
-     "year": 2023,
-     "value": 5.41600334492955
-    },
-    {
-     "iso3": "CHN",
-     "year": 2022,
-     "value": 3.13385438394069
-    },
-    {
-     "iso3": "CHN",
-     "year": 2021,
-     "value": 8.57038414981781
-    },
-    {
-     "iso3": "CHN",
-     "year": 2020,
-     "value": 2.33950385203023
-    },
-    {
-     "iso3": "CHN",
-     "year": 2019,
-     "value": 6.06737806333672
-    },
-    {
-     "iso3": "CHN",
-     "year": 2018,
-     "value": 6.757806142324
-    },
-    {
-     "iso3": "CHN",
-     "year": 2017,
-     "value": 6.89123916636191
-    },
-    {
-     "iso3": "CHN",
-     "year": 2016,
-     "value": 6.7736886867727
-    },
-    {
-     "iso3": "CHN",
-     "year": 2015,
-     "value": 6.98162255562367
-    },
-    {
-     "iso3": "CHN",
-     "year": 2014,
-     "value": 7.46100735778161
     },
     {
      "iso3": "IRN",
@@ -3115,6 +3118,61 @@
    "publisher": "World Bank, World Development Indicators",
    "values": [
     {
+     "iso3": "AFG",
+     "year": 2024,
+     "value": -6.60118564073725
+    },
+    {
+     "iso3": "AFG",
+     "year": 2023,
+     "value": -4.64470870797774
+    },
+    {
+     "iso3": "AFG",
+     "year": 2022,
+     "value": 13.7121023720064
+    },
+    {
+     "iso3": "AFG",
+     "year": 2021,
+     "value": 5.13320340824962
+    },
+    {
+     "iso3": "AFG",
+     "year": 2020,
+     "value": 5.60188791482224
+    },
+    {
+     "iso3": "AFG",
+     "year": 2019,
+     "value": 2.30237251516833
+    },
+    {
+     "iso3": "AFG",
+     "year": 2018,
+     "value": 0.626149149168846
+    },
+    {
+     "iso3": "AFG",
+     "year": 2017,
+     "value": 4.97595150553832
+    },
+    {
+     "iso3": "AFG",
+     "year": 2016,
+     "value": 4.38389195513914
+    },
+    {
+     "iso3": "AFG",
+     "year": 2015,
+     "value": -0.661709164713741
+    },
+    {
+     "iso3": "AFG",
+     "year": 2014,
+     "value": 4.67399603536344
+    },
+    {
      "iso3": "BFA",
      "year": 2025,
      "value": -0.586235316330578
@@ -3173,66 +3231,6 @@
      "iso3": "BFA",
      "year": 2014,
      "value": -0.258089517535291
-    },
-    {
-     "iso3": "CHN",
-     "year": 2025,
-     "value": 0.0595646916565402
-    },
-    {
-     "iso3": "CHN",
-     "year": 2024,
-     "value": 0.218128938439177
-    },
-    {
-     "iso3": "CHN",
-     "year": 2023,
-     "value": 0.23483682889305
-    },
-    {
-     "iso3": "CHN",
-     "year": 2022,
-     "value": 1.9735755573905
-    },
-    {
-     "iso3": "CHN",
-     "year": 2021,
-     "value": 0.981015135544881
-    },
-    {
-     "iso3": "CHN",
-     "year": 2020,
-     "value": 2.41942189457782
-    },
-    {
-     "iso3": "CHN",
-     "year": 2019,
-     "value": 2.89923416358226
-    },
-    {
-     "iso3": "CHN",
-     "year": 2018,
-     "value": 2.07479039965576
-    },
-    {
-     "iso3": "CHN",
-     "year": 2017,
-     "value": 1.59313600071435
-    },
-    {
-     "iso3": "CHN",
-     "year": 2016,
-     "value": 2.00000182191943
-    },
-    {
-     "iso3": "CHN",
-     "year": 2015,
-     "value": 1.43702380935654
-    },
-    {
-     "iso3": "CHN",
-     "year": 2014,
-     "value": 1.9216416278852
     },
     {
      "iso3": "IRN",
@@ -3609,6 +3607,46 @@
    "publisher": "World Bank, World Development Indicators (SIPRI data)",
    "values": [
     {
+     "iso3": "AFG",
+     "year": 2021,
+     "value": 1.8279338562
+    },
+    {
+     "iso3": "AFG",
+     "year": 2020,
+     "value": 1.3588569274
+    },
+    {
+     "iso3": "AFG",
+     "year": 2019,
+     "value": 1.1709683824
+    },
+    {
+     "iso3": "AFG",
+     "year": 2018,
+     "value": 1.0067458557
+    },
+    {
+     "iso3": "AFG",
+     "year": 2017,
+     "value": 0.9452267999
+    },
+    {
+     "iso3": "AFG",
+     "year": 2016,
+     "value": 0.956772141
+    },
+    {
+     "iso3": "AFG",
+     "year": 2015,
+     "value": 0.9945758227
+    },
+    {
+     "iso3": "AFG",
+     "year": 2014,
+     "value": 1.2980128779
+    },
+    {
      "iso3": "BFA",
      "year": 2025,
      "value": 3.3002993565
@@ -3667,66 +3705,6 @@
      "iso3": "BFA",
      "year": 2014,
      "value": 1.2723419522
-    },
-    {
-     "iso3": "CHN",
-     "year": 2025,
-     "value": 1.7247233166
-    },
-    {
-     "iso3": "CHN",
-     "year": 2024,
-     "value": 1.6640184493
-    },
-    {
-     "iso3": "CHN",
-     "year": 2023,
-     "value": 1.6215129762
-    },
-    {
-     "iso3": "CHN",
-     "year": 2022,
-     "value": 1.591812538
-    },
-    {
-     "iso3": "CHN",
-     "year": 2021,
-     "value": 1.5716370377
-    },
-    {
-     "iso3": "CHN",
-     "year": 2020,
-     "value": 1.7205416275
-    },
-    {
-     "iso3": "CHN",
-     "year": 2019,
-     "value": 1.6505247516
-    },
-    {
-     "iso3": "CHN",
-     "year": 2018,
-     "value": 1.6436668977
-    },
-    {
-     "iso3": "CHN",
-     "year": 2017,
-     "value": 1.6802504328
-    },
-    {
-     "iso3": "CHN",
-     "year": 2016,
-     "value": 1.7344987145
-    },
-    {
-     "iso3": "CHN",
-     "year": 2015,
-     "value": 1.7422395511
-    },
-    {
-     "iso3": "CHN",
-     "year": 2014,
-     "value": 1.7060156594
     },
     {
      "iso3": "IRN",
@@ -4103,6 +4081,121 @@
    "publisher": "International Monetary Fund, World Economic Outlook (DataMapper)",
    "values": [
     {
+     "iso3": "AFG",
+     "year": 2003,
+     "value": 8.7
+    },
+    {
+     "iso3": "AFG",
+     "year": 2004,
+     "value": 0.7
+    },
+    {
+     "iso3": "AFG",
+     "year": 2005,
+     "value": 11.8
+    },
+    {
+     "iso3": "AFG",
+     "year": 2006,
+     "value": 5.4
+    },
+    {
+     "iso3": "AFG",
+     "year": 2007,
+     "value": 13.3
+    },
+    {
+     "iso3": "AFG",
+     "year": 2008,
+     "value": 3.9
+    },
+    {
+     "iso3": "AFG",
+     "year": 2009,
+     "value": 20.6
+    },
+    {
+     "iso3": "AFG",
+     "year": 2010,
+     "value": 8.4
+    },
+    {
+     "iso3": "AFG",
+     "year": 2011,
+     "value": 6.5
+    },
+    {
+     "iso3": "AFG",
+     "year": 2012,
+     "value": 14
+    },
+    {
+     "iso3": "AFG",
+     "year": 2013,
+     "value": 5.7
+    },
+    {
+     "iso3": "AFG",
+     "year": 2014,
+     "value": 2.7
+    },
+    {
+     "iso3": "AFG",
+     "year": 2015,
+     "value": 1
+    },
+    {
+     "iso3": "AFG",
+     "year": 2016,
+     "value": 2.2
+    },
+    {
+     "iso3": "AFG",
+     "year": 2017,
+     "value": 2.6
+    },
+    {
+     "iso3": "AFG",
+     "year": 2018,
+     "value": 1.2
+    },
+    {
+     "iso3": "AFG",
+     "year": 2019,
+     "value": 3.9
+    },
+    {
+     "iso3": "AFG",
+     "year": 2020,
+     "value": -2.4
+    },
+    {
+     "iso3": "AFG",
+     "year": 2021,
+     "value": -14.5
+    },
+    {
+     "iso3": "AFG",
+     "year": 2022,
+     "value": -6.2
+    },
+    {
+     "iso3": "AFG",
+     "year": 2023,
+     "value": 2.3
+    },
+    {
+     "iso3": "AFG",
+     "year": 2024,
+     "value": 1.9
+    },
+    {
+     "iso3": "AFG",
+     "year": 2025,
+     "value": 1.5
+    },
+    {
      "iso3": "BFA",
      "year": 1980,
      "value": 4
@@ -4361,266 +4454,6 @@
      "iso3": "BFA",
      "year": 2031,
      "value": 4.9
-    },
-    {
-     "iso3": "CHN",
-     "year": 1980,
-     "value": 7.9
-    },
-    {
-     "iso3": "CHN",
-     "year": 1981,
-     "value": 5.1
-    },
-    {
-     "iso3": "CHN",
-     "year": 1982,
-     "value": 9
-    },
-    {
-     "iso3": "CHN",
-     "year": 1983,
-     "value": 10.8
-    },
-    {
-     "iso3": "CHN",
-     "year": 1984,
-     "value": 15.2
-    },
-    {
-     "iso3": "CHN",
-     "year": 1985,
-     "value": 13.5
-    },
-    {
-     "iso3": "CHN",
-     "year": 1986,
-     "value": 8.9
-    },
-    {
-     "iso3": "CHN",
-     "year": 1987,
-     "value": 11.7
-    },
-    {
-     "iso3": "CHN",
-     "year": 1988,
-     "value": 11.2
-    },
-    {
-     "iso3": "CHN",
-     "year": 1989,
-     "value": 4.2
-    },
-    {
-     "iso3": "CHN",
-     "year": 1990,
-     "value": 3.9
-    },
-    {
-     "iso3": "CHN",
-     "year": 1991,
-     "value": 10.2
-    },
-    {
-     "iso3": "CHN",
-     "year": 1992,
-     "value": 14.3
-    },
-    {
-     "iso3": "CHN",
-     "year": 1993,
-     "value": 13.9
-    },
-    {
-     "iso3": "CHN",
-     "year": 1994,
-     "value": 13.1
-    },
-    {
-     "iso3": "CHN",
-     "year": 1995,
-     "value": 11
-    },
-    {
-     "iso3": "CHN",
-     "year": 1996,
-     "value": 10
-    },
-    {
-     "iso3": "CHN",
-     "year": 1997,
-     "value": 9.3
-    },
-    {
-     "iso3": "CHN",
-     "year": 1998,
-     "value": 7.9
-    },
-    {
-     "iso3": "CHN",
-     "year": 1999,
-     "value": 7.8
-    },
-    {
-     "iso3": "CHN",
-     "year": 2000,
-     "value": 8.6
-    },
-    {
-     "iso3": "CHN",
-     "year": 2001,
-     "value": 8.3
-    },
-    {
-     "iso3": "CHN",
-     "year": 2002,
-     "value": 9.2
-    },
-    {
-     "iso3": "CHN",
-     "year": 2003,
-     "value": 10.1
-    },
-    {
-     "iso3": "CHN",
-     "year": 2004,
-     "value": 10.1
-    },
-    {
-     "iso3": "CHN",
-     "year": 2005,
-     "value": 11.4
-    },
-    {
-     "iso3": "CHN",
-     "year": 2006,
-     "value": 12.7
-    },
-    {
-     "iso3": "CHN",
-     "year": 2007,
-     "value": 14.2
-    },
-    {
-     "iso3": "CHN",
-     "year": 2008,
-     "value": 9.6
-    },
-    {
-     "iso3": "CHN",
-     "year": 2009,
-     "value": 9.4
-    },
-    {
-     "iso3": "CHN",
-     "year": 2010,
-     "value": 10.6
-    },
-    {
-     "iso3": "CHN",
-     "year": 2011,
-     "value": 9.5
-    },
-    {
-     "iso3": "CHN",
-     "year": 2012,
-     "value": 7.8
-    },
-    {
-     "iso3": "CHN",
-     "year": 2013,
-     "value": 7.8
-    },
-    {
-     "iso3": "CHN",
-     "year": 2014,
-     "value": 7.5
-    },
-    {
-     "iso3": "CHN",
-     "year": 2015,
-     "value": 7
-    },
-    {
-     "iso3": "CHN",
-     "year": 2016,
-     "value": 6.8
-    },
-    {
-     "iso3": "CHN",
-     "year": 2017,
-     "value": 6.9
-    },
-    {
-     "iso3": "CHN",
-     "year": 2018,
-     "value": 6.8
-    },
-    {
-     "iso3": "CHN",
-     "year": 2019,
-     "value": 6.1
-    },
-    {
-     "iso3": "CHN",
-     "year": 2020,
-     "value": 2.3
-    },
-    {
-     "iso3": "CHN",
-     "year": 2021,
-     "value": 8.6
-    },
-    {
-     "iso3": "CHN",
-     "year": 2022,
-     "value": 3.1
-    },
-    {
-     "iso3": "CHN",
-     "year": 2023,
-     "value": 5.4
-    },
-    {
-     "iso3": "CHN",
-     "year": 2024,
-     "value": 5
-    },
-    {
-     "iso3": "CHN",
-     "year": 2025,
-     "value": 5
-    },
-    {
-     "iso3": "CHN",
-     "year": 2026,
-     "value": 4.5
-    },
-    {
-     "iso3": "CHN",
-     "year": 2027,
-     "value": 4
-    },
-    {
-     "iso3": "CHN",
-     "year": 2028,
-     "value": 4
-    },
-    {
-     "iso3": "CHN",
-     "year": 2029,
-     "value": 3.7
-    },
-    {
-     "iso3": "CHN",
-     "year": 2030,
-     "value": 3.3
-    },
-    {
-     "iso3": "CHN",
-     "year": 2031,
-     "value": 3.3
     },
     {
      "iso3": "IRN",
@@ -6156,6 +5989,66 @@
    "publisher": "World Bank, World Development Indicators",
    "values": [
     {
+     "iso3": "AFG",
+     "year": 2025,
+     "value": 43844111
+    },
+    {
+     "iso3": "AFG",
+     "year": 2024,
+     "value": 42647492
+    },
+    {
+     "iso3": "AFG",
+     "year": 2023,
+     "value": 41454761
+    },
+    {
+     "iso3": "AFG",
+     "year": 2022,
+     "value": 40578842
+    },
+    {
+     "iso3": "AFG",
+     "year": 2021,
+     "value": 40000412
+    },
+    {
+     "iso3": "AFG",
+     "year": 2020,
+     "value": 39068979
+    },
+    {
+     "iso3": "AFG",
+     "year": 2019,
+     "value": 37856121
+    },
+    {
+     "iso3": "AFG",
+     "year": 2018,
+     "value": 36743039
+    },
+    {
+     "iso3": "AFG",
+     "year": 2017,
+     "value": 35688935
+    },
+    {
+     "iso3": "AFG",
+     "year": 2016,
+     "value": 34700612
+    },
+    {
+     "iso3": "AFG",
+     "year": 2015,
+     "value": 33831764
+    },
+    {
+     "iso3": "AFG",
+     "year": 2014,
+     "value": 32792523
+    },
+    {
      "iso3": "BFA",
      "year": 2025,
      "value": 24074580
@@ -6214,66 +6107,6 @@
      "iso3": "BFA",
      "year": 2014,
      "value": 18229461
-    },
-    {
-     "iso3": "CHN",
-     "year": 2025,
-     "value": 1406585000
-    },
-    {
-     "iso3": "CHN",
-     "year": 2024,
-     "value": 1408975000
-    },
-    {
-     "iso3": "CHN",
-     "year": 2023,
-     "value": 1410710000
-    },
-    {
-     "iso3": "CHN",
-     "year": 2022,
-     "value": 1412175000
-    },
-    {
-     "iso3": "CHN",
-     "year": 2021,
-     "value": 1412360000
-    },
-    {
-     "iso3": "CHN",
-     "year": 2020,
-     "value": 1411100000
-    },
-    {
-     "iso3": "CHN",
-     "year": 2019,
-     "value": 1407745000
-    },
-    {
-     "iso3": "CHN",
-     "year": 2018,
-     "value": 1402760000
-    },
-    {
-     "iso3": "CHN",
-     "year": 2017,
-     "value": 1396215000
-    },
-    {
-     "iso3": "CHN",
-     "year": 2016,
-     "value": 1387790000
-    },
-    {
-     "iso3": "CHN",
-     "year": 2015,
-     "value": 1379860000
-    },
-    {
-     "iso3": "CHN",
-     "year": 2014,
-     "value": 1371860000
     },
     {
      "iso3": "IRN",
@@ -6710,6 +6543,61 @@
    "publisher": "World Bank, World Development Indicators",
    "values": [
     {
+     "iso3": "AFG",
+     "year": 2024,
+     "value": 17778508875.7396
+    },
+    {
+     "iso3": "AFG",
+     "year": 2023,
+     "value": 17152234636.8715
+    },
+    {
+     "iso3": "AFG",
+     "year": 2022,
+     "value": 14497243872.1337
+    },
+    {
+     "iso3": "AFG",
+     "year": 2021,
+     "value": 14259995441.0759
+    },
+    {
+     "iso3": "AFG",
+     "year": 2020,
+     "value": 19955929052.1496
+    },
+    {
+     "iso3": "AFG",
+     "year": 2019,
+     "value": 18799444490.1128
+    },
+    {
+     "iso3": "AFG",
+     "year": 2018,
+     "value": 18053222687.4126
+    },
+    {
+     "iso3": "AFG",
+     "year": 2017,
+     "value": 18753456497.8159
+    },
+    {
+     "iso3": "AFG",
+     "year": 2016,
+     "value": 18116572395.0772
+    },
+    {
+     "iso3": "AFG",
+     "year": 2015,
+     "value": 19134221644.7325
+    },
+    {
+     "iso3": "AFG",
+     "year": 2014,
+     "value": 20497128555.6972
+    },
+    {
      "iso3": "BFA",
      "year": 2025,
      "value": 27627297461.3181
@@ -6768,66 +6656,6 @@
      "iso3": "BFA",
      "year": 2014,
      "value": 13943016076.7436
-    },
-    {
-     "iso3": "CHN",
-     "year": 2025,
-     "value": 19498039388042.6
-    },
-    {
-     "iso3": "CHN",
-     "year": 2024,
-     "value": 18729668435848
-    },
-    {
-     "iso3": "CHN",
-     "year": 2023,
-     "value": 18270356654533.2
-    },
-    {
-     "iso3": "CHN",
-     "year": 2022,
-     "value": 18316765021690.2
-    },
-    {
-     "iso3": "CHN",
-     "year": 2021,
-     "value": 18201698719564
-    },
-    {
-     "iso3": "CHN",
-     "year": 2020,
-     "value": 14996414166715.1
-    },
-    {
-     "iso3": "CHN",
-     "year": 2019,
-     "value": 14560167101283.4
-    },
-    {
-     "iso3": "CHN",
-     "year": 2018,
-     "value": 14147765772963.8
-    },
-    {
-     "iso3": "CHN",
-     "year": 2017,
-     "value": 12537559062282.9
-    },
-    {
-     "iso3": "CHN",
-     "year": 2016,
-     "value": 11456024084962
-    },
-    {
-     "iso3": "CHN",
-     "year": 2015,
-     "value": 11280814787468.9
-    },
-    {
-     "iso3": "CHN",
-     "year": 2014,
-     "value": 10674533168257.4
     },
     {
      "iso3": "IRN",
@@ -7218,6 +7046,716 @@
    "link": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
    "last_updated": "2026-10-08",
    "status": "ok"
+  },
+  {
+   "id": "battle_deaths",
+   "provider": "worldbank",
+   "code": "VC.BTL.DETH",
+   "label": "Battle-related deaths (number of people)",
+   "short": "Battle-related deaths",
+   "unit": "people",
+   "publisher": "World Bank, World Development Indicators (UCDP/PRIO data)",
+   "library": true,
+   "values": [
+    {
+     "iso3": "AFG",
+     "year": 2024,
+     "value": 260
+    },
+    {
+     "iso3": "AFG",
+     "year": 2023,
+     "value": 237
+    },
+    {
+     "iso3": "AFG",
+     "year": 2022,
+     "value": 917
+    },
+    {
+     "iso3": "AFG",
+     "year": 2021,
+     "value": 35787
+    },
+    {
+     "iso3": "AFG",
+     "year": 2020,
+     "value": 20475
+    },
+    {
+     "iso3": "AFG",
+     "year": 2019,
+     "value": 29940
+    },
+    {
+     "iso3": "AFG",
+     "year": 2018,
+     "value": 25676
+    },
+    {
+     "iso3": "AFG",
+     "year": 2017,
+     "value": 19014
+    },
+    {
+     "iso3": "AFG",
+     "year": 2016,
+     "value": 17985
+    },
+    {
+     "iso3": "AFG",
+     "year": 2015,
+     "value": 17303
+    },
+    {
+     "iso3": "AFG",
+     "year": 2014,
+     "value": 12284
+    },
+    {
+     "iso3": "BFA",
+     "year": 2024,
+     "value": 2199
+    },
+    {
+     "iso3": "BFA",
+     "year": 2023,
+     "value": 4608
+    },
+    {
+     "iso3": "BFA",
+     "year": 2022,
+     "value": 2093
+    },
+    {
+     "iso3": "BFA",
+     "year": 2021,
+     "value": 991
+    },
+    {
+     "iso3": "BFA",
+     "year": 2020,
+     "value": 512
+    },
+    {
+     "iso3": "BFA",
+     "year": 2019,
+     "value": 349
+    },
+    {
+     "iso3": "BFA",
+     "year": 2018,
+     "value": 79
+    },
+    {
+     "iso3": "IRN",
+     "year": 2024,
+     "value": 123
+    },
+    {
+     "iso3": "IRN",
+     "year": 2023,
+     "value": 34
+    },
+    {
+     "iso3": "IRN",
+     "year": 2021,
+     "value": 27
+    },
+    {
+     "iso3": "IRN",
+     "year": 2020,
+     "value": 212
+    },
+    {
+     "iso3": "IRN",
+     "year": 2019,
+     "value": 31
+    },
+    {
+     "iso3": "IRN",
+     "year": 2018,
+     "value": 60
+    },
+    {
+     "iso3": "IRN",
+     "year": 2017,
+     "value": 27
+    },
+    {
+     "iso3": "IRN",
+     "year": 2016,
+     "value": 22
+    },
+    {
+     "iso3": "MLI",
+     "year": 2024,
+     "value": 1008
+    },
+    {
+     "iso3": "MLI",
+     "year": 2023,
+     "value": 1238
+    },
+    {
+     "iso3": "MLI",
+     "year": 2022,
+     "value": 1440
+    },
+    {
+     "iso3": "MLI",
+     "year": 2021,
+     "value": 726
+    },
+    {
+     "iso3": "MLI",
+     "year": 2020,
+     "value": 583
+    },
+    {
+     "iso3": "MLI",
+     "year": 2019,
+     "value": 603
+    },
+    {
+     "iso3": "MLI",
+     "year": 2018,
+     "value": 521
+    },
+    {
+     "iso3": "MLI",
+     "year": 2017,
+     "value": 359
+    },
+    {
+     "iso3": "MLI",
+     "year": 2016,
+     "value": 97
+    },
+    {
+     "iso3": "MLI",
+     "year": 2015,
+     "value": 172
+    },
+    {
+     "iso3": "MLI",
+     "year": 2014,
+     "value": 189
+    },
+    {
+     "iso3": "NER",
+     "year": 2024,
+     "value": 952
+    },
+    {
+     "iso3": "NER",
+     "year": 2023,
+     "value": 337
+    },
+    {
+     "iso3": "NER",
+     "year": 2022,
+     "value": 516
+    },
+    {
+     "iso3": "NER",
+     "year": 2021,
+     "value": 459
+    },
+    {
+     "iso3": "NER",
+     "year": 2020,
+     "value": 535
+    },
+    {
+     "iso3": "NER",
+     "year": 2019,
+     "value": 298
+    },
+    {
+     "iso3": "NER",
+     "year": 2018,
+     "value": 74
+    },
+    {
+     "iso3": "NER",
+     "year": 2017,
+     "value": 229
+    },
+    {
+     "iso3": "NER",
+     "year": 2016,
+     "value": 274
+    },
+    {
+     "iso3": "NER",
+     "year": 2015,
+     "value": 368
+    },
+    {
+     "iso3": "RUS",
+     "year": 2024,
+     "value": 7670
+    },
+    {
+     "iso3": "RUS",
+     "year": 2023,
+     "value": 197
+    },
+    {
+     "iso3": "RUS",
+     "year": 2022,
+     "value": 65
+    },
+    {
+     "iso3": "RUS",
+     "year": 2020,
+     "value": 32
+    },
+    {
+     "iso3": "RUS",
+     "year": 2019,
+     "value": 26
+    },
+    {
+     "iso3": "RUS",
+     "year": 2018,
+     "value": 30
+    },
+    {
+     "iso3": "RUS",
+     "year": 2017,
+     "value": 53
+    },
+    {
+     "iso3": "RUS",
+     "year": 2016,
+     "value": 69
+    },
+    {
+     "iso3": "RUS",
+     "year": 2015,
+     "value": 84
+    },
+    {
+     "iso3": "RUS",
+     "year": 2014,
+     "value": 174
+    },
+    {
+     "iso3": "UKR",
+     "year": 2024,
+     "value": 68097
+    },
+    {
+     "iso3": "UKR",
+     "year": 2023,
+     "value": 75080
+    },
+    {
+     "iso3": "UKR",
+     "year": 2022,
+     "value": 91478
+    },
+    {
+     "iso3": "UKR",
+     "year": 2021,
+     "value": 208
+    },
+    {
+     "iso3": "UKR",
+     "year": 2020,
+     "value": 196
+    },
+    {
+     "iso3": "UKR",
+     "year": 2019,
+     "value": 311
+    },
+    {
+     "iso3": "UKR",
+     "year": 2018,
+     "value": 243
+    },
+    {
+     "iso3": "UKR",
+     "year": 2017,
+     "value": 447
+    },
+    {
+     "iso3": "UKR",
+     "year": 2016,
+     "value": 697
+    },
+    {
+     "iso3": "UKR",
+     "year": 2015,
+     "value": 1890
+    },
+    {
+     "iso3": "UKR",
+     "year": 2014,
+     "value": 4894
+    },
+    {
+     "iso3": "YEM",
+     "year": 2024,
+     "value": 918
+    },
+    {
+     "iso3": "YEM",
+     "year": 2023,
+     "value": 795
+    },
+    {
+     "iso3": "YEM",
+     "year": 2022,
+     "value": 2917
+    },
+    {
+     "iso3": "YEM",
+     "year": 2021,
+     "value": 23351
+    },
+    {
+     "iso3": "YEM",
+     "year": 2020,
+     "value": 6294
+    },
+    {
+     "iso3": "YEM",
+     "year": 2019,
+     "value": 2629
+    },
+    {
+     "iso3": "YEM",
+     "year": 2018,
+     "value": 4639
+    },
+    {
+     "iso3": "YEM",
+     "year": 2017,
+     "value": 3145
+    },
+    {
+     "iso3": "YEM",
+     "year": 2016,
+     "value": 3013
+    },
+    {
+     "iso3": "YEM",
+     "year": 2015,
+     "value": 7720
+    },
+    {
+     "iso3": "YEM",
+     "year": 2014,
+     "value": 1826
+    }
+   ],
+   "link": "https://data.worldbank.org/indicator/VC.BTL.DETH",
+   "last_updated": "2026-10-08",
+   "status": "ok"
+  },
+  {
+   "id": "conflict_displacement",
+   "provider": "worldbank",
+   "code": "VC.IDP.NWCV",
+   "label": "Internally displaced persons, new displacement associated with conflict and violence",
+   "short": "New conflict displacement",
+   "unit": "people",
+   "publisher": "World Bank, World Development Indicators (IDMC data)",
+   "library": true,
+   "values": [
+    {
+     "iso3": "AFG",
+     "year": 2022,
+     "value": 32000
+    },
+    {
+     "iso3": "AFG",
+     "year": 2021,
+     "value": 723000
+    },
+    {
+     "iso3": "AFG",
+     "year": 2020,
+     "value": 404000
+    },
+    {
+     "iso3": "AFG",
+     "year": 2019,
+     "value": 461000
+    },
+    {
+     "iso3": "AFG",
+     "year": 2018,
+     "value": 372000
+    },
+    {
+     "iso3": "AFG",
+     "year": 2017,
+     "value": 474000
+    },
+    {
+     "iso3": "AFG",
+     "year": 2016,
+     "value": 653000
+    },
+    {
+     "iso3": "AFG",
+     "year": 2015,
+     "value": 335000
+    },
+    {
+     "iso3": "AFG",
+     "year": 2014,
+     "value": 156000
+    },
+    {
+     "iso3": "BFA",
+     "year": 2023,
+     "value": 707000
+    },
+    {
+     "iso3": "BFA",
+     "year": 2022,
+     "value": 438000
+    },
+    {
+     "iso3": "BFA",
+     "year": 2021,
+     "value": 682000
+    },
+    {
+     "iso3": "BFA",
+     "year": 2020,
+     "value": 515000
+    },
+    {
+     "iso3": "BFA",
+     "year": 2019,
+     "value": 513000
+    },
+    {
+     "iso3": "BFA",
+     "year": 2018,
+     "value": 42000
+    },
+    {
+     "iso3": "BFA",
+     "year": 2017,
+     "value": 4900
+    },
+    {
+     "iso3": "BFA",
+     "year": 2016,
+     "value": 700
+    },
+    {
+     "iso3": "MLI",
+     "year": 2023,
+     "value": 152000
+    },
+    {
+     "iso3": "MLI",
+     "year": 2022,
+     "value": 154000
+    },
+    {
+     "iso3": "MLI",
+     "year": 2021,
+     "value": 249000
+    },
+    {
+     "iso3": "MLI",
+     "year": 2020,
+     "value": 277000
+    },
+    {
+     "iso3": "MLI",
+     "year": 2019,
+     "value": 284000
+    },
+    {
+     "iso3": "MLI",
+     "year": 2018,
+     "value": 126000
+    },
+    {
+     "iso3": "MLI",
+     "year": 2017,
+     "value": 35000
+    },
+    {
+     "iso3": "MLI",
+     "year": 2016,
+     "value": 6300
+    },
+    {
+     "iso3": "MLI",
+     "year": 2014,
+     "value": 19000
+    },
+    {
+     "iso3": "NER",
+     "year": 2023,
+     "value": 181000
+    },
+    {
+     "iso3": "NER",
+     "year": 2022,
+     "value": 101000
+    },
+    {
+     "iso3": "NER",
+     "year": 2021,
+     "value": 110000
+    },
+    {
+     "iso3": "NER",
+     "year": 2020,
+     "value": 136000
+    },
+    {
+     "iso3": "NER",
+     "year": 2019,
+     "value": 56000
+    },
+    {
+     "iso3": "NER",
+     "year": 2018,
+     "value": 52000
+    },
+    {
+     "iso3": "NER",
+     "year": 2017,
+     "value": 40000
+    },
+    {
+     "iso3": "NER",
+     "year": 2016,
+     "value": 166000
+    },
+    {
+     "iso3": "NER",
+     "year": 2015,
+     "value": 47000
+    },
+    {
+     "iso3": "RUS",
+     "year": 2023,
+     "value": 60000
+    },
+    {
+     "iso3": "RUS",
+     "year": 2022,
+     "value": 7100
+    },
+    {
+     "iso3": "UKR",
+     "year": 2023,
+     "value": 714000
+    },
+    {
+     "iso3": "UKR",
+     "year": 2022,
+     "value": 16870000
+    },
+    {
+     "iso3": "UKR",
+     "year": 2021,
+     "value": 40
+    },
+    {
+     "iso3": "UKR",
+     "year": 2020,
+     "value": 74
+    },
+    {
+     "iso3": "UKR",
+     "year": 2019,
+     "value": 60
+    },
+    {
+     "iso3": "UKR",
+     "year": 2018,
+     "value": 12000
+    },
+    {
+     "iso3": "UKR",
+     "year": 2017,
+     "value": 21000
+    },
+    {
+     "iso3": "UKR",
+     "year": 2016,
+     "value": 109000
+    },
+    {
+     "iso3": "UKR",
+     "year": 2015,
+     "value": 942000
+    },
+    {
+     "iso3": "UKR",
+     "year": 2014,
+     "value": 646000
+    },
+    {
+     "iso3": "YEM",
+     "year": 2023,
+     "value": 80000
+    },
+    {
+     "iso3": "YEM",
+     "year": 2022,
+     "value": 276000
+    },
+    {
+     "iso3": "YEM",
+     "year": 2021,
+     "value": 377000
+    },
+    {
+     "iso3": "YEM",
+     "year": 2020,
+     "value": 143000
+    },
+    {
+     "iso3": "YEM",
+     "year": 2019,
+     "value": 398000
+    },
+    {
+     "iso3": "YEM",
+     "year": 2018,
+     "value": 252000
+    },
+    {
+     "iso3": "YEM",
+     "year": 2017,
+     "value": 160000
+    },
+    {
+     "iso3": "YEM",
+     "year": 2016,
+     "value": 478000
+    },
+    {
+     "iso3": "YEM",
+     "year": 2015,
+     "value": 2175000
+    },
+    {
+     "iso3": "YEM",
+     "year": 2014,
+     "value": 100000
+    }
+   ],
+   "link": "https://data.worldbank.org/indicator/VC.IDP.NWCV",
+   "last_updated": "2026-10-08",
+   "status": "ok"
   }
  ],
  "sources": {
@@ -7258,7 +7796,7 @@
     "kind": "news feed",
     "type": "analysis",
     "url": "https://www.geopoliticalmonitor.com/feed/",
-    "retrieved_at": "2026-11-06T21:29:34.233Z",
+    "retrieved_at": "2026-11-06T21:59:17.757Z",
     "status": "ok",
     "items": 10
    },
@@ -7268,7 +7806,7 @@
     "kind": "news feed",
     "type": "analysis",
     "url": "https://www.geopoliticalmonitor.com/feed/?paged=2",
-    "retrieved_at": "2026-11-06T21:29:34.700Z",
+    "retrieved_at": "2026-11-06T21:59:18.279Z",
     "status": "ok",
     "items": 10
    },
@@ -7278,7 +7816,7 @@
     "kind": "news feed",
     "type": "analysis",
     "url": "https://www.rand.org/pubs/commentary.xml",
-    "retrieved_at": "2026-11-06T21:29:34.774Z",
+    "retrieved_at": "2026-11-06T21:59:18.351Z",
     "status": "ok",
     "items": 20
    },
@@ -7288,7 +7826,7 @@
     "kind": "news feed",
     "type": "news",
     "url": "https://www.rand.org/news/press.xml",
-    "retrieved_at": "2026-11-06T21:29:35.228Z",
+    "retrieved_at": "2026-11-06T21:59:18.810Z",
     "status": "ok",
     "items": 20
    },
@@ -7298,7 +7836,7 @@
     "kind": "news feed",
     "type": "news",
     "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
-    "retrieved_at": "2026-11-06T21:29:35.274Z",
+    "retrieved_at": "2026-11-06T21:59:18.860Z",
     "status": "ok",
     "items": 25
    },
@@ -7308,7 +7846,7 @@
     "kind": "news feed",
     "type": "news",
     "url": "https://news.un.org/feed/subscribe/en/news/all/rss.xml",
-    "retrieved_at": "2026-11-06T21:29:35.729Z",
+    "retrieved_at": "2026-11-06T21:59:19.450Z",
     "status": "ok",
     "items": 30
    },
@@ -7317,8 +7855,8 @@
     "name": "World Bank, Worldwide Governance Indicators",
     "kind": "indicator",
     "indicator": "GOV_WGI_PV.EST",
-    "retrieved_at": "2026-11-06T21:29:36.839Z",
-    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;MLI;NER;BFA;CHN/indicator/GOV_WGI_PV.EST?format=json&date=2014:2026&per_page=1000&source=3",
+    "retrieved_at": "2026-11-06T21:59:20.701Z",
+    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;AFG;MLI;NER;BFA/indicator/GOV_WGI_PV.EST?format=json&date=2014:2026&per_page=1000&source=3",
     "status": "ok",
     "items": 108
    },
@@ -7327,48 +7865,48 @@
     "name": "World Bank, World Development Indicators",
     "kind": "indicator",
     "indicator": "NY.GDP.MKTP.KD.ZG",
-    "retrieved_at": "2026-11-06T21:29:37.532Z",
-    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;MLI;NER;BFA;CHN/indicator/NY.GDP.MKTP.KD.ZG?format=json&date=2014:2026&per_page=1000",
+    "retrieved_at": "2026-11-06T21:59:21.350Z",
+    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;AFG;MLI;NER;BFA/indicator/NY.GDP.MKTP.KD.ZG?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
-    "items": 101
+    "items": 100
    },
    {
     "source": "worldbank",
     "name": "World Bank, World Development Indicators",
     "kind": "indicator",
     "indicator": "FP.CPI.TOTL.ZG",
-    "retrieved_at": "2026-11-06T21:29:37.775Z",
-    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;MLI;NER;BFA;CHN/indicator/FP.CPI.TOTL.ZG?format=json&date=2014:2026&per_page=1000",
+    "retrieved_at": "2026-11-06T21:59:21.633Z",
+    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;AFG;MLI;NER;BFA/indicator/FP.CPI.TOTL.ZG?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
-    "items": 96
+    "items": 95
    },
    {
     "source": "worldbank",
     "name": "World Bank, World Development Indicators (SIPRI data)",
     "kind": "indicator",
     "indicator": "MS.MIL.XPND.GD.ZS",
-    "retrieved_at": "2026-11-06T21:29:38.103Z",
-    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;MLI;NER;BFA;CHN/indicator/MS.MIL.XPND.GD.ZS?format=json&date=2014:2026&per_page=1000",
+    "retrieved_at": "2026-11-06T21:59:21.947Z",
+    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;AFG;MLI;NER;BFA/indicator/MS.MIL.XPND.GD.ZS?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
-    "items": 96
+    "items": 92
    },
    {
     "source": "imf",
     "name": "International Monetary Fund, World Economic Outlook (DataMapper)",
     "kind": "indicator",
     "indicator": "NGDP_RPCH",
-    "retrieved_at": "2026-11-06T21:29:38.400Z",
-    "url": "https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH/UKR/RUS/IRN/USA/YEM/ESH/MLI/NER/BFA/CHN?periods=2025,2026,2027",
+    "retrieved_at": "2026-11-06T21:59:22.262Z",
+    "url": "https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH/UKR/RUS/IRN/USA/YEM/AFG/ESH/MLI/NER/BFA?periods=2025,2026,2027",
     "status": "ok",
-    "items": 408
+    "items": 379
    },
    {
     "source": "worldbank",
     "name": "World Bank, World Development Indicators",
     "kind": "indicator",
     "indicator": "SP.POP.TOTL",
-    "retrieved_at": "2026-11-06T21:29:39.200Z",
-    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;MLI;NER;BFA;CHN/indicator/SP.POP.TOTL?format=json&date=2014:2026&per_page=1000",
+    "retrieved_at": "2026-11-06T21:59:23.068Z",
+    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;AFG;MLI;NER;BFA/indicator/SP.POP.TOTL?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
     "items": 108
    },
@@ -7377,10 +7915,30 @@
     "name": "World Bank, World Development Indicators",
     "kind": "indicator",
     "indicator": "NY.GDP.MKTP.CD",
-    "retrieved_at": "2026-11-06T21:29:39.466Z",
-    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;MLI;NER;BFA;CHN/indicator/NY.GDP.MKTP.CD?format=json&date=2014:2026&per_page=1000",
+    "retrieved_at": "2026-11-06T21:59:23.375Z",
+    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;AFG;MLI;NER;BFA/indicator/NY.GDP.MKTP.CD?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
-    "items": 101
+    "items": 100
+   },
+   {
+    "source": "worldbank",
+    "name": "World Bank, World Development Indicators (UCDP/PRIO data)",
+    "kind": "indicator",
+    "indicator": "VC.BTL.DETH",
+    "retrieved_at": "2026-11-06T21:59:23.675Z",
+    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;AFG;MLI;NER;BFA/indicator/VC.BTL.DETH?format=json&date=2014:2026&per_page=1000",
+    "status": "ok",
+    "items": 79
+   },
+   {
+    "source": "worldbank",
+    "name": "World Bank, World Development Indicators (IDMC data)",
+    "kind": "indicator",
+    "indicator": "VC.IDP.NWCV",
+    "retrieved_at": "2026-11-06T21:59:23.993Z",
+    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;AFG;MLI;NER;BFA/indicator/VC.IDP.NWCV?format=json&date=2014:2026&per_page=1000",
+    "status": "ok",
+    "items": 57
    }
   ]
  }

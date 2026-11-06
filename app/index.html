@@ -48,12 +48,9 @@
           <h4 class="sub">Top 10 most-named countries, all themes</h4>
           <p class="note">Blue bars are also named in coverage of the top theme. Select one to zoom the regional map.</p>
           <ol class="rank" id="top-countries"></ol>
-          <h4 class="sub print-page">Risk score: political stability</h4>
-          <p class="note">World Bank governance estimate for the top 10 countries. Below zero means less stable than the world average, so higher risk.</p>
-          <div class="chart" id="chart-risk"></div>
-          <p class="cite">Boundaries: Natural Earth via world-atlas (public domain). Mentions counted from the news items listed below.<br><span id="risk-cite"></span></p>
+          <p class="cite">Boundaries: Natural Earth via world-atlas (public domain). Mentions counted from the news items listed below.</p>
         </div>
-        <div class="card">
+        <div class="card print-page">
           <h4>Region of interest</h4>
           <p class="note">Drag to pan, scroll or pinch to zoom. Select a country for its indicators.</p>
           <div class="map" id="region-map">
@@ -61,6 +58,22 @@
           </div>
           <div class="legend" id="region-legend"></div>
           <div class="detail" id="country-detail"><p class="hint">Select a country on the map.</p></div>
+        </div>
+        <div class="card wide print-page" id="context">
+          <h4 id="ctx-title">Country context</h4>
+          <p class="note">Indicators chosen for this week's top theme, for the countries in the region of interest. The theme-to-indicator mapping is set in the themes configuration.</p>
+          <div class="ctx">
+            <div>
+              <h5 class="ctx-h">Theme indicators, latest reported year</h5>
+              <div class="tablewrap"><table class="ind" id="ctx-table"><thead><tr></tr></thead><tbody></tbody></table></div>
+            </div>
+            <div>
+              <h5 class="ctx-h">Risk score: political stability, 10-year trend</h5>
+              <p class="note">World Bank governance estimate, from −2.5 (weak) to +2.5 (strong). Below zero means less stable than the world average, so higher risk. All countries share one scale.</p>
+              <div class="multiples" id="ctx-stability"></div>
+            </div>
+          </div>
+          <p class="cite" id="ctx-cite"></p>
         </div>
       </div>
     </div>
@@ -83,14 +96,6 @@
           <p class="note">Share of this period's items that touch each theme. An item can count toward several themes. Select a bar to follow that theme.</p>
           <div class="chart" id="chart-themes"></div>
           <p class="cite">Source: keyword classification of the items in the news list (method below).</p>
-        </div>
-        <div class="card wide print-page">
-          <h4>Economic and security indicators</h4>
-          <p class="note">Latest reported year for the top 10 most-named countries. Select a row to find it on the map.</p>
-          <div class="tablewrap">
-            <table class="ind" id="ind-table"><thead><tr></tr></thead><tbody></tbody></table>
-          </div>
-          <p class="cite" id="ind-cite"></p>
         </div>
       </div>
     </div>

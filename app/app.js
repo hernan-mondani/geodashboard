@@ -132,7 +132,7 @@
   function renderRegion() {
     const el = $('#region-map');
     el.querySelectorAll('svg').forEach((n) => n.remove());
-    const W = el.clientWidth || 700, H = Math.round(W * 0.95);
+    const W = el.clientWidth || 700, H = Math.round(W * 0.78);
     const feats = focusIsos.map(featureFor);
     if (!feats.length) return;
     const c = d3.geoCentroid(feats[0]);
@@ -211,7 +211,7 @@
     return vs.length ? vs.reduce((a, b) => (b.year > a.year ? b : a)) : null;
   };
   const big = (v) => d3.format('.3~s')(v).replace('G', 'B');
-  const fmtVal = (i, v) => (i.unit === '%' || i.unit === '% of GDP' ? d3.format('.1f')(v) + '%' : i.unit === 'people' ? big(v) : i.unit === 'US$' ? '$' + big(v) : d3.format('+.2f')(v));
+  const fmtVal = (i, v) => (i.unit.startsWith('%') ? d3.format('.1f')(v) + '%' : i.unit === 'people' || i.unit === 'TIV' ? big(v) : i.unit === 'US$' ? '$' + big(v) : d3.format('+.2f')(v));
 
   // ---------- (iv) charts ----------
   function measure(svg, strings) {
@@ -304,75 +304,82 @@
   function kindTag(n) { const k = n.type === 'analysis' ? 'analysis' : 'news'; const s = document.createElement('span'); s.className = 'tag kind ' + k; s.textContent = k === 'analysis' ? 'Analysis' : 'News'; return s; }
   const shortLabel = (l) => (l.length > 22 ? l.split(/[ ,]/)[0] + '…' : l);
 
-  function renderRisk() {
-    const el = $('#chart-risk'); el.querySelectorAll('svg').forEach((n) => n.remove());
-    const i = ind.pol_stability;
-    const rows = top10.map((iso) => ({ iso, v: latest(i, iso) })).filter((r) => r.v).sort((a, b) => a.v.value - b.v.value);
-    $('#risk-cite').replaceChildren(citeNode(i));
-    if (!rows.length) { el.dataset.empty = '1'; return; }
-    const W = el.clientWidth || 500, rowH = 26, H = rows.length * rowH + 28;
-    const svg = d3.select(el).insert('svg', ':first-child').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', 'Political stability score by country');
-    const lw = measure(svg, rows.map((r) => cname(r.iso))) + 10;
-    const m = { l: lw, r: 40, t: 0, b: 22 };
-    const x = d3.scaleLinear([-2.5, 2.5], [m.l, W - m.r]);
-    const y = d3.scaleBand(rows.map((r) => r.iso), [m.t, H - m.b]).paddingInner(0.32);
-    svg.append('g').attr('class', 'grid').selectAll('line').data([-2, -1, 1, 2]).join('line').attr('x1', x).attr('x2', x).attr('y1', m.t).attr('y2', H - m.b);
-    svg.append('line').attr('x1', x(0)).attr('x2', x(0)).attr('y1', m.t).attr('y2', H - m.b).attr('stroke', css('--axis'));
-    svg.append('g').selectAll('text').data([-2, -1, 0, 1, 2]).join('text').attr('x', x).attr('y', H - 6).attr('text-anchor', 'middle').text((d) => d3.format('+')(d).replace('+0', '0'));
-    const tip = tipFor(el);
-    const g = svg.append('g').selectAll('g').data(rows).join('g');
-    g.append('rect').attr('x', (r) => Math.min(x(0), x(r.v.value))).attr('width', (r) => Math.max(2, Math.abs(x(r.v.value) - x(0))))
-      .attr('y', (r) => y(r.iso)).attr('height', y.bandwidth()).attr('rx', 3).attr('fill', (r) => (r.v.value < 0 ? css('--div-neg') : css('--div-pos')));
-    g.append('text').attr('x', m.l - 8).attr('y', (r) => y(r.iso) + y.bandwidth() / 2).attr('dy', '.32em').attr('text-anchor', 'end').text((r) => cname(r.iso));
-    g.append('text').attr('class', 'val').attr('x', (r) => (r.v.value < 0 ? x(r.v.value) - 5 : x(r.v.value) + 5)).attr('text-anchor', (r) => (r.v.value < 0 ? 'end' : 'start'))
-      .attr('y', (r) => y(r.iso) + y.bandwidth() / 2).attr('dy', '.32em').text((r) => d3.format('+.2f')(r.v.value))
-      .each(function (r) { if (r.v.value < 0 && x(r.v.value) - 5 - this.getComputedTextLength() < m.l) d3.select(this).attr('x', x(0) + 5).attr('text-anchor', 'start'); });
-    g.append('rect').attr('x', 0).attr('width', W).attr('y', (r) => y(r.iso) - 3).attr('height', y.bandwidth() + 6).attr('fill', 'transparent')
-      .on('pointermove', (ev, r) => tip.show(ev, [{ head: true, text: cname(r.iso) }, { text: `Political stability ${d3.format('+.2f')(r.v.value)} (${r.v.year})` }, { text: r.v.value < 0 ? 'Below the world average: higher risk' : 'Above the world average: lower risk' }]))
-      .on('pointerleave', () => tip.hide());
-  }
-
-  function renderIndicators() {
-    const table = $('#ind-table');
-    const cols = ['gdp_growth', 'inflation', 'military', 'imf_gdp_proj'].map((id) => ind[id]).filter(Boolean);
-    const thead = table.tHead.rows[0];
-    thead.replaceChildren();
-    const th = (t, cls) => { const e = document.createElement('th'); e.textContent = t; if (cls) e.className = cls; thead.append(e); };
+  // ---------- country context: theme indicators + stability trend ----------
+  function renderContext() {
+    const regionIsos = focusIsos;
+    const cols = (S.context_indicators ?? []).map((id) => ind[id]).filter(Boolean);
+    $('#ctx-title').textContent = `Country context: ${topTheme.label}`;
+    // table
+    const table = $('#ctx-table');
+    const thead = table.tHead.rows[0]; thead.replaceChildren();
+    const th = (t) => { const e = document.createElement('th'); e.textContent = t; thead.append(e); };
     th('Country');
-    cols.forEach((c) => th(c.id === 'imf_gdp_proj' ? `IMF growth forecast, ${new Date(S.generated_at).getUTCFullYear()}` : c.short + (c.unit === '%' ? ' (%)' : c.unit === '% of GDP' ? ' (% GDP)' : '')));
-    th('GDP growth, 10 yrs', 'opt');
+    cols.forEach((c) => th(`${c.short} (${unitLabel(c)})`));
     const tb = table.tBodies[0]; tb.replaceChildren();
-    const yr = new Date(S.generated_at).getUTCFullYear();
-    top10.forEach((iso) => {
+    regionIsos.forEach((iso) => {
       const tr = document.createElement('tr');
       const td0 = document.createElement('td'); td0.textContent = cname(iso); tr.append(td0);
       cols.forEach((c) => {
         const td = document.createElement('td');
-        const v = c.id === 'imf_gdp_proj' ? c.values.find((x) => x.iso3 === iso && x.year === yr) : latest(c, iso);
-        if (v) { td.textContent = d3.format('.1f')(v.value); if (c.id !== 'imf_gdp_proj') { const s = document.createElement('small'); s.textContent = v.year; td.append(s); } }
-        else { td.textContent = '—'; td.className = 'na'; }
-        tr.append(td);
+        const v = latest(c, iso);
+        if (!v) { td.textContent = '—'; td.className = 'na'; tr.append(td); return; }
+        const wrap = document.createElement('div'); wrap.className = 'cell';
+        const val = document.createElement('span'); val.textContent = fmtVal(c, v.value);
+        const yr = document.createElement('small'); yr.textContent = v.year;
+        wrap.append(val, yr);
+        const pts = c.values.filter((x) => x.iso3 === iso).sort((p, q) => p.year - q.year).slice(-10);
+        if (pts.length > 2) {
+          const w = 72, h = 18;
+          const sx = d3.scaleLinear(d3.extent(pts, (p) => p.year), [2, w - 3]);
+          const sy = d3.scaleLinear(d3.extent([...pts.map((p) => p.value), 0]), [h - 2, 2]);
+          const svg = d3.select(wrap).append('svg').attr('width', w).attr('height', h).attr('aria-label', `${c.short} ${pts[0].year} to ${pts.at(-1).year}`);
+          svg.append('path').attr('d', d3.line().x((p) => sx(p.year)).y((p) => sy(p.value))(pts)).attr('fill', 'none').attr('stroke', css('--ink-2')).attr('stroke-width', 1.25).attr('stroke-linejoin', 'round');
+          svg.append('circle').attr('cx', sx(pts.at(-1).year)).attr('cy', sy(pts.at(-1).value)).attr('r', 2.2).attr('fill', css('--ink'));
+        }
+        td.append(wrap); tr.append(td);
       });
-      const tdS = document.createElement('td'); tdS.className = 'opt';
-      const pts = ind.gdp_growth.values.filter((v) => v.iso3 === iso).sort((a, b) => a.year - b.year).slice(-10);
-      if (pts.length > 1) {
-        const w = 110, h = 26;
-        const sx = d3.scaleLinear(d3.extent(pts, (p) => p.year), [2, w - 4]);
-        const ext = d3.extent([...pts.map((p) => p.value), 0]);
-        const sy = d3.scaleLinear(ext, [h - 3, 3]);
-        const s = d3.select(tdS).append('svg').attr('width', w).attr('height', h).attr('aria-label', `GDP growth ${pts[0].year} to ${pts.at(-1).year}`);
-        s.append('line').attr('x1', 0).attr('x2', w).attr('y1', sy(0)).attr('y2', sy(0)).attr('stroke', css('--axis'));
-        s.append('path').attr('d', d3.line().x((p) => sx(p.year)).y((p) => sy(p.value))(pts)).attr('fill', 'none').attr('stroke', css('--ink-2')).attr('stroke-width', 1.5).attr('stroke-linejoin', 'round');
-        s.append('circle').attr('cx', sx(pts.at(-1).year)).attr('cy', sy(pts.at(-1).value)).attr('r', 2.5).attr('fill', css('--ink'));
-      } else { tdS.textContent = '—'; tdS.classList.add('na'); }
-      tr.append(tdS);
       tr.style.cursor = 'pointer';
       tr.onclick = () => { selectCountry(iso); zoomTo(iso); };
       tb.append(tr);
     });
-    const c = $('#ind-cite'); c.replaceChildren();
-    cols.forEach((i, k) => { c.append(citeNode(i)); if (k < cols.length - 1) c.append(document.createElement('br')); });
+    // political stability small multiples, one shared scale
+    const box = $('#ctx-stability'); box.replaceChildren();
+    const ps = ind.pol_stability;
+    const series = regionIsos.map((iso) => ({ iso, pts: ps.values.filter((v) => v.iso3 === iso).sort((p, q) => p.year - q.year) })).filter((s) => s.pts.length > 1);
+    const years = d3.extent(series.flatMap((s) => s.pts.map((p) => p.year)));
+    series.forEach((s) => {
+      const fig = document.createElement('figure'); fig.className = 'mult';
+      const cap = document.createElement('figcaption');
+      const nm = document.createElement('span'); nm.textContent = cname(s.iso);
+      const last = s.pts.at(-1), first = s.pts[0];
+      const vl = document.createElement('b'); vl.textContent = `${d3.format('+.2f')(last.value)} (${last.year})`;
+      const ch = document.createElement('small'); const d = last.value - first.value; ch.textContent = `${d3.format('+.2f')(d)} since ${first.year}`;
+      ch.className = d < 0 ? 'down' : 'up';
+      cap.append(nm, vl, ch); fig.append(cap);
+      box.append(fig);
+      const W = fig.clientWidth || 260, H = 74, m = { l: 26, r: 6, t: 6, b: 16 };
+      const x = d3.scaleLinear(years, [m.l, W - m.r]);
+      const y = d3.scaleLinear([-2.5, 2.5], [H - m.b, m.t]);
+      const svg = d3.select(fig).append('svg').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', `Political stability in ${cname(s.iso)}, ${first.year} to ${last.year}`);
+      svg.append('rect').attr('x', m.l).attr('width', W - m.l - m.r).attr('y', y(0)).attr('height', y(-2.5) - y(0)).attr('fill', css('--div-neg')).attr('fill-opacity', 0.07);
+      svg.append('g').attr('class', 'grid').selectAll('line').data([-2, 2]).join('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y).attr('y2', y);
+      svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(0)).attr('y2', y(0)).attr('stroke', css('--axis'));
+      svg.append('g').selectAll('text').data([-2, 0, 2]).join('text').attr('x', m.l - 4).attr('y', y).attr('dy', '.32em').attr('text-anchor', 'end').text((v) => (v > 0 ? '+' : '') + v);
+      svg.append('g').selectAll('text').data(years).join('text').attr('x', x).attr('y', H - 3).attr('text-anchor', (v, i) => (i ? 'end' : 'start')).text((v) => v);
+      svg.append('path').attr('d', d3.line().x((p) => x(p.year)).y((p) => y(p.value))(s.pts)).attr('fill', 'none').attr('stroke', last.value < 0 ? css('--div-neg') : css('--div-pos')).attr('stroke-width', 2).attr('stroke-linejoin', 'round').attr('stroke-linecap', 'round');
+      svg.append('circle').attr('cx', x(last.year)).attr('cy', y(last.value)).attr('r', 3).attr('fill', last.value < 0 ? css('--div-neg') : css('--div-pos'));
+      const tip = tipFor(fig);
+      svg.append('rect').attr('x', m.l).attr('y', 0).attr('width', W - m.l - m.r).attr('height', H).attr('fill', 'transparent')
+        .on('pointermove', (ev) => { const [px] = d3.pointer(ev); const p = d3.least(s.pts, (q) => Math.abs(x(q.year) - px)); tip.show(ev, [{ head: true, text: `${cname(s.iso)}, ${p.year}` }, { text: `Political stability ${d3.format('+.2f')(p.value)}` }]); })
+        .on('pointerleave', () => tip.hide());
+    });
+    if (!series.length) { const p = document.createElement('p'); p.className = 'empty'; p.textContent = 'No political stability data for these countries.'; box.append(p); }
+    // citations
+    const c = $('#ctx-cite'); c.replaceChildren();
+    [...cols, ps].forEach((i, k) => { if (k) c.append(document.createElement('br')); c.append(citeNode(i)); });
   }
+  const unitLabel = (c) => (c.unit.startsWith('index') ? 'index' : c.unit === 'people' ? 'people' : c.unit === 'US$' ? 'US$' : c.unit.startsWith('%') ? c.unit.replace('% of ', '% ') : c.unit);
+
   function citeNode(i) {
     const span = document.createElement('span');
     span.append(`Source: ${i.publisher}, “${i.label}” (${i.code}). `);
@@ -473,7 +480,7 @@
   }
 
   // ---------- boot ----------
-  function drawAll() { renderWorld(); renderRegion(); renderThemes(); renderTimeline(); renderRisk(); renderIndicators(); }
+  function drawAll() { renderWorld(); renderRegion(); renderThemes(); renderTimeline(); renderContext(); }
   renderText(); setupExport(); drawAll(); renderTopCountries(); renderNews(); renderSources();
   if (S.focus[0]) selectCountry(S.focus[0].iso3);
   let lastW = innerWidth;

@@ -120,6 +120,139 @@
       "short": "GDP",
       "unit": "US$",
       "publisher": "World Bank, World Development Indicators"
+    },
+    {
+      "id": "battle_deaths",
+      "provider": "worldbank",
+      "code": "VC.BTL.DETH",
+      "label": "Battle-related deaths (number of people)",
+      "short": "Battle-related deaths",
+      "unit": "people",
+      "publisher": "World Bank, World Development Indicators (UCDP/PRIO data)",
+      "library": true
+    },
+    {
+      "id": "conflict_displacement",
+      "provider": "worldbank",
+      "code": "VC.IDP.NWCV",
+      "label": "Internally displaced persons, new displacement associated with conflict and violence",
+      "short": "New conflict displacement",
+      "unit": "people",
+      "publisher": "World Bank, World Development Indicators (IDMC data)",
+      "library": true
+    },
+    {
+      "id": "arms_imports",
+      "provider": "worldbank",
+      "code": "MS.MIL.MPRT.KD",
+      "label": "Arms imports (SIPRI trend indicator values)",
+      "short": "Arms imports",
+      "unit": "TIV",
+      "publisher": "World Bank, World Development Indicators (SIPRI data)",
+      "library": true
+    },
+    {
+      "id": "fuel_exports",
+      "provider": "worldbank",
+      "code": "TX.VAL.FUEL.ZS.UN",
+      "label": "Fuel exports (% of merchandise exports)",
+      "short": "Fuel exports",
+      "unit": "% of exports",
+      "publisher": "World Bank, World Development Indicators",
+      "library": true
+    },
+    {
+      "id": "fuel_imports",
+      "provider": "worldbank",
+      "code": "TM.VAL.FUEL.ZS.UN",
+      "label": "Fuel imports (% of merchandise imports)",
+      "short": "Fuel imports",
+      "unit": "% of imports",
+      "publisher": "World Bank, World Development Indicators",
+      "library": true
+    },
+    {
+      "id": "energy_imports",
+      "provider": "worldbank",
+      "code": "EG.IMP.CONS.ZS",
+      "label": "Energy imports, net (% of energy use)",
+      "short": "Net energy imports",
+      "unit": "% of energy use",
+      "publisher": "World Bank, World Development Indicators",
+      "library": true
+    },
+    {
+      "id": "trade",
+      "provider": "worldbank",
+      "code": "NE.TRD.GNFS.ZS",
+      "label": "Trade (% of GDP)",
+      "short": "Trade",
+      "unit": "% of GDP",
+      "publisher": "World Bank, World Development Indicators",
+      "library": true
+    },
+    {
+      "id": "fdi",
+      "provider": "worldbank",
+      "code": "BX.KLT.DINV.WD.GD.ZS",
+      "label": "Foreign direct investment, net inflows (% of GDP)",
+      "short": "FDI inflows",
+      "unit": "% of GDP",
+      "publisher": "World Bank, World Development Indicators",
+      "library": true
+    },
+    {
+      "id": "hightech_exports",
+      "provider": "worldbank",
+      "code": "TX.VAL.TECH.MF.ZS",
+      "label": "High-technology exports (% of manufactured exports)",
+      "short": "High-tech exports",
+      "unit": "% of manufactured exports",
+      "publisher": "World Bank, World Development Indicators",
+      "library": true
+    },
+    {
+      "id": "internet",
+      "provider": "worldbank",
+      "code": "IT.NET.USER.ZS",
+      "label": "Individuals using the Internet (% of population)",
+      "short": "Internet users",
+      "unit": "% of population",
+      "publisher": "World Bank, World Development Indicators",
+      "library": true
+    },
+    {
+      "id": "rnd",
+      "provider": "worldbank",
+      "code": "GB.XPD.RSDV.GD.ZS",
+      "label": "Research and development expenditure (% of GDP)",
+      "short": "R&D spending",
+      "unit": "% of GDP",
+      "publisher": "World Bank, World Development Indicators",
+      "library": true
+    },
+    {
+      "id": "voice",
+      "provider": "worldbank",
+      "code": "GOV_WGI_VA.EST",
+      "label": "Voice and accountability",
+      "short": "Voice and accountability",
+      "unit": "index, -2.5 (weak) to +2.5 (strong)",
+      "publisher": "World Bank, Worldwide Governance Indicators",
+      "library": true,
+      "wb_source": 3
+    },
+    {
+      "id": "rule_of_law",
+      "provider": "worldbank",
+      "code": "GOV_WGI_RL.EST",
+      "label": "Rule of law",
+      "short": "Rule of law",
+      "unit": "index, -2.5 (weak) to +2.5 (strong)",
+      "publisher": "World Bank, Worldwide Governance Indicators",
+      "library": true,
+      "wb_source": 3
     }
-  ]
+  ],
+  "_comment_indicators": "Indicators without library:true are fetched every week. Those with library:true are fetched only when the week's top theme lists them in config/themes.json."
 }

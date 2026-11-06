@@ -7,10 +7,11 @@ A weekly, citable snapshot of the most prevalent geopolitical theme: where it is
 1. A world map that marks the region of interest for the week's most prevalent theme.
 2. A zoomable, clickable map of that region, with each country's indicators.
 3. A list of the relevant news and analysis, each with its source, date, link and a ready-made citation.
-4. Charts for the leading themes: theme prevalence, an event timeline, a political-stability risk score and an indicator table.
+4. A country context block for the region's countries: indicators chosen for the week's top theme (set per theme in `config/themes.json`), plus a 10-year political-stability trend as the risk score.
+5. Charts for the leading themes: theme prevalence and an event timeline.
 5. A sources table that shows every request made for the snapshot, whether it loaded, and when.
 
-Every page is one self-contained HTML file (data, code and map inside), so it opens offline and can be saved with **Save as webpage**. **Download PDF** gives a print-ready A4 portrait version, always in dark mode, laid out over 7 pages: summary and world view; risk score and region; event timeline; theme prevalence; indicators; sources (the news list stays on the web page).
+Every page is one self-contained HTML file (data, code and map inside), so it opens offline and can be saved with **Save as webpage**. **Download PDF** gives a print-ready A4 portrait version, always in dark mode, laid out over 7 pages: summary and world view; region map and country card; country context; event timeline; theme prevalence; sources (the news list stays on the web page).
 
 ## Run it
 
@@ -28,7 +29,7 @@ All of it is configuration, not code:
 
 | File | What it controls |
 |---|---|
-| `config/sources.json` | News feeds (any RSS or Atom URL) and indicators (World Bank codes, IMF DataMapper codes). Set `"enabled": false` to switch one off. |
+| `config/sources.json` | News feeds (any RSS or Atom URL) and indicators (World Bank codes, IMF DataMapper codes). Indicators marked `"library": true` are fetched only when the top theme asks for them. Set `"enabled": false` to switch one off. |
 | `config/themes.json` | The themes and the keywords that count an item toward each. |
 | `config/places.json` | Extra names that point to countries, such as demonyms, capitals and regions. |
 

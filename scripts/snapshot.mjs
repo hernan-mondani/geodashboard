@@ -198,7 +198,8 @@ async function wbCountries() {
   return focusIsos.filter((c) => wbKnown.has(c));
 }
 const y1 = now.getUTCFullYear();
-for (const ind of sources.indicators) {
+const contextIds = themesCfg.themes.find((t) => t.id === top.id)?.indicators ?? [];
+for (const ind of sources.indicators.filter((i) => !i.library || contextIds.includes(i.id))) {
   const st = { source: ind.provider, name: ind.publisher, kind: 'indicator', indicator: ind.code, retrieved_at: new Date().toISOString() };
   const out = { ...ind, values: [] };
   try {
@@ -248,6 +249,7 @@ const snapshot = {
   top_themes: topThemes.map((t) => t.id),
   top10,
   focus,
+  context_indicators: contextIds,
   mentions: allCountries,
   countries: countryInfo,
   news: weekItems.sort((a, b) => b.date - a.date).map((it) => ({ type: it.type, title: it.title, link: it.link, date: it.date.toISOString(), source: it.source, publisher: it.publisher, author: it.author, summary: it.summary.slice(0, 320), tags: it.tags.slice(0, 6), themes: it.themes, countries: it.countries })),

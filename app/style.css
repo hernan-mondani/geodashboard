@@ -246,14 +246,13 @@ footer { color: var(--muted); font-size: 12px; padding-block: 24px 40px; }
 @media print {
   .grid.maps, .grid.analysis, .lede { grid-template-columns: minmax(0, 1fr) !important; }
   body { font-size: 10.5px; }
-  /* page plan: 1 title, summary, world view · 2 risk score + region · 3 timeline · 4 prevalence · 5 indicators · 6-7 sources */
+  /* page plan: 1 title, summary, world view · 2 region + country card · 3 country context · 4 timeline · 5 prevalence · 6-7 sources */
   .print-page { break-before: page; page-break-before: always; }
   .no-print { display: none !important; }
   .lede { padding-block: 10px 0; }
   .card h4.sub.print-page { margin-top: 0; border-top: 0; padding-top: 0; }
   #world-map svg { max-height: 78mm; width: auto; max-width: 100%; margin-inline: auto; }
   #region-map svg { max-height: 92mm; width: auto; max-width: 100%; margin-inline: auto; }
-  #chart-risk svg { max-height: 72mm; width: auto; max-width: 100%; }
   .rank { gap: 2px; }
   .mast .wrap { padding-block: 12px 10px; }
   .lede { gap: 10px; }
@@ -267,3 +266,21 @@ footer { color: var(--muted); font-size: 12px; padding-block: 24px 40px; }
   .grid.maps .card, .grid > .card:not(.wide) { break-inside: auto; }
 }
 @media print { .card .note, .card h4 { break-after: avoid; page-break-after: avoid; } }
+
+/* country context */
+.ctx { display: grid; gap: 24px; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
+.ctx-h { font: 600 13px var(--f-body); margin: 0 0 8px; color: var(--ink); }
+.ctx .note { margin-top: 0; }
+table.ind .cell { display: inline-flex; align-items: center; gap: 8px; justify-content: flex-end; }
+table.ind .cell small { margin-left: 0; }
+.multiples { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); }
+.mult { margin: 0; position: relative; min-width: 0; }
+.mult figcaption { display: flex; flex-wrap: wrap; gap: 2px 8px; align-items: baseline; font-size: 12px; }
+.mult figcaption span { font-weight: 600; color: var(--ink); }
+.mult figcaption b { font-variant-numeric: tabular-nums; }
+.mult figcaption small { color: var(--muted); font-variant-numeric: tabular-nums; }
+.mult svg { display: block; width: 100%; height: auto; }
+.mult text { font: 10.5px var(--f-body); fill: var(--muted); font-variant-numeric: tabular-nums; }
+.mult .grid line { stroke: var(--line); }
+@media (max-width: 860px) { .ctx { grid-template-columns: minmax(0, 1fr); } }
+@media print { .ctx { grid-template-columns: minmax(0, 1fr); } }
