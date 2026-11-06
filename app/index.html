@@ -57,6 +57,7 @@
             <div class="zoombar"><button type="button" data-z="in" aria-label="Zoom in">+</button><button type="button" data-z="out" aria-label="Zoom out">−</button><button type="button" data-z="reset" aria-label="Reset view">⟲</button></div>
           </div>
           <div class="legend" id="region-legend"></div>
+          <p class="note ev-note" id="ev-note"></p>
           <div class="detail" id="country-detail"><p class="hint">Select a country on the map.</p></div>
         </div>
         <div class="card wide print-page" id="context">
@@ -97,6 +98,12 @@
           <div class="chart" id="chart-themes"></div>
           <p class="cite">Source: keyword classification of the items in the news list (method below).</p>
         </div>
+        <div class="card wide print-page" id="markets">
+          <h4>Market signals</h4>
+          <p class="note" id="mk-note">Daily closes over the last six months. The shaded band is this snapshot's period, and the figure beside each name is the change over that period.</p>
+          <div class="multiples mk" id="mk-charts"></div>
+          <p class="cite" id="mk-cite"></p>
+        </div>
       </div>
     </div>
   </section>
@@ -105,7 +112,7 @@
     <div class="wrap">
       <h3 id="news-h" class="sec-title">Relevant news and analysis</h3>
       <div class="filters" id="news-filters" role="group" aria-label="Filter by theme"></div>
-      <div class="kinds"><span class="tag kind news">News</span> reporting of events <span class="tag kind analysis">Analysis</span> commentary and research</div>
+      <div class="kinds"><span><span class="tag kind news">News</span> reporting of events</span> <span><span class="tag kind analysis">Analysis</span> commentary and research</span> <span><span class="tag kind official">Official</span> UN and government statements, sanctions notices</span> <span><span class="tag kind humanitarian">Humanitarian</span> situation reports</span></div>
       <ul class="news" id="news-list"></ul>
     </div>
   </section>

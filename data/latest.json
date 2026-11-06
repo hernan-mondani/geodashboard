@@ -1,20 +1,205 @@
 {
  "schema": 1,
  "week": "2026-W45",
- "generated_at": "2026-11-06T21:59:24.240Z",
+ "generated_at": "2026-11-06T22:32:59.743Z",
  "window": {
-  "start": "2026-10-30T21:59:17.757Z",
-  "end": "2026-11-06T21:59:17.757Z",
+  "start": "2026-10-30T22:32:52.591Z",
+  "end": "2026-11-06T22:32:52.591Z",
   "days": 7,
   "widened": false
  },
- "method": "Themes are counted from the titles, summaries and tags of news and analysis items published in the window, using the keyword lists in config/themes.json. Countries are matched by name and by the aliases in config/places.json. The region of interest is the set of countries most often named in items about the most prevalent theme. Ties between themes are broken by the number of distinct sources covering them, then by how many country mentions they carry.",
+ "method": "Themes are counted from the titles, summaries and tags of the news, analysis, official and humanitarian items published in the window, using the keyword lists in config/themes.json. Countries are matched by name and by the aliases in config/places.json. The region of interest is the set of countries most often named in items about the most prevalent theme. Ties between themes are broken by the number of distinct sources covering them, then by how many country mentions they carry.",
  "totals": {
-  "items": 67,
-  "sources": 4
+  "items": 81,
+  "sources": 6
  },
- "top_theme": "russia-ukraine",
+ "top_theme": "israel-gaza",
  "themes": [
+  {
+   "id": "israel-gaza",
+   "idx": 2,
+   "label": "Israel, Gaza and the Levant",
+   "keywords": [
+    "israel",
+    "israeli",
+    "gaza",
+    "hamas",
+    "hezbollah",
+    "lebanon",
+    "netanyahu",
+    "west bank",
+    "houthi",
+    "houthis",
+    "yemen"
+   ],
+   "items": 8,
+   "share": 0.09876543209876543,
+   "byCountry": {
+    "ISR": 1,
+    "USA": 1,
+    "NPL": 1,
+    "ESP": 1,
+    "YEM": 5,
+    "KOR": 1,
+    "LBN": 1,
+    "ESH": 2,
+    "PSE": 1,
+    "AFG": 1,
+    "IRN": 1
+   },
+   "byDay": {
+    "2026-10-31": 1,
+    "2026-11-01": 0,
+    "2026-11-02": 1,
+    "2026-11-03": 1,
+    "2026-11-04": 2,
+    "2026-11-05": 2,
+    "2026-11-06": 1
+   },
+   "bySource": {
+    "bbc-world": 1,
+    "un-news": 6,
+    "un-press": 1
+   }
+  },
+  {
+   "id": "iran",
+   "idx": 1,
+   "label": "Iran conflict",
+   "keywords": [
+    "iran",
+    "iranian",
+    "tehran",
+    "hormuz",
+    "iran war",
+    "irgc"
+   ],
+   "items": 7,
+   "share": 0.08641975308641975,
+   "byCountry": {
+    "IRN": 6.5,
+    "RUS": 1,
+    "UKR": 2,
+    "DZA": 1,
+    "CAN": 1,
+    "NER": 1,
+    "MLI": 0.5,
+    "BFA": 0.5,
+    "TCD": 0.5,
+    "MRT": 0.5,
+    "OMN": 0.5,
+    "ARE": 0.5,
+    "AFG": 1,
+    "ESH": 1,
+    "YEM": 1,
+    "VEN": 1
+   },
+   "byDay": {
+    "2026-10-31": 0,
+    "2026-11-01": 0,
+    "2026-11-02": 3,
+    "2026-11-03": 0,
+    "2026-11-04": 2,
+    "2026-11-05": 0,
+    "2026-11-06": 2
+   },
+   "bySource": {
+    "geopolitical-monitor": 2,
+    "bbc-world": 1,
+    "un-news": 2,
+    "ofac": 2
+   }
+  },
+  {
+   "id": "sahel-africa",
+   "idx": 5,
+   "label": "Sahel and African security",
+   "keywords": [
+    "sahel",
+    "mali",
+    "burkina faso",
+    "niger",
+    "wagner",
+    "wagner group",
+    "africa corps",
+    "sudan",
+    "west africa"
+   ],
+   "items": 7,
+   "share": 0.08641975308641975,
+   "byCountry": {
+    "BFA": 2,
+    "GIN": 1,
+    "MLI": 2.5,
+    "RUS": 2,
+    "NER": 2.5,
+    "TCD": 1.5,
+    "MRT": 1.5,
+    "GHA": 0.5,
+    "CIV": 0.5,
+    "SEN": 0.5,
+    "USA": 1,
+    "DZA": 1,
+    "CAN": 1,
+    "IRN": 1,
+    "UKR": 1,
+    "SDN": 4,
+    "SSD": 1
+   },
+   "byDay": {
+    "2026-10-31": 0,
+    "2026-11-01": 0,
+    "2026-11-02": 1,
+    "2026-11-03": 2,
+    "2026-11-04": 0,
+    "2026-11-05": 1,
+    "2026-11-06": 3
+   },
+   "bySource": {
+    "geopolitical-monitor": 3,
+    "un-news": 2,
+    "un-press": 2
+   }
+  },
+  {
+   "id": "elections-governance",
+   "idx": 11,
+   "label": "Elections and governance",
+   "keywords": [
+    "election",
+    "elections",
+    "vote",
+    "referendum",
+    "coup",
+    "protest",
+    "protests",
+    "independence"
+   ],
+   "items": 7,
+   "share": 0.08641975308641975,
+   "byCountry": {
+    "CHN": 1,
+    "TWN": 1,
+    "USA": 2,
+    "SOM": 1,
+    "SDN": 1,
+    "SSD": 1
+   },
+   "byDay": {
+    "2026-10-31": 0,
+    "2026-11-01": 0,
+    "2026-11-02": 0,
+    "2026-11-03": 0,
+    "2026-11-04": 0,
+    "2026-11-05": 1,
+    "2026-11-06": 6
+   },
+   "bySource": {
+    "geopolitical-monitor": 1,
+    "bbc-world": 5,
+    "un-press": 1
+   }
+  },
   {
    "id": "russia-ukraine",
    "idx": 0,
@@ -30,7 +215,7 @@
     "black sea"
    ],
    "items": 7,
-   "share": 0.1044776119402985,
+   "share": 0.08641975308641975,
    "byCountry": {
     "CHN": 1,
     "RUS": 6,
@@ -86,7 +271,7 @@
     "energy"
    ],
    "items": 7,
-   "share": 0.1044776119402985,
+   "share": 0.08641975308641975,
    "byCountry": {
     "BFA": 2,
     "GIN": 1,
@@ -121,167 +306,72 @@
    }
   },
   {
-   "id": "israel-gaza",
-   "idx": 2,
-   "label": "Israel, Gaza and the Levant",
+   "id": "tech-security",
+   "idx": 10,
+   "label": "AI, cyber and biosecurity",
    "keywords": [
-    "israel",
-    "israeli",
-    "gaza",
-    "hamas",
-    "hezbollah",
-    "lebanon",
-    "netanyahu",
-    "west bank",
-    "houthi",
-    "houthis",
-    "yemen"
+    "AI",
+    "artificial intelligence",
+    "cyber",
+    "cyberattack",
+    "biosecurity",
+    "semiconductor",
+    "semiconductors"
    ],
-   "items": 7,
-   "share": 0.1044776119402985,
+   "items": 4,
+   "share": 0.04938271604938271,
    "byCountry": {
-    "ISR": 1,
     "USA": 1,
-    "NPL": 1,
-    "ESP": 1,
-    "YEM": 4,
-    "KOR": 1,
-    "LBN": 1,
-    "ESH": 2,
-    "PSE": 1,
-    "AFG": 1,
-    "IRN": 1
-   },
-   "byDay": {
-    "2026-10-31": 1,
-    "2026-11-01": 0,
-    "2026-11-02": 1,
-    "2026-11-03": 1,
-    "2026-11-04": 2,
-    "2026-11-05": 1,
-    "2026-11-06": 1
-   },
-   "bySource": {
-    "bbc-world": 1,
-    "un-news": 6
-   }
-  },
-  {
-   "id": "elections-governance",
-   "idx": 11,
-   "label": "Elections and governance",
-   "keywords": [
-    "election",
-    "elections",
-    "vote",
-    "referendum",
-    "coup",
-    "protest",
-    "protests",
-    "independence"
-   ],
-   "items": 6,
-   "share": 0.08955223880597014,
-   "byCountry": {
-    "CHN": 1,
-    "TWN": 1,
-    "USA": 2,
-    "SOM": 1
+    "CUB": 1
    },
    "byDay": {
     "2026-10-31": 0,
     "2026-11-01": 0,
     "2026-11-02": 0,
     "2026-11-03": 0,
-    "2026-11-04": 0,
-    "2026-11-05": 0,
-    "2026-11-06": 6
-   },
-   "bySource": {
-    "geopolitical-monitor": 1,
-    "bbc-world": 5
-   }
-  },
-  {
-   "id": "iran",
-   "idx": 1,
-   "label": "Iran conflict",
-   "keywords": [
-    "iran",
-    "iranian",
-    "tehran",
-    "hormuz",
-    "iran war",
-    "irgc"
-   ],
-   "items": 5,
-   "share": 0.07462686567164178,
-   "byCountry": {
-    "IRN": 4.5,
-    "RUS": 1,
-    "UKR": 2,
-    "DZA": 1,
-    "CAN": 1,
-    "NER": 1,
-    "MLI": 0.5,
-    "BFA": 0.5,
-    "TCD": 0.5,
-    "MRT": 0.5,
-    "OMN": 0.5,
-    "ARE": 0.5,
-    "AFG": 1,
-    "ESH": 1,
-    "YEM": 1
-   },
-   "byDay": {
-    "2026-10-31": 0,
-    "2026-11-01": 0,
-    "2026-11-02": 3,
-    "2026-11-03": 0,
     "2026-11-04": 1,
-    "2026-11-05": 0,
-    "2026-11-06": 1
+    "2026-11-05": 1,
+    "2026-11-06": 2
    },
    "bySource": {
-    "geopolitical-monitor": 2,
-    "bbc-world": 1,
-    "un-news": 2
+    "rand": 1,
+    "bbc-world": 2,
+    "ofac": 1
    }
   },
   {
-   "id": "sahel-africa",
-   "idx": 5,
-   "label": "Sahel and African security",
+   "id": "defense",
+   "idx": 9,
+   "label": "Defense spending and arms",
    "keywords": [
-    "sahel",
-    "mali",
-    "burkina faso",
-    "niger",
-    "wagner",
-    "wagner group",
-    "africa corps",
-    "sudan",
-    "west africa"
+    "rearm",
+    "rearmed",
+    "arms",
+    "global arms market",
+    "nato defense spending",
+    "defense spending",
+    "military",
+    "drone warfare",
+    "procurement",
+    "shipbuilding"
    ],
-   "items": 5,
-   "share": 0.07462686567164178,
+   "items": 4,
+   "share": 0.04938271604938271,
    "byCountry": {
-    "BFA": 2,
-    "GIN": 1,
-    "MLI": 2.5,
-    "RUS": 2,
-    "NER": 2.5,
-    "TCD": 1.5,
-    "MRT": 1.5,
-    "GHA": 0.5,
-    "CIV": 0.5,
-    "SEN": 0.5,
+    "IND": 1,
+    "PAK": 1,
+    "MLI": 1.5,
+    "NER": 2,
+    "RUS": 1,
     "USA": 1,
+    "BFA": 1,
+    "TCD": 1,
+    "MRT": 1,
     "DZA": 1,
     "CAN": 1,
     "IRN": 1,
     "UKR": 1,
-    "SDN": 2
+    "CAF": 1
    },
    "byDay": {
     "2026-10-31": 0,
@@ -289,12 +379,57 @@
     "2026-11-02": 1,
     "2026-11-03": 2,
     "2026-11-04": 0,
-    "2026-11-05": 0,
-    "2026-11-06": 2
+    "2026-11-05": 1,
+    "2026-11-06": 0
    },
    "bySource": {
     "geopolitical-monitor": 3,
-    "un-news": 2
+    "un-press": 1
+   }
+  },
+  {
+   "id": "sanctions-trade",
+   "idx": 7,
+   "label": "Sanctions, trade and economic statecraft",
+   "keywords": [
+    "sanction",
+    "sanctions",
+    "tariff",
+    "tariffs",
+    "export controls",
+    "trade war",
+    "supply chains",
+    "russia sanctions"
+   ],
+   "items": 4,
+   "share": 0.04938271604938271,
+   "byCountry": {
+    "BFA": 1,
+    "GIN": 1,
+    "MLI": 1,
+    "RUS": 3,
+    "NER": 0.5,
+    "TCD": 0.5,
+    "MRT": 0.5,
+    "GHA": 0.5,
+    "CIV": 0.5,
+    "SEN": 0.5,
+    "UKR": 2,
+    "IRN": 1,
+    "YEM": 1
+   },
+   "byDay": {
+    "2026-10-31": 0,
+    "2026-11-01": 0,
+    "2026-11-02": 1,
+    "2026-11-03": 0,
+    "2026-11-04": 0,
+    "2026-11-05": 2,
+    "2026-11-06": 1
+   },
+   "bySource": {
+    "geopolitical-monitor": 3,
+    "un-press": 1
    }
   },
   {
@@ -311,7 +446,7 @@
     "shadow fleet"
    ],
    "items": 4,
-   "share": 0.05970149253731343,
+   "share": 0.04938271604938271,
    "byCountry": {
     "RUS": 4,
     "UKR": 3,
@@ -337,127 +472,6 @@
    }
   },
   {
-   "id": "tech-security",
-   "idx": 10,
-   "label": "AI, cyber and biosecurity",
-   "keywords": [
-    "AI",
-    "artificial intelligence",
-    "cyber",
-    "cyberattack",
-    "biosecurity",
-    "semiconductor",
-    "semiconductors"
-   ],
-   "items": 3,
-   "share": 0.04477611940298507,
-   "byCountry": {
-    "USA": 1
-   },
-   "byDay": {
-    "2026-10-31": 0,
-    "2026-11-01": 0,
-    "2026-11-02": 0,
-    "2026-11-03": 0,
-    "2026-11-04": 1,
-    "2026-11-05": 0,
-    "2026-11-06": 2
-   },
-   "bySource": {
-    "rand": 1,
-    "bbc-world": 2
-   }
-  },
-  {
-   "id": "defense",
-   "idx": 9,
-   "label": "Defense spending and arms",
-   "keywords": [
-    "rearm",
-    "rearmed",
-    "arms",
-    "global arms market",
-    "nato defense spending",
-    "defense spending",
-    "military",
-    "drone warfare",
-    "procurement",
-    "shipbuilding"
-   ],
-   "items": 3,
-   "share": 0.04477611940298507,
-   "byCountry": {
-    "IND": 1,
-    "PAK": 1,
-    "MLI": 1.5,
-    "NER": 2,
-    "RUS": 1,
-    "USA": 1,
-    "BFA": 1,
-    "TCD": 1,
-    "MRT": 1,
-    "DZA": 1,
-    "CAN": 1,
-    "IRN": 1,
-    "UKR": 1
-   },
-   "byDay": {
-    "2026-10-31": 0,
-    "2026-11-01": 0,
-    "2026-11-02": 1,
-    "2026-11-03": 2,
-    "2026-11-04": 0,
-    "2026-11-05": 0,
-    "2026-11-06": 0
-   },
-   "bySource": {
-    "geopolitical-monitor": 3
-   }
-  },
-  {
-   "id": "sanctions-trade",
-   "idx": 7,
-   "label": "Sanctions, trade and economic statecraft",
-   "keywords": [
-    "sanction",
-    "sanctions",
-    "tariff",
-    "tariffs",
-    "export controls",
-    "trade war",
-    "supply chains",
-    "russia sanctions"
-   ],
-   "items": 3,
-   "share": 0.04477611940298507,
-   "byCountry": {
-    "BFA": 1,
-    "GIN": 1,
-    "MLI": 1,
-    "RUS": 3,
-    "NER": 0.5,
-    "TCD": 0.5,
-    "MRT": 0.5,
-    "GHA": 0.5,
-    "CIV": 0.5,
-    "SEN": 0.5,
-    "UKR": 2,
-    "IRN": 1
-   },
-   "byDay": {
-    "2026-10-31": 0,
-    "2026-11-01": 0,
-    "2026-11-02": 1,
-    "2026-11-03": 0,
-    "2026-11-04": 0,
-    "2026-11-05": 1,
-    "2026-11-06": 1
-   },
-   "bySource": {
-    "geopolitical-monitor": 3
-   }
-  },
-  {
    "id": "us-china",
    "idx": 3,
    "label": "US–China rivalry and Taiwan",
@@ -472,7 +486,7 @@
     "indo-pacific"
    ],
    "items": 2,
-   "share": 0.029850746268656716,
+   "share": 0.024691358024691357,
    "byCountry": {
     "CHN": 2,
     "TWN": 1,
@@ -515,7 +529,7 @@
     "sindoor"
    ],
    "items": 1,
-   "share": 0.014925373134328358,
+   "share": 0.012345679012345678,
    "byCountry": {
     "IND": 1,
     "PAK": 1
@@ -535,9 +549,9 @@
   }
  ],
  "top_themes": [
-  "russia-ukraine",
-  "energy-commodities",
-  "israel-gaza"
+  "israel-gaza",
+  "iran",
+  "sahel-africa"
  ],
  "top10": [
   {
@@ -545,19 +559,27 @@
    "n": 9
   },
   {
+   "iso3": "USA",
+   "n": 8
+  },
+  {
    "iso3": "UKR",
    "n": 6.5
   },
   {
-   "iso3": "USA",
-   "n": 6
-  },
-  {
    "iso3": "IRN",
-   "n": 4.5
+   "n": 6.5
   },
   {
    "iso3": "YEM",
+   "n": 5
+  },
+  {
+   "iso3": "ESP",
+   "n": 4
+  },
+  {
+   "iso3": "SDN",
    "n": 4
   },
   {
@@ -571,27 +593,15 @@
   {
    "iso3": "MLI",
    "n": 2.5
-  },
-  {
-   "iso3": "NER",
-   "n": 2.5
-  },
-  {
-   "iso3": "BFA",
-   "n": 2
   }
  ],
  "focus": [
   {
-   "iso3": "UKR",
-   "n": 6.5
+   "iso3": "YEM",
+   "n": 5
   },
   {
-   "iso3": "RUS",
-   "n": 6
-  },
-  {
-   "iso3": "IRN",
+   "iso3": "ESH",
    "n": 2
   }
  ],
@@ -613,7 +623,7 @@
   "SEN": 0.5,
   "CHN": 2,
   "TWN": 1,
-  "USA": 6,
+  "USA": 8,
   "UKR": 6.5,
   "TUR": 0.5,
   "ROU": 0.5,
@@ -628,10 +638,11 @@
   "TJK": 0.5,
   "IND": 2,
   "PAK": 1,
-  "IRN": 4.5,
+  "IRN": 6.5,
   "DZA": 1,
   "CAN": 1,
   "FRA": 1,
+  "ESP": 4,
   "ARG": 1,
   "PER": 1,
   "URY": 1,
@@ -639,14 +650,13 @@
   "PRY": 1,
   "ISR": 1,
   "IDN": 1,
-  "ESP": 2,
   "GBR": 1,
   "AFG": 3,
   "COG": 2,
   "COD": 2,
-  "SDN": 2,
+  "SDN": 4,
   "NPL": 1,
-  "YEM": 4,
+  "YEM": 5,
   "KOR": 1,
   "LBN": 1,
   "ESH": 3,
@@ -657,7 +667,11 @@
   "MOZ": 1,
   "MMR": 1,
   "ETH": 1,
-  "MEX": 1
+  "MEX": 1,
+  "SSD": 1,
+  "CAF": 1,
+  "CUB": 1,
+  "VEN": 1
  },
  "countries": {
   "BFA": {
@@ -784,6 +798,10 @@
    "name": "France",
    "numeric": "250"
   },
+  "ESP": {
+   "name": "Spain",
+   "numeric": "724"
+  },
   "ARG": {
    "name": "Argentina",
    "numeric": "032"
@@ -811,10 +829,6 @@
   "IDN": {
    "name": "Indonesia",
    "numeric": "360"
-  },
-  "ESP": {
-   "name": "Spain",
-   "numeric": "724"
   },
   "GBR": {
    "name": "United Kingdom",
@@ -887,6 +901,22 @@
   "MEX": {
    "name": "Mexico",
    "numeric": "484"
+  },
+  "SSD": {
+   "name": "South Sudan",
+   "numeric": "728"
+  },
+  "CAF": {
+   "name": "Central African Republic",
+   "numeric": "140"
+  },
+  "CUB": {
+   "name": "Cuba",
+   "numeric": "192"
+  },
+  "VEN": {
+   "name": "Venezuela",
+   "numeric": "862"
   }
  },
  "news": [
@@ -918,6 +948,85 @@
     "elections-governance"
    ],
    "countries": []
+  },
+  {
+   "type": "official",
+   "title": "Daily Press Briefing by the Office of the Spokesperson for the Secretary-General",
+   "link": "https://press.un.org/en/2026/db261106.doc.htm",
+   "date": "2026-11-06T21:02:31.000Z",
+   "source": "un-press",
+   "publisher": "United Nations",
+   "author": "United Nations",
+   "summary": "In Sudan, the Office of the United Nations High Commissioner for Refugees (UNHCR) and the International Organization for Migration (IOM) warn that millions of people displaced by the conflict risk being left without even a roof over their heads as funding shortages threaten to deplete emergency shelter stocks.",
+   "tags": [],
+   "themes": [
+    "sahel-africa"
+   ],
+   "countries": [
+    "SDN"
+   ]
+  },
+  {
+   "type": "official",
+   "title": "As Global Challenges Mount, Secretary-General Urges World to Uphold International Law in Address to University of Salamanca",
+   "link": "https://press.un.org/en/2026/sgsm23360.doc.htm",
+   "date": "2026-11-06T20:19:54.000Z",
+   "source": "un-press",
+   "publisher": "United Nations",
+   "author": "United Nations",
+   "summary": "Following is UN Secretary-General António Guterres’ address to the University of Salamanca, in Salamanca, Spain today:",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "ESP"
+   ]
+  },
+  {
+   "type": "official",
+   "title": "Iran-related Designations",
+   "link": "https://ofac.treasury.gov/recent-actions/20261106",
+   "date": "2026-11-06T20:00:00.000Z",
+   "source": "ofac",
+   "publisher": "US Department of the Treasury (OFAC)",
+   "author": "",
+   "summary": "",
+   "tags": [],
+   "themes": [
+    "iran"
+   ],
+   "countries": [
+    "IRN"
+   ]
+  },
+  {
+   "type": "official",
+   "title": "Sixth Committee Discusses United States’ Conduct as Host Country of United Nations Headquarters",
+   "link": "https://press.un.org/en/2026/gal3765.doc.htm",
+   "date": "2026-11-06T19:19:38.000Z",
+   "source": "un-press",
+   "publisher": "United Nations",
+   "author": "United Nations",
+   "summary": "The Sixth Committee (Legal) today discussed the report of the Committee on Relations with the Host Country, with many speakers spotlighting repeated violations by the United States that impede certain delegations’ full participation in the work of the United Nations and, with it, the efforts of the entire Organization.",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "USA"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "Spain's rail authorities face European fraud probe after Urda rail disaster",
+   "link": "https://www.bbc.co.uk/news/articles/c6x2wwnz5445o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T17:44:02.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "Prosecutors begin investigating EU funds meant for upgrading the Spanish railway line where a train crash killed 69 people.",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "ESP"
+   ]
   },
   {
    "type": "news",
@@ -1318,6 +1427,32 @@
    ]
   },
   {
+   "type": "official",
+   "title": "Stressing that Peacekeeping Missions Save Lives, Fourth Committee Highlights Need for Adequate Funding to Avert Conflicts, Protect Civilians",
+   "link": "https://press.un.org/en/2026/gaspd850.doc.htm",
+   "date": "2026-11-06T00:47:54.000Z",
+   "source": "un-press",
+   "publisher": "United Nations",
+   "author": "United Nations",
+   "summary": "As the Fourth Committee (Special Political and Decolonization) began its consideration of peacekeeping operations, senior UN officials stressed the importance of political unity and predictable funding.",
+   "tags": [],
+   "themes": [],
+   "countries": []
+  },
+  {
+   "type": "official",
+   "title": "Debate on International Law Commission Report Concludes as Sixth Committee Turns to Transboundary Aquifers",
+   "link": "https://press.un.org/en/2026/gal3764.doc.htm",
+   "date": "2026-11-06T00:08:17.000Z",
+   "source": "un-press",
+   "publisher": "United Nations",
+   "author": "United Nations",
+   "summary": "Delegates in the Sixth Committee (Legal) today concluded their debate on the annual report of the International Law Commission and then turned to the law of transboundary aquifers, underscoring the importance of international cooperation to protect and manage shared water resources.",
+   "tags": [],
+   "themes": [],
+   "countries": []
+  },
+  {
    "type": "news",
    "title": "Pope begins lengthy trip to Latin America weeks after lung cancer surgery",
    "link": "https://www.bbc.co.uk/news/articles/cqn06j0y61k6o?at_medium=RSS&at_campaign=rss",
@@ -1351,6 +1486,90 @@
    ]
   },
   {
+   "type": "official",
+   "title": "Reviewing Economic and Social Council’ Work, Impact of Sea Level Rise, General Assembly Hears Calls for More Development Financing, Partnership to Achieve 2030 Agenda",
+   "link": "https://press.un.org/en/2026/ga12806.doc.htm",
+   "date": "2026-11-05T22:48:49.000Z",
+   "source": "un-press",
+   "publisher": "United Nations",
+   "author": "United Nations",
+   "summary": "Warning that the world remains off track to achieve the Sustainable Development Goals by 2030, delegates today urged Member States to move beyond declarations towards measurable progress, as the General Assembly reviewed the Economic and Social Council’s work amid widening inequalities, mounting debt and growing demand",
+   "tags": [],
+   "themes": [],
+   "countries": []
+  },
+  {
+   "type": "official",
+   "title": "Security Council Hears Update on Yemen Sanctions Committee’s Work, Including Panel Recommendations",
+   "link": "https://press.un.org/en/2026/sc16501.doc.htm",
+   "date": "2026-11-05T22:00:28.000Z",
+   "source": "un-press",
+   "publisher": "United Nations",
+   "author": "United Nations",
+   "summary": "The Security Council today heard an update on the work of the Committee overseeing sanctions on Yemen, including its consideration of reports addressing dual-use items, precursor chemicals, information-sharing and vessel flag State capacity, as well as recommendations submitted by its Panel of Experts.",
+   "tags": [],
+   "themes": [
+    "israel-gaza",
+    "sanctions-trade"
+   ],
+   "countries": [
+    "YEM"
+   ]
+  },
+  {
+   "type": "official",
+   "title": "Security Council Weighs United Nations Abyei Mission Mandate Renewal Ahead of Vote",
+   "link": "https://press.un.org/en/2026/sc16502.doc.htm",
+   "date": "2026-11-05T20:57:10.000Z",
+   "source": "un-press",
+   "publisher": "United Nations",
+   "author": "United Nations",
+   "summary": "In the absence of a political solution between Sudan and South Sudan, senior United Nations officials and delegates told the Security Council today that evolving violence and a fragile security situation in and around the disputed Abyei area underscore the importance of strengthening and renewing the mandate of the Uni",
+   "tags": [],
+   "themes": [
+    "sahel-africa",
+    "elections-governance"
+   ],
+   "countries": [
+    "SDN",
+    "SSD"
+   ]
+  },
+  {
+   "type": "official",
+   "title": "Daily Press Briefing by the Office of the Spokesman for the Secretary-General",
+   "link": "https://press.un.org/en/2026/db261105.doc.htm",
+   "date": "2026-11-05T20:51:33.000Z",
+   "source": "un-press",
+   "publisher": "United Nations",
+   "author": "United Nations",
+   "summary": "The UN Multidimensional Integrated Stabilization Mission in the Central African Republic reports that 137 members of the Azande Ani Kpi Gbe armed group have voluntarily surrendered military weapons and ammunition in Obo, in the south-east, after intensive outreach by local authorities, with the Mission’s support.",
+   "tags": [],
+   "themes": [
+    "defense"
+   ],
+   "countries": [
+    "CAF"
+   ]
+  },
+  {
+   "type": "official",
+   "title": "Cyber-related and Transnational Criminal Organizations Designations; Cuba Designations; Publication of Cuba-related Determination",
+   "link": "https://ofac.treasury.gov/recent-actions/20261105",
+   "date": "2026-11-05T20:00:00.000Z",
+   "source": "ofac",
+   "publisher": "US Department of the Treasury (OFAC)",
+   "author": "",
+   "summary": "",
+   "tags": [],
+   "themes": [
+    "tech-security"
+   ],
+   "countries": [
+    "CUB"
+   ]
+  },
+  {
    "type": "news",
    "title": "Bomb hoaxes: Messages reveal how threat was passed on by air traffic control",
    "link": "https://www.bbc.co.uk/news/videos/cq398m8w41lyo?at_medium=RSS&at_campaign=rss",
@@ -1376,6 +1595,21 @@
    "themes": [],
    "countries": [
     "PRY"
+   ]
+  },
+  {
+   "type": "official",
+   "title": "Secretary-General, Addressing Ibero-American Summit, Highlights Its Role in Championing Culture as Global Public Good, Urges More Arts, Humanities in Education",
+   "link": "https://press.un.org/en/2026/sgsm23359.doc.htm",
+   "date": "2026-11-05T17:28:40.000Z",
+   "source": "un-press",
+   "publisher": "United Nations",
+   "author": "United Nations",
+   "summary": "Following is UN Secretary-General António Guterres’ address to the thirtieth Ibero-American Summit, in Madrid today:",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "USA"
    ]
   },
   {
@@ -1514,6 +1748,24 @@
    "tags": [],
    "themes": [],
    "countries": []
+  },
+  {
+   "type": "official",
+   "title": "Iran-related Designations; Updates to Certain Iran-related Listings; Publication of Iran-related OFAC Alert; Issuance of Amended Venezuela-related General License and Frequently Asked Question",
+   "link": "https://ofac.treasury.gov/recent-actions/20261104",
+   "date": "2026-11-04T20:00:00.000Z",
+   "source": "ofac",
+   "publisher": "US Department of the Treasury (OFAC)",
+   "author": "",
+   "summary": "",
+   "tags": [],
+   "themes": [
+    "iran"
+   ],
+   "countries": [
+    "IRN",
+    "VEN"
+   ]
   },
   {
    "type": "analysis",
@@ -2110,64 +2362,64 @@
      "value": -2.3322691
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2025,
-     "value": -1.798613
+     "value": 0.178328
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2024,
-     "value": -1.7493961
+     "value": 0.1486709
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2023,
-     "value": -2.039031
+     "value": 0.1644394
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2022,
-     "value": -1.824178
+     "value": 0.1464063
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2021,
-     "value": -1.5740184
+     "value": 0.3655782
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2020,
-     "value": -1.4170425
+     "value": 0.3115828
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2019,
-     "value": -1.1990137
+     "value": 0.2816408
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2018,
-     "value": -0.9622057
+     "value": 0.3484949
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2017,
-     "value": -0.8514561
+     "value": 0.3055939
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2016,
-     "value": -0.9084037
+     "value": 0.4340081
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2015,
-     "value": -0.694179
+     "value": 0.4534319
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2014,
-     "value": -0.7116285
+     "value": 0.4985045
     },
     {
      "iso3": "IRN",
@@ -2290,66 +2542,6 @@
      "value": -1.5978529
     },
     {
-     "iso3": "NER",
-     "year": 2025,
-     "value": -1.7676299
-    },
-    {
-     "iso3": "NER",
-     "year": 2024,
-     "value": -1.7602928
-    },
-    {
-     "iso3": "NER",
-     "year": 2023,
-     "value": -1.6547689
-    },
-    {
-     "iso3": "NER",
-     "year": 2022,
-     "value": -1.2925903
-    },
-    {
-     "iso3": "NER",
-     "year": 2021,
-     "value": -1.4733031
-    },
-    {
-     "iso3": "NER",
-     "year": 2020,
-     "value": -1.500058
-    },
-    {
-     "iso3": "NER",
-     "year": 2019,
-     "value": -1.2045725
-    },
-    {
-     "iso3": "NER",
-     "year": 2018,
-     "value": -1.2050393
-    },
-    {
-     "iso3": "NER",
-     "year": 2017,
-     "value": -1.0496502
-    },
-    {
-     "iso3": "NER",
-     "year": 2016,
-     "value": -0.9596828
-    },
-    {
-     "iso3": "NER",
-     "year": 2015,
-     "value": -0.8173599
-    },
-    {
-     "iso3": "NER",
-     "year": 2014,
-     "value": -0.9780706
-    },
-    {
      "iso3": "RUS",
      "year": 2025,
      "value": -0.9449586
@@ -2408,6 +2600,66 @@
      "iso3": "RUS",
      "year": 2014,
      "value": -0.7092694
+    },
+    {
+     "iso3": "SDN",
+     "year": 2025,
+     "value": -2.0692829
+    },
+    {
+     "iso3": "SDN",
+     "year": 2024,
+     "value": -2.0344983
+    },
+    {
+     "iso3": "SDN",
+     "year": 2023,
+     "value": -2.0682158
+    },
+    {
+     "iso3": "SDN",
+     "year": 2022,
+     "value": -1.9342198
+    },
+    {
+     "iso3": "SDN",
+     "year": 2021,
+     "value": -1.7962832
+    },
+    {
+     "iso3": "SDN",
+     "year": 2020,
+     "value": -1.4071804
+    },
+    {
+     "iso3": "SDN",
+     "year": 2019,
+     "value": -1.6827368
+    },
+    {
+     "iso3": "SDN",
+     "year": 2018,
+     "value": -1.7213647
+    },
+    {
+     "iso3": "SDN",
+     "year": 2017,
+     "value": -1.9617608
+    },
+    {
+     "iso3": "SDN",
+     "year": 2016,
+     "value": -2.1648921
+    },
+    {
+     "iso3": "SDN",
+     "year": 2015,
+     "value": -2.0548186
+    },
+    {
+     "iso3": "SDN",
+     "year": 2014,
+     "value": -2.230423
     },
     {
      "iso3": "UKR",
@@ -2659,64 +2911,64 @@
      "value": 2.72454336219565
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2025,
-     "value": 5.29461839319283
+     "value": 2.82495400578509
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2024,
-     "value": 4.83395810163883
+     "value": 3.45525405630191
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2023,
-     "value": 3.00027415814125
+     "value": 2.46085796805582
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2022,
-     "value": 1.62673258211919
+     "value": 6.37031712129601
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2021,
-     "value": 6.94252492572348
+     "value": 6.68314420473001
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2020,
-     "value": 2.01077262406221
+     "value": -10.9400706350371
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2019,
-     "value": 5.88920497068135
+     "value": 1.96117850841711
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2018,
-     "value": 6.60456906812341
+     "value": 2.39541124478878
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2017,
-     "value": 6.20348941121868
+     "value": 2.89604207865007
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2016,
-     "value": 5.95797670754024
+     "value": 2.91515598595787
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2015,
-     "value": 3.9212287937935
+     "value": 4.06086672473866
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2014,
-     "value": 4.32684561452976
+     "value": 1.52048593647231
     },
     {
      "iso3": "IRN",
@@ -2839,66 +3091,6 @@
      "value": 6.50263878386326
     },
     {
-     "iso3": "NER",
-     "year": 2025,
-     "value": 7.00782960149
-    },
-    {
-     "iso3": "NER",
-     "year": 2024,
-     "value": 8.32327058280728
-    },
-    {
-     "iso3": "NER",
-     "year": 2023,
-     "value": 2.63516980401258
-    },
-    {
-     "iso3": "NER",
-     "year": 2022,
-     "value": 12.2215497467041
-    },
-    {
-     "iso3": "NER",
-     "year": 2021,
-     "value": 1.11520063869706
-    },
-    {
-     "iso3": "NER",
-     "year": 2020,
-     "value": 4.45481803846413
-    },
-    {
-     "iso3": "NER",
-     "year": 2019,
-     "value": 6.07881528959186
-    },
-    {
-     "iso3": "NER",
-     "year": 2018,
-     "value": 6.89458420864513
-    },
-    {
-     "iso3": "NER",
-     "year": 2017,
-     "value": 5.53198531271451
-    },
-    {
-     "iso3": "NER",
-     "year": 2016,
-     "value": 4.28137558478143
-    },
-    {
-     "iso3": "NER",
-     "year": 2015,
-     "value": 4.39264883207291
-    },
-    {
-     "iso3": "NER",
-     "year": 2014,
-     "value": 6.64213665495603
-    },
-    {
      "iso3": "RUS",
      "year": 2025,
      "value": 1.00117656925738
@@ -2957,6 +3149,66 @@
      "iso3": "RUS",
      "year": 2014,
      "value": 0.736267221403651
+    },
+    {
+     "iso3": "SDN",
+     "year": 2025,
+     "value": 3.06427942935869
+    },
+    {
+     "iso3": "SDN",
+     "year": 2024,
+     "value": -13.9643378424022
+    },
+    {
+     "iso3": "SDN",
+     "year": 2023,
+     "value": -29.4332716274387
+    },
+    {
+     "iso3": "SDN",
+     "year": 2022,
+     "value": -0.957816591119183
+    },
+    {
+     "iso3": "SDN",
+     "year": 2021,
+     "value": -1.8685204827207
+    },
+    {
+     "iso3": "SDN",
+     "year": 2020,
+     "value": -3.62980082410752
+    },
+    {
+     "iso3": "SDN",
+     "year": 2019,
+     "value": -2.17825104530091
+    },
+    {
+     "iso3": "SDN",
+     "year": 2018,
+     "value": -2.6809305497999
+    },
+    {
+     "iso3": "SDN",
+     "year": 2017,
+     "value": 0.70925628476644
+    },
+    {
+     "iso3": "SDN",
+     "year": 2016,
+     "value": 3.46764218409288
+    },
+    {
+     "iso3": "SDN",
+     "year": 2015,
+     "value": 1.91017689052751
+    },
+    {
+     "iso3": "SDN",
+     "year": 2014,
+     "value": 4.66137954229873
     },
     {
      "iso3": "UKR",
@@ -3173,64 +3425,64 @@
      "value": 4.67399603536344
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2025,
-     "value": -0.586235316330578
+     "value": 2.67326741144651
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2024,
-     "value": 4.19081721344523
+     "value": 2.77406987275873
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2023,
-     "value": 0.742910428668917
+     "value": 3.53247287667898
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2022,
-     "value": 14.2902354303358
+     "value": 8.39041940748896
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2021,
-     "value": 3.65326761825508
+     "value": 3.09304989531805
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2020,
-     "value": 1.88470066518847
+     "value": -0.322564616861942
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2019,
-     "value": -3.23338933983321
+     "value": 0.699267137814226
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2018,
-     "value": 1.95594302672532
+     "value": 1.67539821465287
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2017,
-     "value": 1.48299897161325
+     "value": 1.95575728963107
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2016,
-     "value": 0.441041448058809
+     "value": -0.202721903367454
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2015,
-     "value": 0.724838981070516
+     "value": -0.500327420149904
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2014,
-     "value": -0.258089517535291
+     "value": -0.150921217655048
     },
     {
      "iso3": "IRN",
@@ -3353,66 +3605,6 @@
      "value": 0.883814547137841
     },
     {
-     "iso3": "NER",
-     "year": 2025,
-     "value": -4.45470804102568
-    },
-    {
-     "iso3": "NER",
-     "year": 2024,
-     "value": 9.07151997725013
-    },
-    {
-     "iso3": "NER",
-     "year": 2023,
-     "value": 3.70097316425833
-    },
-    {
-     "iso3": "NER",
-     "year": 2022,
-     "value": 4.22621791916392
-    },
-    {
-     "iso3": "NER",
-     "year": 2021,
-     "value": 3.83786802840509
-    },
-    {
-     "iso3": "NER",
-     "year": 2020,
-     "value": 2.8981937602627
-    },
-    {
-     "iso3": "NER",
-     "year": 2019,
-     "value": -2.48979265070854
-    },
-    {
-     "iso3": "NER",
-     "year": 2018,
-     "value": 2.96760366004455
-    },
-    {
-     "iso3": "NER",
-     "year": 2017,
-     "value": 2.79637318871284
-    },
-    {
-     "iso3": "NER",
-     "year": 2016,
-     "value": 1.65388922387805
-    },
-    {
-     "iso3": "NER",
-     "year": 2015,
-     "value": -0.576090369833188
-    },
-    {
-     "iso3": "NER",
-     "year": 2014,
-     "value": -0.930287259984466
-    },
-    {
      "iso3": "RUS",
      "year": 2025,
      "value": 8.71986939402666
@@ -3471,6 +3663,51 @@
      "iso3": "RUS",
      "year": 2014,
      "value": 7.82016970013844
+    },
+    {
+     "iso3": "SDN",
+     "year": 2022,
+     "value": 138.80846024176
+    },
+    {
+     "iso3": "SDN",
+     "year": 2021,
+     "value": 359.093040778998
+    },
+    {
+     "iso3": "SDN",
+     "year": 2020,
+     "value": 163.257782355457
+    },
+    {
+     "iso3": "SDN",
+     "year": 2019,
+     "value": 50.9940515002964
+    },
+    {
+     "iso3": "SDN",
+     "year": 2018,
+     "value": 63.2925073455887
+    },
+    {
+     "iso3": "SDN",
+     "year": 2017,
+     "value": 32.3516260968436
+    },
+    {
+     "iso3": "SDN",
+     "year": 2016,
+     "value": 17.7502538311959
+    },
+    {
+     "iso3": "SDN",
+     "year": 2015,
+     "value": 16.9095706050977
+    },
+    {
+     "iso3": "SDN",
+     "year": 2014,
+     "value": 36.9066427863595
     },
     {
      "iso3": "UKR",
@@ -3647,64 +3884,64 @@
      "value": 1.2980128779
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2025,
-     "value": 3.3002993565
+     "value": 2.1289211383
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2024,
-     "value": 4.3907038562
+     "value": 1.4603080918
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2023,
-     "value": 4.0787117239
+     "value": 1.5349257992
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2022,
-     "value": 2.9816156694
+     "value": 1.4319863242
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2021,
-     "value": 2.3336286314
+     "value": 1.3668349152
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2020,
-     "value": 2.1142418147
+     "value": 1.3557377078
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2019,
-     "value": 2.2125520849
+     "value": 1.2246452529
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2018,
-     "value": 1.9253845506
+     "value": 1.2456247587
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2017,
-     "value": 1.3636297047
+     "value": 1.2221108285
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2016,
-     "value": 1.1653333544
+     "value": 1.1284810685
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2015,
-     "value": 1.2507808803
+     "value": 1.2596926536
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2014,
-     "value": 1.2723419522
+     "value": 1.246259441
     },
     {
      "iso3": "IRN",
@@ -3827,61 +4064,6 @@
      "value": 1.515933832
     },
     {
-     "iso3": "NER",
-     "year": 2025,
-     "value": 2.1357835045
-    },
-    {
-     "iso3": "NER",
-     "year": 2024,
-     "value": 2.1962316177
-    },
-    {
-     "iso3": "NER",
-     "year": 2023,
-     "value": 1.9761600098
-    },
-    {
-     "iso3": "NER",
-     "year": 2022,
-     "value": 1.5729764924
-    },
-    {
-     "iso3": "NER",
-     "year": 2021,
-     "value": 1.3573009312
-    },
-    {
-     "iso3": "NER",
-     "year": 2020,
-     "value": 1.7336075217
-    },
-    {
-     "iso3": "NER",
-     "year": 2019,
-     "value": 1.9173360065
-    },
-    {
-     "iso3": "NER",
-     "year": 2018,
-     "value": 1.793808817
-    },
-    {
-     "iso3": "NER",
-     "year": 2017,
-     "value": 1.8098429244
-    },
-    {
-     "iso3": "NER",
-     "year": 2016,
-     "value": 1.5996462432
-    },
-    {
-     "iso3": "NER",
-     "year": 2014,
-     "value": 1.3385981974
-    },
-    {
      "iso3": "RUS",
      "year": 2025,
      "value": 7.5014846549
@@ -3940,6 +4122,41 @@
      "iso3": "RUS",
      "year": 2014,
      "value": 4.1129929782
+    },
+    {
+     "iso3": "SDN",
+     "year": 2021,
+     "value": 0.925377248
+    },
+    {
+     "iso3": "SDN",
+     "year": 2020,
+     "value": 0.975842223
+    },
+    {
+     "iso3": "SDN",
+     "year": 2019,
+     "value": 1.6290679927
+    },
+    {
+     "iso3": "SDN",
+     "year": 2018,
+     "value": 1.7789240269
+    },
+    {
+     "iso3": "SDN",
+     "year": 2017,
+     "value": 3.285803901
+    },
+    {
+     "iso3": "SDN",
+     "year": 2016,
+     "value": 2.2785072155
+    },
+    {
+     "iso3": "SDN",
+     "year": 2015,
+     "value": 2.7129402332
     },
     {
      "iso3": "UKR",
@@ -4081,6 +4298,266 @@
    "publisher": "International Monetary Fund, World Economic Outlook (DataMapper)",
    "values": [
     {
+     "iso3": "SDN",
+     "year": 1980,
+     "value": 2.5
+    },
+    {
+     "iso3": "SDN",
+     "year": 1981,
+     "value": 6.3
+    },
+    {
+     "iso3": "SDN",
+     "year": 1982,
+     "value": 4.1
+    },
+    {
+     "iso3": "SDN",
+     "year": 1983,
+     "value": -1.5
+    },
+    {
+     "iso3": "SDN",
+     "year": 1984,
+     "value": -5.6
+    },
+    {
+     "iso3": "SDN",
+     "year": 1985,
+     "value": -0.6
+    },
+    {
+     "iso3": "SDN",
+     "year": 1986,
+     "value": 9.9
+    },
+    {
+     "iso3": "SDN",
+     "year": 1987,
+     "value": 6.5
+    },
+    {
+     "iso3": "SDN",
+     "year": 1988,
+     "value": 4.3
+    },
+    {
+     "iso3": "SDN",
+     "year": 1989,
+     "value": 1.4
+    },
+    {
+     "iso3": "SDN",
+     "year": 1990,
+     "value": 0.8
+    },
+    {
+     "iso3": "SDN",
+     "year": 1991,
+     "value": 7
+    },
+    {
+     "iso3": "SDN",
+     "year": 1992,
+     "value": 5.5
+    },
+    {
+     "iso3": "SDN",
+     "year": 1993,
+     "value": 2.8
+    },
+    {
+     "iso3": "SDN",
+     "year": 1994,
+     "value": 3.5
+    },
+    {
+     "iso3": "SDN",
+     "year": 1995,
+     "value": 8.9
+    },
+    {
+     "iso3": "SDN",
+     "year": 1996,
+     "value": 5.5
+    },
+    {
+     "iso3": "SDN",
+     "year": 1997,
+     "value": 6.1
+    },
+    {
+     "iso3": "SDN",
+     "year": 1998,
+     "value": 8.2
+    },
+    {
+     "iso3": "SDN",
+     "year": 1999,
+     "value": 4.2
+    },
+    {
+     "iso3": "SDN",
+     "year": 2000,
+     "value": 8.4
+    },
+    {
+     "iso3": "SDN",
+     "year": 2001,
+     "value": 10.9
+    },
+    {
+     "iso3": "SDN",
+     "year": 2002,
+     "value": 5.9
+    },
+    {
+     "iso3": "SDN",
+     "year": 2003,
+     "value": 6.3
+    },
+    {
+     "iso3": "SDN",
+     "year": 2004,
+     "value": 5.1
+    },
+    {
+     "iso3": "SDN",
+     "year": 2005,
+     "value": 5.6
+    },
+    {
+     "iso3": "SDN",
+     "year": 2006,
+     "value": 6.5
+    },
+    {
+     "iso3": "SDN",
+     "year": 2007,
+     "value": 5.7
+    },
+    {
+     "iso3": "SDN",
+     "year": 2008,
+     "value": 3.8
+    },
+    {
+     "iso3": "SDN",
+     "year": 2009,
+     "value": -2.8
+    },
+    {
+     "iso3": "SDN",
+     "year": 2010,
+     "value": 3.9
+    },
+    {
+     "iso3": "SDN",
+     "year": 2011,
+     "value": -3.2
+    },
+    {
+     "iso3": "SDN",
+     "year": 2012,
+     "value": -17
+    },
+    {
+     "iso3": "SDN",
+     "year": 2013,
+     "value": 2
+    },
+    {
+     "iso3": "SDN",
+     "year": 2014,
+     "value": 4.7
+    },
+    {
+     "iso3": "SDN",
+     "year": 2015,
+     "value": 4.9
+    },
+    {
+     "iso3": "SDN",
+     "year": 2016,
+     "value": 4.7
+    },
+    {
+     "iso3": "SDN",
+     "year": 2017,
+     "value": 0.8
+    },
+    {
+     "iso3": "SDN",
+     "year": 2018,
+     "value": -2.3
+    },
+    {
+     "iso3": "SDN",
+     "year": 2019,
+     "value": -2.5
+    },
+    {
+     "iso3": "SDN",
+     "year": 2020,
+     "value": -3.6
+    },
+    {
+     "iso3": "SDN",
+     "year": 2021,
+     "value": 0.5
+    },
+    {
+     "iso3": "SDN",
+     "year": 2022,
+     "value": -2.5
+    },
+    {
+     "iso3": "SDN",
+     "year": 2023,
+     "value": -23.5
+    },
+    {
+     "iso3": "SDN",
+     "year": 2024,
+     "value": -19.3
+    },
+    {
+     "iso3": "SDN",
+     "year": 2025,
+     "value": 0
+    },
+    {
+     "iso3": "SDN",
+     "year": 2026,
+     "value": 7
+    },
+    {
+     "iso3": "SDN",
+     "year": 2027,
+     "value": 15
+    },
+    {
+     "iso3": "SDN",
+     "year": 2028,
+     "value": 10
+    },
+    {
+     "iso3": "SDN",
+     "year": 2029,
+     "value": 8
+    },
+    {
+     "iso3": "SDN",
+     "year": 2030,
+     "value": 8
+    },
+    {
+     "iso3": "SDN",
+     "year": 2031,
+     "value": 8
+    },
+    {
      "iso3": "AFG",
      "year": 2003,
      "value": 8.7
@@ -4194,266 +4671,6 @@
      "iso3": "AFG",
      "year": 2025,
      "value": 1.5
-    },
-    {
-     "iso3": "BFA",
-     "year": 1980,
-     "value": 4
-    },
-    {
-     "iso3": "BFA",
-     "year": 1981,
-     "value": 2.7
-    },
-    {
-     "iso3": "BFA",
-     "year": 1982,
-     "value": 1.4
-    },
-    {
-     "iso3": "BFA",
-     "year": 1983,
-     "value": -1.2
-    },
-    {
-     "iso3": "BFA",
-     "year": 1984,
-     "value": 1.6
-    },
-    {
-     "iso3": "BFA",
-     "year": 1985,
-     "value": 11.3
-    },
-    {
-     "iso3": "BFA",
-     "year": 1986,
-     "value": 8
-    },
-    {
-     "iso3": "BFA",
-     "year": 1987,
-     "value": -0.2
-    },
-    {
-     "iso3": "BFA",
-     "year": 1988,
-     "value": 5.8
-    },
-    {
-     "iso3": "BFA",
-     "year": 1989,
-     "value": 2.2
-    },
-    {
-     "iso3": "BFA",
-     "year": 1990,
-     "value": -0.6
-    },
-    {
-     "iso3": "BFA",
-     "year": 1991,
-     "value": 9.1
-    },
-    {
-     "iso3": "BFA",
-     "year": 1992,
-     "value": 0.2
-    },
-    {
-     "iso3": "BFA",
-     "year": 1993,
-     "value": 3.5
-    },
-    {
-     "iso3": "BFA",
-     "year": 1994,
-     "value": 1.3
-    },
-    {
-     "iso3": "BFA",
-     "year": 1995,
-     "value": 5.7
-    },
-    {
-     "iso3": "BFA",
-     "year": 1996,
-     "value": 11
-    },
-    {
-     "iso3": "BFA",
-     "year": 1997,
-     "value": 6.3
-    },
-    {
-     "iso3": "BFA",
-     "year": 1998,
-     "value": 7.3
-    },
-    {
-     "iso3": "BFA",
-     "year": 1999,
-     "value": 7.3
-    },
-    {
-     "iso3": "BFA",
-     "year": 2000,
-     "value": 1.9
-    },
-    {
-     "iso3": "BFA",
-     "year": 2001,
-     "value": 6.6
-    },
-    {
-     "iso3": "BFA",
-     "year": 2002,
-     "value": 4.4
-    },
-    {
-     "iso3": "BFA",
-     "year": 2003,
-     "value": 7.8
-    },
-    {
-     "iso3": "BFA",
-     "year": 2004,
-     "value": 4.5
-    },
-    {
-     "iso3": "BFA",
-     "year": 2005,
-     "value": 8.7
-    },
-    {
-     "iso3": "BFA",
-     "year": 2006,
-     "value": 6.3
-    },
-    {
-     "iso3": "BFA",
-     "year": 2007,
-     "value": 4.1
-    },
-    {
-     "iso3": "BFA",
-     "year": 2008,
-     "value": 5.8
-    },
-    {
-     "iso3": "BFA",
-     "year": 2009,
-     "value": 3
-    },
-    {
-     "iso3": "BFA",
-     "year": 2010,
-     "value": 8.4
-    },
-    {
-     "iso3": "BFA",
-     "year": 2011,
-     "value": 6.6
-    },
-    {
-     "iso3": "BFA",
-     "year": 2012,
-     "value": 6.5
-    },
-    {
-     "iso3": "BFA",
-     "year": 2013,
-     "value": 5.8
-    },
-    {
-     "iso3": "BFA",
-     "year": 2014,
-     "value": 4.3
-    },
-    {
-     "iso3": "BFA",
-     "year": 2015,
-     "value": 3.9
-    },
-    {
-     "iso3": "BFA",
-     "year": 2016,
-     "value": 6
-    },
-    {
-     "iso3": "BFA",
-     "year": 2017,
-     "value": 6.2
-    },
-    {
-     "iso3": "BFA",
-     "year": 2018,
-     "value": 6.6
-    },
-    {
-     "iso3": "BFA",
-     "year": 2019,
-     "value": 5.9
-    },
-    {
-     "iso3": "BFA",
-     "year": 2020,
-     "value": 2
-    },
-    {
-     "iso3": "BFA",
-     "year": 2021,
-     "value": 6.9
-    },
-    {
-     "iso3": "BFA",
-     "year": 2022,
-     "value": 1.6
-    },
-    {
-     "iso3": "BFA",
-     "year": 2023,
-     "value": 3
-    },
-    {
-     "iso3": "BFA",
-     "year": 2024,
-     "value": 4.8
-    },
-    {
-     "iso3": "BFA",
-     "year": 2025,
-     "value": 5.3
-    },
-    {
-     "iso3": "BFA",
-     "year": 2026,
-     "value": 4.4
-    },
-    {
-     "iso3": "BFA",
-     "year": 2027,
-     "value": 4.8
-    },
-    {
-     "iso3": "BFA",
-     "year": 2028,
-     "value": 4.8
-    },
-    {
-     "iso3": "BFA",
-     "year": 2029,
-     "value": 4.8
-    },
-    {
-     "iso3": "BFA",
-     "year": 2030,
-     "value": 4.8
-    },
-    {
-     "iso3": "BFA",
-     "year": 2031,
-     "value": 4.9
     },
     {
      "iso3": "IRN",
@@ -4976,266 +5193,6 @@
      "value": 5.2
     },
     {
-     "iso3": "NER",
-     "year": 1980,
-     "value": 4.9
-    },
-    {
-     "iso3": "NER",
-     "year": 1981,
-     "value": -0.2
-    },
-    {
-     "iso3": "NER",
-     "year": 1982,
-     "value": 2.2
-    },
-    {
-     "iso3": "NER",
-     "year": 1983,
-     "value": -3.9
-    },
-    {
-     "iso3": "NER",
-     "year": 1984,
-     "value": -16.8
-    },
-    {
-     "iso3": "NER",
-     "year": 1985,
-     "value": 7.7
-    },
-    {
-     "iso3": "NER",
-     "year": 1986,
-     "value": 6.4
-    },
-    {
-     "iso3": "NER",
-     "year": 1987,
-     "value": 0.1
-    },
-    {
-     "iso3": "NER",
-     "year": 1988,
-     "value": 6.9
-    },
-    {
-     "iso3": "NER",
-     "year": 1989,
-     "value": 1
-    },
-    {
-     "iso3": "NER",
-     "year": 1990,
-     "value": -1.3
-    },
-    {
-     "iso3": "NER",
-     "year": 1991,
-     "value": -0.4
-    },
-    {
-     "iso3": "NER",
-     "year": 1992,
-     "value": 2
-    },
-    {
-     "iso3": "NER",
-     "year": 1993,
-     "value": 0.3
-    },
-    {
-     "iso3": "NER",
-     "year": 1994,
-     "value": 1.9
-    },
-    {
-     "iso3": "NER",
-     "year": 1995,
-     "value": 2.5
-    },
-    {
-     "iso3": "NER",
-     "year": 1996,
-     "value": 0.1
-    },
-    {
-     "iso3": "NER",
-     "year": 1997,
-     "value": 1.5
-    },
-    {
-     "iso3": "NER",
-     "year": 1998,
-     "value": 10
-    },
-    {
-     "iso3": "NER",
-     "year": 1999,
-     "value": -0.2
-    },
-    {
-     "iso3": "NER",
-     "year": 2000,
-     "value": -1.2
-    },
-    {
-     "iso3": "NER",
-     "year": 2001,
-     "value": 7.3
-    },
-    {
-     "iso3": "NER",
-     "year": 2002,
-     "value": 4.9
-    },
-    {
-     "iso3": "NER",
-     "year": 2003,
-     "value": 2.2
-    },
-    {
-     "iso3": "NER",
-     "year": 2004,
-     "value": 0.4
-    },
-    {
-     "iso3": "NER",
-     "year": 2005,
-     "value": 7.3
-    },
-    {
-     "iso3": "NER",
-     "year": 2006,
-     "value": 5.9
-    },
-    {
-     "iso3": "NER",
-     "year": 2007,
-     "value": 3.1
-    },
-    {
-     "iso3": "NER",
-     "year": 2008,
-     "value": 7.7
-    },
-    {
-     "iso3": "NER",
-     "year": 2009,
-     "value": 2
-    },
-    {
-     "iso3": "NER",
-     "year": 2010,
-     "value": 8.6
-    },
-    {
-     "iso3": "NER",
-     "year": 2011,
-     "value": 2.4
-    },
-    {
-     "iso3": "NER",
-     "year": 2012,
-     "value": 10.5
-    },
-    {
-     "iso3": "NER",
-     "year": 2013,
-     "value": 5.3
-    },
-    {
-     "iso3": "NER",
-     "year": 2014,
-     "value": 6.6
-    },
-    {
-     "iso3": "NER",
-     "year": 2015,
-     "value": 4.4
-    },
-    {
-     "iso3": "NER",
-     "year": 2016,
-     "value": 5.7
-    },
-    {
-     "iso3": "NER",
-     "year": 2017,
-     "value": 5
-    },
-    {
-     "iso3": "NER",
-     "year": 2018,
-     "value": 7
-    },
-    {
-     "iso3": "NER",
-     "year": 2019,
-     "value": 6.1
-    },
-    {
-     "iso3": "NER",
-     "year": 2020,
-     "value": 3.5
-    },
-    {
-     "iso3": "NER",
-     "year": 2021,
-     "value": 1.4
-    },
-    {
-     "iso3": "NER",
-     "year": 2022,
-     "value": 11.9
-    },
-    {
-     "iso3": "NER",
-     "year": 2023,
-     "value": 2.5
-    },
-    {
-     "iso3": "NER",
-     "year": 2024,
-     "value": 8.3
-    },
-    {
-     "iso3": "NER",
-     "year": 2025,
-     "value": 6.9
-    },
-    {
-     "iso3": "NER",
-     "year": 2026,
-     "value": 7
-    },
-    {
-     "iso3": "NER",
-     "year": 2027,
-     "value": 6.5
-    },
-    {
-     "iso3": "NER",
-     "year": 2028,
-     "value": 6
-    },
-    {
-     "iso3": "NER",
-     "year": 2029,
-     "value": 6
-    },
-    {
-     "iso3": "NER",
-     "year": 2030,
-     "value": 6
-    },
-    {
-     "iso3": "NER",
-     "year": 2031,
-     "value": 6
-    },
-    {
      "iso3": "RUS",
      "year": 1993,
      "value": -8.7
@@ -5429,6 +5386,266 @@
      "iso3": "RUS",
      "year": 2031,
      "value": 1
+    },
+    {
+     "iso3": "ESP",
+     "year": 1980,
+     "value": 1.2
+    },
+    {
+     "iso3": "ESP",
+     "year": 1981,
+     "value": -0.4
+    },
+    {
+     "iso3": "ESP",
+     "year": 1982,
+     "value": 1.2
+    },
+    {
+     "iso3": "ESP",
+     "year": 1983,
+     "value": 1.7
+    },
+    {
+     "iso3": "ESP",
+     "year": 1984,
+     "value": 1.7
+    },
+    {
+     "iso3": "ESP",
+     "year": 1985,
+     "value": 2.4
+    },
+    {
+     "iso3": "ESP",
+     "year": 1986,
+     "value": 3.4
+    },
+    {
+     "iso3": "ESP",
+     "year": 1987,
+     "value": 5.7
+    },
+    {
+     "iso3": "ESP",
+     "year": 1988,
+     "value": 5.3
+    },
+    {
+     "iso3": "ESP",
+     "year": 1989,
+     "value": 5
+    },
+    {
+     "iso3": "ESP",
+     "year": 1990,
+     "value": 3.8
+    },
+    {
+     "iso3": "ESP",
+     "year": 1991,
+     "value": 2.5
+    },
+    {
+     "iso3": "ESP",
+     "year": 1992,
+     "value": 0.9
+    },
+    {
+     "iso3": "ESP",
+     "year": 1993,
+     "value": -1.3
+    },
+    {
+     "iso3": "ESP",
+     "year": 1994,
+     "value": 2.3
+    },
+    {
+     "iso3": "ESP",
+     "year": 1995,
+     "value": 4.1
+    },
+    {
+     "iso3": "ESP",
+     "year": 1996,
+     "value": 2.4
+    },
+    {
+     "iso3": "ESP",
+     "year": 1997,
+     "value": 3.9
+    },
+    {
+     "iso3": "ESP",
+     "year": 1998,
+     "value": 4.5
+    },
+    {
+     "iso3": "ESP",
+     "year": 1999,
+     "value": 4.7
+    },
+    {
+     "iso3": "ESP",
+     "year": 2000,
+     "value": 5.1
+    },
+    {
+     "iso3": "ESP",
+     "year": 2001,
+     "value": 3.9
+    },
+    {
+     "iso3": "ESP",
+     "year": 2002,
+     "value": 2.8
+    },
+    {
+     "iso3": "ESP",
+     "year": 2003,
+     "value": 2.9
+    },
+    {
+     "iso3": "ESP",
+     "year": 2004,
+     "value": 3.1
+    },
+    {
+     "iso3": "ESP",
+     "year": 2005,
+     "value": 3.6
+    },
+    {
+     "iso3": "ESP",
+     "year": 2006,
+     "value": 4
+    },
+    {
+     "iso3": "ESP",
+     "year": 2007,
+     "value": 3.5
+    },
+    {
+     "iso3": "ESP",
+     "year": 2008,
+     "value": 0.8
+    },
+    {
+     "iso3": "ESP",
+     "year": 2009,
+     "value": -3.8
+    },
+    {
+     "iso3": "ESP",
+     "year": 2010,
+     "value": 0.1
+    },
+    {
+     "iso3": "ESP",
+     "year": 2011,
+     "value": -0.6
+    },
+    {
+     "iso3": "ESP",
+     "year": 2012,
+     "value": -2.9
+    },
+    {
+     "iso3": "ESP",
+     "year": 2013,
+     "value": -1.4
+    },
+    {
+     "iso3": "ESP",
+     "year": 2014,
+     "value": 1.5
+    },
+    {
+     "iso3": "ESP",
+     "year": 2015,
+     "value": 4.1
+    },
+    {
+     "iso3": "ESP",
+     "year": 2016,
+     "value": 2.9
+    },
+    {
+     "iso3": "ESP",
+     "year": 2017,
+     "value": 2.9
+    },
+    {
+     "iso3": "ESP",
+     "year": 2018,
+     "value": 2.4
+    },
+    {
+     "iso3": "ESP",
+     "year": 2019,
+     "value": 2
+    },
+    {
+     "iso3": "ESP",
+     "year": 2020,
+     "value": -10.9
+    },
+    {
+     "iso3": "ESP",
+     "year": 2021,
+     "value": 6.7
+    },
+    {
+     "iso3": "ESP",
+     "year": 2022,
+     "value": 6.4
+    },
+    {
+     "iso3": "ESP",
+     "year": 2023,
+     "value": 2.4
+    },
+    {
+     "iso3": "ESP",
+     "year": 2024,
+     "value": 3.7
+    },
+    {
+     "iso3": "ESP",
+     "year": 2025,
+     "value": 2.6
+    },
+    {
+     "iso3": "ESP",
+     "year": 2026,
+     "value": 2.5
+    },
+    {
+     "iso3": "ESP",
+     "year": 2027,
+     "value": 1.8
+    },
+    {
+     "iso3": "ESP",
+     "year": 2028,
+     "value": 1.8
+    },
+    {
+     "iso3": "ESP",
+     "year": 2029,
+     "value": 1.7
+    },
+    {
+     "iso3": "ESP",
+     "year": 2030,
+     "value": 1.7
+    },
+    {
+     "iso3": "ESP",
+     "year": 2031,
+     "value": 1.7
     },
     {
      "iso3": "UKR",
@@ -6049,64 +6266,64 @@
      "value": 32792523
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2025,
-     "value": 24074580
+     "value": 49355143
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2024,
-     "value": 23548781
+     "value": 48848840
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2023,
-     "value": 23025776
+     "value": 48352528
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2022,
-     "value": 22509038
+     "value": 47786102
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2021,
-     "value": 21995243
+     "value": 47443821
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2020,
-     "value": 21478690
+     "value": 47359424
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2019,
-     "value": 20961952
+     "value": 47118501
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2018,
-     "value": 20438288
+     "value": 46782011
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2017,
-     "value": 19894407
+     "value": 46571232
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2016,
-     "value": 19334856
+     "value": 46458139
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2015,
-     "value": 18777487
+     "value": 46422303
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2014,
-     "value": 18229461
+     "value": 46460733
     },
     {
      "iso3": "IRN",
@@ -6229,66 +6446,6 @@
      "value": 18020267
     },
     {
-     "iso3": "NER",
-     "year": 2025,
-     "value": 27917831
-    },
-    {
-     "iso3": "NER",
-     "year": 2024,
-     "value": 27032412
-    },
-    {
-     "iso3": "NER",
-     "year": 2023,
-     "value": 26159867
-    },
-    {
-     "iso3": "NER",
-     "year": 2022,
-     "value": 25311973
-    },
-    {
-     "iso3": "NER",
-     "year": 2021,
-     "value": 24502140
-    },
-    {
-     "iso3": "NER",
-     "year": 2020,
-     "value": 23717613
-    },
-    {
-     "iso3": "NER",
-     "year": 2019,
-     "value": 22947757
-    },
-    {
-     "iso3": "NER",
-     "year": 2018,
-     "value": 22188069
-    },
-    {
-     "iso3": "NER",
-     "year": 2017,
-     "value": 21435446
-    },
-    {
-     "iso3": "NER",
-     "year": 2016,
-     "value": 20685753
-    },
-    {
-     "iso3": "NER",
-     "year": 2015,
-     "value": 19939498
-    },
-    {
-     "iso3": "NER",
-     "year": 2014,
-     "value": 19215909
-    },
-    {
      "iso3": "RUS",
      "year": 2025,
      "value": 143513328
@@ -6347,6 +6504,66 @@
      "iso3": "RUS",
      "year": 2014,
      "value": 144237223
+    },
+    {
+     "iso3": "SDN",
+     "year": 2025,
+     "value": 51662147
+    },
+    {
+     "iso3": "SDN",
+     "year": 2024,
+     "value": 50448963
+    },
+    {
+     "iso3": "SDN",
+     "year": 2023,
+     "value": 50042791
+    },
+    {
+     "iso3": "SDN",
+     "year": 2022,
+     "value": 49383346
+    },
+    {
+     "iso3": "SDN",
+     "year": 2021,
+     "value": 48066924
+    },
+    {
+     "iso3": "SDN",
+     "year": 2020,
+     "value": 46789231
+    },
+    {
+     "iso3": "SDN",
+     "year": 2019,
+     "value": 45548175
+    },
+    {
+     "iso3": "SDN",
+     "year": 2018,
+     "value": 44230596
+    },
+    {
+     "iso3": "SDN",
+     "year": 2017,
+     "value": 42714306
+    },
+    {
+     "iso3": "SDN",
+     "year": 2016,
+     "value": 41259892
+    },
+    {
+     "iso3": "SDN",
+     "year": 2015,
+     "value": 40024431
+    },
+    {
+     "iso3": "SDN",
+     "year": 2014,
+     "value": 38823318
     },
     {
      "iso3": "UKR",
@@ -6598,64 +6815,64 @@
      "value": 20497128555.6972
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2025,
-     "value": 27627297461.3181
+     "value": 1906453309985.88
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2024,
-     "value": 23136514855.7646
+     "value": 1725671652742.19
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2023,
-     "value": 20106062971.6533
+     "value": 1619481980719.64
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2022,
-     "value": 18622421394.6133
+     "value": 1448850658406.62
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2021,
-     "value": 19697516284.3787
+     "value": 1461244901852.69
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2020,
-     "value": 17725010532.5268
+     "value": 1289783836971.21
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2019,
-     "value": 16032813503.3707
+     "value": 1403496387686.27
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2018,
-     "value": 15890066221.2882
+     "value": 1431642809327.06
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2017,
-     "value": 14106955615.3442
+     "value": 1321754088818.83
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2016,
-     "value": 12833363045.3367
+     "value": 1243015667917.12
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2015,
-     "value": 11832159315.6298
+     "value": 1206164777553.12
     },
     {
-     "iso3": "BFA",
+     "iso3": "ESP",
      "year": 2014,
-     "value": 13943016076.7436
+     "value": 1380244561361.96
     },
     {
      "iso3": "IRN",
@@ -6778,66 +6995,6 @@
      "value": 17081681993.2577
     },
     {
-     "iso3": "NER",
-     "year": 2025,
-     "value": 21646191388.2507
-    },
-    {
-     "iso3": "NER",
-     "year": 2024,
-     "value": 19729786046.7618
-    },
-    {
-     "iso3": "NER",
-     "year": 2023,
-     "value": 16949765463.9058
-    },
-    {
-     "iso3": "NER",
-     "year": 2022,
-     "value": 15531799640.9005
-    },
-    {
-     "iso3": "NER",
-     "year": 2021,
-     "value": 14936154253.3242
-    },
-    {
-     "iso3": "NER",
-     "year": 2020,
-     "value": 13648332189.7307
-    },
-    {
-     "iso3": "NER",
-     "year": 2019,
-     "value": 12420836506.7888
-    },
-    {
-     "iso3": "NER",
-     "year": 2018,
-     "value": 12800907985.9863
-    },
-    {
-     "iso3": "NER",
-     "year": 2017,
-     "value": 11359273443.3897
-    },
-    {
-     "iso3": "NER",
-     "year": 2016,
-     "value": 10341025540.2322
-    },
-    {
-     "iso3": "NER",
-     "year": 2015,
-     "value": 9683867926.44282
-    },
-    {
-     "iso3": "NER",
-     "year": 2014,
-     "value": 10862943543.5419
-    },
-    {
      "iso3": "RUS",
      "year": 2025,
      "value": 2561310169358.74
@@ -6896,6 +7053,66 @@
      "iso3": "RUS",
      "year": 2014,
      "value": 2059241589895.01
+    },
+    {
+     "iso3": "SDN",
+     "year": 2025,
+     "value": 60162634574.4689
+    },
+    {
+     "iso3": "SDN",
+     "year": 2024,
+     "value": 49672435513.1126
+    },
+    {
+     "iso3": "SDN",
+     "year": 2023,
+     "value": 39898289820.7951
+    },
+    {
+     "iso3": "SDN",
+     "year": 2022,
+     "value": 51666875363.0963
+    },
+    {
+     "iso3": "SDN",
+     "year": 2021,
+     "value": 34229513774.9936
+    },
+    {
+     "iso3": "SDN",
+     "year": 2020,
+     "value": 27034593750
+    },
+    {
+     "iso3": "SDN",
+     "year": 2019,
+     "value": 32338079165.2893
+    },
+    {
+     "iso3": "SDN",
+     "year": 2018,
+     "value": 32333780383.2924
+    },
+    {
+     "iso3": "SDN",
+     "year": 2017,
+     "value": 41283617976.1905
+    },
+    {
+     "iso3": "SDN",
+     "year": 2016,
+     "value": 42630376000
+    },
+    {
+     "iso3": "SDN",
+     "year": 2015,
+     "value": 51726758676.7677
+    },
+    {
+     "iso3": "SDN",
+     "year": 2014,
+     "value": 49516748617.9775
     },
     {
      "iso3": "UKR",
@@ -7113,41 +7330,6 @@
      "value": 12284
     },
     {
-     "iso3": "BFA",
-     "year": 2024,
-     "value": 2199
-    },
-    {
-     "iso3": "BFA",
-     "year": 2023,
-     "value": 4608
-    },
-    {
-     "iso3": "BFA",
-     "year": 2022,
-     "value": 2093
-    },
-    {
-     "iso3": "BFA",
-     "year": 2021,
-     "value": 991
-    },
-    {
-     "iso3": "BFA",
-     "year": 2020,
-     "value": 512
-    },
-    {
-     "iso3": "BFA",
-     "year": 2019,
-     "value": 349
-    },
-    {
-     "iso3": "BFA",
-     "year": 2018,
-     "value": 79
-    },
-    {
      "iso3": "IRN",
      "year": 2024,
      "value": 123
@@ -7243,56 +7425,6 @@
      "value": 189
     },
     {
-     "iso3": "NER",
-     "year": 2024,
-     "value": 952
-    },
-    {
-     "iso3": "NER",
-     "year": 2023,
-     "value": 337
-    },
-    {
-     "iso3": "NER",
-     "year": 2022,
-     "value": 516
-    },
-    {
-     "iso3": "NER",
-     "year": 2021,
-     "value": 459
-    },
-    {
-     "iso3": "NER",
-     "year": 2020,
-     "value": 535
-    },
-    {
-     "iso3": "NER",
-     "year": 2019,
-     "value": 298
-    },
-    {
-     "iso3": "NER",
-     "year": 2018,
-     "value": 74
-    },
-    {
-     "iso3": "NER",
-     "year": 2017,
-     "value": 229
-    },
-    {
-     "iso3": "NER",
-     "year": 2016,
-     "value": 274
-    },
-    {
-     "iso3": "NER",
-     "year": 2015,
-     "value": 368
-    },
-    {
      "iso3": "RUS",
      "year": 2024,
      "value": 7670
@@ -7341,6 +7473,56 @@
      "iso3": "RUS",
      "year": 2014,
      "value": 174
+    },
+    {
+     "iso3": "SDN",
+     "year": 2024,
+     "value": 4680
+    },
+    {
+     "iso3": "SDN",
+     "year": 2023,
+     "value": 5353
+    },
+    {
+     "iso3": "SDN",
+     "year": 2022,
+     "value": 54
+    },
+    {
+     "iso3": "SDN",
+     "year": 2021,
+     "value": 31
+    },
+    {
+     "iso3": "SDN",
+     "year": 2020,
+     "value": 45
+    },
+    {
+     "iso3": "SDN",
+     "year": 2018,
+     "value": 243
+    },
+    {
+     "iso3": "SDN",
+     "year": 2017,
+     "value": 160
+    },
+    {
+     "iso3": "SDN",
+     "year": 2016,
+     "value": 1309
+    },
+    {
+     "iso3": "SDN",
+     "year": 2015,
+     "value": 1264
+    },
+    {
+     "iso3": "SDN",
+     "year": 2014,
+     "value": 849
     },
     {
      "iso3": "UKR",
@@ -7513,46 +7695,6 @@
      "value": 156000
     },
     {
-     "iso3": "BFA",
-     "year": 2023,
-     "value": 707000
-    },
-    {
-     "iso3": "BFA",
-     "year": 2022,
-     "value": 438000
-    },
-    {
-     "iso3": "BFA",
-     "year": 2021,
-     "value": 682000
-    },
-    {
-     "iso3": "BFA",
-     "year": 2020,
-     "value": 515000
-    },
-    {
-     "iso3": "BFA",
-     "year": 2019,
-     "value": 513000
-    },
-    {
-     "iso3": "BFA",
-     "year": 2018,
-     "value": 42000
-    },
-    {
-     "iso3": "BFA",
-     "year": 2017,
-     "value": 4900
-    },
-    {
-     "iso3": "BFA",
-     "year": 2016,
-     "value": 700
-    },
-    {
      "iso3": "MLI",
      "year": 2023,
      "value": 152000
@@ -7598,51 +7740,6 @@
      "value": 19000
     },
     {
-     "iso3": "NER",
-     "year": 2023,
-     "value": 181000
-    },
-    {
-     "iso3": "NER",
-     "year": 2022,
-     "value": 101000
-    },
-    {
-     "iso3": "NER",
-     "year": 2021,
-     "value": 110000
-    },
-    {
-     "iso3": "NER",
-     "year": 2020,
-     "value": 136000
-    },
-    {
-     "iso3": "NER",
-     "year": 2019,
-     "value": 56000
-    },
-    {
-     "iso3": "NER",
-     "year": 2018,
-     "value": 52000
-    },
-    {
-     "iso3": "NER",
-     "year": 2017,
-     "value": 40000
-    },
-    {
-     "iso3": "NER",
-     "year": 2016,
-     "value": 166000
-    },
-    {
-     "iso3": "NER",
-     "year": 2015,
-     "value": 47000
-    },
-    {
      "iso3": "RUS",
      "year": 2023,
      "value": 60000
@@ -7651,6 +7748,56 @@
      "iso3": "RUS",
      "year": 2022,
      "value": 7100
+    },
+    {
+     "iso3": "SDN",
+     "year": 2023,
+     "value": 6039000
+    },
+    {
+     "iso3": "SDN",
+     "year": 2022,
+     "value": 314000
+    },
+    {
+     "iso3": "SDN",
+     "year": 2021,
+     "value": 442000
+    },
+    {
+     "iso3": "SDN",
+     "year": 2020,
+     "value": 79000
+    },
+    {
+     "iso3": "SDN",
+     "year": 2019,
+     "value": 84000
+    },
+    {
+     "iso3": "SDN",
+     "year": 2018,
+     "value": 41000
+    },
+    {
+     "iso3": "SDN",
+     "year": 2017,
+     "value": 17000
+    },
+    {
+     "iso3": "SDN",
+     "year": 2016,
+     "value": 97000
+    },
+    {
+     "iso3": "SDN",
+     "year": 2015,
+     "value": 144000
+    },
+    {
+     "iso3": "SDN",
+     "year": 2014,
+     "value": 558000
     },
     {
      "iso3": "UKR",
@@ -7758,6 +7905,2060 @@
    "status": "ok"
   }
  ],
+ "markets": {
+  "series": [
+   {
+    "id": "usd_broad",
+    "label": "US dollar, broad index",
+    "unit": "index",
+    "release": "H.10",
+    "package": "122e3bcb627e8e53f1bf72a1a09cfb81",
+    "column": "JRXWTFB_N.B",
+    "note": "Nominal broad dollar index, Jan 2006 = 100. Rises when the dollar strengthens.",
+    "provider": "Federal Reserve Board",
+    "dataset": "H.10 Foreign Exchange Rates",
+    "link": "https://www.federalreserve.gov/releases/h10/",
+    "values": [
+     {
+      "date": "2026-05-11",
+      "value": 118.0562
+     },
+     {
+      "date": "2026-05-12",
+      "value": 118.5238
+     },
+     {
+      "date": "2026-05-13",
+      "value": 118.4737
+     },
+     {
+      "date": "2026-05-14",
+      "value": 118.6696
+     },
+     {
+      "date": "2026-05-15",
+      "value": 119.2825
+     },
+     {
+      "date": "2026-05-18",
+      "value": 119.0574
+     },
+     {
+      "date": "2026-05-19",
+      "value": 119.451
+     },
+     {
+      "date": "2026-05-20",
+      "value": 119.1624
+     },
+     {
+      "date": "2026-05-21",
+      "value": 119.369
+     },
+     {
+      "date": "2026-05-22",
+      "value": 119.2868
+     },
+     {
+      "date": "2026-05-26",
+      "value": 119.1696
+     },
+     {
+      "date": "2026-05-27",
+      "value": 119.1829
+     },
+     {
+      "date": "2026-05-28",
+      "value": 119.0318
+     },
+     {
+      "date": "2026-05-29",
+      "value": 118.8783
+     },
+     {
+      "date": "2026-06-01",
+      "value": 119.1653
+     },
+     {
+      "date": "2026-06-02",
+      "value": 119.0359
+     },
+     {
+      "date": "2026-06-03",
+      "value": 119.3848
+     },
+     {
+      "date": "2026-06-04",
+      "value": 119.3615
+     },
+     {
+      "date": "2026-06-05",
+      "value": 120.0831
+     },
+     {
+      "date": "2026-06-08",
+      "value": 120.034
+     },
+     {
+      "date": "2026-06-09",
+      "value": 119.9617
+     },
+     {
+      "date": "2026-06-10",
+      "value": 119.9134
+     },
+     {
+      "date": "2026-06-11",
+      "value": 120.1174
+     },
+     {
+      "date": "2026-06-12",
+      "value": 119.5073
+     },
+     {
+      "date": "2026-06-15",
+      "value": 119.3158
+     },
+     {
+      "date": "2026-06-16",
+      "value": 119.256
+     },
+     {
+      "date": "2026-06-17",
+      "value": 119.3871
+     },
+     {
+      "date": "2026-06-18",
+      "value": 120.3958
+     },
+     {
+      "date": "2026-06-22",
+      "value": 120.5463
+     },
+     {
+      "date": "2026-06-23",
+      "value": 121.0552
+     },
+     {
+      "date": "2026-06-24",
+      "value": 121.412
+     },
+     {
+      "date": "2026-06-25",
+      "value": 121.0559
+     },
+     {
+      "date": "2026-06-26",
+      "value": 120.8866
+     },
+     {
+      "date": "2026-06-29",
+      "value": 120.9525
+     },
+     {
+      "date": "2026-06-30",
+      "value": 120.9248
+     },
+     {
+      "date": "2026-07-01",
+      "value": 121.1455
+     },
+     {
+      "date": "2026-07-02",
+      "value": 120.6902
+     },
+     {
+      "date": "2026-07-06",
+      "value": 120.835
+     },
+     {
+      "date": "2026-07-07",
+      "value": 120.8145
+     },
+     {
+      "date": "2026-07-08",
+      "value": 121.1307
+     },
+     {
+      "date": "2026-07-09",
+      "value": 120.753
+     },
+     {
+      "date": "2026-07-10",
+      "value": 120.5046
+     },
+     {
+      "date": "2026-07-13",
+      "value": 120.7413
+     },
+     {
+      "date": "2026-07-14",
+      "value": 120.4728
+     },
+     {
+      "date": "2026-07-15",
+      "value": 120.3088
+     },
+     {
+      "date": "2026-07-16",
+      "value": 120.331
+     },
+     {
+      "date": "2026-07-17",
+      "value": 120.5315
+     },
+     {
+      "date": "2026-07-20",
+      "value": 120.5401
+     },
+     {
+      "date": "2026-07-21",
+      "value": 120.5779
+     },
+     {
+      "date": "2026-07-22",
+      "value": 120.5736
+     },
+     {
+      "date": "2026-07-23",
+      "value": 120.9075
+     },
+     {
+      "date": "2026-07-24",
+      "value": 120.7105
+     },
+     {
+      "date": "2026-07-27",
+      "value": 120.7739
+     },
+     {
+      "date": "2026-07-28",
+      "value": 120.6247
+     },
+     {
+      "date": "2026-07-29",
+      "value": 120.7892
+     },
+     {
+      "date": "2026-07-30",
+      "value": 119.6753
+     },
+     {
+      "date": "2026-07-31",
+      "value": 119.7034
+     },
+     {
+      "date": "2026-08-03",
+      "value": 119.6951
+     },
+     {
+      "date": "2026-08-04",
+      "value": 119.5977
+     },
+     {
+      "date": "2026-08-05",
+      "value": 119.3881
+     },
+     {
+      "date": "2026-08-06",
+      "value": 119.5113
+     },
+     {
+      "date": "2026-08-07",
+      "value": 119.0649
+     },
+     {
+      "date": "2026-08-10",
+      "value": 119.1187
+     },
+     {
+      "date": "2026-08-11",
+      "value": 119.179
+     },
+     {
+      "date": "2026-08-12",
+      "value": 119.1179
+     },
+     {
+      "date": "2026-08-13",
+      "value": 119.1848
+     },
+     {
+      "date": "2026-08-14",
+      "value": 118.9028
+     },
+     {
+      "date": "2026-08-17",
+      "value": 118.814
+     },
+     {
+      "date": "2026-08-18",
+      "value": 118.9831
+     },
+     {
+      "date": "2026-08-19",
+      "value": 118.3328
+     },
+     {
+      "date": "2026-08-20",
+      "value": 118.2548
+     },
+     {
+      "date": "2026-08-21",
+      "value": 118.0628
+     },
+     {
+      "date": "2026-08-24",
+      "value": 118.3195
+     },
+     {
+      "date": "2026-08-25",
+      "value": 118.2283
+     },
+     {
+      "date": "2026-08-26",
+      "value": 118.4461
+     },
+     {
+      "date": "2026-08-27",
+      "value": 118.3583
+     },
+     {
+      "date": "2026-08-28",
+      "value": 118.7479
+     },
+     {
+      "date": "2026-08-31",
+      "value": 118.5679
+     },
+     {
+      "date": "2026-09-01",
+      "value": 118.6568
+     },
+     {
+      "date": "2026-09-02",
+      "value": 118.5296
+     },
+     {
+      "date": "2026-09-03",
+      "value": 118.127
+     },
+     {
+      "date": "2026-09-04",
+      "value": 118.0732
+     },
+     {
+      "date": "2026-09-08",
+      "value": 117.9127
+     },
+     {
+      "date": "2026-09-09",
+      "value": 117.8834
+     },
+     {
+      "date": "2026-09-10",
+      "value": 118.0787
+     },
+     {
+      "date": "2026-09-11",
+      "value": 118.2126
+     },
+     {
+      "date": "2026-09-14",
+      "value": 118.6923
+     },
+     {
+      "date": "2026-09-15",
+      "value": 118.8822
+     },
+     {
+      "date": "2026-09-16",
+      "value": 118.9206
+     },
+     {
+      "date": "2026-09-17",
+      "value": 119.3489
+     },
+     {
+      "date": "2026-09-18",
+      "value": 119.5133
+     },
+     {
+      "date": "2026-09-21",
+      "value": 119.4014
+     },
+     {
+      "date": "2026-09-22",
+      "value": 119.5933
+     },
+     {
+      "date": "2026-09-23",
+      "value": 120.1169
+     },
+     {
+      "date": "2026-09-24",
+      "value": 120.5521
+     },
+     {
+      "date": "2026-09-25",
+      "value": 120.33
+     },
+     {
+      "date": "2026-09-28",
+      "value": 120.6958
+     },
+     {
+      "date": "2026-09-29",
+      "value": 121.0296
+     },
+     {
+      "date": "2026-09-30",
+      "value": 120.9693
+     },
+     {
+      "date": "2026-10-01",
+      "value": 121.7882
+     },
+     {
+      "date": "2026-10-02",
+      "value": 121.3848
+     },
+     {
+      "date": "2026-10-05",
+      "value": 121.2708
+     },
+     {
+      "date": "2026-10-06",
+      "value": 120.8976
+     },
+     {
+      "date": "2026-10-07",
+      "value": 121.2558
+     },
+     {
+      "date": "2026-10-08",
+      "value": 121.4469
+     },
+     {
+      "date": "2026-10-09",
+      "value": 121.6023
+     },
+     {
+      "date": "2026-10-13",
+      "value": 121.4433
+     },
+     {
+      "date": "2026-10-14",
+      "value": 122.0037
+     },
+     {
+      "date": "2026-10-15",
+      "value": 121.5693
+     },
+     {
+      "date": "2026-10-16",
+      "value": 121.4048
+     },
+     {
+      "date": "2026-10-19",
+      "value": 121.3248
+     },
+     {
+      "date": "2026-10-20",
+      "value": 121.116
+     },
+     {
+      "date": "2026-10-21",
+      "value": 121.3422
+     },
+     {
+      "date": "2026-10-22",
+      "value": 121.3531
+     },
+     {
+      "date": "2026-10-23",
+      "value": 121.3202
+     },
+     {
+      "date": "2026-10-26",
+      "value": 121.6042
+     },
+     {
+      "date": "2026-10-27",
+      "value": 121.6622
+     },
+     {
+      "date": "2026-10-28",
+      "value": 121.8491
+     },
+     {
+      "date": "2026-10-29",
+      "value": 121.7361
+     },
+     {
+      "date": "2026-10-30",
+      "value": 121.6656
+     }
+    ]
+   },
+   {
+    "id": "usd_eme",
+    "label": "US dollar vs emerging markets",
+    "unit": "index",
+    "release": "H.10",
+    "package": "122e3bcb627e8e53f1bf72a1a09cfb81",
+    "column": "JRXWTFO_N.B",
+    "note": "Nominal emerging market economies dollar index. Rises when emerging-market currencies weaken.",
+    "provider": "Federal Reserve Board",
+    "dataset": "H.10 Foreign Exchange Rates",
+    "link": "https://www.federalreserve.gov/releases/h10/",
+    "values": [
+     {
+      "date": "2026-05-11",
+      "value": 127.6934
+     },
+     {
+      "date": "2026-05-12",
+      "value": 128.1153
+     },
+     {
+      "date": "2026-05-13",
+      "value": 127.9262
+     },
+     {
+      "date": "2026-05-14",
+      "value": 128.0519
+     },
+     {
+      "date": "2026-05-15",
+      "value": 128.7739
+     },
+     {
+      "date": "2026-05-18",
+      "value": 128.5139
+     },
+     {
+      "date": "2026-05-19",
+      "value": 128.9953
+     },
+     {
+      "date": "2026-05-20",
+      "value": 128.6004
+     },
+     {
+      "date": "2026-05-21",
+      "value": 128.7075
+     },
+     {
+      "date": "2026-05-22",
+      "value": 128.5954
+     },
+     {
+      "date": "2026-05-26",
+      "value": 128.4586
+     },
+     {
+      "date": "2026-05-27",
+      "value": 128.4441
+     },
+     {
+      "date": "2026-05-28",
+      "value": 128.341
+     },
+     {
+      "date": "2026-05-29",
+      "value": 128.2828
+     },
+     {
+      "date": "2026-06-01",
+      "value": 128.3677
+     },
+     {
+      "date": "2026-06-02",
+      "value": 128.2521
+     },
+     {
+      "date": "2026-06-03",
+      "value": 128.5202
+     },
+     {
+      "date": "2026-06-04",
+      "value": 128.6216
+     },
+     {
+      "date": "2026-06-05",
+      "value": 129.382
+     },
+     {
+      "date": "2026-06-08",
+      "value": 129.2771
+     },
+     {
+      "date": "2026-06-09",
+      "value": 129.1711
+     },
+     {
+      "date": "2026-06-10",
+      "value": 129.0731
+     },
+     {
+      "date": "2026-06-11",
+      "value": 129.0592
+     },
+     {
+      "date": "2026-06-12",
+      "value": 128.3014
+     },
+     {
+      "date": "2026-06-15",
+      "value": 128.0489
+     },
+     {
+      "date": "2026-06-16",
+      "value": 128.0067
+     },
+     {
+      "date": "2026-06-17",
+      "value": 128.0389
+     },
+     {
+      "date": "2026-06-18",
+      "value": 128.9187
+     },
+     {
+      "date": "2026-06-22",
+      "value": 128.9465
+     },
+     {
+      "date": "2026-06-23",
+      "value": 129.594
+     },
+     {
+      "date": "2026-06-24",
+      "value": 129.9919
+     },
+     {
+      "date": "2026-06-25",
+      "value": 129.6404
+     },
+     {
+      "date": "2026-06-26",
+      "value": 129.398
+     },
+     {
+      "date": "2026-06-29",
+      "value": 129.575
+     },
+     {
+      "date": "2026-06-30",
+      "value": 129.4572
+     },
+     {
+      "date": "2026-07-01",
+      "value": 129.7915
+     },
+     {
+      "date": "2026-07-02",
+      "value": 129.4776
+     },
+     {
+      "date": "2026-07-06",
+      "value": 129.469
+     },
+     {
+      "date": "2026-07-07",
+      "value": 129.476
+     },
+     {
+      "date": "2026-07-08",
+      "value": 129.8962
+     },
+     {
+      "date": "2026-07-09",
+      "value": 129.5119
+     },
+     {
+      "date": "2026-07-10",
+      "value": 129.156
+     },
+     {
+      "date": "2026-07-13",
+      "value": 129.2765
+     },
+     {
+      "date": "2026-07-14",
+      "value": 129.0652
+     },
+     {
+      "date": "2026-07-15",
+      "value": 128.9555
+     },
+     {
+      "date": "2026-07-16",
+      "value": 129.0412
+     },
+     {
+      "date": "2026-07-17",
+      "value": 129.4359
+     },
+     {
+      "date": "2026-07-20",
+      "value": 129.1448
+     },
+     {
+      "date": "2026-07-21",
+      "value": 129.0274
+     },
+     {
+      "date": "2026-07-22",
+      "value": 129.0605
+     },
+     {
+      "date": "2026-07-23",
+      "value": 129.3803
+     },
+     {
+      "date": "2026-07-24",
+      "value": 129.1064
+     },
+     {
+      "date": "2026-07-27",
+      "value": 129.0609
+     },
+     {
+      "date": "2026-07-28",
+      "value": 128.9378
+     },
+     {
+      "date": "2026-07-29",
+      "value": 129.1137
+     },
+     {
+      "date": "2026-07-30",
+      "value": 128.3402
+     },
+     {
+      "date": "2026-07-31",
+      "value": 128.3405
+     },
+     {
+      "date": "2026-08-03",
+      "value": 128.3599
+     },
+     {
+      "date": "2026-08-04",
+      "value": 128.1793
+     },
+     {
+      "date": "2026-08-05",
+      "value": 127.9683
+     },
+     {
+      "date": "2026-08-06",
+      "value": 127.9452
+     },
+     {
+      "date": "2026-08-07",
+      "value": 127.5866
+     },
+     {
+      "date": "2026-08-10",
+      "value": 127.5866
+     },
+     {
+      "date": "2026-08-11",
+      "value": 127.6179
+     },
+     {
+      "date": "2026-08-12",
+      "value": 127.4718
+     },
+     {
+      "date": "2026-08-13",
+      "value": 127.4931
+     },
+     {
+      "date": "2026-08-14",
+      "value": 127.3772
+     },
+     {
+      "date": "2026-08-17",
+      "value": 127.277
+     },
+     {
+      "date": "2026-08-18",
+      "value": 127.4556
+     },
+     {
+      "date": "2026-08-19",
+      "value": 126.9157
+     },
+     {
+      "date": "2026-08-20",
+      "value": 126.9021
+     },
+     {
+      "date": "2026-08-21",
+      "value": 126.5773
+     },
+     {
+      "date": "2026-08-24",
+      "value": 126.7936
+     },
+     {
+      "date": "2026-08-25",
+      "value": 126.6715
+     },
+     {
+      "date": "2026-08-26",
+      "value": 126.8392
+     },
+     {
+      "date": "2026-08-27",
+      "value": 126.766
+     },
+     {
+      "date": "2026-08-28",
+      "value": 127.0648
+     },
+     {
+      "date": "2026-08-31",
+      "value": 126.8637
+     },
+     {
+      "date": "2026-09-01",
+      "value": 126.7701
+     },
+     {
+      "date": "2026-09-02",
+      "value": 126.6828
+     },
+     {
+      "date": "2026-09-03",
+      "value": 126.521
+     },
+     {
+      "date": "2026-09-04",
+      "value": 126.173
+     },
+     {
+      "date": "2026-09-08",
+      "value": 126.1827
+     },
+     {
+      "date": "2026-09-09",
+      "value": 126.1185
+     },
+     {
+      "date": "2026-09-10",
+      "value": 126.4299
+     },
+     {
+      "date": "2026-09-11",
+      "value": 126.4419
+     },
+     {
+      "date": "2026-09-14",
+      "value": 126.9689
+     },
+     {
+      "date": "2026-09-15",
+      "value": 127.2269
+     },
+     {
+      "date": "2026-09-16",
+      "value": 127.2249
+     },
+     {
+      "date": "2026-09-17",
+      "value": 127.4937
+     },
+     {
+      "date": "2026-09-18",
+      "value": 127.666
+     },
+     {
+      "date": "2026-09-21",
+      "value": 127.4055
+     },
+     {
+      "date": "2026-09-22",
+      "value": 127.4581
+     },
+     {
+      "date": "2026-09-23",
+      "value": 128.1156
+     },
+     {
+      "date": "2026-09-24",
+      "value": 128.7007
+     },
+     {
+      "date": "2026-09-25",
+      "value": 128.5556
+     },
+     {
+      "date": "2026-09-28",
+      "value": 129.0379
+     },
+     {
+      "date": "2026-09-29",
+      "value": 129.4469
+     },
+     {
+      "date": "2026-09-30",
+      "value": 129.3778
+     },
+     {
+      "date": "2026-10-01",
+      "value": 130.3614
+     },
+     {
+      "date": "2026-10-02",
+      "value": 129.7052
+     },
+     {
+      "date": "2026-10-05",
+      "value": 129.2213
+     },
+     {
+      "date": "2026-10-06",
+      "value": 128.8131
+     },
+     {
+      "date": "2026-10-07",
+      "value": 129.0128
+     },
+     {
+      "date": "2026-10-08",
+      "value": 129.4339
+     },
+     {
+      "date": "2026-10-09",
+      "value": 129.7715
+     },
+     {
+      "date": "2026-10-13",
+      "value": 129.5935
+     },
+     {
+      "date": "2026-10-14",
+      "value": 130.0585
+     },
+     {
+      "date": "2026-10-15",
+      "value": 129.9434
+     },
+     {
+      "date": "2026-10-16",
+      "value": 129.9838
+     },
+     {
+      "date": "2026-10-19",
+      "value": 129.7865
+     },
+     {
+      "date": "2026-10-20",
+      "value": 129.6815
+     },
+     {
+      "date": "2026-10-21",
+      "value": 130.0969
+     },
+     {
+      "date": "2026-10-22",
+      "value": 130.2808
+     },
+     {
+      "date": "2026-10-23",
+      "value": 130.214
+     },
+     {
+      "date": "2026-10-26",
+      "value": 130.5101
+     },
+     {
+      "date": "2026-10-27",
+      "value": 130.3883
+     },
+     {
+      "date": "2026-10-28",
+      "value": 130.7103
+     },
+     {
+      "date": "2026-10-29",
+      "value": 130.8857
+     },
+     {
+      "date": "2026-10-30",
+      "value": 130.8602
+     }
+    ]
+   },
+   {
+    "id": "ust10",
+    "label": "US 10-year Treasury yield",
+    "unit": "%",
+    "release": "H.15",
+    "package": "bf17364827e38702b42a58cf8eaa3f78",
+    "column": "RIFLGFCY10_N.B",
+    "note": "Market yield at 10-year constant maturity.",
+    "provider": "Federal Reserve Board",
+    "dataset": "H.15 Selected Interest Rates",
+    "link": "https://www.federalreserve.gov/releases/h15/",
+    "values": [
+     {
+      "date": "2026-05-11",
+      "value": 4.42
+     },
+     {
+      "date": "2026-05-12",
+      "value": 4.46
+     },
+     {
+      "date": "2026-05-13",
+      "value": 4.46
+     },
+     {
+      "date": "2026-05-14",
+      "value": 4.47
+     },
+     {
+      "date": "2026-05-15",
+      "value": 4.59
+     },
+     {
+      "date": "2026-05-18",
+      "value": 4.61
+     },
+     {
+      "date": "2026-05-19",
+      "value": 4.67
+     },
+     {
+      "date": "2026-05-20",
+      "value": 4.57
+     },
+     {
+      "date": "2026-05-21",
+      "value": 4.57
+     },
+     {
+      "date": "2026-05-22",
+      "value": 4.56
+     },
+     {
+      "date": "2026-05-26",
+      "value": 4.5
+     },
+     {
+      "date": "2026-05-27",
+      "value": 4.48
+     },
+     {
+      "date": "2026-05-28",
+      "value": 4.45
+     },
+     {
+      "date": "2026-05-29",
+      "value": 4.45
+     },
+     {
+      "date": "2026-06-01",
+      "value": 4.47
+     },
+     {
+      "date": "2026-06-02",
+      "value": 4.46
+     },
+     {
+      "date": "2026-06-03",
+      "value": 4.49
+     },
+     {
+      "date": "2026-06-04",
+      "value": 4.47
+     },
+     {
+      "date": "2026-06-05",
+      "value": 4.55
+     },
+     {
+      "date": "2026-06-08",
+      "value": 4.56
+     },
+     {
+      "date": "2026-06-09",
+      "value": 4.53
+     },
+     {
+      "date": "2026-06-10",
+      "value": 4.55
+     },
+     {
+      "date": "2026-06-11",
+      "value": 4.45
+     },
+     {
+      "date": "2026-06-12",
+      "value": 4.48
+     },
+     {
+      "date": "2026-06-15",
+      "value": 4.47
+     },
+     {
+      "date": "2026-06-16",
+      "value": 4.43
+     },
+     {
+      "date": "2026-06-17",
+      "value": 4.49
+     },
+     {
+      "date": "2026-06-18",
+      "value": 4.46
+     },
+     {
+      "date": "2026-06-22",
+      "value": 4.51
+     },
+     {
+      "date": "2026-06-23",
+      "value": 4.5
+     },
+     {
+      "date": "2026-06-24",
+      "value": 4.41
+     },
+     {
+      "date": "2026-06-25",
+      "value": 4.4
+     },
+     {
+      "date": "2026-06-26",
+      "value": 4.38
+     },
+     {
+      "date": "2026-06-29",
+      "value": 4.38
+     },
+     {
+      "date": "2026-06-30",
+      "value": 4.44
+     },
+     {
+      "date": "2026-07-01",
+      "value": 4.48
+     },
+     {
+      "date": "2026-07-02",
+      "value": 4.49
+     },
+     {
+      "date": "2026-07-06",
+      "value": 4.48
+     },
+     {
+      "date": "2026-07-07",
+      "value": 4.55
+     },
+     {
+      "date": "2026-07-08",
+      "value": 4.56
+     },
+     {
+      "date": "2026-07-09",
+      "value": 4.54
+     },
+     {
+      "date": "2026-07-10",
+      "value": 4.56
+     },
+     {
+      "date": "2026-07-13",
+      "value": 4.62
+     },
+     {
+      "date": "2026-07-14",
+      "value": 4.58
+     },
+     {
+      "date": "2026-07-15",
+      "value": 4.55
+     },
+     {
+      "date": "2026-07-16",
+      "value": 4.57
+     },
+     {
+      "date": "2026-07-17",
+      "value": 4.55
+     },
+     {
+      "date": "2026-07-20",
+      "value": 4.6
+     },
+     {
+      "date": "2026-07-21",
+      "value": 4.63
+     },
+     {
+      "date": "2026-07-22",
+      "value": 4.67
+     },
+     {
+      "date": "2026-07-23",
+      "value": 4.71
+     },
+     {
+      "date": "2026-07-24",
+      "value": 4.69
+     },
+     {
+      "date": "2026-07-27",
+      "value": 4.65
+     },
+     {
+      "date": "2026-07-28",
+      "value": 4.61
+     },
+     {
+      "date": "2026-07-29",
+      "value": 4.67
+     },
+     {
+      "date": "2026-07-30",
+      "value": 4.68
+     },
+     {
+      "date": "2026-07-31",
+      "value": 4.75
+     },
+     {
+      "date": "2026-08-03",
+      "value": 4.7
+     },
+     {
+      "date": "2026-08-04",
+      "value": 4.63
+     },
+     {
+      "date": "2026-08-05",
+      "value": 4.63
+     },
+     {
+      "date": "2026-08-06",
+      "value": 4.69
+     },
+     {
+      "date": "2026-08-07",
+      "value": 4.65
+     },
+     {
+      "date": "2026-08-10",
+      "value": 4.72
+     },
+     {
+      "date": "2026-08-11",
+      "value": 4.7
+     },
+     {
+      "date": "2026-08-12",
+      "value": 4.68
+     },
+     {
+      "date": "2026-08-13",
+      "value": 4.63
+     },
+     {
+      "date": "2026-08-14",
+      "value": 4.68
+     },
+     {
+      "date": "2026-08-17",
+      "value": 4.72
+     },
+     {
+      "date": "2026-08-18",
+      "value": 4.71
+     },
+     {
+      "date": "2026-08-19",
+      "value": 4.65
+     },
+     {
+      "date": "2026-08-20",
+      "value": 4.69
+     },
+     {
+      "date": "2026-08-21",
+      "value": 4.74
+     },
+     {
+      "date": "2026-08-24",
+      "value": 4.7
+     },
+     {
+      "date": "2026-08-25",
+      "value": 4.64
+     },
+     {
+      "date": "2026-08-26",
+      "value": 4.66
+     },
+     {
+      "date": "2026-08-27",
+      "value": 4.67
+     },
+     {
+      "date": "2026-08-28",
+      "value": 4.73
+     },
+     {
+      "date": "2026-08-31",
+      "value": 4.75
+     },
+     {
+      "date": "2026-09-01",
+      "value": 4.79
+     },
+     {
+      "date": "2026-09-02",
+      "value": 4.79
+     },
+     {
+      "date": "2026-09-03",
+      "value": 4.77
+     },
+     {
+      "date": "2026-09-04",
+      "value": 4.78
+     },
+     {
+      "date": "2026-09-08",
+      "value": 4.8
+     },
+     {
+      "date": "2026-09-09",
+      "value": 4.83
+     },
+     {
+      "date": "2026-09-10",
+      "value": 4.95
+     },
+     {
+      "date": "2026-09-11",
+      "value": 4.96
+     },
+     {
+      "date": "2026-09-14",
+      "value": 4.97
+     },
+     {
+      "date": "2026-09-15",
+      "value": 5
+     },
+     {
+      "date": "2026-09-16",
+      "value": 5.01
+     },
+     {
+      "date": "2026-09-17",
+      "value": 4.94
+     },
+     {
+      "date": "2026-09-18",
+      "value": 5.01
+     },
+     {
+      "date": "2026-09-21",
+      "value": 4.96
+     },
+     {
+      "date": "2026-09-22",
+      "value": 4.96
+     },
+     {
+      "date": "2026-09-23",
+      "value": 5.11
+     },
+     {
+      "date": "2026-09-24",
+      "value": 5.18
+     },
+     {
+      "date": "2026-09-25",
+      "value": 5.17
+     },
+     {
+      "date": "2026-09-28",
+      "value": 5.24
+     },
+     {
+      "date": "2026-09-29",
+      "value": 5.26
+     },
+     {
+      "date": "2026-09-30",
+      "value": 5.29
+     },
+     {
+      "date": "2026-10-01",
+      "value": 5.24
+     },
+     {
+      "date": "2026-10-02",
+      "value": 5.28
+     },
+     {
+      "date": "2026-10-05",
+      "value": 5.31
+     },
+     {
+      "date": "2026-10-06",
+      "value": 5.27
+     },
+     {
+      "date": "2026-10-07",
+      "value": 5.28
+     },
+     {
+      "date": "2026-10-08",
+      "value": 5.22
+     },
+     {
+      "date": "2026-10-09",
+      "value": 5.24
+     },
+     {
+      "date": "2026-10-13",
+      "value": 5.21
+     },
+     {
+      "date": "2026-10-14",
+      "value": 5.19
+     },
+     {
+      "date": "2026-10-15",
+      "value": 5.1
+     },
+     {
+      "date": "2026-10-16",
+      "value": 5.09
+     },
+     {
+      "date": "2026-10-19",
+      "value": 5.15
+     },
+     {
+      "date": "2026-10-20",
+      "value": 5.12
+     },
+     {
+      "date": "2026-10-21",
+      "value": 5.13
+     },
+     {
+      "date": "2026-10-22",
+      "value": 4.96
+     },
+     {
+      "date": "2026-10-23",
+      "value": 5
+     },
+     {
+      "date": "2026-10-26",
+      "value": 5
+     },
+     {
+      "date": "2026-10-27",
+      "value": 4.99
+     },
+     {
+      "date": "2026-10-28",
+      "value": 5.05
+     },
+     {
+      "date": "2026-10-29",
+      "value": 4.98
+     },
+     {
+      "date": "2026-10-30",
+      "value": 4.94
+     },
+     {
+      "date": "2026-11-02",
+      "value": 4.91
+     },
+     {
+      "date": "2026-11-03",
+      "value": 4.95
+     },
+     {
+      "date": "2026-11-04",
+      "value": 4.9
+     },
+     {
+      "date": "2026-11-05",
+      "value": 4.84
+     }
+    ]
+   },
+   {
+    "id": "fx_eur",
+    "label": "EUR per US dollar",
+    "unit": "EUR",
+    "currency": "EUR",
+    "isos": [],
+    "provider": "European Central Bank",
+    "dataset": "Euro foreign exchange reference rates (EXR)",
+    "release": "EXR",
+    "column": "EXR.D.USD.EUR.SP00.A",
+    "link": "https://data.ecb.europa.eu/data/datasets/EXR",
+    "note": "Rises when the euro weakens against the dollar.",
+    "values": [
+     {
+      "date": "2026-05-11",
+      "value": 0.8499787505312366
+     },
+     {
+      "date": "2026-05-12",
+      "value": 0.8519338899301414
+     },
+     {
+      "date": "2026-05-13",
+      "value": 0.8536064874093043
+     },
+     {
+      "date": "2026-05-14",
+      "value": 0.8545547769612033
+     },
+     {
+      "date": "2026-05-15",
+      "value": 0.8599931200550395
+     },
+     {
+      "date": "2026-05-18",
+      "value": 0.8585164835164835
+     },
+     {
+      "date": "2026-05-19",
+      "value": 0.8605851979345955
+     },
+     {
+      "date": "2026-05-20",
+      "value": 0.8620689655172414
+     },
+     {
+      "date": "2026-05-21",
+      "value": 0.8621432882145013
+     },
+     {
+      "date": "2026-05-22",
+      "value": 0.8624407072013799
+     },
+     {
+      "date": "2026-05-25",
+      "value": 0.8588851670531651
+     },
+     {
+      "date": "2026-05-26",
+      "value": 0.8595495960116899
+     },
+     {
+      "date": "2026-05-27",
+      "value": 0.8593280054996992
+     },
+     {
+      "date": "2026-05-28",
+      "value": 0.860807437376259
+     },
+     {
+      "date": "2026-05-29",
+      "value": 0.8588114050154585
+     },
+     {
+      "date": "2026-06-01",
+      "value": 0.858663918942126
+     },
+     {
+      "date": "2026-06-02",
+      "value": 0.8584427847883939
+     },
+     {
+      "date": "2026-06-03",
+      "value": 0.8610297916307904
+     },
+     {
+      "date": "2026-06-04",
+      "value": 0.859106529209622
+     },
+     {
+      "date": "2026-06-05",
+      "value": 0.859106529209622
+     },
+     {
+      "date": "2026-06-08",
+      "value": 0.8665511265164645
+     },
+     {
+      "date": "2026-06-09",
+      "value": 0.8640801866413204
+     },
+     {
+      "date": "2026-06-10",
+      "value": 0.8666262241095416
+     },
+     {
+      "date": "2026-06-11",
+      "value": 0.8667764583513912
+     },
+     {
+      "date": "2026-06-12",
+      "value": 0.864528399757932
+     },
+     {
+      "date": "2026-06-15",
+      "value": 0.8615490652192642
+     },
+     {
+      "date": "2026-06-16",
+      "value": 0.8625150940141453
+     },
+     {
+      "date": "2026-06-17",
+      "value": 0.862738331464067
+     },
+     {
+      "date": "2026-06-18",
+      "value": 0.8725242125468983
+     },
+     {
+      "date": "2026-06-19",
+      "value": 0.8720676724513822
+     },
+     {
+      "date": "2026-06-22",
+      "value": 0.8729050279329609
+     },
+     {
+      "date": "2026-06-23",
+      "value": 0.877808988764045
+     },
+     {
+      "date": "2026-06-24",
+      "value": 0.8818342151675486
+     },
+     {
+      "date": "2026-06-25",
+      "value": 0.881678716275789
+     },
+     {
+      "date": "2026-06-26",
+      "value": 0.8771160424524166
+     },
+     {
+      "date": "2026-06-29",
+      "value": 0.8767315448009819
+     },
+     {
+      "date": "2026-06-30",
+      "value": 0.8776549060909251
+     },
+     {
+      "date": "2026-07-01",
+      "value": 0.8785030308354563
+     },
+     {
+      "date": "2026-07-02",
+      "value": 0.8772699359592947
+     },
+     {
+      "date": "2026-07-03",
+      "value": 0.8735150244584207
+     },
+     {
+      "date": "2026-07-06",
+      "value": 0.8760402978537013
+     },
+     {
+      "date": "2026-07-07",
+      "value": 0.8746610688358262
+     },
+     {
+      "date": "2026-07-08",
+      "value": 0.876885303402315
+     },
+     {
+      "date": "2026-07-09",
+      "value": 0.8745080891998251
+     },
+     {
+      "date": "2026-07-10",
+      "value": 0.8748906386701663
+     },
+     {
+      "date": "2026-07-13",
+      "value": 0.8753501400560223
+     },
+     {
+      "date": "2026-07-14",
+      "value": 0.8768084173608066
+     },
+     {
+      "date": "2026-07-15",
+      "value": 0.8767315448009819
+     },
+     {
+      "date": "2026-07-16",
+      "value": 0.8720676724513822
+     },
+     {
+      "date": "2026-07-17",
+      "value": 0.8745080891998251
+     },
+     {
+      "date": "2026-07-20",
+      "value": 0.875196919306844
+     },
+     {
+      "date": "2026-07-21",
+      "value": 0.8758101243650377
+     },
+     {
+      "date": "2026-07-22",
+      "value": 0.876577840112202
+     },
+     {
+      "date": "2026-07-23",
+      "value": 0.877808988764045
+     },
+     {
+      "date": "2026-07-24",
+      "value": 0.878966335589347
+     },
+     {
+      "date": "2026-07-27",
+      "value": 0.8780402142418122
+     },
+     {
+      "date": "2026-07-28",
+      "value": 0.8797395970792645
+     },
+     {
+      "date": "2026-07-29",
+      "value": 0.8787346221441126
+     },
+     {
+      "date": "2026-07-30",
+      "value": 0.871383757406762
+     },
+     {
+      "date": "2026-07-31",
+      "value": 0.8707009142359599
+     },
+     {
+      "date": "2026-08-03",
+      "value": 0.8669267446900737
+     },
+     {
+      "date": "2026-08-04",
+      "value": 0.8684324793747287
+     },
+     {
+      "date": "2026-08-05",
+      "value": 0.8655011251514627
+     },
+     {
+      "date": "2026-08-06",
+      "value": 0.8664009703690869
+     },
+     {
+      "date": "2026-08-07",
+      "value": 0.8669267446900737
+     },
+     {
+      "date": "2026-08-10",
+      "value": 0.8654262224145391
+     },
+     {
+      "date": "2026-08-11",
+      "value": 0.8665511265164645
+     },
+     {
+      "date": "2026-08-12",
+      "value": 0.8661758336942399
+     },
+     {
+      "date": "2026-08-13",
+      "value": 0.8670019074041964
+     },
+     {
+      "date": "2026-08-14",
+      "value": 0.864528399757932
+     },
+     {
+      "date": "2026-08-17",
+      "value": 0.8625894936599672
+     },
+     {
+      "date": "2026-08-18",
+      "value": 0.8638562543192813
+     },
+     {
+      "date": "2026-08-19",
+      "value": 0.8616975441619991
+     },
+     {
+      "date": "2026-08-20",
+      "value": 0.856091088091773
+     },
+     {
+      "date": "2026-08-21",
+      "value": 0.8547739123001966
+     },
+     {
+      "date": "2026-08-24",
+      "value": 0.8573388203017832
+     },
+     {
+      "date": "2026-08-25",
+      "value": 0.8574858514834506
+     },
+     {
+      "date": "2026-08-26",
+      "value": 0.856971462850287
+     },
+     {
+      "date": "2026-08-27",
+      "value": 0.8587376556462
+     },
+     {
+      "date": "2026-08-28",
+      "value": 0.8588851670531651
+     },
+     {
+      "date": "2026-08-31",
+      "value": 0.8623663332183512
+     },
+     {
+      "date": "2026-09-01",
+      "value": 0.8628127696289905
+     },
+     {
+      "date": "2026-09-02",
+      "value": 0.8637070305752289
+     },
+     {
+      "date": "2026-09-03",
+      "value": 0.8609556607834696
+     },
+     {
+      "date": "2026-09-04",
+      "value": 0.8604371020478404
+     },
+     {
+      "date": "2026-09-07",
+      "value": 0.8604371020478404
+     },
+     {
+      "date": "2026-09-08",
+      "value": 0.8610297916307904
+     },
+     {
+      "date": "2026-09-09",
+      "value": 0.8582217645039478
+     },
+     {
+      "date": "2026-09-10",
+      "value": 0.8608815426997245
+     },
+     {
+      "date": "2026-09-11",
+      "value": 0.862663906142167
+     },
+     {
+      "date": "2026-09-14",
+      "value": 0.8657259111765215
+     },
+     {
+      "date": "2026-09-15",
+      "value": 0.8666262241095416
+     },
+     {
+      "date": "2026-09-16",
+      "value": 0.8667764583513912
+     },
+     {
+      "date": "2026-09-17",
+      "value": 0.8710042679209129
+     },
+     {
+      "date": "2026-09-18",
+      "value": 0.8726003490401397
+     },
+     {
+      "date": "2026-09-21",
+      "value": 0.8703220191470844
+     },
+     {
+      "date": "2026-09-22",
+      "value": 0.8723719794120212
+     },
+     {
+      "date": "2026-09-23",
+      "value": 0.8763473841030585
+     },
+     {
+      "date": "2026-09-24",
+      "value": 0.8797395970792645
+     },
+     {
+      "date": "2026-09-25",
+      "value": 0.8769622029290537
+     },
+     {
+      "date": "2026-09-28",
+      "value": 0.8788890841975743
+     },
+     {
+      "date": "2026-09-29",
+      "value": 0.8806693086745927
+     },
+     {
+      "date": "2026-09-30",
+      "value": 0.8806693086745927
+     },
+     {
+      "date": "2026-10-01",
+      "value": 0.8851124092759781
+     },
+     {
+      "date": "2026-10-02",
+      "value": 0.8908685968819599
+     },
+     {
+      "date": "2026-10-05",
+      "value": 0.8925383791503034
+     },
+     {
+      "date": "2026-10-06",
+      "value": 0.8873901854645487
+     },
+     {
+      "date": "2026-10-07",
+      "value": 0.8946944618412813
+     },
+     {
+      "date": "2026-10-08",
+      "value": 0.8939746111210441
+     },
+     {
+      "date": "2026-10-09",
+      "value": 0.892379082634303
+     },
+     {
+      "date": "2026-10-12",
+      "value": 0.8943743851176101
+     },
+     {
+      "date": "2026-10-13",
+      "value": 0.893814801573114
+     },
+     {
+      "date": "2026-10-14",
+      "value": 0.8932559178204557
+     },
+     {
+      "date": "2026-10-15",
+      "value": 0.8922198429693077
+     },
+     {
+      "date": "2026-10-16",
+      "value": 0.888651915044877
+     },
+     {
+      "date": "2026-10-19",
+      "value": 0.8908685968819599
+     },
+     {
+      "date": "2026-10-20",
+      "value": 0.8916629514043692
+     },
+     {
+      "date": "2026-10-21",
+      "value": 0.8901548869503294
+     },
+     {
+      "date": "2026-10-22",
+      "value": 0.8924587237840249
+     },
+     {
+      "date": "2026-10-23",
+      "value": 0.893415527561869
+     },
+     {
+      "date": "2026-10-26",
+      "value": 0.893814801573114
+     },
+     {
+      "date": "2026-10-27",
+      "value": 0.8968609865470852
+     },
+     {
+      "date": "2026-10-28",
+      "value": 0.898230485942693
+     },
+     {
+      "date": "2026-10-29",
+      "value": 0.8984725965858041
+     },
+     {
+      "date": "2026-10-30",
+      "value": 0.8950948800572861
+     },
+     {
+      "date": "2026-11-02",
+      "value": 0.891583452211127
+     },
+     {
+      "date": "2026-11-03",
+      "value": 0.894534394847482
+     },
+     {
+      "date": "2026-11-04",
+      "value": 0.8875477056891807
+     },
+     {
+      "date": "2026-11-05",
+      "value": 0.8909479686386315
+     },
+     {
+      "date": "2026-11-06",
+      "value": 0.8956560680698611
+     }
+    ]
+   }
+  ],
+  "window": {
+   "start": "2026-10-30T22:32:52.591Z",
+   "end": "2026-11-06T22:32:52.591Z"
+  },
+  "no_rate": [
+   "YEM",
+   "ESH"
+  ]
+ },
+ "events": {
+  "provider": "UCDP",
+  "status": "not_configured",
+  "items": [],
+  "range": {
+   "start": "2026-08-08",
+   "end": "2026-11-06"
+  }
+ },
  "sources": {
   "config": [
    {
@@ -7787,6 +9988,30 @@
     "publisher": "United Nations",
     "homepage": "https://news.un.org/en/",
     "enabled": true
+   },
+   {
+    "id": "un-press",
+    "name": "UN Meetings Coverage and Press Releases",
+    "publisher": "United Nations",
+    "homepage": "https://press.un.org/en",
+    "note": "Security Council, General Assembly and Secretary-General statements. The feed holds the latest 10 releases.",
+    "enabled": true
+   },
+   {
+    "id": "ofac",
+    "name": "US Treasury OFAC Recent Actions",
+    "publisher": "US Department of the Treasury (OFAC)",
+    "homepage": "https://ofac.treasury.gov/recent-actions",
+    "note": "Sanctions designations, removals and general licences.",
+    "enabled": true
+   },
+   {
+    "id": "reliefweb",
+    "name": "ReliefWeb situation reports",
+    "publisher": "ReliefWeb (UN OCHA)",
+    "homepage": "https://reliefweb.int/",
+    "note": "English-language situation reports from UN agencies and NGOs, through the ReliefWeb API. Needs an approved appname from ReliefWeb (free); until then this source is skipped.",
+    "enabled": true
    }
   ],
   "statuses": [
@@ -7796,7 +10021,7 @@
     "kind": "news feed",
     "type": "analysis",
     "url": "https://www.geopoliticalmonitor.com/feed/",
-    "retrieved_at": "2026-11-06T21:59:17.757Z",
+    "retrieved_at": "2026-11-06T22:32:52.591Z",
     "status": "ok",
     "items": 10
    },
@@ -7806,7 +10031,7 @@
     "kind": "news feed",
     "type": "analysis",
     "url": "https://www.geopoliticalmonitor.com/feed/?paged=2",
-    "retrieved_at": "2026-11-06T21:59:18.279Z",
+    "retrieved_at": "2026-11-06T22:32:53.017Z",
     "status": "ok",
     "items": 10
    },
@@ -7816,7 +10041,7 @@
     "kind": "news feed",
     "type": "analysis",
     "url": "https://www.rand.org/pubs/commentary.xml",
-    "retrieved_at": "2026-11-06T21:59:18.351Z",
+    "retrieved_at": "2026-11-06T22:32:53.090Z",
     "status": "ok",
     "items": 20
    },
@@ -7826,7 +10051,7 @@
     "kind": "news feed",
     "type": "news",
     "url": "https://www.rand.org/news/press.xml",
-    "retrieved_at": "2026-11-06T21:59:18.810Z",
+    "retrieved_at": "2026-11-06T22:32:53.636Z",
     "status": "ok",
     "items": 20
    },
@@ -7836,9 +10061,9 @@
     "kind": "news feed",
     "type": "news",
     "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
-    "retrieved_at": "2026-11-06T21:59:18.860Z",
+    "retrieved_at": "2026-11-06T22:32:53.690Z",
     "status": "ok",
-    "items": 25
+    "items": 26
    },
    {
     "source": "un-news",
@@ -7846,17 +10071,47 @@
     "kind": "news feed",
     "type": "news",
     "url": "https://news.un.org/feed/subscribe/en/news/all/rss.xml",
-    "retrieved_at": "2026-11-06T21:59:19.450Z",
+    "retrieved_at": "2026-11-06T22:32:54.048Z",
     "status": "ok",
     "items": 30
+   },
+   {
+    "source": "un-press",
+    "name": "UN Meetings Coverage and Press Releases",
+    "kind": "news feed",
+    "type": "official",
+    "url": "https://press.un.org/en/rss.xml",
+    "retrieved_at": "2026-11-06T22:32:54.452Z",
+    "status": "ok",
+    "items": 10
+   },
+   {
+    "source": "ofac",
+    "name": "US Treasury OFAC Recent Actions",
+    "kind": "news feed",
+    "type": "official",
+    "url": "https://ofac.treasury.gov/recent-actions",
+    "retrieved_at": "2026-11-06T22:32:54.795Z",
+    "status": "ok",
+    "items": 10
+   },
+   {
+    "source": "reliefweb",
+    "name": "ReliefWeb situation reports",
+    "kind": "news feed",
+    "type": "humanitarian",
+    "url": "https://api.reliefweb.int/v2/reports",
+    "retrieved_at": "2026-11-06T22:32:55.243Z",
+    "status": "skipped",
+    "error": "No ReliefWeb appname set"
    },
    {
     "source": "worldbank",
     "name": "World Bank, Worldwide Governance Indicators",
     "kind": "indicator",
     "indicator": "GOV_WGI_PV.EST",
-    "retrieved_at": "2026-11-06T21:59:20.701Z",
-    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;AFG;MLI;NER;BFA/indicator/GOV_WGI_PV.EST?format=json&date=2014:2026&per_page=1000&source=3",
+    "retrieved_at": "2026-11-06T22:32:56.049Z",
+    "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;ESP;SDN;AFG;MLI/indicator/GOV_WGI_PV.EST?format=json&date=2014:2026&per_page=1000&source=3",
     "status": "ok",
     "items": 108
    },
@@ -7865,8 +10120,8 @@
     "name": "World Bank, World Development Indicators",
     "kind": "indicator",
     "indicator": "NY.GDP.MKTP.KD.ZG",
-    "retrieved_at": "2026-11-06T21:59:21.350Z",
-    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;AFG;MLI;NER;BFA/indicator/NY.GDP.MKTP.KD.ZG?format=json&date=2014:2026&per_page=1000",
+    "retrieved_at": "2026-11-06T22:32:56.491Z",
+    "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;ESP;SDN;AFG;MLI/indicator/NY.GDP.MKTP.KD.ZG?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
     "items": 100
    },
@@ -7875,28 +10130,28 @@
     "name": "World Bank, World Development Indicators",
     "kind": "indicator",
     "indicator": "FP.CPI.TOTL.ZG",
-    "retrieved_at": "2026-11-06T21:59:21.633Z",
-    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;AFG;MLI;NER;BFA/indicator/FP.CPI.TOTL.ZG?format=json&date=2014:2026&per_page=1000",
+    "retrieved_at": "2026-11-06T22:32:56.566Z",
+    "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;ESP;SDN;AFG;MLI/indicator/FP.CPI.TOTL.ZG?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
-    "items": 95
+    "items": 92
    },
    {
     "source": "worldbank",
     "name": "World Bank, World Development Indicators (SIPRI data)",
     "kind": "indicator",
     "indicator": "MS.MIL.XPND.GD.ZS",
-    "retrieved_at": "2026-11-06T21:59:21.947Z",
-    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;AFG;MLI;NER;BFA/indicator/MS.MIL.XPND.GD.ZS?format=json&date=2014:2026&per_page=1000",
+    "retrieved_at": "2026-11-06T22:32:56.633Z",
+    "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;ESP;SDN;AFG;MLI/indicator/MS.MIL.XPND.GD.ZS?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
-    "items": 92
+    "items": 88
    },
    {
     "source": "imf",
     "name": "International Monetary Fund, World Economic Outlook (DataMapper)",
     "kind": "indicator",
     "indicator": "NGDP_RPCH",
-    "retrieved_at": "2026-11-06T21:59:22.262Z",
-    "url": "https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH/UKR/RUS/IRN/USA/YEM/AFG/ESH/MLI/NER/BFA?periods=2025,2026,2027",
+    "retrieved_at": "2026-11-06T22:32:56.703Z",
+    "url": "https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH/YEM/ESH/RUS/USA/UKR/IRN/ESP/SDN/AFG/MLI?periods=2025,2026,2027",
     "status": "ok",
     "items": 379
    },
@@ -7905,8 +10160,8 @@
     "name": "World Bank, World Development Indicators",
     "kind": "indicator",
     "indicator": "SP.POP.TOTL",
-    "retrieved_at": "2026-11-06T21:59:23.068Z",
-    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;AFG;MLI;NER;BFA/indicator/SP.POP.TOTL?format=json&date=2014:2026&per_page=1000",
+    "retrieved_at": "2026-11-06T22:32:57.532Z",
+    "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;ESP;SDN;AFG;MLI/indicator/SP.POP.TOTL?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
     "items": 108
    },
@@ -7915,8 +10170,8 @@
     "name": "World Bank, World Development Indicators",
     "kind": "indicator",
     "indicator": "NY.GDP.MKTP.CD",
-    "retrieved_at": "2026-11-06T21:59:23.375Z",
-    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;AFG;MLI;NER;BFA/indicator/NY.GDP.MKTP.CD?format=json&date=2014:2026&per_page=1000",
+    "retrieved_at": "2026-11-06T22:32:57.600Z",
+    "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;ESP;SDN;AFG;MLI/indicator/NY.GDP.MKTP.CD?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
     "items": 100
    },
@@ -7925,20 +10180,59 @@
     "name": "World Bank, World Development Indicators (UCDP/PRIO data)",
     "kind": "indicator",
     "indicator": "VC.BTL.DETH",
-    "retrieved_at": "2026-11-06T21:59:23.675Z",
-    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;AFG;MLI;NER;BFA/indicator/VC.BTL.DETH?format=json&date=2014:2026&per_page=1000",
+    "retrieved_at": "2026-11-06T22:32:57.690Z",
+    "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;ESP;SDN;AFG;MLI/indicator/VC.BTL.DETH?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
-    "items": 79
+    "items": 72
    },
    {
     "source": "worldbank",
     "name": "World Bank, World Development Indicators (IDMC data)",
     "kind": "indicator",
     "indicator": "VC.IDP.NWCV",
-    "retrieved_at": "2026-11-06T21:59:23.993Z",
-    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;AFG;MLI;NER;BFA/indicator/VC.IDP.NWCV?format=json&date=2014:2026&per_page=1000",
+    "retrieved_at": "2026-11-06T22:32:57.750Z",
+    "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;ESP;SDN;AFG;MLI/indicator/VC.IDP.NWCV?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
-    "items": 57
+    "items": 50
+   },
+   {
+    "source": "federal-reserve",
+    "name": "Federal Reserve Board",
+    "kind": "market",
+    "indicator": "JRXWTFB_N.B, JRXWTFO_N.B",
+    "url": "https://www.federalreserve.gov/datadownload/Output.aspx?rel=H10&series=122e3bcb627e8e53f1bf72a1a09cfb81&from=2026-05-10&to=2026-11-06&filetype=csv&label=include&layout=seriescolumn",
+    "retrieved_at": "2026-11-06T22:32:57.809Z",
+    "status": "ok",
+    "items": 125
+   },
+   {
+    "source": "federal-reserve",
+    "name": "Federal Reserve Board",
+    "kind": "market",
+    "indicator": "RIFLGFCY10_N.B",
+    "url": "https://www.federalreserve.gov/datadownload/Output.aspx?rel=H15&series=bf17364827e38702b42a58cf8eaa3f78&from=2026-05-10&to=2026-11-06&filetype=csv&label=include&layout=seriescolumn",
+    "retrieved_at": "2026-11-06T22:32:58.205Z",
+    "status": "ok",
+    "items": 129
+   },
+   {
+    "source": "ecb",
+    "name": "European Central Bank",
+    "kind": "market",
+    "indicator": "EXR USD",
+    "url": "https://data-api.ecb.europa.eu/service/data/EXR/D.USD.EUR.SP00.A?format=csvdata&startPeriod=2026-05-10&endPeriod=2026-11-06",
+    "retrieved_at": "2026-11-06T22:32:58.649Z",
+    "status": "ok",
+    "items": 130
+   },
+   {
+    "source": "ucdp",
+    "name": "Uppsala Conflict Data Program",
+    "kind": "events",
+    "indicator": "GED Candidate",
+    "retrieved_at": "2026-11-06T22:32:59.742Z",
+    "status": "skipped",
+    "error": "No UCDP_TOKEN set"
    }
   ]
  }

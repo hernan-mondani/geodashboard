@@ -51,7 +51,7 @@ async function get(url, { json = false, tries = 2 } = {}) {
   let last;
   for (let i = 0; i < tries; i++) {
     try {
-      const res = await fetch(url, { headers: { 'User-Agent': UA, Accept: json ? 'application/json' : '*/*' }, redirect: 'follow', signal: AbortSignal.timeout(45000) });
+      const res = await fetch(url, { headers: { 'User-Agent': UA, Accept: json ? 'application/json' : 'application/rss+xml, application/xml;q=0.9, */*;q=0.8' }, redirect: 'follow', signal: AbortSignal.timeout(45000) });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       return json ? await res.json() : await res.text();
     } catch (e) { last = e; await sleep(1500 * (i + 1)); }
@@ -64,14 +64,20 @@ const xml = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: '@' })
 function parseFeed(body) {
   const doc = xml.parse(body);
   if (doc.rss) {
-    return arr(doc.rss.channel?.item).map((it) => ({
-      title: stripHtml(text(it.title)),
-      link: text(it.link).trim(),
-      date: new Date(text(it.pubDate) || text(it['dc:date'])),
-      summary: stripHtml(text(it.description)).replace(/\s*The post .{0,300}? appeared first on .{0,80}?\.?\s*$/i, ''),
-      tags: arr(it.category).map((c) => stripHtml(text(c))).filter((t) => t && t !== 'All' && t !== 'Featured Slider'),
-      author: stripHtml(text(it['dc:creator'])),
-    }));
+    return arr(doc.rss.channel?.item).map((it) => {
+      // ReliefWeb puts countries and the reporting organisation in tagged divs at the top of the description
+      let desc = text(it.description).replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"');
+      const tagDiv = (cls) => { const m = desc.match(new RegExp(`<div class="tag ${cls}">\\s*[^:<]*:\\s*([^<]*)</div>`)); if (m) desc = desc.replace(m[0], ' '); return m ? stripHtml(m[1]) : ''; };
+      const rwCountries = tagDiv('country'), rwSource = tagDiv('source');
+      return {
+        title: stripHtml(text(it.title)),
+        link: text(it.link).trim(),
+        date: new Date(text(it.pubDate) || text(it['dc:date'])),
+        summary: stripHtml(desc).replace(/^Please refer to the attached [^.]*\.\s*/i, '').replace(/\s*The post .{0,300}? appeared first on .{0,80}?\.?\s*$/i, ''),
+        tags: [...arr(it.category).map((c) => stripHtml(text(c))), ...(rwCountries ? rwCountries.split(/,\s*/) : [])].filter((t) => t && t !== 'All' && t !== 'Featured Slider'),
+        author: rwSource || stripHtml(text(it['dc:creator'])),
+      };
+    });
   }
   if (doc.feed) {
     return arr(doc.feed.entry).map((e) => {
@@ -104,6 +110,33 @@ function parseFeed(body) {
   throw new Error('Not an RSS, Atom or news sitemap feed');
 }
 
+// ReliefWeb API v2: English situation reports, newest first. Automated access needs an approved appname.
+async function fetchReliefweb(f) {
+  const app = f.appname || process.env.RELIEFWEB_APPNAME;
+  if (!app) { const e = new Error('No ReliefWeb appname set'); e.skipped = true; throw e; }
+  const q = new URLSearchParams({ appname: app, preset: 'latest', limit: String(f.limit ?? 60) });
+  q.append('filter[operator]', 'AND');
+  q.append('filter[conditions][0][field]', 'language.code'); q.append('filter[conditions][0][value]', 'en');
+  q.append('filter[conditions][1][field]', 'format.name'); q.append('filter[conditions][1][value]', 'Situation Report');
+  for (const fl of ['title', 'url_alias', 'date.created', 'source.shortname', 'country.name', 'body']) q.append('fields[include][]', fl);
+  const body = await get(`${f.url}?${q}`, { json: true });
+  return (body.data ?? []).map((d) => {
+    const x = d.fields ?? {};
+    return { title: stripHtml(x.title), link: x.url_alias || `https://reliefweb.int/node/${d.id}`, date: new Date(x.date?.created), summary: stripHtml(x.body ?? '').slice(0, 400), tags: arr(x.country).map((c) => c.name), author: arr(x.source).map((s) => s.shortname).join(', ') };
+  });
+}
+
+// US Treasury OFAC "Recent Actions" page: one link per day, /recent-actions/YYYYMMDD, titled with that day's actions
+function parseOfac(body, base) {
+  const out = [];
+  for (const m of body.matchAll(/href="(\/recent-actions\/(\d{8}(?:_\d+)?))"[^>]*>([^<]+)</g)) {
+    const d = m[2].slice(0, 8);
+    out.push({ title: stripHtml(m[3]), link: new URL(m[1], base).href, date: new Date(`${d.slice(0, 4)}-${d.slice(4, 6)}-${d.slice(6, 8)}T20:00:00Z`), summary: '', tags: [], author: '' });
+  }
+  if (!out.length) throw new Error('No actions found on the page');
+  return out;
+}
+
 const statuses = [];
 let items = [];
 for (const src of sources.news.filter((s) => s.enabled !== false)) {
@@ -112,11 +145,11 @@ for (const src of sources.news.filter((s) => s.enabled !== false)) {
     const url = f.url, type = f.type ?? src.type ?? 'news';
     const st = { source: src.id, name: src.name, kind: 'news feed', type, url, retrieved_at: new Date().toISOString() };
     try {
-      const parsed = parseFeed(await get(url)).filter((p) => !f.url_contains || p.link.includes(f.url_contains));
+      const parsed = (f.format === 'reliefweb-api' ? await fetchReliefweb(f) : f.format === 'ofac-html' ? parseOfac(await get(url), url) : parseFeed(await get(url))).filter((p) => !f.url_contains || p.link.includes(f.url_contains));
       st.status = 'ok'; st.items = parsed.length;
       items.push(...parsed.map((p) => ({ ...p, type, source: src.id, publisher: src.publisher })));
     } catch (e) {
-      st.status = 'failed'; st.error = String(e.message || e);
+      st.status = e.skipped ? 'skipped' : 'failed'; st.error = String(e.message || e);
     }
     statuses.push(st);
     console.log(`${st.status.padEnd(6)} ${url}${st.error ? ' — ' + st.error : ` (${st.items} items)`}`);
@@ -232,6 +265,106 @@ for (const ind of sources.indicators.filter((i) => !i.library || contextIds.incl
   console.log(`${st.status.padEnd(6)} ${ind.provider} ${ind.code}${st.error ? ' — ' + st.error : ` (${st.items} values)`}`);
 }
 
+// ---------- market signals ----------
+const markets = { series: [], window: { start: windowStart.toISOString(), end: now.toISOString() } };
+const mk = sources.markets;
+if (mk) {
+  const since = new Date(now - (mk.days ?? 180) * 86400000).toISOString().slice(0, 10);
+  const until = now.toISOString().slice(0, 10);
+  // Federal Reserve Board Data Download Program: CSV with five label rows, then date,value,... per day ("ND" = no data)
+  const fedByPkg = {};
+  for (const s of mk.fed ?? []) (fedByPkg[`${s.release}|${s.package}`] ??= []).push(s);
+  for (const [key, list] of Object.entries(fedByPkg)) {
+    const [release, pkg] = key.split('|');
+    const rel = release.replace('.', '');
+    const url = `https://www.federalreserve.gov/datadownload/Output.aspx?rel=${rel}&series=${pkg}&from=${since}&to=${until}&filetype=csv&label=include&layout=seriescolumn`;
+    const st = { source: 'federal-reserve', name: 'Federal Reserve Board', kind: 'market', indicator: list.map((s) => s.column).join(', '), url, retrieved_at: new Date().toISOString() };
+    try {
+      const rows = (await get(url)).trim().split(/\r?\n/).map((l) => l.split(',').map((c) => c.replace(/^"|"$/g, '')));
+      const head = rows.find((r) => r[0] === 'Time Period');
+      if (!head) throw new Error('Unexpected file layout');
+      const data = rows.filter((r) => /^\d{4}-\d{2}-\d{2}$/.test(r[0]));
+      for (const s of list) {
+        const col = head.indexOf(s.column);
+        if (col < 0) throw new Error(`Column ${s.column} not in package`);
+        const values = data.map((r) => ({ date: r[0], value: +r[col] })).filter((v) => r_ok(v.value));
+        markets.series.push({ ...s, provider: 'Federal Reserve Board', dataset: `${s.release} Selected Interest Rates and Exchange Rates`.replace('Selected Interest Rates and Exchange Rates', s.release === 'H.10' ? 'Foreign Exchange Rates' : 'Selected Interest Rates'), link: `https://www.federalreserve.gov/releases/${rel.toLowerCase()}/`, values });
+      }
+      st.status = 'ok'; st.items = data.length;
+    } catch (e) { st.status = 'failed'; st.error = String(e.message || e); }
+    statuses.push(st);
+    console.log(`${st.status.padEnd(6)} fed ${release}${st.error ? ' — ' + st.error : ` (${st.items} days)`}`);
+  }
+  // ECB euro reference rates for the region's currencies, turned into units per US dollar
+  const regionCur = [...new Set(focus.map((f) => mk.ecb_currencies?.[f.iso3]).filter(Boolean))];
+  const curs = [...new Set([...(mk.ecb_always ?? []), ...regionCur])];
+  const noEcb = focus.filter((f) => !mk.ecb_currencies?.[f.iso3] && f.iso3 !== 'USA').map((f) => f.iso3);
+  const asked = [...new Set(['USD', ...curs.filter((c) => c !== 'EUR')])];
+  const url = `https://data-api.ecb.europa.eu/service/data/EXR/D.${asked.join('+')}.EUR.SP00.A?format=csvdata&startPeriod=${since}&endPeriod=${until}`;
+  const st = { source: 'ecb', name: 'European Central Bank', kind: 'market', indicator: `EXR ${asked.join(', ')}`, url, retrieved_at: new Date().toISOString() };
+  try {
+    const lines = (await get(url)).trim().split(/\r?\n/);
+    const h = lines[0].split(',');
+    const iC = h.indexOf('CURRENCY'), iT = h.indexOf('TIME_PERIOD'), iV = h.indexOf('OBS_VALUE');
+    const by = {};
+    for (const l of lines.slice(1)) { const r = l.split(','); if (r[iV] !== '') (by[r[iC]] ??= {})[r[iT]] = +r[iV]; }
+    const usd = by.USD ?? {};
+    for (const c of curs) {
+      const values = Object.keys(usd).sort().map((d) => ({ date: d, value: c === 'EUR' ? 1 / usd[d] : by[c]?.[d] / usd[d] })).filter((v) => r_ok(v.value));
+      const last = values.at(-1)?.date;
+      if (!last || now - new Date(last) > 14 * 86400000) continue; // suspended (e.g. RUB since 2022)
+      const isos = c === 'EUR' ? [] : Object.entries(mk.ecb_currencies).filter(([, v]) => v === c).map(([k]) => k).filter((k) => focus.some((f) => f.iso3 === k));
+      markets.series.push({ id: `fx_${c.toLowerCase()}`, label: `${c} per US dollar`, unit: c, currency: c, isos, provider: 'European Central Bank', dataset: 'Euro foreign exchange reference rates (EXR)', release: 'EXR', column: c === 'EUR' ? 'EXR.D.USD.EUR.SP00.A' : `EXR.D.${c}.EUR.SP00.A`, link: 'https://data.ecb.europa.eu/data/datasets/EXR', note: c === 'EUR' ? 'Rises when the euro weakens against the dollar.' : `Cross rate from ECB reference rates. Rises when the ${c} weakens against the dollar.`, values });
+    }
+    markets.no_rate = noEcb;
+    st.status = 'ok'; st.items = Object.keys(usd).length;
+  } catch (e) { st.status = 'failed'; st.error = String(e.message || e); }
+  statuses.push(st);
+  console.log(`${st.status.padEnd(6)} ecb EXR${st.error ? ' — ' + st.error : ` (${st.items} days)`}`);
+}
+function r_ok(v) { return Number.isFinite(v) && v > 0; }
+
+// ---------- conflict events (UCDP GED Candidate) ----------
+const events = { provider: 'UCDP', status: 'not_configured', items: [] };
+const ev = sources.events;
+if (ev?.enabled !== false && ev?.provider === 'ucdp') {
+  const token = process.env.UCDP_TOKEN;
+  // Candidate releases are named <yy>.0.<month>; try the configured ones, else the last five months
+  const guess = [];
+  for (let k = 0; k < 5; k++) { const d = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() - k, 1)); guess.push(`${String(d.getUTCFullYear()).slice(2)}.0.${d.getUTCMonth() + 1}`); }
+  const versions = ev.versions?.length ? ev.versions : guess;
+  const start = new Date(now - (ev.days ?? 90) * 86400000).toISOString().slice(0, 10);
+  const st = { source: 'ucdp', name: 'Uppsala Conflict Data Program', kind: 'events', indicator: 'GED Candidate', retrieved_at: new Date().toISOString() };
+  if (!token) { st.status = 'skipped'; st.error = 'No UCDP_TOKEN set'; }
+  else {
+    for (const v of versions) {
+      let url = `https://ucdpapi.pcr.uu.se/api/gedevents/${v}?pagesize=1000&StartDate=${start}&EndDate=${now.toISOString().slice(0, 10)}`;
+      st.url = url;
+      try {
+        const rows = [];
+        for (let page = 0; url && page < 20; page++) {
+          const res = await fetch(url, { headers: { 'User-Agent': UA, Accept: 'application/json', 'x-ucdp-access-token': token }, signal: AbortSignal.timeout(60000) });
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const body = await res.json();
+          rows.push(...(body.Result ?? []));
+          url = body.NextPageUrl || null;
+        }
+        events.version = v;
+        events.items = rows.map((r) => ({ id: r.id, date: String(r.date_start).slice(0, 10), end: String(r.date_end).slice(0, 10), lat: +r.latitude, lon: +r.longitude, iso3: nameToIso.get(String(r.country).replace(/\s*\(.*\)$/, ''))?.[0] ?? countries.getAlpha3Code(String(r.country), 'en') ?? null, country: r.country, type: +r.type_of_violence, deaths: +r.best || 0, conflict: r.conflict_name, place: r.where_coordinates })).filter((e) => Number.isFinite(e.lat) && Number.isFinite(e.lon));
+        events.status = 'ok';
+        events.link = 'https://ucdp.uu.se/downloads/#candidate';
+        events.citation = `Hegre, Håvard, Mihai Croicu, Kristine Eck, and Stina Högbladh (2020). Introducing the UCDP Candidate Events Dataset. Research & Politics 7(3). Uppsala Conflict Data Program, GED Candidate version ${v}.`;
+        st.status = rows.length ? 'ok' : 'empty'; st.items = rows.length;
+        break;
+      } catch (e) { st.status = 'failed'; st.error = `${v}: ${e.message || e}`; }
+    }
+  }
+  events.status = events.status === 'ok' ? 'ok' : (st.status === 'skipped' ? 'not_configured' : 'failed');
+  events.range = { start, end: now.toISOString().slice(0, 10) };
+  statuses.push(st);
+  console.log(`${(st.status ?? '').padEnd(6)} ucdp GED${st.error ? ' — ' + st.error : ` (${st.items} events, v${events.version})`}`);
+}
+
 // ---------- write ----------
 const countryName = (iso3) => ({ PSE: 'Palestinian territories', TWN: 'Taiwan', RUS: 'Russia', IRN: 'Iran', KOR: 'South Korea', PRK: 'North Korea', USA: 'United States', GBR: 'United Kingdom', SYR: 'Syria', VNM: 'Vietnam', CHN: 'China', BOL: 'Bolivia', VEN: 'Venezuela', TZA: 'Tanzania', LAO: 'Laos', MDA: 'Moldova', COD: 'DR Congo', COG: 'Republic of the Congo' }[iso3] ?? countries.getName(iso3, 'en') ?? iso3);
 const countryInfo = Object.fromEntries([...new Set([...Object.keys(allCountries), ...focusIsos])].map((iso3) => [iso3, { name: countryName(iso3), numeric: countries.alpha3ToNumeric(iso3) }]));
@@ -242,7 +375,7 @@ const snapshot = {
   week,
   generated_at: new Date().toISOString(),
   window: { start: windowStart.toISOString(), end: now.toISOString(), days: windowDays, widened: windowDays !== (sources.window_days ?? 7) },
-  method: 'Themes are counted from the titles, summaries and tags of news and analysis items published in the window, using the keyword lists in config/themes.json. Countries are matched by name and by the aliases in config/places.json. The region of interest is the set of countries most often named in items about the most prevalent theme. Ties between themes are broken by the number of distinct sources covering them, then by how many country mentions they carry.',
+  method: 'Themes are counted from the titles, summaries and tags of the news, analysis, official and humanitarian items published in the window, using the keyword lists in config/themes.json. Countries are matched by name and by the aliases in config/places.json. The region of interest is the set of countries most often named in items about the most prevalent theme. Ties between themes are broken by the number of distinct sources covering them, then by how many country mentions they carry.',
   totals: { items: weekItems.length, sources: [...new Set(weekItems.map((i) => i.source))].length },
   top_theme: top.id,
   themes: themeStats,
@@ -254,6 +387,8 @@ const snapshot = {
   countries: countryInfo,
   news: weekItems.sort((a, b) => b.date - a.date).map((it) => ({ type: it.type, title: it.title, link: it.link, date: it.date.toISOString(), source: it.source, publisher: it.publisher, author: it.author, summary: it.summary.slice(0, 320), tags: it.tags.slice(0, 6), themes: it.themes, countries: it.countries })),
   indicators,
+  markets,
+  events,
   sources: { config: sources.news.map(({ id, name, publisher, homepage, note, enabled }) => ({ id, name, publisher, homepage, note, enabled })), statuses },
 };
 

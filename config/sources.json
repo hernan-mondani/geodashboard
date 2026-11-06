@@ -1,5 +1,5 @@
 {
-  "_comment": "Edit this file to add, remove or swap data sources. A news feed is RSS, Atom or a Google News sitemap; give it as a URL, or as {url, type, url_contains}. type is news or analysis and sets the tag colour. Set enabled:false to switch a source off without deleting it.",
+  "_comment": "Edit this file to add, remove or swap data sources. A news feed is RSS, Atom or a Google News sitemap; give it as a URL, or as {url, type, url_contains, format}. type is news, analysis, official or humanitarian and sets the tag colour. format 'reliefweb-api' reads ReliefWeb situation reports (set appname, or the RELIEFWEB_APPNAME environment variable); format 'ofac-html' reads the US Treasury OFAC Recent Actions page. Set enabled:false to switch a source off without deleting it.",
   "window_days": 7,
   "user_agent": "geo-dashboard/0.1 (academic research; weekly snapshot)",
   "news": [
@@ -52,6 +52,50 @@
       "feeds": [
         "https://news.un.org/feed/subscribe/en/news/all/rss.xml"
       ],
+      "enabled": true
+    },
+    {
+      "id": "un-press",
+      "name": "UN Meetings Coverage and Press Releases",
+      "publisher": "United Nations",
+      "homepage": "https://press.un.org/en",
+      "type": "official",
+      "feeds": [
+        "https://press.un.org/en/rss.xml"
+      ],
+      "note": "Security Council, General Assembly and Secretary-General statements. The feed holds the latest 10 releases.",
+      "enabled": true
+    },
+    {
+      "id": "ofac",
+      "name": "US Treasury OFAC Recent Actions",
+      "publisher": "US Department of the Treasury (OFAC)",
+      "homepage": "https://ofac.treasury.gov/recent-actions",
+      "type": "official",
+      "feeds": [
+        {
+          "url": "https://ofac.treasury.gov/recent-actions",
+          "format": "ofac-html"
+        }
+      ],
+      "note": "Sanctions designations, removals and general licences.",
+      "enabled": true
+    },
+    {
+      "id": "reliefweb",
+      "name": "ReliefWeb situation reports",
+      "publisher": "ReliefWeb (UN OCHA)",
+      "homepage": "https://reliefweb.int/",
+      "type": "humanitarian",
+      "feeds": [
+        {
+          "url": "https://api.reliefweb.int/v2/reports",
+          "format": "reliefweb-api",
+          "appname": "",
+          "limit": 60
+        }
+      ],
+      "note": "English-language situation reports from UN agencies and NGOs, through the ReliefWeb API. Needs an approved appname from ReliefWeb (free); until then this source is skipped.",
       "enabled": true
     }
   ],
@@ -254,5 +298,83 @@
       "wb_source": 3
     }
   ],
-  "_comment_indicators": "Indicators without library:true are fetched every week. Those with library:true are fetched only when the week's top theme lists them in config/themes.json."
+  "_comment_indicators": "Indicators without library:true are fetched every week. Those with library:true are fetched only when the week's top theme lists them in config/themes.json.",
+  "markets": {
+    "_comment": "Market signals. fed = Federal Reserve Board Data Download Program packages (series column codes); ecb = ECB euro reference rates, converted to units per US dollar for the currencies of the countries in the region of interest.",
+    "days": 180,
+    "fed": [
+      {
+        "id": "usd_broad",
+        "label": "US dollar, broad index",
+        "unit": "index",
+        "release": "H.10",
+        "package": "122e3bcb627e8e53f1bf72a1a09cfb81",
+        "column": "JRXWTFB_N.B",
+        "note": "Nominal broad dollar index, Jan 2006 = 100. Rises when the dollar strengthens."
+      },
+      {
+        "id": "usd_eme",
+        "label": "US dollar vs emerging markets",
+        "unit": "index",
+        "release": "H.10",
+        "package": "122e3bcb627e8e53f1bf72a1a09cfb81",
+        "column": "JRXWTFO_N.B",
+        "note": "Nominal emerging market economies dollar index. Rises when emerging-market currencies weaken."
+      },
+      {
+        "id": "ust10",
+        "label": "US 10-year Treasury yield",
+        "unit": "%",
+        "release": "H.15",
+        "package": "bf17364827e38702b42a58cf8eaa3f78",
+        "column": "RIFLGFCY10_N.B",
+        "note": "Market yield at 10-year constant maturity."
+      }
+    ],
+    "ecb_currencies": {
+      "AUS": "AUD",
+      "BRA": "BRL",
+      "CAN": "CAD",
+      "CHE": "CHF",
+      "CHN": "CNY",
+      "CZE": "CZK",
+      "DNK": "DKK",
+      "GBR": "GBP",
+      "HKG": "HKD",
+      "HUN": "HUF",
+      "IDN": "IDR",
+      "ISR": "ILS",
+      "PSE": "ILS",
+      "IND": "INR",
+      "ISL": "ISK",
+      "JPN": "JPY",
+      "KOR": "KRW",
+      "MEX": "MXN",
+      "MYS": "MYR",
+      "NOR": "NOK",
+      "NZL": "NZD",
+      "PHL": "PHP",
+      "POL": "PLN",
+      "ROU": "RON",
+      "SWE": "SEK",
+      "SGP": "SGD",
+      "THA": "THB",
+      "TUR": "TRY",
+      "ZAF": "ZAR",
+      "ARG": "ARS",
+      "DZA": "DZD",
+      "MAR": "MAD",
+      "TWN": "TWD"
+    },
+    "ecb_always": [
+      "EUR"
+    ]
+  },
+  "events": {
+    "_comment": "Conflict events from the UCDP Georeferenced Event Dataset (GED) Candidate, released monthly. Needs a free API token from UCDP, read from the UCDP_TOKEN environment variable (a GitHub Actions secret). Versions are tried newest first; leave versions empty to guess them from the date.",
+    "provider": "ucdp",
+    "versions": [],
+    "days": 90,
+    "enabled": true
+  }
 }

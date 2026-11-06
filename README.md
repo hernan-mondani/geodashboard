@@ -5,13 +5,14 @@ A weekly, citable snapshot of the most prevalent geopolitical theme: where it is
 ## What each page shows
 
 1. A world map that marks the region of interest for the week's most prevalent theme.
-2. A zoomable, clickable map of that region, with each country's indicators.
-3. A list of the relevant news and analysis, each with its source, date, link and a ready-made citation.
+2. A zoomable, clickable map of that region, with each country's indicators and, once set up, UCDP conflict events.
+3. A list of the relevant items, tagged News, Analysis, Official (UN and government statements, sanctions notices) or Humanitarian (situation reports), each with its source, date, link and a ready-made citation.
 4. A country context block for the region's countries: indicators chosen for the week's top theme (set per theme in `config/themes.json`), plus a 10-year political-stability trend as the risk score.
 5. Charts for the leading themes: theme prevalence and an event timeline.
-5. A sources table that shows every request made for the snapshot, whether it loaded, and when.
+6. Market signals: US dollar indexes and the 10-year Treasury yield (Federal Reserve Board), and the region's currencies against the dollar (ECB reference rates).
+7. A sources table that shows every request made for the snapshot, whether it loaded, and when.
 
-Every page is one self-contained HTML file (data, code and map inside), so it opens offline and can be saved with **Save as webpage**. **Download PDF** gives a print-ready A4 portrait version, always in dark mode, laid out as: summary and world view; region map and country card; country context; event timeline; theme prevalence; the full list of items (about 4 pages for 67 items); sources and citation.
+Every page is one self-contained HTML file (data, code and map inside), so it opens offline and can be saved with **Save as webpage**. **Download PDF** gives a print-ready A4 portrait version, always in dark mode, laid out as: summary and world view; region map and country card; country context; event timeline; theme prevalence; market signals; the full list of items (about 5 pages for 80 items); sources and citation.
 
 ## Run it
 
@@ -37,10 +38,19 @@ All of it is configuration, not code:
 
 `.github/workflows/weekly.yml` runs every Monday at 06:00 UTC. It takes the snapshot, commits it to `data/`, builds the pages and PDF, and publishes `dist/` to GitHub Pages. Past weeks stay available in `dist/weeks/` and in the week picker.
 
+Two sources need a free registration before they load. Until then they show as "Not set up" in the sources table and the rest of the page works as usual.
+
+- UCDP conflict events: request an API token from UCDP and store it as the repository secret `UCDP_TOKEN`.
+- ReliefWeb situation reports: request an approved appname from ReliefWeb and store it as the repository variable `RELIEFWEB_APPNAME` (or put it in `config/sources.json`).
+
 ## Sources and licences
 
 - World Bank: World Development Indicators and Worldwide Governance Indicators (CC BY 4.0).
 - International Monetary Fund: World Economic Outlook via DataMapper.
 - Geopolitical Monitor and RAND Corporation: headlines, short summaries and links from their public feeds. Full articles stay on the publishers' sites.
 - BBC News World and UN News: headlines, summaries and links from their official RSS feeds.
+- UN Meetings Coverage and Press Releases, and US Treasury OFAC Recent Actions: titles and links to the official texts.
+- ReliefWeb (UN OCHA): titles, short summaries and links to situation reports.
+- UCDP Georeferenced Event Dataset Candidate (CC BY 4.0). Cite Hegre et al. (2020), Research & Politics 7(3).
+- Federal Reserve Board H.10 and H.15 releases, and ECB euro foreign exchange reference rates (public data).
 - Boundaries: Natural Earth via world-atlas (public domain).

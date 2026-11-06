@@ -153,12 +153,20 @@
       .on('pointermove', (ev, f) => { const iso = isoByNumeric.get(f.id); if (iso) tip.show(ev, countryTip(iso)); else tip.hide(); })
       .on('pointerleave', () => tip.hide())
       .on('click', (ev, f) => { const iso = isoByNumeric.get(f.id); if (iso) selectCountry(iso); });
+    // conflict events (UCDP), sized by best estimate of deaths, coloured by type of violence
+    const EV = S.events?.status === 'ok' ? S.events.items : [];
+    const evR = d3.scaleSqrt([0, d3.max(EV, (e) => e.deaths) || 1], [1.6, 9]);
+    const evDots = g.append('g').attr('class', 'events').selectAll('circle').data(EV.filter((e) => proj([e.lon, e.lat]))).join('circle')
+      .attr('cx', (e) => proj([e.lon, e.lat])[0]).attr('cy', (e) => proj([e.lon, e.lat])[1]).attr('r', (e) => evR(e.deaths))
+      .style('fill', (e) => css(EV_TYPES[e.type]?.v ?? '--muted'))
+      .on('pointermove', (ev, e) => tip.show(ev, [{ head: true, text: `${e.place || e.country}, ${fmtDate(new Date(e.date))}` }, { text: `${EV_TYPES[e.type]?.label ?? 'Event'}: ${e.conflict}` }, { text: `Deaths, best estimate: ${fmtN(e.deaths)}` }]))
+      .on('pointerleave', () => tip.hide());
     const labels = g.append('g').selectAll('text').data(focusIsos).join('text').attr('class', 'lbl')
       .attr('text-anchor', 'middle').text(cname)
       .each(function (iso) { const p = path.centroid(featureFor(iso)); d3.select(this).attr('x', p[0]).attr('y', p[1]); });
 
     const zoom = d3.zoom().scaleExtent([1, 14]).translateExtent([[-W, -H], [2 * W, 2 * H]])
-      .on('zoom', (ev) => { g.attr('transform', ev.transform); labels.style('font-size', `${11 / ev.transform.k}px`).style('stroke-width', `${3 / ev.transform.k}px`); });
+      .on('zoom', (ev) => { g.attr('transform', ev.transform); evDots.attr('r', (e) => evR(e.deaths) / Math.sqrt(ev.transform.k)).style('stroke-width', `${0.8 / ev.transform.k}px`); labels.style('font-size', `${11 / ev.transform.k}px`).style('stroke-width', `${3 / ev.transform.k}px`); });
     svg.call(zoom);
     const zb = $('.zoombar', el);
     zb.querySelector('[data-z="in"]').onclick = () => svg.transition().duration(300).call(zoom.scaleBy, 1.6);
@@ -181,7 +189,15 @@
     const lo = document.createElement('span'); lo.textContent = 'Fewer';
     const hi = document.createElement('span'); hi.textContent = `More mentions (max ${fmtN(maxM)})`;
     lg.append(lo, ramp, hi);
+    const note = $('#ev-note'); note.replaceChildren();
+    if (EV.length) {
+      Object.values(EV_TYPES).forEach((t) => { const k = document.createElement('span'); k.className = 'evkey'; const i = document.createElement('i'); i.style.background = css(t.v); k.append(i, t.label); note.append(k); });
+      const r = S.events.range;
+      note.append(` Dots are UCDP conflict events from ${fmtDate(new Date(r.start))} to ${fmtDate(new Date(r.end))} (${fmtN(EV.length)} events), sized by the best estimate of deaths. Candidate data, released monthly, so the latest weeks may be missing. `);
+      const a = document.createElement('a'); a.href = S.events.link; a.target = '_blank'; a.rel = 'noopener'; a.textContent = `UCDP GED Candidate ${S.events.version}`; note.append(a, '.');
+    } else note.textContent = S.events?.status === 'failed' ? 'Conflict events from UCDP could not be loaded for this snapshot.' : 'Conflict events from UCDP will appear on this map once the UCDP data feed is set up.';
   }
+  const EV_TYPES = { 1: { v: '--t7', label: 'State-based conflict' }, 2: { v: '--t3', label: 'Non-state conflict' }, 3: { v: '--t6', label: 'One-sided violence' } };
 
   function selectCountry(iso) {
     d3.selectAll('#region-map .country').classed('sel', function () { return this.dataset.iso === iso; });
@@ -301,7 +317,8 @@
     });
   }
   function themeTag(id) { const s = document.createElement('span'); s.className = 'tag theme'; s.style.setProperty('--tc', themeColor(id)); s.textContent = themeById.get(id)?.label ?? id; return s; }
-  function kindTag(n) { const k = n.type === 'analysis' ? 'analysis' : 'news'; const s = document.createElement('span'); s.className = 'tag kind ' + k; s.textContent = k === 'analysis' ? 'Analysis' : 'News'; return s; }
+  const KINDS = { news: 'News', analysis: 'Analysis', official: 'Official', humanitarian: 'Humanitarian' };
+  function kindTag(n) { const k = KINDS[n.type] ? n.type : 'news'; const s = document.createElement('span'); s.className = 'tag kind ' + k; s.textContent = KINDS[k]; return s; }
   const shortLabel = (l) => (l.length > 22 ? l.split(/[ ,]/)[0] + '…' : l);
 
   // ---------- country context: theme indicators + stability trend ----------
@@ -389,6 +406,57 @@
     return span;
   }
 
+  // ---------- market signals ----------
+  function renderMarkets() {
+    const card = $('#markets'); const M = S.markets;
+    if (!M?.series?.length) { card.hidden = true; return; }
+    card.hidden = false;
+    const box = $('#mk-charts'); box.replaceChildren();
+    const ws = new Date(M.window.start), we = new Date(M.window.end);
+    const xStart = d3.min(M.series, (m) => new Date(m.values[0]?.date + 'T12:00:00Z'));
+    M.series.forEach((m) => {
+      const pts = m.values.map((v) => ({ d: new Date(v.date + 'T12:00:00Z'), v: v.value }));
+      if (pts.length < 2) return;
+      const last = pts.at(-1);
+      const before = d3.least(pts.filter((p) => p.d < ws), (p) => -p.d) ?? pts[0];
+      const stale = last.d < ws;
+      const pct = m.unit === '%' ? last.v - before.v : (last.v / before.v - 1) * 100;
+      const fmtV = m.unit === '%' ? (v) => d3.format('.2f')(v) + '%' : m.unit === 'index' ? d3.format('.1f') : (v) => (v >= 100 ? d3.format(',.0f')(v) : v >= 10 ? d3.format('.2f')(v) : d3.format('.4f')(v));
+      const fig = document.createElement('figure'); fig.className = 'mult';
+      const cap = document.createElement('figcaption');
+      const nm = document.createElement('span'); nm.textContent = m.label;
+      const vl = document.createElement('b'); vl.textContent = fmtV(last.v);
+      const ch = document.createElement('small'); ch.textContent = stale ? `latest ${fmtDate(last.d)}, before this period` : m.unit === '%' ? `${d3.format('+.2f')(pct)} pts this period` : `${d3.format('+.1f')(pct)}% this period`;
+      cap.append(nm, vl, ch);
+      if (m.isos?.length) { const w = document.createElement('small'); w.textContent = m.isos.map(cname).join(', '); cap.append(w); }
+      fig.append(cap); box.append(fig);
+      const W = fig.clientWidth || 260, H = 78, mg = { l: 4, r: 4, t: 8, b: 16 };
+      const x = d3.scaleUtc([xStart, we], [mg.l, W - mg.r]);
+      const y = d3.scaleLinear(d3.extent(pts, (p) => p.v), [H - mg.b, mg.t]).nice();
+      const svg = d3.select(fig).append('svg').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', `${m.label}, last six months`);
+      const x0 = Math.max(mg.l, x(ws)), x1 = Math.min(W - mg.r, x(we));
+      svg.append('rect').attr('x', x0).attr('width', Math.max(2, x1 - x0)).attr('y', mg.t).attr('height', H - mg.b - mg.t).attr('fill', css('--accent')).attr('fill-opacity', 0.14);
+      svg.append('line').attr('x1', mg.l).attr('x2', W - mg.r).attr('y1', H - mg.b).attr('y2', H - mg.b).attr('stroke', css('--axis'));
+      svg.append('g').selectAll('text').data([pts[0].d, we]).join('text').attr('x', x).attr('y', H - 3).attr('text-anchor', (v, i) => (i ? 'end' : 'start')).text(d3.utcFormat('%b %-d'));
+      svg.append('path').attr('d', d3.line().x((p) => x(p.d)).y((p) => y(p.v))(pts)).attr('fill', 'none').attr('stroke', css('--ink-2')).attr('stroke-width', 1.6).attr('stroke-linejoin', 'round');
+      svg.append('circle').attr('cx', x(last.d)).attr('cy', y(last.v)).attr('r', 3).attr('fill', css('--ink'));
+      const tip = tipFor(fig);
+      svg.append('rect').attr('x', 0).attr('y', 0).attr('width', W).attr('height', H).attr('fill', 'transparent')
+        .on('pointermove', (ev) => { const [px] = d3.pointer(ev); const p = d3.least(pts, (q) => Math.abs(x(q.d) - px)); tip.show(ev, [{ head: true, text: m.label }, { text: `${fmtDate(p.d)}: ${fmtV(p.v)}` }]); })
+        .on('pointerleave', () => tip.hide());
+    });
+    const missing = (M.no_rate ?? []).filter((i) => i !== 'USA');
+    $('#mk-note').textContent = `Daily values over the last six months. The shaded band is this snapshot's period, and the change beside each name runs from the last value before it to the latest.${missing.length ? ` No reference exchange rate is published for ${missing.map(cname).join(', ')}.` : ''}`;
+    const c = $('#mk-cite'); c.replaceChildren();
+    const groups = d3.groups(M.series, (m) => m.provider + '|' + m.dataset);
+    groups.forEach(([k, list], i) => {
+      if (i) c.append(document.createElement('br'));
+      const [prov, ds] = k.split('|');
+      c.append(`Source: ${prov}, ${ds} (${list.map((m) => m.column).join(', ')}). `);
+      const a = document.createElement('a'); a.href = list[0].link; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'Open dataset'; c.append(a, `. Retrieved ${fmtDate(new Date(S.generated_at))}.`);
+    });
+  }
+
   // ---------- (iii) news ----------
   let newsFilter = 'top';
   function renderNews() {
@@ -459,20 +527,20 @@
     S.sources.statuses.forEach((s) => {
       const tr = document.createElement('tr');
       const td = (content) => { const e = document.createElement('td'); if (content instanceof Node) e.append(content); else e.textContent = content; tr.append(e); return e; };
-      td(s.kind === 'indicator' ? s.name : sourceName(s.source));
-      td(s.kind === 'indicator' ? s.indicator : s.type === 'analysis' ? 'Analysis feed' : 'News feed');
-      const pill = document.createElement('span'); pill.className = 'pill ' + s.status; pill.textContent = s.status === 'ok' ? `Loaded (${d3.format(',')(s.items)})` : s.status === 'empty' ? 'No data' : 'Failed';
+      const viaName = s.kind === 'indicator' || s.kind === 'market' || s.kind === 'events';
+      td(viaName ? s.name : sourceName(s.source));
+      td(viaName ? s.indicator : `${KINDS[s.type] ?? 'News'} feed`);
+      const pill = document.createElement('span'); pill.className = 'pill ' + s.status; pill.textContent = s.status === 'ok' ? `Loaded (${d3.format(',')(s.items)})` : s.status === 'empty' ? 'No data' : s.status === 'skipped' ? 'Not set up' : 'Failed';
       const st = td(pill); if (s.error) { const sm = document.createElement('div'); sm.style.cssText = 'font-size:11px;color:var(--muted)'; sm.textContent = s.error; st.append(sm); }
-      const a = document.createElement('a'); a.href = s.url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = s.url?.replace(/^https?:\/\//, '').slice(0, 70) + (s.url?.length > 78 ? '…' : '');
-      td(a);
+      if (s.url) { const a = document.createElement('a'); a.href = s.url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = s.url.replace(/^https?:\/\//, '').slice(0, 70) + (s.url.length > 78 ? '…' : ''); td(a); } else td('—');
       td(fmtDate(new Date(s.retrieved_at)));
       tb.append(tr);
     });
     $('#method-text').textContent = S.method;
     const url = location.protocol.startsWith('http') ? location.href.split('#')[0] : '[URL]';
-    $('#cite-dashboard').textContent = `Geopolitical Dashboard. (${d3.utcFormat('%Y, %B %-d')(new Date(S.generated_at))}). Weekly snapshot ${S.week}: ${topTheme.label}. Compiled from ${[...new Set(S.sources.statuses.filter((s) => s.status === 'ok').map((s) => s.kind === 'indicator' ? s.name.split(',')[0] : sourceName(s.source)))].join(', ')}. ${url}`;
+    $('#cite-dashboard').textContent = `Geopolitical Dashboard. (${d3.utcFormat('%Y, %B %-d')(new Date(S.generated_at))}). Weekly snapshot ${S.week}: ${topTheme.label}. Compiled from ${[...new Set(S.sources.statuses.filter((s) => s.status === 'ok').map((s) => (s.kind === 'indicator' || s.kind === 'market' || s.kind === 'events') ? s.name.split(',')[0] : sourceName(s.source)))].join(', ')}. ${url}`;
     $('#cite-copy').onclick = (ev) => copyText(ev.currentTarget, $('#cite-dashboard').textContent);
-    const failed = S.sources.statuses.filter((s) => s.status !== 'ok');
+    const failed = S.sources.statuses.filter((s) => s.status !== 'ok' && s.status !== 'skipped');
     $('#src-note').textContent = failed.length ? `${failed.length} source request${failed.length > 1 ? 's' : ''} did not load this week; the dashboard shows everything else and marks what is missing.` : 'Every configured source loaded this week.';
   }
 
@@ -498,7 +566,7 @@
   }
 
   // ---------- boot ----------
-  function drawAll() { renderWorld(); renderRegion(); renderThemes(); renderTimeline(); renderContext(); }
+  function drawAll() { renderWorld(); renderRegion(); renderThemes(); renderTimeline(); renderContext(); renderMarkets(); }
   renderText(); setupExport(); drawAll(); renderTopCountries(); renderNews(); renderItemsPrint(); renderSources();
   if (S.focus[0]) selectCountry(S.focus[0].iso3);
   let lastW = innerWidth;
