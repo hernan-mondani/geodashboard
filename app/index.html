@@ -57,7 +57,6 @@
             <div class="zoombar"><button type="button" data-z="in" aria-label="Zoom in">+</button><button type="button" data-z="out" aria-label="Zoom out">−</button><button type="button" data-z="reset" aria-label="Reset view">⟲</button></div>
           </div>
           <div class="legend" id="region-legend"></div>
-          <p class="note ev-note" id="ev-note"></p>
           <div class="detail" id="country-detail"><p class="hint">Select a country on the map.</p></div>
         </div>
         <div class="card wide print-page" id="context">
@@ -112,7 +111,7 @@
     <div class="wrap">
       <h3 id="news-h" class="sec-title">Relevant news and analysis</h3>
       <div class="filters" id="news-filters" role="group" aria-label="Filter by theme"></div>
-      <div class="kinds"><span><span class="tag kind news">News</span> reporting of events</span> <span><span class="tag kind analysis">Analysis</span> commentary and research</span> <span><span class="tag kind official">Official</span> UN and government statements, sanctions notices</span> <span><span class="tag kind humanitarian">Humanitarian</span> situation reports</span></div>
+      <div class="kinds" id="news-kinds" role="group" aria-label="Filter by type of source"></div>
       <ul class="news" id="news-list"></ul>
     </div>
   </section>

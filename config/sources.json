@@ -1,5 +1,5 @@
 {
-  "_comment": "Edit this file to add, remove or swap data sources. A news feed is RSS, Atom or a Google News sitemap; give it as a URL, or as {url, type, url_contains, format}. type is news, analysis, official or humanitarian and sets the tag colour. format 'reliefweb-api' reads ReliefWeb situation reports (set appname, or the RELIEFWEB_APPNAME environment variable); format 'ofac-html' reads the US Treasury OFAC Recent Actions page. Set enabled:false to switch a source off without deleting it.",
+  "_comment": "Edit this file to add, remove or swap data sources. A news feed is RSS, Atom or a Google News sitemap; give it as a URL, or as {url, type, url_contains, format}. type is news, analysis or official and sets the tag colour. format 'ofac-html' reads the US Treasury OFAC Recent Actions page. Set enabled:false to switch a source off without deleting it.",
   "window_days": 7,
   "user_agent": "geo-dashboard/0.1 (academic research; weekly snapshot)",
   "news": [
@@ -79,23 +79,6 @@
         }
       ],
       "note": "Sanctions designations, removals and general licences.",
-      "enabled": true
-    },
-    {
-      "id": "reliefweb",
-      "name": "ReliefWeb situation reports",
-      "publisher": "ReliefWeb (UN OCHA)",
-      "homepage": "https://reliefweb.int/",
-      "type": "humanitarian",
-      "feeds": [
-        {
-          "url": "https://api.reliefweb.int/v2/reports",
-          "format": "reliefweb-api",
-          "appname": "",
-          "limit": 60
-        }
-      ],
-      "note": "English-language situation reports from UN agencies and NGOs, through the ReliefWeb API. Needs an approved appname from ReliefWeb (free); until then this source is skipped.",
       "enabled": true
     }
   ],
@@ -300,8 +283,61 @@
   ],
   "_comment_indicators": "Indicators without library:true are fetched every week. Those with library:true are fetched only when the week's top theme lists them in config/themes.json.",
   "markets": {
-    "_comment": "Market signals. fed = Federal Reserve Board Data Download Program packages (series column codes); ecb = ECB euro reference rates, converted to units per US dollar for the currencies of the countries in the region of interest.",
+    "_comment": "Market signals. eia = US Energy Information Administration daily spot prices (series code); fed = Federal Reserve Board Data Download Program packages (series column codes); ecb = ECB euro reference rates, converted to units per US dollar for the currencies of the countries in the region of interest. yahoo = Yahoo Finance chart data (unofficial endpoint, daily closes; requests are spaced out to respect its rate limit).",
     "days": 180,
+    "eia": [
+      {
+        "id": "brent",
+        "label": "Brent crude oil",
+        "unit": "US$",
+        "series": "RBRTE",
+        "note": "Europe Brent spot price FOB, dollars per barrel."
+      },
+      {
+        "id": "wti",
+        "label": "WTI crude oil",
+        "unit": "US$",
+        "series": "RWTC",
+        "note": "Cushing, OK WTI spot price FOB, dollars per barrel."
+      }
+    ],
+    "yahoo": [
+      {
+        "id": "gold",
+        "label": "Gold",
+        "unit": "US$",
+        "symbol": "GC=F",
+        "note": "COMEX gold futures, front month, dollars per troy ounce."
+      },
+      {
+        "id": "spx",
+        "label": "S&P 500 (New York)",
+        "unit": "index",
+        "symbol": "^GSPC",
+        "note": "US large caps listed on NYSE and Nasdaq."
+      },
+      {
+        "id": "sx5e",
+        "label": "Euro Stoxx 50 (euro area)",
+        "unit": "index",
+        "symbol": "^STOXX50E",
+        "note": "Blue chips of the euro area, largely Euronext and Xetra listings."
+      },
+      {
+        "id": "n225",
+        "label": "Nikkei 225 (Tokyo)",
+        "unit": "index",
+        "symbol": "^N225",
+        "note": "Tokyo Stock Exchange (Japan Exchange Group)."
+      },
+      {
+        "id": "sse",
+        "label": "Shanghai Composite",
+        "unit": "index",
+        "symbol": "000001.SS",
+        "note": "All shares listed on the Shanghai Stock Exchange."
+      }
+    ],
     "fed": [
       {
         "id": "usd_broad",
@@ -369,12 +405,5 @@
     "ecb_always": [
       "EUR"
     ]
-  },
-  "events": {
-    "_comment": "Conflict events from the UCDP Georeferenced Event Dataset (GED) Candidate, released monthly. Needs a free API token from UCDP, read from the UCDP_TOKEN environment variable (a GitHub Actions secret). Versions are tried newest first; leave versions empty to guess them from the date.",
-    "provider": "ucdp",
-    "versions": [],
-    "days": 90,
-    "enabled": true
   }
 }

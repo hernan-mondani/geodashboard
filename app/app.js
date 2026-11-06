@@ -153,20 +153,12 @@
       .on('pointermove', (ev, f) => { const iso = isoByNumeric.get(f.id); if (iso) tip.show(ev, countryTip(iso)); else tip.hide(); })
       .on('pointerleave', () => tip.hide())
       .on('click', (ev, f) => { const iso = isoByNumeric.get(f.id); if (iso) selectCountry(iso); });
-    // conflict events (UCDP), sized by best estimate of deaths, coloured by type of violence
-    const EV = S.events?.status === 'ok' ? S.events.items : [];
-    const evR = d3.scaleSqrt([0, d3.max(EV, (e) => e.deaths) || 1], [1.6, 9]);
-    const evDots = g.append('g').attr('class', 'events').selectAll('circle').data(EV.filter((e) => proj([e.lon, e.lat]))).join('circle')
-      .attr('cx', (e) => proj([e.lon, e.lat])[0]).attr('cy', (e) => proj([e.lon, e.lat])[1]).attr('r', (e) => evR(e.deaths))
-      .style('fill', (e) => css(EV_TYPES[e.type]?.v ?? '--muted'))
-      .on('pointermove', (ev, e) => tip.show(ev, [{ head: true, text: `${e.place || e.country}, ${fmtDate(new Date(e.date))}` }, { text: `${EV_TYPES[e.type]?.label ?? 'Event'}: ${e.conflict}` }, { text: `Deaths, best estimate: ${fmtN(e.deaths)}` }]))
-      .on('pointerleave', () => tip.hide());
     const labels = g.append('g').selectAll('text').data(focusIsos).join('text').attr('class', 'lbl')
       .attr('text-anchor', 'middle').text(cname)
       .each(function (iso) { const p = path.centroid(featureFor(iso)); d3.select(this).attr('x', p[0]).attr('y', p[1]); });
 
     const zoom = d3.zoom().scaleExtent([1, 14]).translateExtent([[-W, -H], [2 * W, 2 * H]])
-      .on('zoom', (ev) => { g.attr('transform', ev.transform); evDots.attr('r', (e) => evR(e.deaths) / Math.sqrt(ev.transform.k)).style('stroke-width', `${0.8 / ev.transform.k}px`); labels.style('font-size', `${11 / ev.transform.k}px`).style('stroke-width', `${3 / ev.transform.k}px`); });
+      .on('zoom', (ev) => { g.attr('transform', ev.transform); labels.style('font-size', `${11 / ev.transform.k}px`).style('stroke-width', `${3 / ev.transform.k}px`); });
     svg.call(zoom);
     const zb = $('.zoombar', el);
     zb.querySelector('[data-z="in"]').onclick = () => svg.transition().duration(300).call(zoom.scaleBy, 1.6);
@@ -189,15 +181,7 @@
     const lo = document.createElement('span'); lo.textContent = 'Fewer';
     const hi = document.createElement('span'); hi.textContent = `More mentions (max ${fmtN(maxM)})`;
     lg.append(lo, ramp, hi);
-    const note = $('#ev-note'); note.replaceChildren();
-    if (EV.length) {
-      Object.values(EV_TYPES).forEach((t) => { const k = document.createElement('span'); k.className = 'evkey'; const i = document.createElement('i'); i.style.background = css(t.v); k.append(i, t.label); note.append(k); });
-      const r = S.events.range;
-      note.append(` Dots are UCDP conflict events from ${fmtDate(new Date(r.start))} to ${fmtDate(new Date(r.end))} (${fmtN(EV.length)} events), sized by the best estimate of deaths. Candidate data, released monthly, so the latest weeks may be missing. `);
-      const a = document.createElement('a'); a.href = S.events.link; a.target = '_blank'; a.rel = 'noopener'; a.textContent = `UCDP GED Candidate ${S.events.version}`; note.append(a, '.');
-    } else note.textContent = S.events?.status === 'failed' ? 'Conflict events from UCDP could not be loaded for this snapshot.' : 'Conflict events from UCDP will appear on this map once the UCDP data feed is set up.';
   }
-  const EV_TYPES = { 1: { v: '--t7', label: 'State-based conflict' }, 2: { v: '--t3', label: 'Non-state conflict' }, 3: { v: '--t6', label: 'One-sided violence' } };
 
   function selectCountry(iso) {
     d3.selectAll('#region-map .country').classed('sel', function () { return this.dataset.iso === iso; });
@@ -317,7 +301,7 @@
     });
   }
   function themeTag(id) { const s = document.createElement('span'); s.className = 'tag theme'; s.style.setProperty('--tc', themeColor(id)); s.textContent = themeById.get(id)?.label ?? id; return s; }
-  const KINDS = { news: 'News', analysis: 'Analysis', official: 'Official', humanitarian: 'Humanitarian' };
+  const KINDS = { news: 'News', analysis: 'Analysis', official: 'Official' };
   function kindTag(n) { const k = KINDS[n.type] ? n.type : 'news'; const s = document.createElement('span'); s.className = 'tag kind ' + k; s.textContent = KINDS[k]; return s; }
   const shortLabel = (l) => (l.length > 22 ? l.split(/[ ,]/)[0] + '…' : l);
 
@@ -421,8 +405,8 @@
       const before = d3.least(pts.filter((p) => p.d < ws), (p) => -p.d) ?? pts[0];
       const stale = last.d < ws;
       const pct = m.unit === '%' ? last.v - before.v : (last.v / before.v - 1) * 100;
-      const fmtV = m.unit === '%' ? (v) => d3.format('.2f')(v) + '%' : m.unit === 'index' ? d3.format('.1f') : (v) => (v >= 100 ? d3.format(',.0f')(v) : v >= 10 ? d3.format('.2f')(v) : d3.format('.4f')(v));
-      const fig = document.createElement('figure'); fig.className = 'mult';
+      const fmtV = m.unit === 'US$' ? d3.format('$,.2f') : m.unit === '%' ? (v) => d3.format('.2f')(v) + '%' : m.unit === 'index' ? (v) => d3.format(v >= 1000 ? ',.0f' : '.1f')(v) : (v) => (v >= 100 ? d3.format(',.0f')(v) : v >= 10 ? d3.format('.2f')(v) : d3.format('.4f')(v));
+      const fig = document.createElement('figure'); fig.className = 'mult'; fig.dataset.id = m.id;
       const cap = document.createElement('figcaption');
       const nm = document.createElement('span'); nm.textContent = m.label;
       const vl = document.createElement('b'); vl.textContent = fmtV(last.v);
@@ -445,8 +429,21 @@
         .on('pointermove', (ev) => { const [px] = d3.pointer(ev); const p = d3.least(pts, (q) => Math.abs(x(q.d) - px)); tip.show(ev, [{ head: true, text: m.label }, { text: `${fmtDate(p.d)}: ${fmtV(p.v)}` }]); })
         .on('pointerleave', () => tip.hide());
     });
+    // placeholders for configured series that did not load this week, in their configured place
+    (M.missing ?? []).forEach((m) => {
+      const fig = document.createElement('figure'); fig.className = 'mult mk-missing';
+      const cap = document.createElement('figcaption');
+      const nm = document.createElement('span'); nm.textContent = m.label;
+      const w = document.createElement('small'); w.textContent = 'not available this week';
+      cap.append(nm, w); fig.append(cap);
+      const ph = document.createElement('div'); ph.className = 'ph'; ph.textContent = `${m.provider} did not return data (${m.column})`;
+      fig.append(ph);
+      const order = ['brent', 'wti', 'gold', 'spx', 'sx5e', 'n225', 'sse'];
+      const after = [...box.children].find((f) => order.indexOf(f.dataset.id) > order.indexOf(m.id));
+      fig.dataset.id = m.id; box.insertBefore(fig, after ?? null);
+    });
     const missing = (M.no_rate ?? []).filter((i) => i !== 'USA');
-    $('#mk-note').textContent = `Daily values over the last six months. The shaded band is this snapshot's period, and the change beside each name runs from the last value before it to the latest.${missing.length ? ` No reference exchange rate is published for ${missing.map(cname).join(', ')}.` : ''}`;
+    $('#mk-note').textContent = `Daily closes over the last six months: oil and gold, four leading stock indexes, the US dollar and Treasury yield, and the region's currencies. The shaded band is this snapshot's period, and the change beside each name runs from the last value before it to the latest.${missing.length ? ` No reference exchange rate is published for ${missing.map(cname).join(', ')}.` : ''}`;
     const c = $('#mk-cite'); c.replaceChildren();
     const groups = d3.groups(M.series, (m) => m.provider + '|' + m.dataset);
     groups.forEach(([k, list], i) => {
@@ -458,7 +455,7 @@
   }
 
   // ---------- (iii) news ----------
-  let newsFilter = 'top';
+  let newsFilter = 'top', newsKind = 'all';
   function renderNews() {
     const bar = $('#news-filters'); bar.replaceChildren();
     const opts = [...S.themes.filter((t) => t.items > 0).map((t) => [t.id === S.top_theme ? 'top' : t.id, t.label, t.items, t.id]), ['all', 'All items', S.news.length, null]];
@@ -471,9 +468,25 @@
       bar.append(b);
     });
     const want = newsFilter === 'top' ? S.top_theme : newsFilter;
-    const list = S.news.filter((n) => want === 'all' || n.themes.includes(want));
+    const byTheme = S.news.filter((n) => want === 'all' || n.themes.includes(want));
+    // type filter: click a tag to show only that type, click again (or All types) to clear
+    const kb = $('#news-kinds'); kb.replaceChildren();
+    const lab = document.createElement('span'); lab.className = 'klab'; lab.textContent = 'Type:'; kb.append(lab);
+    [['all', 'All types', ''], ['news', 'News', 'reporting of events'], ['analysis', 'Analysis', 'commentary and research'], ['official', 'Official', 'UN and government statements, sanctions notices']].forEach(([k, label, desc]) => {
+      const n = k === 'all' ? byTheme.length : byTheme.filter((x) => (KINDS[x.type] ? x.type : 'news') === k).length;
+      if (k !== 'all' && !S.news.some((x) => x.type === k)) return;
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'kbtn';
+      b.setAttribute('aria-pressed', String(newsKind === k));
+      const t = document.createElement('span'); t.className = k === 'all' ? 'tag' : 'tag kind ' + k; t.textContent = label;
+      const c = document.createElement('span'); c.className = 'n'; c.textContent = n;
+      b.append(t, c); if (desc) { const d = document.createElement('span'); d.className = 'desc'; d.textContent = desc; b.append(d); }
+      b.disabled = k !== 'all' && n === 0 && newsKind !== k;
+      b.onclick = () => { newsKind = newsKind === k ? 'all' : k; renderNews(); };
+      kb.append(b);
+    });
+    const list = byTheme.filter((n) => newsKind === 'all' || (KINDS[n.type] ? n.type : 'news') === newsKind);
     const ul = $('#news-list'); ul.replaceChildren();
-    if (!list.length) { const li = document.createElement('li'); li.className = 'empty'; li.textContent = 'No items for this theme in the snapshot.'; ul.append(li); }
+    if (!list.length) { const li = document.createElement('li'); li.className = 'empty'; li.textContent = newsKind === 'all' ? 'No items for this theme in the snapshot.' : `No ${KINDS[newsKind].toLowerCase()} items for this theme in the snapshot.`; ul.append(li); }
     list.forEach((n) => {
       const li = document.createElement('li');
       const meta = document.createElement('div'); meta.className = 'meta';

@@ -28,9 +28,6 @@ jobs:
         run: npm install --no-save playwright@1.48.2 && npx playwright install --with-deps chromium
       - name: Take this week's snapshot
         run: node scripts/snapshot.mjs
-        env:
-          UCDP_TOKEN: ${{ secrets.UCDP_TOKEN }}
-          RELIEFWEB_APPNAME: ${{ vars.RELIEFWEB_APPNAME }}
       - name: Build pages and PDF
         run: node scripts/build.mjs --pdf
       - name: Keep the snapshot in the repository

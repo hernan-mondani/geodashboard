@@ -110,22 +110,6 @@ function parseFeed(body) {
   throw new Error('Not an RSS, Atom or news sitemap feed');
 }
 
-// ReliefWeb API v2: English situation reports, newest first. Automated access needs an approved appname.
-async function fetchReliefweb(f) {
-  const app = f.appname || process.env.RELIEFWEB_APPNAME;
-  if (!app) { const e = new Error('No ReliefWeb appname set'); e.skipped = true; throw e; }
-  const q = new URLSearchParams({ appname: app, preset: 'latest', limit: String(f.limit ?? 60) });
-  q.append('filter[operator]', 'AND');
-  q.append('filter[conditions][0][field]', 'language.code'); q.append('filter[conditions][0][value]', 'en');
-  q.append('filter[conditions][1][field]', 'format.name'); q.append('filter[conditions][1][value]', 'Situation Report');
-  for (const fl of ['title', 'url_alias', 'date.created', 'source.shortname', 'country.name', 'body']) q.append('fields[include][]', fl);
-  const body = await get(`${f.url}?${q}`, { json: true });
-  return (body.data ?? []).map((d) => {
-    const x = d.fields ?? {};
-    return { title: stripHtml(x.title), link: x.url_alias || `https://reliefweb.int/node/${d.id}`, date: new Date(x.date?.created), summary: stripHtml(x.body ?? '').slice(0, 400), tags: arr(x.country).map((c) => c.name), author: arr(x.source).map((s) => s.shortname).join(', ') };
-  });
-}
-
 // US Treasury OFAC "Recent Actions" page: one link per day, /recent-actions/YYYYMMDD, titled with that day's actions
 function parseOfac(body, base) {
   const out = [];
@@ -145,7 +129,7 @@ for (const src of sources.news.filter((s) => s.enabled !== false)) {
     const url = f.url, type = f.type ?? src.type ?? 'news';
     const st = { source: src.id, name: src.name, kind: 'news feed', type, url, retrieved_at: new Date().toISOString() };
     try {
-      const parsed = (f.format === 'reliefweb-api' ? await fetchReliefweb(f) : f.format === 'ofac-html' ? parseOfac(await get(url), url) : parseFeed(await get(url))).filter((p) => !f.url_contains || p.link.includes(f.url_contains));
+      const parsed = (f.format === 'ofac-html' ? parseOfac(await get(url), url) : parseFeed(await get(url))).filter((p) => !f.url_contains || p.link.includes(f.url_contains));
       st.status = 'ok'; st.items = parsed.length;
       items.push(...parsed.map((p) => ({ ...p, type, source: src.id, publisher: src.publisher })));
     } catch (e) {
@@ -271,6 +255,63 @@ const mk = sources.markets;
 if (mk) {
   const since = new Date(now - (mk.days ?? 180) * 86400000).toISOString().slice(0, 10);
   const until = now.toISOString().slice(0, 10);
+  // US EIA daily spot prices: an HTML table with one row per week ("2026 Nov- 2 to Nov- 6") and a cell per weekday
+  for (const s of mk.eia ?? []) {
+    const url = `https://www.eia.gov/dnav/pet/hist/${s.series}D.htm`;
+    const st = { source: 'eia', name: 'US Energy Information Administration', kind: 'market', indicator: s.series, url, retrieved_at: new Date().toISOString() };
+    try {
+      const html = await get(url);
+      const values = [];
+      for (const row of html.matchAll(/<td class='B6'>(?:&nbsp;)*\s*(\d{4}) (\w{3})-\s*(\d+) to [^<]*<\/td>((?:\s*<td class='B3'>[^<]*<\/td>){5})/g)) {
+        const start = new Date(`${row[2]} ${row[3]}, ${row[1]} 12:00 UTC`);
+        [...row[4].matchAll(/<td class='B3'>([^<]*)<\/td>/g)].forEach((c, i) => {
+          const v = parseFloat(c[1]); const d = new Date(start.getTime() + i * 86400000).toISOString().slice(0, 10);
+          if (Number.isFinite(v) && d >= since) values.push({ date: d, value: v });
+        });
+      }
+      if (!values.length) throw new Error('No prices found on the page');
+      markets.series.push({ ...s, provider: 'US Energy Information Administration', dataset: 'Spot Prices for Crude Oil and Petroleum Products', release: 'EIA', column: s.series, link: url, values });
+      st.status = 'ok'; st.items = values.length;
+    } catch (e) { st.status = 'failed'; st.error = String(e.message || e); (markets.missing ??= []).push({ id: s.id, label: s.label, provider: 'US Energy Information Administration', column: s.series, reason: st.error }); }
+    statuses.push(st);
+    console.log(`${st.status.padEnd(6)} eia ${s.series}${st.error ? ' — ' + st.error : ` (${st.items} days)`}`);
+  }
+  // Yahoo Finance (unofficial): one batched "spark" request for every symbol, so the rate limit is hit once,
+  // with a retry after a pause. Symbols missing from the batch fall back to one chart request each.
+  const ySeries = mk.yahoo ?? [];
+  if (ySeries.length) {
+    const yget = async (url) => {
+      for (let k = 0; ; k++) {
+        try { return await get(url, { json: true, tries: 1 }); }
+        catch (e) { if (!/429/.test(e.message) || k >= 3) throw e; await sleep(20000 * (k + 1)); }
+      }
+    };
+    const toValues = (ts, close) => (ts ?? []).map((t, j) => ({ date: new Date(t * 1000).toISOString().slice(0, 10), value: close?.[j] })).filter((v) => Number.isFinite(v.value) && v.date >= since);
+    const got = {};
+    const sparkUrl = `https://query1.finance.yahoo.com/v7/finance/spark?symbols=${ySeries.map((s) => encodeURIComponent(s.symbol)).join(',')}&range=6mo&interval=1d`;
+    try {
+      const body = await yget(sparkUrl);
+      for (const r of body?.spark?.result ?? []) { const x = r.response?.[0]; if (x) got[r.symbol] = { values: toValues(x.timestamp, x.indicators?.quote?.[0]?.close), currency: x.meta?.currency }; }
+    } catch (e) { console.log(`failed yahoo spark — ${e.message}`); }
+    for (const s of ySeries) {
+      const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(s.symbol)}?range=6mo&interval=1d`;
+      const st = { source: 'yahoo', name: 'Yahoo Finance', kind: 'market', indicator: s.symbol, url: got[s.symbol] ? sparkUrl : url, retrieved_at: new Date().toISOString() };
+      try {
+        if (!got[s.symbol]?.values?.length) {
+          await sleep(5000);
+          const r = (await yget(url))?.chart?.result?.[0];
+          if (!r) throw new Error('No data returned');
+          got[s.symbol] = { values: toValues(r.timestamp, r.indicators?.quote?.[0]?.close), currency: r.meta?.currency };
+        }
+        const { values, currency } = got[s.symbol];
+        if (!values.length) throw new Error('No closing prices');
+        markets.series.push({ ...s, currency, provider: 'Yahoo Finance', dataset: 'Daily closing prices', release: 'Yahoo', column: s.symbol, link: `https://finance.yahoo.com/quote/${encodeURIComponent(s.symbol)}/history/`, values });
+        st.status = 'ok'; st.items = values.length;
+      } catch (e) { st.status = 'failed'; st.error = String(e.message || e); (markets.missing ??= []).push({ id: s.id, label: s.label, provider: 'Yahoo Finance', column: s.symbol, reason: st.error }); }
+      statuses.push(st);
+      console.log(`${st.status.padEnd(6)} yahoo ${s.symbol}${st.error ? ' — ' + st.error : ` (${st.items} days)`}`);
+    }
+  }
   // Federal Reserve Board Data Download Program: CSV with five label rows, then date,value,... per day ("ND" = no data)
   const fedByPkg = {};
   for (const s of mk.fed ?? []) (fedByPkg[`${s.release}|${s.package}`] ??= []).push(s);
@@ -324,47 +365,6 @@ if (mk) {
 }
 function r_ok(v) { return Number.isFinite(v) && v > 0; }
 
-// ---------- conflict events (UCDP GED Candidate) ----------
-const events = { provider: 'UCDP', status: 'not_configured', items: [] };
-const ev = sources.events;
-if (ev?.enabled !== false && ev?.provider === 'ucdp') {
-  const token = process.env.UCDP_TOKEN;
-  // Candidate releases are named <yy>.0.<month>; try the configured ones, else the last five months
-  const guess = [];
-  for (let k = 0; k < 5; k++) { const d = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() - k, 1)); guess.push(`${String(d.getUTCFullYear()).slice(2)}.0.${d.getUTCMonth() + 1}`); }
-  const versions = ev.versions?.length ? ev.versions : guess;
-  const start = new Date(now - (ev.days ?? 90) * 86400000).toISOString().slice(0, 10);
-  const st = { source: 'ucdp', name: 'Uppsala Conflict Data Program', kind: 'events', indicator: 'GED Candidate', retrieved_at: new Date().toISOString() };
-  if (!token) { st.status = 'skipped'; st.error = 'No UCDP_TOKEN set'; }
-  else {
-    for (const v of versions) {
-      let url = `https://ucdpapi.pcr.uu.se/api/gedevents/${v}?pagesize=1000&StartDate=${start}&EndDate=${now.toISOString().slice(0, 10)}`;
-      st.url = url;
-      try {
-        const rows = [];
-        for (let page = 0; url && page < 20; page++) {
-          const res = await fetch(url, { headers: { 'User-Agent': UA, Accept: 'application/json', 'x-ucdp-access-token': token }, signal: AbortSignal.timeout(60000) });
-          if (!res.ok) throw new Error(`HTTP ${res.status}`);
-          const body = await res.json();
-          rows.push(...(body.Result ?? []));
-          url = body.NextPageUrl || null;
-        }
-        events.version = v;
-        events.items = rows.map((r) => ({ id: r.id, date: String(r.date_start).slice(0, 10), end: String(r.date_end).slice(0, 10), lat: +r.latitude, lon: +r.longitude, iso3: nameToIso.get(String(r.country).replace(/\s*\(.*\)$/, ''))?.[0] ?? countries.getAlpha3Code(String(r.country), 'en') ?? null, country: r.country, type: +r.type_of_violence, deaths: +r.best || 0, conflict: r.conflict_name, place: r.where_coordinates })).filter((e) => Number.isFinite(e.lat) && Number.isFinite(e.lon));
-        events.status = 'ok';
-        events.link = 'https://ucdp.uu.se/downloads/#candidate';
-        events.citation = `Hegre, Håvard, Mihai Croicu, Kristine Eck, and Stina Högbladh (2020). Introducing the UCDP Candidate Events Dataset. Research & Politics 7(3). Uppsala Conflict Data Program, GED Candidate version ${v}.`;
-        st.status = rows.length ? 'ok' : 'empty'; st.items = rows.length;
-        break;
-      } catch (e) { st.status = 'failed'; st.error = `${v}: ${e.message || e}`; }
-    }
-  }
-  events.status = events.status === 'ok' ? 'ok' : (st.status === 'skipped' ? 'not_configured' : 'failed');
-  events.range = { start, end: now.toISOString().slice(0, 10) };
-  statuses.push(st);
-  console.log(`${(st.status ?? '').padEnd(6)} ucdp GED${st.error ? ' — ' + st.error : ` (${st.items} events, v${events.version})`}`);
-}
-
 // ---------- write ----------
 const countryName = (iso3) => ({ PSE: 'Palestinian territories', TWN: 'Taiwan', RUS: 'Russia', IRN: 'Iran', KOR: 'South Korea', PRK: 'North Korea', USA: 'United States', GBR: 'United Kingdom', SYR: 'Syria', VNM: 'Vietnam', CHN: 'China', BOL: 'Bolivia', VEN: 'Venezuela', TZA: 'Tanzania', LAO: 'Laos', MDA: 'Moldova', COD: 'DR Congo', COG: 'Republic of the Congo' }[iso3] ?? countries.getName(iso3, 'en') ?? iso3);
 const countryInfo = Object.fromEntries([...new Set([...Object.keys(allCountries), ...focusIsos])].map((iso3) => [iso3, { name: countryName(iso3), numeric: countries.alpha3ToNumeric(iso3) }]));
@@ -375,7 +375,7 @@ const snapshot = {
   week,
   generated_at: new Date().toISOString(),
   window: { start: windowStart.toISOString(), end: now.toISOString(), days: windowDays, widened: windowDays !== (sources.window_days ?? 7) },
-  method: 'Themes are counted from the titles, summaries and tags of the news, analysis, official and humanitarian items published in the window, using the keyword lists in config/themes.json. Countries are matched by name and by the aliases in config/places.json. The region of interest is the set of countries most often named in items about the most prevalent theme. Ties between themes are broken by the number of distinct sources covering them, then by how many country mentions they carry.',
+  method: 'Themes are counted from the titles, summaries and tags of the news, analysis and official items published in the window, using the keyword lists in config/themes.json. Countries are matched by name and by the aliases in config/places.json. The region of interest is the set of countries most often named in items about the most prevalent theme. Ties between themes are broken by the number of distinct sources covering them, then by how many country mentions they carry.',
   totals: { items: weekItems.length, sources: [...new Set(weekItems.map((i) => i.source))].length },
   top_theme: top.id,
   themes: themeStats,
@@ -388,7 +388,6 @@ const snapshot = {
   news: weekItems.sort((a, b) => b.date - a.date).map((it) => ({ type: it.type, title: it.title, link: it.link, date: it.date.toISOString(), source: it.source, publisher: it.publisher, author: it.author, summary: it.summary.slice(0, 320), tags: it.tags.slice(0, 6), themes: it.themes, countries: it.countries })),
   indicators,
   markets,
-  events,
   sources: { config: sources.news.map(({ id, name, publisher, homepage, note, enabled }) => ({ id, name, publisher, homepage, note, enabled })), statuses },
 };
 
