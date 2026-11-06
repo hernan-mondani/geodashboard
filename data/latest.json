@@ -1,17 +1,17 @@
 {
  "schema": 1,
  "week": "2026-W45",
- "generated_at": "2026-11-06T21:15:35.234Z",
+ "generated_at": "2026-11-06T21:29:39.688Z",
  "window": {
-  "start": "2026-10-30T21:15:26.236Z",
-  "end": "2026-11-06T21:15:26.236Z",
+  "start": "2026-10-30T21:29:34.233Z",
+  "end": "2026-11-06T21:29:34.233Z",
   "days": 7,
   "widened": false
  },
- "method": "Themes are counted from the titles, summaries and tags of news and analysis items published in the window, using the keyword lists in config/themes.json. Countries are matched by name and by the aliases in config/places.json. The region of interest is the set of countries most often named in items about the most prevalent theme.",
+ "method": "Themes are counted from the titles, summaries and tags of news and analysis items published in the window, using the keyword lists in config/themes.json. Countries are matched by name and by the aliases in config/places.json. The region of interest is the set of countries most often named in items about the most prevalent theme. Ties between themes are broken by the number of distinct sources covering them, then by how many country mentions they carry.",
  "totals": {
-  "items": 12,
-  "sources": 2
+  "items": 67,
+  "sources": 4
  },
  "top_theme": "russia-ukraine",
  "themes": [
@@ -29,12 +29,12 @@
     "ukraine war",
     "black sea"
    ],
-   "items": 5,
-   "share": 0.4166666666666667,
+   "items": 7,
+   "share": 0.1044776119402985,
    "byCountry": {
     "CHN": 1,
-    "RUS": 4,
-    "UKR": 4.5,
+    "RUS": 6,
+    "UKR": 6.5,
     "TUR": 0.5,
     "ROU": 0.5,
     "BGR": 0.5,
@@ -58,14 +58,15 @@
    "byDay": {
     "2026-10-31": 0,
     "2026-11-01": 0,
-    "2026-11-02": 2,
-    "2026-11-03": 0,
+    "2026-11-02": 3,
+    "2026-11-03": 1,
     "2026-11-04": 1,
     "2026-11-05": 2,
     "2026-11-06": 0
    },
    "bySource": {
-    "geopolitical-monitor": 5
+    "geopolitical-monitor": 5,
+    "un-news": 2
    }
   },
   {
@@ -84,8 +85,8 @@
     "rare earths",
     "energy"
    ],
-   "items": 4,
-   "share": 0.3333333333333333,
+   "items": 7,
+   "share": 0.1044776119402985,
    "byCountry": {
     "BFA": 2,
     "GIN": 1,
@@ -98,22 +99,202 @@
     "CIV": 0.5,
     "SEN": 0.5,
     "USA": 1,
-    "IRN": 2,
+    "IRN": 2.5,
     "UKR": 2,
     "DZA": 1,
-    "CAN": 1
+    "CAN": 1,
+    "OMN": 0.5,
+    "ARE": 0.5
    },
    "byDay": {
     "2026-10-31": 0,
     "2026-11-01": 0,
     "2026-11-02": 2,
     "2026-11-03": 1,
+    "2026-11-04": 2,
+    "2026-11-05": 0,
+    "2026-11-06": 2
+   },
+   "bySource": {
+    "geopolitical-monitor": 4,
+    "un-news": 3
+   }
+  },
+  {
+   "id": "israel-gaza",
+   "idx": 2,
+   "label": "Israel, Gaza and the Levant",
+   "keywords": [
+    "israel",
+    "israeli",
+    "gaza",
+    "hamas",
+    "hezbollah",
+    "lebanon",
+    "netanyahu",
+    "west bank",
+    "houthi",
+    "houthis",
+    "yemen"
+   ],
+   "items": 7,
+   "share": 0.1044776119402985,
+   "byCountry": {
+    "ISR": 1,
+    "USA": 1,
+    "NPL": 1,
+    "ESP": 1,
+    "YEM": 4,
+    "KOR": 1,
+    "LBN": 1,
+    "ESH": 2,
+    "PSE": 1,
+    "AFG": 1,
+    "IRN": 1
+   },
+   "byDay": {
+    "2026-10-31": 1,
+    "2026-11-01": 0,
+    "2026-11-02": 1,
+    "2026-11-03": 1,
+    "2026-11-04": 2,
+    "2026-11-05": 1,
+    "2026-11-06": 1
+   },
+   "bySource": {
+    "bbc-world": 1,
+    "un-news": 6
+   }
+  },
+  {
+   "id": "elections-governance",
+   "idx": 11,
+   "label": "Elections and governance",
+   "keywords": [
+    "election",
+    "elections",
+    "vote",
+    "referendum",
+    "coup",
+    "protest",
+    "protests",
+    "independence"
+   ],
+   "items": 6,
+   "share": 0.08955223880597014,
+   "byCountry": {
+    "CHN": 1,
+    "TWN": 1,
+    "USA": 2,
+    "SOM": 1
+   },
+   "byDay": {
+    "2026-10-31": 0,
+    "2026-11-01": 0,
+    "2026-11-02": 0,
+    "2026-11-03": 0,
     "2026-11-04": 0,
+    "2026-11-05": 0,
+    "2026-11-06": 6
+   },
+   "bySource": {
+    "geopolitical-monitor": 1,
+    "bbc-world": 5
+   }
+  },
+  {
+   "id": "iran",
+   "idx": 1,
+   "label": "Iran conflict",
+   "keywords": [
+    "iran",
+    "iranian",
+    "tehran",
+    "hormuz",
+    "iran war",
+    "irgc"
+   ],
+   "items": 5,
+   "share": 0.07462686567164178,
+   "byCountry": {
+    "IRN": 4.5,
+    "RUS": 1,
+    "UKR": 2,
+    "DZA": 1,
+    "CAN": 1,
+    "NER": 1,
+    "MLI": 0.5,
+    "BFA": 0.5,
+    "TCD": 0.5,
+    "MRT": 0.5,
+    "OMN": 0.5,
+    "ARE": 0.5,
+    "AFG": 1,
+    "ESH": 1,
+    "YEM": 1
+   },
+   "byDay": {
+    "2026-10-31": 0,
+    "2026-11-01": 0,
+    "2026-11-02": 3,
+    "2026-11-03": 0,
+    "2026-11-04": 1,
     "2026-11-05": 0,
     "2026-11-06": 1
    },
    "bySource": {
-    "geopolitical-monitor": 4
+    "geopolitical-monitor": 2,
+    "bbc-world": 1,
+    "un-news": 2
+   }
+  },
+  {
+   "id": "sahel-africa",
+   "idx": 5,
+   "label": "Sahel and African security",
+   "keywords": [
+    "sahel",
+    "mali",
+    "burkina faso",
+    "niger",
+    "wagner",
+    "wagner group",
+    "africa corps",
+    "sudan",
+    "west africa"
+   ],
+   "items": 5,
+   "share": 0.07462686567164178,
+   "byCountry": {
+    "BFA": 2,
+    "GIN": 1,
+    "MLI": 2.5,
+    "RUS": 2,
+    "NER": 2.5,
+    "TCD": 1.5,
+    "MRT": 1.5,
+    "GHA": 0.5,
+    "CIV": 0.5,
+    "SEN": 0.5,
+    "USA": 1,
+    "DZA": 1,
+    "CAN": 1,
+    "IRN": 1,
+    "UKR": 1,
+    "SDN": 2
+   },
+   "byDay": {
+    "2026-10-31": 0,
+    "2026-11-01": 0,
+    "2026-11-02": 1,
+    "2026-11-03": 2,
+    "2026-11-04": 0,
+    "2026-11-05": 0,
+    "2026-11-06": 2
+   },
+   "bySource": {
+    "geopolitical-monitor": 3,
+    "un-news": 2
    }
   },
   {
@@ -130,7 +311,7 @@
     "shadow fleet"
    ],
    "items": 4,
-   "share": 0.3333333333333333,
+   "share": 0.05970149253731343,
    "byCountry": {
     "RUS": 4,
     "UKR": 3,
@@ -156,6 +337,38 @@
    }
   },
   {
+   "id": "tech-security",
+   "idx": 10,
+   "label": "AI, cyber and biosecurity",
+   "keywords": [
+    "AI",
+    "artificial intelligence",
+    "cyber",
+    "cyberattack",
+    "biosecurity",
+    "semiconductor",
+    "semiconductors"
+   ],
+   "items": 3,
+   "share": 0.04477611940298507,
+   "byCountry": {
+    "USA": 1
+   },
+   "byDay": {
+    "2026-10-31": 0,
+    "2026-11-01": 0,
+    "2026-11-02": 0,
+    "2026-11-03": 0,
+    "2026-11-04": 1,
+    "2026-11-05": 0,
+    "2026-11-06": 2
+   },
+   "bySource": {
+    "rand": 1,
+    "bbc-world": 2
+   }
+  },
+  {
    "id": "defense",
    "idx": 9,
    "label": "Defense spending and arms",
@@ -172,7 +385,7 @@
     "shipbuilding"
    ],
    "items": 3,
-   "share": 0.25,
+   "share": 0.04477611940298507,
    "byCountry": {
     "IND": 1,
     "PAK": 1,
@@ -202,53 +415,6 @@
    }
   },
   {
-   "id": "sahel-africa",
-   "idx": 5,
-   "label": "Sahel and African security",
-   "keywords": [
-    "sahel",
-    "mali",
-    "burkina faso",
-    "niger",
-    "wagner",
-    "wagner group",
-    "africa corps",
-    "sudan",
-    "west africa"
-   ],
-   "items": 3,
-   "share": 0.25,
-   "byCountry": {
-    "BFA": 2,
-    "GIN": 1,
-    "MLI": 2.5,
-    "RUS": 2,
-    "NER": 2.5,
-    "TCD": 1.5,
-    "MRT": 1.5,
-    "GHA": 0.5,
-    "CIV": 0.5,
-    "SEN": 0.5,
-    "USA": 1,
-    "DZA": 1,
-    "CAN": 1,
-    "IRN": 1,
-    "UKR": 1
-   },
-   "byDay": {
-    "2026-10-31": 0,
-    "2026-11-01": 0,
-    "2026-11-02": 1,
-    "2026-11-03": 1,
-    "2026-11-04": 0,
-    "2026-11-05": 0,
-    "2026-11-06": 1
-   },
-   "bySource": {
-    "geopolitical-monitor": 3
-   }
-  },
-  {
    "id": "sanctions-trade",
    "idx": 7,
    "label": "Sanctions, trade and economic statecraft",
@@ -263,7 +429,7 @@
     "russia sanctions"
    ],
    "items": 3,
-   "share": 0.25,
+   "share": 0.04477611940298507,
    "byCountry": {
     "BFA": 1,
     "GIN": 1,
@@ -292,45 +458,6 @@
    }
   },
   {
-   "id": "iran",
-   "idx": 1,
-   "label": "Iran conflict",
-   "keywords": [
-    "iran",
-    "iranian",
-    "tehran",
-    "hormuz",
-    "iran war",
-    "irgc"
-   ],
-   "items": 2,
-   "share": 0.16666666666666666,
-   "byCountry": {
-    "IRN": 2,
-    "RUS": 1,
-    "UKR": 2,
-    "DZA": 1,
-    "CAN": 1,
-    "NER": 1,
-    "MLI": 0.5,
-    "BFA": 0.5,
-    "TCD": 0.5,
-    "MRT": 0.5
-   },
-   "byDay": {
-    "2026-10-31": 0,
-    "2026-11-01": 0,
-    "2026-11-02": 2,
-    "2026-11-03": 0,
-    "2026-11-04": 0,
-    "2026-11-05": 0,
-    "2026-11-06": 0
-   },
-   "bySource": {
-    "geopolitical-monitor": 2
-   }
-  },
-  {
    "id": "us-china",
    "idx": 3,
    "label": "US–China rivalry and Taiwan",
@@ -345,7 +472,7 @@
     "indo-pacific"
    ],
    "items": 2,
-   "share": 0.16666666666666666,
+   "share": 0.029850746268656716,
    "byCountry": {
     "CHN": 2,
     "TWN": 1,
@@ -378,69 +505,6 @@
    }
   },
   {
-   "id": "tech-security",
-   "idx": 10,
-   "label": "AI, cyber and biosecurity",
-   "keywords": [
-    "AI",
-    "artificial intelligence",
-    "cyber",
-    "cyberattack",
-    "biosecurity",
-    "semiconductor",
-    "semiconductors"
-   ],
-   "items": 1,
-   "share": 0.08333333333333333,
-   "byCountry": {},
-   "byDay": {
-    "2026-10-31": 0,
-    "2026-11-01": 0,
-    "2026-11-02": 0,
-    "2026-11-03": 0,
-    "2026-11-04": 1,
-    "2026-11-05": 0,
-    "2026-11-06": 0
-   },
-   "bySource": {
-    "rand": 1
-   }
-  },
-  {
-   "id": "elections-governance",
-   "idx": 11,
-   "label": "Elections and governance",
-   "keywords": [
-    "election",
-    "elections",
-    "vote",
-    "referendum",
-    "coup",
-    "protest",
-    "protests",
-    "independence"
-   ],
-   "items": 1,
-   "share": 0.08333333333333333,
-   "byCountry": {
-    "CHN": 1,
-    "TWN": 1,
-    "USA": 1
-   },
-   "byDay": {
-    "2026-10-31": 0,
-    "2026-11-01": 0,
-    "2026-11-02": 0,
-    "2026-11-03": 0,
-    "2026-11-04": 0,
-    "2026-11-05": 0,
-    "2026-11-06": 1
-   },
-   "bySource": {
-    "geopolitical-monitor": 1
-   }
-  },
-  {
    "id": "south-asia",
    "idx": 6,
    "label": "India–Pakistan tensions",
@@ -451,7 +515,7 @@
     "sindoor"
    ],
    "items": 1,
-   "share": 0.08333333333333333,
+   "share": 0.014925373134328358,
    "byCountry": {
     "IND": 1,
     "PAK": 1
@@ -468,52 +532,37 @@
    "bySource": {
     "geopolitical-monitor": 1
    }
-  },
-  {
-   "id": "israel-gaza",
-   "idx": 2,
-   "label": "Israel, Gaza and the Levant",
-   "keywords": [
-    "israel",
-    "israeli",
-    "gaza",
-    "hamas",
-    "hezbollah",
-    "lebanon",
-    "netanyahu",
-    "west bank",
-    "houthi",
-    "houthis",
-    "yemen"
-   ],
-   "items": 0,
-   "share": 0,
-   "byCountry": {},
-   "byDay": {
-    "2026-10-31": 0,
-    "2026-11-01": 0,
-    "2026-11-02": 0,
-    "2026-11-03": 0,
-    "2026-11-04": 0,
-    "2026-11-05": 0,
-    "2026-11-06": 0
-   },
-   "bySource": {}
   }
  ],
  "top_themes": [
   "russia-ukraine",
   "energy-commodities",
-  "russia-west"
+  "israel-gaza"
  ],
  "top10": [
   {
    "iso3": "RUS",
-   "n": 6
+   "n": 9
   },
   {
    "iso3": "UKR",
+   "n": 6.5
+  },
+  {
+   "iso3": "USA",
+   "n": 6
+  },
+  {
+   "iso3": "IRN",
    "n": 4.5
+  },
+  {
+   "iso3": "YEM",
+   "n": 4
+  },
+  {
+   "iso3": "ESH",
+   "n": 3
   },
   {
    "iso3": "MLI",
@@ -530,32 +579,16 @@
   {
    "iso3": "CHN",
    "n": 2
-  },
-  {
-   "iso3": "USA",
-   "n": 2
-  },
-  {
-   "iso3": "IRN",
-   "n": 2
-  },
-  {
-   "iso3": "TCD",
-   "n": 1.5
-  },
-  {
-   "iso3": "MRT",
-   "n": 1.5
   }
  ],
  "focus": [
   {
    "iso3": "UKR",
-   "n": 4.5
+   "n": 6.5
   },
   {
    "iso3": "RUS",
-   "n": 4
+   "n": 6
   },
   {
    "iso3": "IRN",
@@ -566,7 +599,7 @@
   "BFA": 2,
   "GIN": 1,
   "MLI": 2.5,
-  "RUS": 6,
+  "RUS": 9,
   "NER": 2.5,
   "TCD": 1.5,
   "MRT": 1.5,
@@ -575,24 +608,51 @@
   "SEN": 0.5,
   "CHN": 2,
   "TWN": 1,
-  "USA": 2,
-  "UKR": 4.5,
+  "USA": 6,
+  "UKR": 6.5,
   "TUR": 0.5,
   "ROU": 0.5,
   "BGR": 0.5,
   "GEO": 0.5,
-  "ARM": 0.5,
+  "ARM": 1.5,
   "AZE": 0.5,
   "KAZ": 0.5,
   "UZB": 0.5,
   "TKM": 0.5,
   "KGZ": 0.5,
   "TJK": 0.5,
-  "IND": 1,
+  "IND": 2,
   "PAK": 1,
-  "IRN": 2,
+  "IRN": 4.5,
   "DZA": 1,
-  "CAN": 1
+  "CAN": 1,
+  "FRA": 1,
+  "ARG": 1,
+  "PER": 1,
+  "URY": 1,
+  "SOM": 1,
+  "PRY": 1,
+  "ISR": 1,
+  "IDN": 1,
+  "ESP": 2,
+  "GBR": 1,
+  "SDN": 2,
+  "NPL": 1,
+  "YEM": 4,
+  "KOR": 2,
+  "COG": 1,
+  "COD": 1,
+  "LBN": 1,
+  "ESH": 3,
+  "PSE": 1,
+  "OMN": 0.5,
+  "ARE": 0.5,
+  "SYR": 1,
+  "AFG": 2,
+  "MOZ": 1,
+  "MMR": 1,
+  "ETH": 1,
+  "MEX": 1
  },
  "countries": {
   "BFA": {
@@ -714,9 +774,256 @@
   "CAN": {
    "name": "Canada",
    "numeric": "124"
+  },
+  "FRA": {
+   "name": "France",
+   "numeric": "250"
+  },
+  "ARG": {
+   "name": "Argentina",
+   "numeric": "032"
+  },
+  "PER": {
+   "name": "Peru",
+   "numeric": "604"
+  },
+  "URY": {
+   "name": "Uruguay",
+   "numeric": "858"
+  },
+  "SOM": {
+   "name": "Somalia",
+   "numeric": "706"
+  },
+  "PRY": {
+   "name": "Paraguay",
+   "numeric": "600"
+  },
+  "ISR": {
+   "name": "Israel",
+   "numeric": "376"
+  },
+  "IDN": {
+   "name": "Indonesia",
+   "numeric": "360"
+  },
+  "ESP": {
+   "name": "Spain",
+   "numeric": "724"
+  },
+  "GBR": {
+   "name": "United Kingdom",
+   "numeric": "826"
+  },
+  "SDN": {
+   "name": "Sudan",
+   "numeric": "729"
+  },
+  "NPL": {
+   "name": "Nepal",
+   "numeric": "524"
+  },
+  "YEM": {
+   "name": "Yemen",
+   "numeric": "887"
+  },
+  "KOR": {
+   "name": "South Korea",
+   "numeric": "410"
+  },
+  "COG": {
+   "name": "Republic of the Congo",
+   "numeric": "178"
+  },
+  "COD": {
+   "name": "DR Congo",
+   "numeric": "180"
+  },
+  "LBN": {
+   "name": "Lebanon",
+   "numeric": "422"
+  },
+  "ESH": {
+   "name": "Western Sahara",
+   "numeric": "732"
+  },
+  "PSE": {
+   "name": "Palestinian territories",
+   "numeric": "275"
+  },
+  "OMN": {
+   "name": "Oman",
+   "numeric": "512"
+  },
+  "ARE": {
+   "name": "United Arab Emirates",
+   "numeric": "784"
+  },
+  "SYR": {
+   "name": "Syria",
+   "numeric": "760"
+  },
+  "AFG": {
+   "name": "Afghanistan",
+   "numeric": "004"
+  },
+  "MOZ": {
+   "name": "Mozambique",
+   "numeric": "508"
+  },
+  "MMR": {
+   "name": "Myanmar",
+   "numeric": "104"
+  },
+  "ETH": {
+   "name": "Ethiopia",
+   "numeric": "231"
+  },
+  "MEX": {
+   "name": "Mexico",
+   "numeric": "484"
   }
  },
  "news": [
+  {
+   "type": "news",
+   "title": "AI stocks climb after trillions wiped from market values",
+   "link": "https://www.bbc.co.uk/news/articles/c35ynnpzdq51o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T21:06:25.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "Investors had been selling off tech shares in part due to concerns the Democrat election victory would mean slower AI development.",
+   "tags": [],
+   "themes": [
+    "tech-security",
+    "elections-governance"
+   ],
+   "countries": []
+  },
+  {
+   "type": "news",
+   "title": "Nigerian court rules opposition candidate cannot stand in elections",
+   "link": "https://www.bbc.co.uk/news/articles/cw8rzzx46jd5o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T17:35:55.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "The high court has sacked the leadership of the opposition ADC party with only months to go until elections.",
+   "tags": [],
+   "themes": [
+    "elections-governance"
+   ],
+   "countries": []
+  },
+  {
+   "type": "news",
+   "title": "Dozens of Democrats eyeing 2028 presidential run, says former Obama aide",
+   "link": "https://www.bbc.co.uk/news/articles/cx8dzzy8n713o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T16:51:01.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "Jim Messina tells the BBC that after Democrats' midterm victories he's talked to \"over two dozen campaigns\", with some already hiring staff.",
+   "tags": [],
+   "themes": [],
+   "countries": []
+  },
+  {
+   "type": "news",
+   "title": "Four midterms takeaways for 2028 White House race",
+   "link": "https://www.bbc.co.uk/news/articles/cq1m41n3v7mmo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T16:12:22.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "The buzz about the presidential election is already under way - here's what we learned this week.",
+   "tags": [],
+   "themes": [
+    "elections-governance"
+   ],
+   "countries": []
+  },
+  {
+   "type": "news",
+   "title": "Two dead after bus crashes in France, officials say",
+   "link": "https://www.bbc.co.uk/news/articles/cmly00l4p3lwo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T15:33:52.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "One child and one young adult were killed in the crash, local authorities say, with more injured.",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "FRA"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "Judge blocks construction of Trump's massive arch after federal agency approval",
+   "link": "https://www.bbc.co.uk/news/articles/cq99zd93ryvko?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T15:30:42.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "The Trump administration had hoped the construction of the 250-foot arch could begin as early as this week.",
+   "tags": [],
+   "themes": [],
+   "countries": []
+  },
+  {
+   "type": "news",
+   "title": "New wave of bomb threats hit European airlines",
+   "link": "https://www.bbc.co.uk/news/articles/cq62yy064vjpo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T15:25:35.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "No link has been established between the threats against the airlines and those against the media outlets.",
+   "tags": [],
+   "themes": [],
+   "countries": []
+  },
+  {
+   "type": "news",
+   "title": "Watch: Is it the end of the road for Tesla's Cybertruck?",
+   "link": "https://www.bbc.co.uk/news/videos/cv8ezz9ll7nyo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T15:02:03.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "The car company's CEO Elon Musk has said production will halt in Texas, to focus on the firm's self-driving Cybercabs.",
+   "tags": [],
+   "themes": [],
+   "countries": []
+  },
+  {
+   "type": "news",
+   "title": "Tanzanian opposition leader found guilty of inciting unrest but acquitted of treason",
+   "link": "https://www.bbc.co.uk/news/articles/ckp8g4pm0y4lo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T14:57:08.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "The 58-year-old, who has been detained since April last year, says the charges are politically motivated.",
+   "tags": [],
+   "themes": [],
+   "countries": []
+  },
+  {
+   "type": "news",
+   "title": "Kenyan doomsday cult leader given life sentence for murdering 191 people",
+   "link": "https://www.bbc.co.uk/news/articles/cm5yne5984l0o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T14:46:03.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "Paul Mackenzie ordered his followers to starve their children to death in a forest so they could \"meet Jesus\".",
+   "tags": [],
+   "themes": [],
+   "countries": []
+  },
   {
    "type": "analysis",
    "title": "Refining Sovereignty: Russia and West Africa’s Gold Refinery Wave",
@@ -770,6 +1077,269 @@
     "CHN",
     "TWN",
     "USA"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "US midterm results spark fears in Israel over future of two countries' ties",
+   "link": "https://www.bbc.co.uk/news/articles/cx30ee8018lvo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T13:23:44.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "Staunch US support of Israel has been raised as one of the reasons why Republicans performed so badly.",
+   "tags": [],
+   "themes": [
+    "israel-gaza"
+   ],
+   "countries": [
+    "ISR",
+    "USA"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "Russian extremist group denies sending hoax bomb threats",
+   "link": "https://www.bbc.co.uk/news/articles/cm2d66n0lx1yo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T12:51:38.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "Scores of flights across Europe have received bomb threats this week, but no explosives have been found so far.",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "RUS"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "From a ship frozen into Arctic ice, a warning to world leaders: Trust the science",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168751",
+   "date": "2026-11-06T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "Drifting through the polar darkness, a team of scientists is documenting a rapidly changing Arctic. As sea ice retreats and oil tankers move in, a conversation with the UN chief reveals why the battle for climate science matters far beyond the North Pole.",
+   "tags": [],
+   "themes": [
+    "energy-commodities"
+   ],
+   "countries": []
+  },
+  {
+   "type": "news",
+   "title": "Sudan’s suffering is plain for all to see say aid teams, as brutal war continues",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168753",
+   "date": "2026-11-06T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "Aid teams working to help millions of people uprooted by the ongoing war in Sudan appealed on Friday for more international assistance amid desperate funding shortages, empty warehouses and overwhelming needs.",
+   "tags": [],
+   "themes": [
+    "sahel-africa"
+   ],
+   "countries": [
+    "SDN"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "‘No Escape’ for refugees on the frontlines of the climate crisis",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168752",
+   "date": "2026-11-06T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "The climate emergency is an immediate crisis for refugees, with three in four – nearly 90 million people – living in countries facing high to severe exposure to hazards such as drought, floods and extreme heat.",
+   "tags": [],
+   "themes": [],
+   "countries": []
+  },
+  {
+   "type": "news",
+   "title": "Homes and temples glow across India as Diwali celebrations begin",
+   "link": "https://www.bbc.co.uk/news/articles/cm70pdwz122ro?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T10:21:30.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "Millions of Indians will mark the festival of lights with glowing lamps, fireworks and traditional sweets",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "IND"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "What to know about the presidential wiretapping scandal rocking Indonesia",
+   "link": "https://www.bbc.co.uk/news/articles/cwkg55155mrro?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T10:10:38.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "The scandal involves senior members of President Prabowo Subianto's government, and hint at growing tensions among its elites.",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "Elon Musk appears to signal the end of the road for Cybertruck",
+   "link": "https://www.bbc.co.uk/news/articles/cq1j33w7d232o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T09:57:04.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "Musk said it was to make room for production of its Cybercabs - autonomous taxis without a driver.",
+   "tags": [],
+   "themes": [],
+   "countries": []
+  },
+  {
+   "type": "news",
+   "title": "Somalia's top court rejects president's term extension amid political crisis",
+   "link": "https://www.bbc.co.uk/news/articles/c977ppnezep6o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T08:18:10.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "The country's first nationwide elections since 1969 are due next year - a timetable now thrown into doubt.",
+   "tags": [],
+   "themes": [
+    "elections-governance"
+   ],
+   "countries": [
+    "SOM"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "Major construction ongoing near Iran missile bases, satellite images suggest",
+   "link": "https://www.bbc.co.uk/news/articles/ckjrwx1r2d5ro?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T07:33:41.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "Evidence of digging and new buildings are visible in satellite imagery taken in November, satellite images suggest.",
+   "tags": [],
+   "themes": [
+    "iran"
+   ],
+   "countries": [
+    "IRN"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "Macau jails pro-democracy campaigner in city's first national security case",
+   "link": "https://www.bbc.co.uk/news/articles/cmdx33v9vvr2o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T06:46:21.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "Au Kam San was sentenced to 12 years and six months' jail for \"subversion against the political power of the state\".",
+   "tags": [],
+   "themes": [],
+   "countries": []
+  },
+  {
+   "type": "news",
+   "title": "Did a data centre revolt affect the US midterm election results?",
+   "link": "https://www.bbc.co.uk/news/articles/crvg9yyz5437o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T06:01:13.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "BBC Verify examines whether US voters were influenced by the data centre boom - and the impact anti-AI sentiment could have on the industry.",
+   "tags": [],
+   "themes": [
+    "tech-security",
+    "elections-governance"
+   ],
+   "countries": [
+    "USA"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "A wildfire killed their loved ones in Spain. These British families demand to know why",
+   "link": "https://www.bbc.co.uk/news/articles/cm3vq4wyeld1o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T06:00:46.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "Nine British nationals were among the 15 people who died when fire ripped through the village of Bédar this summer.",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "ESP",
+    "GBR"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "Pope begins lengthy trip to Latin America weeks after lung cancer surgery",
+   "link": "https://www.bbc.co.uk/news/articles/cqn06j0y61k6o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T00:02:57.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "Pope Leo, who had part of a lung removed last month, will visit Uruguay, Argentina and Peru.",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "ARG",
+    "PER",
+    "URY",
+    "USA"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "California governor commutes sentences for state's 548 death row inmates",
+   "link": "https://www.bbc.co.uk/news/articles/cqrkyyd2j8mvo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-05T23:09:33.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "California has historically had the largest population of people on death row in the US.",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "USA"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "Bomb hoaxes: Messages reveal how threat was passed on by air traffic control",
+   "link": "https://www.bbc.co.uk/news/videos/cq398m8w41lyo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-05T18:22:46.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "BBC Verify has been analysing messages after flights across Europe were targeted by fake bomb threats - the second such incident this week.",
+   "tags": [],
+   "themes": [],
+   "countries": []
+  },
+  {
+   "type": "news",
+   "title": "Paraguay President Santiago Peña resigns after bank collapse",
+   "link": "https://www.bbc.co.uk/news/articles/c6p9g39vln3yo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-05T17:40:40.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "The move follows a bank collapse and after the lower house of congress voted in favour of pursuing an impeachment trial against him.",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "PRY"
    ]
   },
   {
@@ -835,6 +1405,81 @@
    ]
   },
   {
+   "type": "news",
+   "title": "World News in Brief: Korea tensions mount, UN demands answers over staff death in Yemen, Guterres in Spain, Nepal alert ahead of COP31",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168750",
+   "date": "2026-11-05T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "UN Secretary-General António Guterres remains concerned over the situation on the Korean Peninsula, including the potential escalation of tensions across the Demilitarized Zone (DMZ), his Spokesperson said on Thursday.",
+   "tags": [],
+   "themes": [
+    "israel-gaza"
+   ],
+   "countries": [
+    "NPL",
+    "ESP",
+    "YEM",
+    "KOR"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "Abyei: Deadly drone strikes mark ‘new and concerning’ threat, UN peacekeeping chief warns",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168749",
+   "date": "2026-11-05T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "Drone strikes that killed at least 30 people in Abyei last month have added “a new and concerning dimension” to security in the disputed area, the UN’s peacekeeping chief told the Security Council on Thursday.",
+   "tags": [],
+   "themes": [],
+   "countries": []
+  },
+  {
+   "type": "news",
+   "title": "Children at risk as war zone attacks on water and sanitation more than triple",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168743",
+   "date": "2026-11-05T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "Attacks that damaged or destroyed water and sanitation systems in conflict zones tripled between 2021 and 2025, increasing children’s risk of exposure to disease outbreaks, malnutrition and violence.",
+   "tags": [],
+   "themes": [],
+   "countries": []
+  },
+  {
+   "type": "news",
+   "title": "Two new Ebola vaccines to join DR Congo clinical trial",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168742",
+   "date": "2026-11-05T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "Two new Ebola vaccine candidates will be added to a clinical trial in the Democratic Republic of the Congo (DRC) as the country continues to battle a deadly outbreak caused by the Bundibugyo species of the virus.",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "COG",
+    "COD"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "Was an Italian chef really fired over refusal to put pineapple on pizza?",
+   "link": "https://www.bbc.co.uk/news/videos/cmvg9yy8wpweo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-05T10:33:21.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "The chef had stated that putting pineapple on pizza was \"offensive to his culture\".",
+   "tags": [],
+   "themes": [],
+   "countries": []
+  },
+  {
    "type": "analysis",
    "title": "Preparedness for the AI Era Requires a Reserve of Critical Workers",
    "link": "https://www.rand.org/pubs/commentary/2026/11/preparedness-for-the-ai-era-requires-a-reserve-of-critical.html",
@@ -874,6 +1519,132 @@
     "RUS",
     "UKR"
    ]
+  },
+  {
+   "type": "news",
+   "title": "COP31 explained: What’s at stake at this year’s UN climate summit?",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168735",
+   "date": "2026-11-04T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "The world has more tools than ever to tackle climate change, yet millions remain unable to benefit from them. As clean energy technologies advance faster than ever, the challenge facing countries at COP31 is no longer just finding solutions – but making sure everyone can afford them.",
+   "tags": [],
+   "themes": [
+    "energy-commodities"
+   ],
+   "countries": []
+  },
+  {
+   "type": "news",
+   "title": "UN peacekeeping chief warns of ‘security vacuum’ as Blue Helmets leave Lebanon and Western Sahara",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168741",
+   "date": "2026-11-04T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "The UN’s peacekeeping chief warned on Wednesday that the withdrawal of “Blue Helmets” from Lebanon and Western Sahara risks leaving a dangerous security vacuum, while the Security Council remains divided over what, if anything, should replace them.",
+   "tags": [],
+   "themes": [
+    "israel-gaza"
+   ],
+   "countries": [
+    "LBN",
+    "ESH"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "Gunfire damages tents at Rafah displacement site in Gaza, as aid teams prepare for winter storms",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168740",
+   "date": "2026-11-04T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "Gunfire hit and damaged multiple tents at a displacement site in Gaza’s northern Rafah region on Tuesday, reportedly causing injuries and forcing a humanitarian partner to leave the area, the UN aid coordination office (OCHA) has said.",
+   "tags": [],
+   "themes": [
+    "israel-gaza"
+   ],
+   "countries": [
+    "PSE"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "Fuel price shock: Why developing economies are paying the most at the pump",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168738",
+   "date": "2026-11-04T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "When war shut the Strait of Hormuz in February, oil prices soared everywhere. But the pain at the pump has been far from equal, and the world’s developing economies are paying the heaviest price, according to a new report from UNCTAD, the UN trade and development agency.",
+   "tags": [],
+   "themes": [
+    "iran",
+    "energy-commodities"
+   ],
+   "countries": [
+    "IRN",
+    "OMN",
+    "ARE"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "Syria’s undocumented children ‘pay the price’ of war and a law that shuts out mothers",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168737",
+   "date": "2026-11-04T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "Many children born in Syria since the war began in 2011 have no legal identity because nationality passes only through fathers – many of whom are dead or missing – a member of the independent UN commission investigating rights violations in the country said on Wednesday.",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "SYR"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "15 years of ‘almost no progress’ in getting young people moving: WHO",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168736",
+   "date": "2026-11-04T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "One in four adolescents worldwide reported not getting at least 60 minutes of physical activity on any day in the previous week, according to new global estimates released by the World Health Organization (WHO) on Wednesday.",
+   "tags": [],
+   "themes": [],
+   "countries": []
+  },
+  {
+   "type": "news",
+   "title": "Afghan children face narrowing path to education, UN agencies report",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168732",
+   "date": "2026-11-04T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "More than half of Afghanistan’s children who should be in primary school remain outside formal learning and millions of girls can only dream of going to university.",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "AFG"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "‘The world is not ready’: Climate adaptation cash falls far short as warming heads past 1.5°C",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168725",
+   "date": "2026-11-04T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "Although global warming is set to exceed 1.5°C, financing to help communities adapt to climate change falls far short of needs, the UN Environment Programme (UNEP) said in a report published on Wednesday.",
+   "tags": [],
+   "themes": [],
+   "countries": []
   },
   {
    "type": "analysis",
@@ -927,6 +1698,87 @@
     "BFA",
     "TCD",
     "MRT"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "‘This is not about politics. This is about people’: UN warns of impact of deadly drone strikes in Sudan",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168731",
+   "date": "2026-11-03T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "Intensifying drone attacks on civilian infrastructure across Sudan are disrupting electricity, water and fuel supplies, putting lives at risk and hampering the delivery of humanitarian aid, the UN’s top official in the country has warned.",
+   "tags": [],
+   "themes": [
+    "sahel-africa"
+   ],
+   "countries": [
+    "SDN"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "World News in Brief: Children killed in Myanmar strike, new violence flares in Mozambique, an Internet affordability milestone",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168729",
+   "date": "2026-11-03T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "A school in Myanmar has been hit in an airstrike, with three children reported killed and five others injured, according to UN Children’s Fund UNICEF.",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "MOZ",
+    "MMR"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "Married off at 14: In Yemen’s war, women and girls suffer ‘devastating consequences’",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168730",
+   "date": "2026-11-03T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "Safa is 14. Her mother died earlier this year. She has no brothers or sisters. And a few weeks ago, as the crisis took hold, her father married her to an elderly man, afraid that if he were killed in the hostilities, no one would be left to protect her.",
+   "tags": [],
+   "themes": [
+    "israel-gaza"
+   ],
+   "countries": [
+    "YEM"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "Gender equality pays off for business – so why are companies pulling back?",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168726",
+   "date": "2026-11-03T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "Gender equality and diversity are good for business – but while increasing numbers of women are reaching top spots in the corporate world, more initiatives are needed to keep momentum going.",
+   "tags": [],
+   "themes": [],
+   "countries": []
+  },
+  {
+   "type": "news",
+   "title": "Air raid alerts and attacks on schools: the devastating face of education in Ukraine",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168724",
+   "date": "2026-11-03T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "Ukraine has sustained almost 2,000 attacks on education since the full-scale Russian invasion in 2022, with some 270 this year alone, the UN Children’s Fund (UNICEF) said on Tuesday, a day after a strike at a school being used to distribute aid.",
+   "tags": [],
+   "themes": [
+    "russia-ukraine"
+   ],
+   "countries": [
+    "UKR",
+    "RUS"
    ]
   },
   {
@@ -1018,6 +1870,163 @@
    "tags": [],
    "themes": [],
    "countries": []
+  },
+  {
+   "type": "news",
+   "title": "World News in Brief: healthcare crisis in Yemen’s Taiz and Afghanistan, Western Sahara mission's phased closure",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168723",
+   "date": "2026-11-02T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "The humanitarian crisis in Yemen is worsening, particularly in the southwestern city of Taiz, which is being encircled by paramilitary Iran-backed Houthi forces.",
+   "tags": [],
+   "themes": [
+    "iran",
+    "israel-gaza"
+   ],
+   "countries": [
+    "AFG",
+    "IRN",
+    "ESH",
+    "YEM"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "Ukraine: WFP provides hot meals to Oleshky evacuees as UN pushes to restore power before winter",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168722",
+   "date": "2026-11-02T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "The UN World Food Programme (WFP) is providing emergency food assistance to more than 400 people who were able to leave the Russian-occupied city of Oleshky, in Ukraine’s Kherson region, during a brief local ceasefire.",
+   "tags": [],
+   "themes": [
+    "russia-ukraine"
+   ],
+   "countries": [
+    "UKR",
+    "RUS"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "Ethiopia: Violence in the north is pushing health system to the brink, WHO chief warns",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168720",
+   "date": "2026-11-02T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "The head of the World Health Organization (WHO) called on Monday for greater protection for civilians caught in conflict in northern Ethiopia following deadly drone strikes this past weekend.",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "ETH"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "Six in seven journalist murders go unpunished, UNESCO reports",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168719",
+   "date": "2026-11-02T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "Global impunity for journalist killings has risen for the first time in more than a decade, while the growing use of drones is an emerging threat for reporters in conflict zones, according to the latest report from UN cultural organization UNESCO.",
+   "tags": [],
+   "themes": [],
+   "countries": []
+  },
+  {
+   "type": "news",
+   "title": "Breaking the silence in Mexico’s barracks",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168715",
+   "date": "2026-11-01T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "In Mexico’s armed forces, an order from a superior is meant to be obeyed without question. For many women in uniform, investigative journalist Zorayda Gallegos found, that can include an order to step into an officer’s bedroom.",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "MEX"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "COP17: Nations chart ‘Yerevan Pathway’ to speed up action for nature",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168718",
+   "date": "2026-11-01T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "At the halfway mark to 2030, countries meeting in Armenia have agreed a roadmap to accelerate action for nature, after a global review found the world off track to meet its biodiversity targets.",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "ARM"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "Western Sahara: UN ‘stands ready’ to keep supporting peace efforts as MINURSO mission ends",
+   "link": "https://news.un.org/feed/view/en/story/2026/11/1168717",
+   "date": "2026-11-01T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "The UN remains committed to supporting a just, lasting and mutually acceptable political solution in Western Sahara that provides for the self-determination of its people, Secretary-General António Guterres said on Sunday, as the UN peacekeeping mission there began to wind down.",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "ESH"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "‘They deserve to know the truth’: UN rights chief demands probe into staffer’s death in Houthi custody",
+   "link": "https://news.un.org/feed/view/en/story/2026/10/1168716",
+   "date": "2026-10-31T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "The UN human rights chief on Saturday demanded an independent investigation into the death of a Yemeni colleague held by the Houthis for more than two years, whose family learned of his death only weeks after it happened.",
+   "tags": [],
+   "themes": [
+    "israel-gaza"
+   ],
+   "countries": [
+    "YEM"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "Samarkand: A ‘living museum’ on the Silk Road grapples with a tourism boom",
+   "link": "https://news.un.org/feed/view/en/story/2026/10/1168711",
+   "date": "2026-10-31T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "As the sun sets over Samarkand’s majestic Registan, its last rays glint across the turquoise mosaics. Dusk settles on the ancient square where great trade routes have crossed for centuries.",
+   "tags": [],
+   "themes": [],
+   "countries": []
+  },
+  {
+   "type": "news",
+   "title": "DPR Korea: Isolation deepens even as the country changes, says UN rights official",
+   "link": "https://news.un.org/feed/view/en/story/2026/10/1168690",
+   "date": "2026-10-31T12:00:00.000Z",
+   "source": "un-news",
+   "publisher": "United Nations",
+   "author": "",
+   "summary": "The Democratic People’s Republic of Korea (DPRK) is building factories and hospitals, rolling out smartphones and mobile banking, and passing new laws at an unprecedented rate. But its people are more cut off from the outside world than at any point in the country’s history.",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "KOR"
+   ]
   }
  ],
  "indicators": [
@@ -1273,66 +2282,6 @@
      "value": -1.5978529
     },
     {
-     "iso3": "MRT",
-     "year": 2025,
-     "value": -0.6544237
-    },
-    {
-     "iso3": "MRT",
-     "year": 2024,
-     "value": -0.6283763
-    },
-    {
-     "iso3": "MRT",
-     "year": 2023,
-     "value": -0.5101785
-    },
-    {
-     "iso3": "MRT",
-     "year": 2022,
-     "value": -0.2987989
-    },
-    {
-     "iso3": "MRT",
-     "year": 2021,
-     "value": -0.527047
-    },
-    {
-     "iso3": "MRT",
-     "year": 2020,
-     "value": -0.642728
-    },
-    {
-     "iso3": "MRT",
-     "year": 2019,
-     "value": -0.6619181
-    },
-    {
-     "iso3": "MRT",
-     "year": 2018,
-     "value": -0.7474837
-    },
-    {
-     "iso3": "MRT",
-     "year": 2017,
-     "value": -0.7581416
-    },
-    {
-     "iso3": "MRT",
-     "year": 2016,
-     "value": -0.9513822
-    },
-    {
-     "iso3": "MRT",
-     "year": 2015,
-     "value": -0.8054232
-    },
-    {
-     "iso3": "MRT",
-     "year": 2014,
-     "value": -0.7863618
-    },
-    {
      "iso3": "NER",
      "year": 2025,
      "value": -1.7676299
@@ -1453,66 +2402,6 @@
      "value": -0.7092694
     },
     {
-     "iso3": "TCD",
-     "year": 2025,
-     "value": -1.5739859
-    },
-    {
-     "iso3": "TCD",
-     "year": 2024,
-     "value": -1.6060664
-    },
-    {
-     "iso3": "TCD",
-     "year": 2023,
-     "value": -1.6781962
-    },
-    {
-     "iso3": "TCD",
-     "year": 2022,
-     "value": -1.6587182
-    },
-    {
-     "iso3": "TCD",
-     "year": 2021,
-     "value": -1.6996161
-    },
-    {
-     "iso3": "TCD",
-     "year": 2020,
-     "value": -1.476875
-    },
-    {
-     "iso3": "TCD",
-     "year": 2019,
-     "value": -1.4764847
-    },
-    {
-     "iso3": "TCD",
-     "year": 2018,
-     "value": -1.3831776
-    },
-    {
-     "iso3": "TCD",
-     "year": 2017,
-     "value": -1.3890042
-    },
-    {
-     "iso3": "TCD",
-     "year": 2016,
-     "value": -1.3637505
-    },
-    {
-     "iso3": "TCD",
-     "year": 2015,
-     "value": -1.1589706
-    },
-    {
-     "iso3": "TCD",
-     "year": 2014,
-     "value": -1.3244234
-    },
-    {
      "iso3": "UKR",
      "year": 2025,
      "value": -0.3337994
@@ -1631,6 +2520,66 @@
      "iso3": "USA",
      "year": 2014,
      "value": 0.6596148
+    },
+    {
+     "iso3": "YEM",
+     "year": 2025,
+     "value": -2.5063447
+    },
+    {
+     "iso3": "YEM",
+     "year": 2024,
+     "value": -2.6394083
+    },
+    {
+     "iso3": "YEM",
+     "year": 2023,
+     "value": -2.6313914
+    },
+    {
+     "iso3": "YEM",
+     "year": 2022,
+     "value": -2.6080793
+    },
+    {
+     "iso3": "YEM",
+     "year": 2021,
+     "value": -2.677753
+    },
+    {
+     "iso3": "YEM",
+     "year": 2020,
+     "value": -2.6671716
+    },
+    {
+     "iso3": "YEM",
+     "year": 2019,
+     "value": -2.6207507
+    },
+    {
+     "iso3": "YEM",
+     "year": 2018,
+     "value": -2.7186616
+    },
+    {
+     "iso3": "YEM",
+     "year": 2017,
+     "value": -2.7258486
+    },
+    {
+     "iso3": "YEM",
+     "year": 2016,
+     "value": -2.6486379
+    },
+    {
+     "iso3": "YEM",
+     "year": 2015,
+     "value": -2.5453955
+    },
+    {
+     "iso3": "YEM",
+     "year": 2014,
+     "value": -2.5296817
     }
    ],
    "link": "https://www.worldbank.org/en/publication/worldwide-governance-indicators",
@@ -1887,66 +2836,6 @@
      "value": 6.50263878386326
     },
     {
-     "iso3": "MRT",
-     "year": 2025,
-     "value": 4.02891976567948
-    },
-    {
-     "iso3": "MRT",
-     "year": 2024,
-     "value": 6.3076021190402
-    },
-    {
-     "iso3": "MRT",
-     "year": 2023,
-     "value": 6.80949002457973
-    },
-    {
-     "iso3": "MRT",
-     "year": 2022,
-     "value": 6.7960049994761
-    },
-    {
-     "iso3": "MRT",
-     "year": 2021,
-     "value": 0.7427154981402
-    },
-    {
-     "iso3": "MRT",
-     "year": 2020,
-     "value": -0.36065738652286
-    },
-    {
-     "iso3": "MRT",
-     "year": 2019,
-     "value": 3.14100489264639
-    },
-    {
-     "iso3": "MRT",
-     "year": 2018,
-     "value": 4.77217363890155
-    },
-    {
-     "iso3": "MRT",
-     "year": 2017,
-     "value": 6.27054569386574
-    },
-    {
-     "iso3": "MRT",
-     "year": 2016,
-     "value": 1.26090922448303
-    },
-    {
-     "iso3": "MRT",
-     "year": 2015,
-     "value": 5.37633923694936
-    },
-    {
-     "iso3": "MRT",
-     "year": 2014,
-     "value": 4.27482327130284
-    },
-    {
      "iso3": "NER",
      "year": 2025,
      "value": 7.00782960149
@@ -2067,66 +2956,6 @@
      "value": 0.736267221403651
     },
     {
-     "iso3": "TCD",
-     "year": 2025,
-     "value": 5.58988021765651
-    },
-    {
-     "iso3": "TCD",
-     "year": 2024,
-     "value": 4.95210484607125
-    },
-    {
-     "iso3": "TCD",
-     "year": 2023,
-     "value": 3.99861309461539
-    },
-    {
-     "iso3": "TCD",
-     "year": 2022,
-     "value": 4.12969897668356
-    },
-    {
-     "iso3": "TCD",
-     "year": 2021,
-     "value": 0.293442648033434
-    },
-    {
-     "iso3": "TCD",
-     "year": 2020,
-     "value": -0.393646582380399
-    },
-    {
-     "iso3": "TCD",
-     "year": 2019,
-     "value": 5.38282202874814
-    },
-    {
-     "iso3": "TCD",
-     "year": 2018,
-     "value": 5.74111580758154
-    },
-    {
-     "iso3": "TCD",
-     "year": 2017,
-     "value": -1.61746922820204
-    },
-    {
-     "iso3": "TCD",
-     "year": 2016,
-     "value": -4.12250332637034
-    },
-    {
-     "iso3": "TCD",
-     "year": 2015,
-     "value": 3.30415979779805
-    },
-    {
-     "iso3": "TCD",
-     "year": 2014,
-     "value": 2.06283074361411
-    },
-    {
      "iso3": "UKR",
      "year": 2025,
      "value": 1.82152376756284
@@ -2245,6 +3074,31 @@
      "iso3": "USA",
      "year": 2014,
      "value": 2.52381981757846
+    },
+    {
+     "iso3": "YEM",
+     "year": 2018,
+     "value": 0.752447592962554
+    },
+    {
+     "iso3": "YEM",
+     "year": 2017,
+     "value": -5.07179568062152
+    },
+    {
+     "iso3": "YEM",
+     "year": 2016,
+     "value": -9.37512379736752
+    },
+    {
+     "iso3": "YEM",
+     "year": 2015,
+     "value": -27.9945462502541
+    },
+    {
+     "iso3": "YEM",
+     "year": 2014,
+     "value": -0.188690241954504
     }
    ],
    "link": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG",
@@ -2501,66 +3355,6 @@
      "value": 0.883814547137841
     },
     {
-     "iso3": "MRT",
-     "year": 2025,
-     "value": 1.54796926167072
-    },
-    {
-     "iso3": "MRT",
-     "year": 2024,
-     "value": 2.49164347481971
-    },
-    {
-     "iso3": "MRT",
-     "year": 2023,
-     "value": 4.95305034506872
-    },
-    {
-     "iso3": "MRT",
-     "year": 2022,
-     "value": 9.52526628622842
-    },
-    {
-     "iso3": "MRT",
-     "year": 2021,
-     "value": 3.56516484650184
-    },
-    {
-     "iso3": "MRT",
-     "year": 2020,
-     "value": 2.38569488456319
-    },
-    {
-     "iso3": "MRT",
-     "year": 2019,
-     "value": 2.30009262117937
-    },
-    {
-     "iso3": "MRT",
-     "year": 2018,
-     "value": 3.06735996058355
-    },
-    {
-     "iso3": "MRT",
-     "year": 2017,
-     "value": 2.25427651934812
-    },
-    {
-     "iso3": "MRT",
-     "year": 2016,
-     "value": 1.47171045650003
-    },
-    {
-     "iso3": "MRT",
-     "year": 2015,
-     "value": 3.25472688117631
-    },
-    {
-     "iso3": "MRT",
-     "year": 2014,
-     "value": 3.53436856147323
-    },
-    {
      "iso3": "NER",
      "year": 2025,
      "value": -4.45470804102568
@@ -2681,66 +3475,6 @@
      "value": 7.82016970013844
     },
     {
-     "iso3": "TCD",
-     "year": 2025,
-     "value": -3.91198124406589
-    },
-    {
-     "iso3": "TCD",
-     "year": 2024,
-     "value": 8.89950732263754
-    },
-    {
-     "iso3": "TCD",
-     "year": 2023,
-     "value": 10.8363568399842
-    },
-    {
-     "iso3": "TCD",
-     "year": 2022,
-     "value": 5.78802687843616
-    },
-    {
-     "iso3": "TCD",
-     "year": 2021,
-     "value": -0.772844370359139
-    },
-    {
-     "iso3": "TCD",
-     "year": 2020,
-     "value": 4.4641443723286
-    },
-    {
-     "iso3": "TCD",
-     "year": 2019,
-     "value": -0.971939175419401
-    },
-    {
-     "iso3": "TCD",
-     "year": 2018,
-     "value": 4.27462198610545
-    },
-    {
-     "iso3": "TCD",
-     "year": 2017,
-     "value": -1.5370996298084
-    },
-    {
-     "iso3": "TCD",
-     "year": 2016,
-     "value": -0.792440525236102
-    },
-    {
-     "iso3": "TCD",
-     "year": 2015,
-     "value": 4.37712665065654
-    },
-    {
-     "iso3": "TCD",
-     "year": 2014,
-     "value": 1.6819731392567
-    },
-    {
      "iso3": "UKR",
      "year": 2025,
      "value": 12.7303341026902
@@ -2854,6 +3588,11 @@
      "iso3": "USA",
      "year": 2014,
      "value": 1.62222297740817
+    },
+    {
+     "iso3": "YEM",
+     "year": 2014,
+     "value": 8.10472583623914
     }
    ],
    "link": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG",
@@ -3110,66 +3849,6 @@
      "value": 1.515933832
     },
     {
-     "iso3": "MRT",
-     "year": 2025,
-     "value": 2.748416225
-    },
-    {
-     "iso3": "MRT",
-     "year": 2024,
-     "value": 2.5467545539
-    },
-    {
-     "iso3": "MRT",
-     "year": 2023,
-     "value": 2.5907210885
-    },
-    {
-     "iso3": "MRT",
-     "year": 2022,
-     "value": 2.3597545776
-    },
-    {
-     "iso3": "MRT",
-     "year": 2021,
-     "value": 2.4864444908
-    },
-    {
-     "iso3": "MRT",
-     "year": 2020,
-     "value": 2.4311343525
-    },
-    {
-     "iso3": "MRT",
-     "year": 2019,
-     "value": 2.0396629906
-    },
-    {
-     "iso3": "MRT",
-     "year": 2018,
-     "value": 2.1312823098
-    },
-    {
-     "iso3": "MRT",
-     "year": 2017,
-     "value": 2.1210984569
-    },
-    {
-     "iso3": "MRT",
-     "year": 2016,
-     "value": 2.1454878008
-    },
-    {
-     "iso3": "MRT",
-     "year": 2015,
-     "value": 2.1555724036
-    },
-    {
-     "iso3": "MRT",
-     "year": 2014,
-     "value": 2.1970951924
-    },
-    {
      "iso3": "NER",
      "year": 2025,
      "value": 2.1357835045
@@ -3283,66 +3962,6 @@
      "iso3": "RUS",
      "year": 2014,
      "value": 4.1129929782
-    },
-    {
-     "iso3": "TCD",
-     "year": 2025,
-     "value": 3.185180279
-    },
-    {
-     "iso3": "TCD",
-     "year": 2024,
-     "value": 2.9775181794
-    },
-    {
-     "iso3": "TCD",
-     "year": 2023,
-     "value": 2.1175898288
-    },
-    {
-     "iso3": "TCD",
-     "year": 2022,
-     "value": 2.0442448086
-    },
-    {
-     "iso3": "TCD",
-     "year": 2021,
-     "value": 2.0791355688
-    },
-    {
-     "iso3": "TCD",
-     "year": 2020,
-     "value": 2.2119268812
-    },
-    {
-     "iso3": "TCD",
-     "year": 2019,
-     "value": 1.5736014821
-    },
-    {
-     "iso3": "TCD",
-     "year": 2018,
-     "value": 1.6527026798
-    },
-    {
-     "iso3": "TCD",
-     "year": 2017,
-     "value": 1.65961164
-    },
-    {
-     "iso3": "TCD",
-     "year": 2016,
-     "value": 2.31170355
-    },
-    {
-     "iso3": "TCD",
-     "year": 2015,
-     "value": 1.5239707659
-    },
-    {
-     "iso3": "TCD",
-     "year": 2014,
-     "value": 2.157842389
     },
     {
      "iso3": "UKR",
@@ -3463,6 +4082,11 @@
      "iso3": "USA",
      "year": 2014,
      "value": 3.6789181739
+    },
+    {
+     "iso3": "YEM",
+     "year": 2014,
+     "value": 3.9668908328
     }
    ],
    "link": "https://data.worldbank.org/indicator/MS.MIL.XPND.GD.ZS",
@@ -3737,266 +4361,6 @@
      "iso3": "BFA",
      "year": 2031,
      "value": 4.9
-    },
-    {
-     "iso3": "TCD",
-     "year": 1980,
-     "value": -6
-    },
-    {
-     "iso3": "TCD",
-     "year": 1981,
-     "value": -10.8
-    },
-    {
-     "iso3": "TCD",
-     "year": 1982,
-     "value": 5.4
-    },
-    {
-     "iso3": "TCD",
-     "year": 1983,
-     "value": 15.7
-    },
-    {
-     "iso3": "TCD",
-     "year": 1984,
-     "value": 5.3
-    },
-    {
-     "iso3": "TCD",
-     "year": 1985,
-     "value": 7.9
-    },
-    {
-     "iso3": "TCD",
-     "year": 1986,
-     "value": 6
-    },
-    {
-     "iso3": "TCD",
-     "year": 1987,
-     "value": 3.6
-    },
-    {
-     "iso3": "TCD",
-     "year": 1988,
-     "value": 7.5
-    },
-    {
-     "iso3": "TCD",
-     "year": 1989,
-     "value": 2
-    },
-    {
-     "iso3": "TCD",
-     "year": 1990,
-     "value": 3.2
-    },
-    {
-     "iso3": "TCD",
-     "year": 1991,
-     "value": 10.4
-    },
-    {
-     "iso3": "TCD",
-     "year": 1992,
-     "value": 2.4
-    },
-    {
-     "iso3": "TCD",
-     "year": 1993,
-     "value": -2.1
-    },
-    {
-     "iso3": "TCD",
-     "year": 1994,
-     "value": 5.5
-    },
-    {
-     "iso3": "TCD",
-     "year": 1995,
-     "value": -0.8
-    },
-    {
-     "iso3": "TCD",
-     "year": 1996,
-     "value": 2.1
-    },
-    {
-     "iso3": "TCD",
-     "year": 1997,
-     "value": 5.7
-    },
-    {
-     "iso3": "TCD",
-     "year": 1998,
-     "value": 7
-    },
-    {
-     "iso3": "TCD",
-     "year": 1999,
-     "value": -0.7
-    },
-    {
-     "iso3": "TCD",
-     "year": 2000,
-     "value": -0.9
-    },
-    {
-     "iso3": "TCD",
-     "year": 2001,
-     "value": 11.7
-    },
-    {
-     "iso3": "TCD",
-     "year": 2002,
-     "value": 8.5
-    },
-    {
-     "iso3": "TCD",
-     "year": 2003,
-     "value": 14.7
-    },
-    {
-     "iso3": "TCD",
-     "year": 2004,
-     "value": 33.6
-    },
-    {
-     "iso3": "TCD",
-     "year": 2005,
-     "value": 7.5
-    },
-    {
-     "iso3": "TCD",
-     "year": 2006,
-     "value": -0.5
-    },
-    {
-     "iso3": "TCD",
-     "year": 2007,
-     "value": 4.4
-    },
-    {
-     "iso3": "TCD",
-     "year": 2008,
-     "value": 3.1
-    },
-    {
-     "iso3": "TCD",
-     "year": 2009,
-     "value": -1.3
-    },
-    {
-     "iso3": "TCD",
-     "year": 2010,
-     "value": 13.8
-    },
-    {
-     "iso3": "TCD",
-     "year": 2011,
-     "value": 4.6
-    },
-    {
-     "iso3": "TCD",
-     "year": 2012,
-     "value": 8.9
-    },
-    {
-     "iso3": "TCD",
-     "year": 2013,
-     "value": 2.9
-    },
-    {
-     "iso3": "TCD",
-     "year": 2014,
-     "value": 2.3
-    },
-    {
-     "iso3": "TCD",
-     "year": 2015,
-     "value": 3.2
-    },
-    {
-     "iso3": "TCD",
-     "year": 2016,
-     "value": -3.7
-    },
-    {
-     "iso3": "TCD",
-     "year": 2017,
-     "value": -2.1
-    },
-    {
-     "iso3": "TCD",
-     "year": 2018,
-     "value": 5.2
-    },
-    {
-     "iso3": "TCD",
-     "year": 2019,
-     "value": 5.9
-    },
-    {
-     "iso3": "TCD",
-     "year": 2020,
-     "value": 0
-    },
-    {
-     "iso3": "TCD",
-     "year": 2021,
-     "value": 2
-    },
-    {
-     "iso3": "TCD",
-     "year": 2022,
-     "value": 4.7
-    },
-    {
-     "iso3": "TCD",
-     "year": 2023,
-     "value": 5
-    },
-    {
-     "iso3": "TCD",
-     "year": 2024,
-     "value": 5
-    },
-    {
-     "iso3": "TCD",
-     "year": 2025,
-     "value": 5.1
-    },
-    {
-     "iso3": "TCD",
-     "year": 2026,
-     "value": 4.5
-    },
-    {
-     "iso3": "TCD",
-     "year": 2027,
-     "value": 5.4
-    },
-    {
-     "iso3": "TCD",
-     "year": 2028,
-     "value": 4.6
-    },
-    {
-     "iso3": "TCD",
-     "year": 2029,
-     "value": 5.1
-    },
-    {
-     "iso3": "TCD",
-     "year": 2030,
-     "value": 5.4
-    },
-    {
-     "iso3": "TCD",
-     "year": 2031,
-     "value": 5.3
     },
     {
      "iso3": "CHN",
@@ -4777,211 +5141,6 @@
      "iso3": "MLI",
      "year": 2031,
      "value": 5.2
-    },
-    {
-     "iso3": "MRT",
-     "year": 1991,
-     "value": 0
-    },
-    {
-     "iso3": "MRT",
-     "year": 1992,
-     "value": 1.8
-    },
-    {
-     "iso3": "MRT",
-     "year": 1993,
-     "value": 5.9
-    },
-    {
-     "iso3": "MRT",
-     "year": 1994,
-     "value": -3.1
-    },
-    {
-     "iso3": "MRT",
-     "year": 1995,
-     "value": 9.8
-    },
-    {
-     "iso3": "MRT",
-     "year": 1996,
-     "value": 5.8
-    },
-    {
-     "iso3": "MRT",
-     "year": 1997,
-     "value": -4
-    },
-    {
-     "iso3": "MRT",
-     "year": 1998,
-     "value": 2.8
-    },
-    {
-     "iso3": "MRT",
-     "year": 1999,
-     "value": 3.7
-    },
-    {
-     "iso3": "MRT",
-     "year": 2000,
-     "value": -3.9
-    },
-    {
-     "iso3": "MRT",
-     "year": 2001,
-     "value": -0.8
-    },
-    {
-     "iso3": "MRT",
-     "year": 2002,
-     "value": 1.4
-    },
-    {
-     "iso3": "MRT",
-     "year": 2003,
-     "value": 6.9
-    },
-    {
-     "iso3": "MRT",
-     "year": 2004,
-     "value": 4.7
-    },
-    {
-     "iso3": "MRT",
-     "year": 2005,
-     "value": 8.6
-    },
-    {
-     "iso3": "MRT",
-     "year": 2006,
-     "value": 18.3
-    },
-    {
-     "iso3": "MRT",
-     "year": 2007,
-     "value": -2
-    },
-    {
-     "iso3": "MRT",
-     "year": 2008,
-     "value": -0.3
-    },
-    {
-     "iso3": "MRT",
-     "year": 2009,
-     "value": 0.1
-    },
-    {
-     "iso3": "MRT",
-     "year": 2010,
-     "value": 2.6
-    },
-    {
-     "iso3": "MRT",
-     "year": 2011,
-     "value": 4.2
-    },
-    {
-     "iso3": "MRT",
-     "year": 2012,
-     "value": 4.5
-    },
-    {
-     "iso3": "MRT",
-     "year": 2013,
-     "value": 4.2
-    },
-    {
-     "iso3": "MRT",
-     "year": 2014,
-     "value": 4.3
-    },
-    {
-     "iso3": "MRT",
-     "year": 2015,
-     "value": 5.4
-    },
-    {
-     "iso3": "MRT",
-     "year": 2016,
-     "value": 1.3
-    },
-    {
-     "iso3": "MRT",
-     "year": 2017,
-     "value": 6.3
-    },
-    {
-     "iso3": "MRT",
-     "year": 2018,
-     "value": 4.8
-    },
-    {
-     "iso3": "MRT",
-     "year": 2019,
-     "value": 3.1
-    },
-    {
-     "iso3": "MRT",
-     "year": 2020,
-     "value": -0.4
-    },
-    {
-     "iso3": "MRT",
-     "year": 2021,
-     "value": 0.7
-    },
-    {
-     "iso3": "MRT",
-     "year": 2022,
-     "value": 6.8
-    },
-    {
-     "iso3": "MRT",
-     "year": 2023,
-     "value": 6.8
-    },
-    {
-     "iso3": "MRT",
-     "year": 2024,
-     "value": 5.9
-    },
-    {
-     "iso3": "MRT",
-     "year": 2025,
-     "value": 3.6
-    },
-    {
-     "iso3": "MRT",
-     "year": 2026,
-     "value": 4.4
-    },
-    {
-     "iso3": "MRT",
-     "year": 2027,
-     "value": 4.4
-    },
-    {
-     "iso3": "MRT",
-     "year": 2028,
-     "value": 5.8
-    },
-    {
-     "iso3": "MRT",
-     "year": 2029,
-     "value": 4.9
-    },
-    {
-     "iso3": "MRT",
-     "year": 2030,
-     "value": 3.1
-    },
-    {
-     "iso3": "MRT",
-     "year": 2031,
-     "value": 3
     },
     {
      "iso3": "NER",
@@ -5897,6 +6056,91 @@
      "iso3": "USA",
      "year": 2031,
      "value": 1.8
+    },
+    {
+     "iso3": "YEM",
+     "year": 2015,
+     "value": -32
+    },
+    {
+     "iso3": "YEM",
+     "year": 2016,
+     "value": -4.4
+    },
+    {
+     "iso3": "YEM",
+     "year": 2017,
+     "value": 4
+    },
+    {
+     "iso3": "YEM",
+     "year": 2018,
+     "value": 8.5
+    },
+    {
+     "iso3": "YEM",
+     "year": 2019,
+     "value": 4.7
+    },
+    {
+     "iso3": "YEM",
+     "year": 2020,
+     "value": 0.3
+    },
+    {
+     "iso3": "YEM",
+     "year": 2021,
+     "value": 6
+    },
+    {
+     "iso3": "YEM",
+     "year": 2022,
+     "value": -0.5
+    },
+    {
+     "iso3": "YEM",
+     "year": 2023,
+     "value": -9.3
+    },
+    {
+     "iso3": "YEM",
+     "year": 2024,
+     "value": -1.5
+    },
+    {
+     "iso3": "YEM",
+     "year": 2025,
+     "value": -0.5
+    },
+    {
+     "iso3": "YEM",
+     "year": 2026,
+     "value": -1.5
+    },
+    {
+     "iso3": "YEM",
+     "year": 2027,
+     "value": 0
+    },
+    {
+     "iso3": "YEM",
+     "year": 2028,
+     "value": 1
+    },
+    {
+     "iso3": "YEM",
+     "year": 2029,
+     "value": 1.5
+    },
+    {
+     "iso3": "YEM",
+     "year": 2030,
+     "value": 2
+    },
+    {
+     "iso3": "YEM",
+     "year": 2031,
+     "value": 2.5
     }
    ],
    "link": "https://www.imf.org/external/datamapper/NGDP_RPCH@WEO",
@@ -6152,66 +6396,6 @@
      "value": 18020267
     },
     {
-     "iso3": "MRT",
-     "year": 2025,
-     "value": 5315065
-    },
-    {
-     "iso3": "MRT",
-     "year": 2024,
-     "value": 5169395
-    },
-    {
-     "iso3": "MRT",
-     "year": 2023,
-     "value": 5022441
-    },
-    {
-     "iso3": "MRT",
-     "year": 2022,
-     "value": 4875637
-    },
-    {
-     "iso3": "MRT",
-     "year": 2021,
-     "value": 4734874
-    },
-    {
-     "iso3": "MRT",
-     "year": 2020,
-     "value": 4600131
-    },
-    {
-     "iso3": "MRT",
-     "year": 2019,
-     "value": 4467708
-    },
-    {
-     "iso3": "MRT",
-     "year": 2018,
-     "value": 4337685
-    },
-    {
-     "iso3": "MRT",
-     "year": 2017,
-     "value": 4210600
-    },
-    {
-     "iso3": "MRT",
-     "year": 2016,
-     "value": 4086657
-    },
-    {
-     "iso3": "MRT",
-     "year": 2015,
-     "value": 3965959
-    },
-    {
-     "iso3": "MRT",
-     "year": 2014,
-     "value": 3848514
-    },
-    {
      "iso3": "NER",
      "year": 2025,
      "value": 27917831
@@ -6332,66 +6516,6 @@
      "value": 144237223
     },
     {
-     "iso3": "TCD",
-     "year": 2025,
-     "value": 21003705
-    },
-    {
-     "iso3": "TCD",
-     "year": 2024,
-     "value": 20299123
-    },
-    {
-     "iso3": "TCD",
-     "year": 2023,
-     "value": 19319064
-    },
-    {
-     "iso3": "TCD",
-     "year": 2022,
-     "value": 18455316
-    },
-    {
-     "iso3": "TCD",
-     "year": 2021,
-     "value": 17828273
-    },
-    {
-     "iso3": "TCD",
-     "year": 2020,
-     "value": 17224679
-    },
-    {
-     "iso3": "TCD",
-     "year": 2019,
-     "value": 16685223
-    },
-    {
-     "iso3": "TCD",
-     "year": 2018,
-     "value": 16156531
-    },
-    {
-     "iso3": "TCD",
-     "year": 2017,
-     "value": 15622759
-    },
-    {
-     "iso3": "TCD",
-     "year": 2016,
-     "value": 15114655
-    },
-    {
-     "iso3": "TCD",
-     "year": 2015,
-     "value": 14647621
-    },
-    {
-     "iso3": "TCD",
-     "year": 2014,
-     "value": 14188678
-    },
-    {
      "iso3": "UKR",
      "year": 2025,
      "value": 38980376
@@ -6510,6 +6634,66 @@
      "iso3": "USA",
      "year": 2014,
      "value": 319257560
+    },
+    {
+     "iso3": "YEM",
+     "year": 2025,
+     "value": 41773878
+    },
+    {
+     "iso3": "YEM",
+     "year": 2024,
+     "value": 40583164
+    },
+    {
+     "iso3": "YEM",
+     "year": 2023,
+     "value": 39390799
+    },
+    {
+     "iso3": "YEM",
+     "year": 2022,
+     "value": 38222876
+    },
+    {
+     "iso3": "YEM",
+     "year": 2021,
+     "value": 37140230
+    },
+    {
+     "iso3": "YEM",
+     "year": 2020,
+     "value": 36134863
+    },
+    {
+     "iso3": "YEM",
+     "year": 2019,
+     "value": 35111408
+    },
+    {
+     "iso3": "YEM",
+     "year": 2018,
+     "value": 34085182
+    },
+    {
+     "iso3": "YEM",
+     "year": 2017,
+     "value": 33090921
+    },
+    {
+     "iso3": "YEM",
+     "year": 2016,
+     "value": 32109010
+    },
+    {
+     "iso3": "YEM",
+     "year": 2015,
+     "value": 31159379
+    },
+    {
+     "iso3": "YEM",
+     "year": 2014,
+     "value": 30226309
     }
    ],
    "link": "https://data.worldbank.org/indicator/SP.POP.TOTL",
@@ -6766,66 +6950,6 @@
      "value": 17081681993.2577
     },
     {
-     "iso3": "MRT",
-     "year": 2025,
-     "value": 11679910946.4371
-    },
-    {
-     "iso3": "MRT",
-     "year": 2024,
-     "value": 10879212033.4823
-    },
-    {
-     "iso3": "MRT",
-     "year": 2023,
-     "value": 10687541640.1299
-    },
-    {
-     "iso3": "MRT",
-     "year": 2022,
-     "value": 9562497460.55394
-    },
-    {
-     "iso3": "MRT",
-     "year": 2021,
-     "value": 9221044666.76483
-    },
-    {
-     "iso3": "MRT",
-     "year": 2020,
-     "value": 8260567356.81635
-    },
-    {
-     "iso3": "MRT",
-     "year": 2019,
-     "value": 7894764885.82312
-    },
-    {
-     "iso3": "MRT",
-     "year": 2018,
-     "value": 7475471309.52265
-    },
-    {
-     "iso3": "MRT",
-     "year": 2017,
-     "value": 6812472965.33868
-    },
-    {
-     "iso3": "MRT",
-     "year": 2016,
-     "value": 6407900701.25829
-    },
-    {
-     "iso3": "MRT",
-     "year": 2015,
-     "value": 6182303676.55144
-    },
-    {
-     "iso3": "MRT",
-     "year": 2014,
-     "value": 6615483550.17817
-    },
-    {
      "iso3": "NER",
      "year": 2025,
      "value": 21646191388.2507
@@ -6946,66 +7070,6 @@
      "value": 2059241589895.01
     },
     {
-     "iso3": "TCD",
-     "year": 2025,
-     "value": 21472835225.4338
-    },
-    {
-     "iso3": "TCD",
-     "year": 2024,
-     "value": 19906706689.7582
-    },
-    {
-     "iso3": "TCD",
-     "year": 2023,
-     "value": 18352937976.2179
-    },
-    {
-     "iso3": "TCD",
-     "year": 2022,
-     "value": 17828508289.6049
-    },
-    {
-     "iso3": "TCD",
-     "year": 2021,
-     "value": 16871937697.5854
-    },
-    {
-     "iso3": "TCD",
-     "year": 2020,
-     "value": 14932897821.2387
-    },
-    {
-     "iso3": "TCD",
-     "year": 2019,
-     "value": 14905517742.8454
-    },
-    {
-     "iso3": "TCD",
-     "year": 2018,
-     "value": 15327000248.8701
-    },
-    {
-     "iso3": "TCD",
-     "year": 2017,
-     "value": 13349041408.7152
-    },
-    {
-     "iso3": "TCD",
-     "year": 2016,
-     "value": 13026289835.7789
-    },
-    {
-     "iso3": "TCD",
-     "year": 2015,
-     "value": 14559599499.5011
-    },
-    {
-     "iso3": "TCD",
-     "year": 2014,
-     "value": 18144336903.7175
-    },
-    {
      "iso3": "UKR",
      "year": 2025,
      "value": 214233312784.397
@@ -7124,6 +7188,31 @@
      "iso3": "USA",
      "year": 2014,
      "value": 17608138000000
+    },
+    {
+     "iso3": "YEM",
+     "year": 2018,
+     "value": 21606160663.0318
+    },
+    {
+     "iso3": "YEM",
+     "year": 2017,
+     "value": 26842229044.5848
+    },
+    {
+     "iso3": "YEM",
+     "year": 2016,
+     "value": 31317825274.1507
+    },
+    {
+     "iso3": "YEM",
+     "year": 2015,
+     "value": 42444490073.8555
+    },
+    {
+     "iso3": "YEM",
+     "year": 2014,
+     "value": 43228585321.3272
     }
    ],
    "link": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
@@ -7148,11 +7237,17 @@
     "enabled": true
    },
    {
-    "id": "reuters",
-    "name": "Reuters World",
-    "publisher": "Reuters",
-    "homepage": "https://www.reuters.com/world/",
-    "note": "Headlines and links from Reuters' public news sitemap, limited to the World section. Articles stay on reuters.com.",
+    "id": "bbc-world",
+    "name": "BBC News World",
+    "publisher": "BBC News",
+    "homepage": "https://www.bbc.com/news/world",
+    "enabled": true
+   },
+   {
+    "id": "un-news",
+    "name": "UN News",
+    "publisher": "United Nations",
+    "homepage": "https://news.un.org/en/",
     "enabled": true
    }
   ],
@@ -7163,7 +7258,7 @@
     "kind": "news feed",
     "type": "analysis",
     "url": "https://www.geopoliticalmonitor.com/feed/",
-    "retrieved_at": "2026-11-06T21:15:26.236Z",
+    "retrieved_at": "2026-11-06T21:29:34.233Z",
     "status": "ok",
     "items": 10
    },
@@ -7173,7 +7268,7 @@
     "kind": "news feed",
     "type": "analysis",
     "url": "https://www.geopoliticalmonitor.com/feed/?paged=2",
-    "retrieved_at": "2026-11-06T21:15:26.783Z",
+    "retrieved_at": "2026-11-06T21:29:34.700Z",
     "status": "ok",
     "items": 10
    },
@@ -7183,7 +7278,7 @@
     "kind": "news feed",
     "type": "analysis",
     "url": "https://www.rand.org/pubs/commentary.xml",
-    "retrieved_at": "2026-11-06T21:15:26.893Z",
+    "retrieved_at": "2026-11-06T21:29:34.774Z",
     "status": "ok",
     "items": 20
    },
@@ -7193,89 +7288,99 @@
     "kind": "news feed",
     "type": "news",
     "url": "https://www.rand.org/news/press.xml",
-    "retrieved_at": "2026-11-06T21:15:27.320Z",
+    "retrieved_at": "2026-11-06T21:29:35.228Z",
     "status": "ok",
     "items": 20
    },
    {
-    "source": "reuters",
-    "name": "Reuters World",
+    "source": "bbc-world",
+    "name": "BBC News World",
     "kind": "news feed",
     "type": "news",
-    "url": "https://www.reuters.com/arc/outboundfeeds/news-sitemap/?outputType=xml",
-    "retrieved_at": "2026-11-06T21:15:27.379Z",
-    "status": "failed",
-    "error": "fetch failed"
+    "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "retrieved_at": "2026-11-06T21:29:35.274Z",
+    "status": "ok",
+    "items": 25
+   },
+   {
+    "source": "un-news",
+    "name": "UN News",
+    "kind": "news feed",
+    "type": "news",
+    "url": "https://news.un.org/feed/subscribe/en/news/all/rss.xml",
+    "retrieved_at": "2026-11-06T21:29:35.729Z",
+    "status": "ok",
+    "items": 30
    },
    {
     "source": "worldbank",
     "name": "World Bank, Worldwide Governance Indicators",
     "kind": "indicator",
     "indicator": "GOV_WGI_PV.EST",
-    "retrieved_at": "2026-11-06T21:15:33.125Z",
-    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;MLI;NER;BFA;CHN;USA;TCD;MRT/indicator/GOV_WGI_PV.EST?format=json&date=2014:2026&per_page=1000&source=3",
+    "retrieved_at": "2026-11-06T21:29:36.839Z",
+    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;MLI;NER;BFA;CHN/indicator/GOV_WGI_PV.EST?format=json&date=2014:2026&per_page=1000&source=3",
     "status": "ok",
-    "items": 120
+    "items": 108
    },
    {
     "source": "worldbank",
     "name": "World Bank, World Development Indicators",
     "kind": "indicator",
     "indicator": "NY.GDP.MKTP.KD.ZG",
-    "retrieved_at": "2026-11-06T21:15:33.545Z",
-    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;MLI;NER;BFA;CHN;USA;TCD;MRT/indicator/NY.GDP.MKTP.KD.ZG?format=json&date=2014:2026&per_page=1000",
+    "retrieved_at": "2026-11-06T21:29:37.532Z",
+    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;MLI;NER;BFA;CHN/indicator/NY.GDP.MKTP.KD.ZG?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
-    "items": 120
+    "items": 101
    },
    {
     "source": "worldbank",
     "name": "World Bank, World Development Indicators",
     "kind": "indicator",
     "indicator": "FP.CPI.TOTL.ZG",
-    "retrieved_at": "2026-11-06T21:15:33.632Z",
-    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;MLI;NER;BFA;CHN;USA;TCD;MRT/indicator/FP.CPI.TOTL.ZG?format=json&date=2014:2026&per_page=1000",
+    "retrieved_at": "2026-11-06T21:29:37.775Z",
+    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;MLI;NER;BFA;CHN/indicator/FP.CPI.TOTL.ZG?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
-    "items": 119
+    "items": 96
    },
    {
     "source": "worldbank",
     "name": "World Bank, World Development Indicators (SIPRI data)",
     "kind": "indicator",
     "indicator": "MS.MIL.XPND.GD.ZS",
-    "retrieved_at": "2026-11-06T21:15:33.713Z",
-    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;MLI;NER;BFA;CHN;USA;TCD;MRT/indicator/MS.MIL.XPND.GD.ZS?format=json&date=2014:2026&per_page=1000",
+    "retrieved_at": "2026-11-06T21:29:38.103Z",
+    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;MLI;NER;BFA;CHN/indicator/MS.MIL.XPND.GD.ZS?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
-    "items": 119
+    "items": 96
    },
    {
     "source": "imf",
     "name": "International Monetary Fund, World Economic Outlook (DataMapper)",
     "kind": "indicator",
     "indicator": "NGDP_RPCH",
-    "retrieved_at": "2026-11-06T21:15:33.903Z",
-    "url": "https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH/UKR/RUS/IRN/MLI/NER/BFA/CHN/USA/TCD/MRT?periods=2025,2026,2027",
+    "retrieved_at": "2026-11-06T21:29:38.400Z",
+    "url": "https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH/UKR/RUS/IRN/USA/YEM/ESH/MLI/NER/BFA/CHN?periods=2025,2026,2027",
     "status": "ok",
-    "items": 484
+    "items": 408
    },
    {
     "source": "worldbank",
     "name": "World Bank, World Development Indicators",
     "kind": "indicator",
     "indicator": "SP.POP.TOTL",
-    "retrieved_at": "2026-11-06T21:15:35.021Z",
-    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;MLI;NER;BFA;CHN;USA;TCD;MRT/indicator/SP.POP.TOTL?format=json&date=2014:2026&per_page=1000",
+    "retrieved_at": "2026-11-06T21:29:39.200Z",
+    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;MLI;NER;BFA;CHN/indicator/SP.POP.TOTL?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
-    "items": 120
+    "items": 108
    },
    {
     "source": "worldbank",
     "name": "World Bank, World Development Indicators",
     "kind": "indicator",
     "indicator": "NY.GDP.MKTP.CD",
-    "retrieved_at": "2026-11-06T21:15:35.129Z",
-    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;MLI;NER;BFA;CHN;USA;TCD;MRT/indicator/NY.GDP.MKTP.CD?format=json&date=2014:2026&per_page=1000",
+    "retrieved_at": "2026-11-06T21:29:39.466Z",
+    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;USA;YEM;MLI;NER;BFA;CHN/indicator/NY.GDP.MKTP.CD?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
-    "items": 120
+    "items": 101
    }
   ]
  }

@@ -169,7 +169,8 @@ const themeStats = themesCfg.themes.map((t, idx) => {
   const bySource = {};
   its.forEach((it) => (bySource[it.source] = (bySource[it.source] || 0) + 1));
   return { id: t.id, idx, label: t.label, keywords: t.keywords, items: its.length, share: weekItems.length ? its.length / weekItems.length : 0, byCountry, byDay, bySource };
-}).sort((a, b) => b.items - a.items || a.label.localeCompare(b.label));
+}).sort((a, b) => b.items - a.items || Object.keys(b.bySource).length - Object.keys(a.bySource).length || d3sum(b.byCountry) - d3sum(a.byCountry) || a.label.localeCompare(b.label));
+function d3sum(o) { return Object.values(o).reduce((x, y) => x + y, 0); }
 
 const top = themeStats[0];
 const topThemes = themeStats.filter((t) => t.items > 0).slice(0, 3);
@@ -185,13 +186,24 @@ weekItems.forEach((it) => it.countries.forEach((c) => (allCountries[c] = (allCou
 const top10 = rank(allCountries).slice(0, 10).map(([iso3, n]) => ({ iso3, n }));
 const focusIsos = [...new Set([...focus.map((f) => f.iso3), ...top10.map((t) => t.iso3)])];
 const indicators = [];
+// The World Bank rejects the whole request if one code is unknown to it (e.g. Taiwan), so ask only for codes it lists.
+let wbKnown = null;
+async function wbCountries() {
+  if (!wbKnown) {
+    try {
+      const body = await get('https://api.worldbank.org/v2/country?format=json&per_page=400', { json: true });
+      wbKnown = new Set(body[1].filter((c) => c.region?.value !== 'Aggregates').map((c) => c.id));
+    } catch (e) { wbKnown = new Set(focusIsos); }
+  }
+  return focusIsos.filter((c) => wbKnown.has(c));
+}
 const y1 = now.getUTCFullYear();
 for (const ind of sources.indicators) {
   const st = { source: ind.provider, name: ind.publisher, kind: 'indicator', indicator: ind.code, retrieved_at: new Date().toISOString() };
   const out = { ...ind, values: [] };
   try {
     if (ind.provider === 'worldbank') {
-      const url = `https://api.worldbank.org/v2/country/${focusIsos.join(';')}/indicator/${ind.code}?format=json&date=${y1 - 12}:${y1}&per_page=1000${ind.wb_source ? `&source=${ind.wb_source}` : ''}`;
+      const url = `https://api.worldbank.org/v2/country/${(await wbCountries()).join(';')}/indicator/${ind.code}?format=json&date=${y1 - 12}:${y1}&per_page=1000${ind.wb_source ? `&source=${ind.wb_source}` : ''}`;
       st.url = url;
       const body = await get(url, { json: true });
       if (!Array.isArray(body) || !Array.isArray(body[1])) throw new Error(body?.[0]?.message?.[0]?.value || 'No data returned');
@@ -229,7 +241,7 @@ const snapshot = {
   week,
   generated_at: new Date().toISOString(),
   window: { start: windowStart.toISOString(), end: now.toISOString(), days: windowDays, widened: windowDays !== (sources.window_days ?? 7) },
-  method: 'Themes are counted from the titles, summaries and tags of news and analysis items published in the window, using the keyword lists in config/themes.json. Countries are matched by name and by the aliases in config/places.json. The region of interest is the set of countries most often named in items about the most prevalent theme.',
+  method: 'Themes are counted from the titles, summaries and tags of news and analysis items published in the window, using the keyword lists in config/themes.json. Countries are matched by name and by the aliases in config/places.json. The region of interest is the set of countries most often named in items about the most prevalent theme. Ties between themes are broken by the number of distinct sources covering them, then by how many country mentions they carry.',
   totals: { items: weekItems.length, sources: [...new Set(weekItems.map((i) => i.source))].length },
   top_theme: top.id,
   themes: themeStats,

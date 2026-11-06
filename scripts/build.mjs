@@ -47,12 +47,12 @@ console.log(`Built dist/index.html and ${weeks.length} weekly page(s).`);
 if (withPdf) {
   const { chromium } = require('playwright');
   const browser = await chromium.launch();
-  const page = await browser.newPage({ viewport: { width: 1400, height: 1000 } });
+  const page = await browser.newPage({ viewport: { width: 1400, height: 1000 }, colorScheme: 'dark' });
   for (const w of weeks.slice(0, 1)) {
     await page.goto('file://' + path.join(root, `dist/weeks/${w}.html`), { waitUntil: 'load' });
-    await page.emulateMedia({ media: 'print', colorScheme: 'light' });
+    await page.emulateMedia({ media: 'print', colorScheme: 'dark' });
     await page.waitForTimeout(800);
-    await page.pdf({ path: path.join(root, `dist/weeks/${w}.pdf`), format: 'A4', landscape: true, printBackground: true, margin: { top: '12mm', bottom: '12mm', left: '10mm', right: '10mm' } });
+    await page.pdf({ path: path.join(root, `dist/weeks/${w}.pdf`), format: 'A4', landscape: true, printBackground: true, margin: { top: '0', bottom: '0', left: '0', right: '0' } });
     console.log(`Rendered dist/weeks/${w}.pdf`);
   }
   await browser.close();

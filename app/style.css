@@ -198,21 +198,22 @@ footer { color: var(--muted); font-size: 12px; padding-block: 24px 40px; }
 
 /* print / PDF */
 @media print {
-  @page { size: A4 landscape; margin: 12mm; }
-  :root { --paper: #fff; --surface: #fff; color-scheme: light; }
-  body { font-size: 11px; }
+  /* PDF exports are always dark */
+  @page { size: A4 landscape; margin: 0; }
+  :root, :root[data-theme] { --paper: #0f1216; --surface: #171b20; --ink: #eef0f2; --ink-2: #c0c5cc; --muted: #8a9099; --line: #2a3038; --axis: #3a414a;   --land: #262c33; --land-edge: #171b20; --water: #12161b; --accent: #6da7ec;   --s1: #3987e5; --s2: #d95926; --s3: #199e70;   --seq-0: #1f2a38; --seq-1: #184f95; --seq-2: #256abf; --seq-3: #3987e5; --seq-4: #86b6ef;   --div-neg: #e66767; --div-pos: #3987e5; --ok: #3cc43c; --warn: #e0a83a; --bad: #ef7474; --pop: #20252c;   --shadow: 0 6px 24px rgba(0, 0, 0, .5);   --t0: #3987e5; --t1: #d95926; --t2: #199e70; --t3: #c98500; --t4: #d55181; --t5: #008300; --t6: #9085e9; --t7: #e66767; --t8: #22a5a8; --t9: #a8875d; --t10: #7d8d9c; --t11: #c172b8; --news: #c9d6e3; --news-ink: #10202f; --analysis: #4d3f22; --analysis-ink: #f3e2bd;   color-scheme: dark; }
+  html, body { background: var(--paper); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-size: 11px; padding: 10mm 8mm; }
   .tools, .zoombar, .filters, .copy, .tip { display: none !important; }
   .card { break-inside: auto; }
   .grid.maps .card, .grid > .card:not(.wide) { break-inside: avoid; }
   .grid.maps { grid-template-columns: 1fr 1.25fr; }
-  .news li { background: #fff; }
   .map, .chart, .news li, tr, .detail, .rank, .tl li { break-inside: avoid; }
   .sec-title, h4 { break-after: avoid; }
   .tl { max-height: none; }
   section.band { padding-block: 8px; }
   .map .pulse { display: none; }
   a { color: inherit; }
-  .news h5 a::after { content: " — " attr(href); font: 400 10px var(--f-body); color: #555; overflow-wrap: anywhere; }
+  .news h5 a::after { content: " — " attr(href); font: 400 10px var(--f-body); color: var(--muted); overflow-wrap: anywhere; }
 }
 
 .rank { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 13px; }

@@ -33,18 +33,25 @@
       "enabled": true
     },
     {
-      "id": "reuters",
-      "name": "Reuters World",
-      "publisher": "Reuters",
-      "homepage": "https://www.reuters.com/world/",
+      "id": "bbc-world",
+      "name": "BBC News World",
+      "publisher": "BBC News",
+      "homepage": "https://www.bbc.com/news/world",
       "type": "news",
       "feeds": [
-        {
-          "url": "https://www.reuters.com/arc/outboundfeeds/news-sitemap/?outputType=xml",
-          "url_contains": "/world/"
-        }
+        "https://feeds.bbci.co.uk/news/world/rss.xml"
       ],
-      "note": "Headlines and links from Reuters' public news sitemap, limited to the World section. Articles stay on reuters.com.",
+      "enabled": true
+    },
+    {
+      "id": "un-news",
+      "name": "UN News",
+      "publisher": "United Nations",
+      "homepage": "https://news.un.org/en/",
+      "type": "news",
+      "feeds": [
+        "https://news.un.org/feed/subscribe/en/news/all/rss.xml"
+      ],
       "enabled": true
     }
   ],

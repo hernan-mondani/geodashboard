@@ -479,5 +479,8 @@
   let lastW = innerWidth;
   addEventListener('resize', () => { if (Math.abs(innerWidth - lastW) > 40) { lastW = innerWidth; drawAll(); } });
   matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', drawAll);
-  addEventListener('beforeprint', drawAll);
+  // PDF exports are always dark: switch the theme for the print, then restore it.
+  let themeBeforePrint = null;
+  addEventListener('beforeprint', () => { themeBeforePrint = document.documentElement.getAttribute('data-theme'); document.documentElement.setAttribute('data-theme', 'dark'); drawAll(); });
+  addEventListener('afterprint', () => { if (themeBeforePrint) document.documentElement.setAttribute('data-theme', themeBeforePrint); else document.documentElement.removeAttribute('data-theme'); drawAll(); });
 })();
