@@ -45,19 +45,16 @@ await fs.writeFile(path.join(root, 'dist/index.html'), fill(await read(path.join
 console.log(`Built dist/index.html and ${weeks.length} weekly page(s).`);
 
 if (withPdf) {
-  // --portrait renders an A4 portrait PDF instead of the default A4 landscape.
-  const portrait = process.argv.includes('--portrait');
+  // The PDF is A4 portrait and always dark; the page is laid out at about A4 width so charts keep their proportions.
   const { chromium } = require('playwright');
   const browser = await chromium.launch();
-  const page = await browser.newPage({ viewport: portrait ? { width: 800, height: 1100 } : { width: 1400, height: 1000 }, colorScheme: 'dark' });
+  const page = await browser.newPage({ viewport: { width: 800, height: 1100 }, colorScheme: 'dark' });
   for (const w of weeks.slice(0, 1)) {
     await page.goto('file://' + path.join(root, `dist/weeks/${w}.html`), { waitUntil: 'load' });
-    if (portrait) await page.evaluate(() => document.documentElement.classList.add('portrait'));
-    if (portrait) await page.addStyleTag({ content: '@page { size: A4 portrait; margin: 0; }' });
     await page.emulateMedia({ media: 'print', colorScheme: 'dark' });
     await page.waitForTimeout(800);
-    const out = path.join(root, `dist/weeks/${w}${portrait ? '-portrait' : ''}.pdf`);
-    await page.pdf({ path: out, format: 'A4', landscape: !portrait, printBackground: true, margin: { top: '0', bottom: '0', left: '0', right: '0' } });
+    const out = path.join(root, `dist/weeks/${w}.pdf`);
+    await page.pdf({ path: out, format: 'A4', landscape: false, printBackground: true, margin: { top: '0', bottom: '0', left: '0', right: '0' } });
     console.log(`Rendered ${path.relative(root, out)}`);
   }
   await browser.close();

@@ -10,7 +10,7 @@ A weekly, citable snapshot of the most prevalent geopolitical theme: where it is
 4. Charts for the leading themes: theme prevalence, an event timeline, a political-stability risk score and an indicator table.
 5. A sources table that shows every request made for the snapshot, whether it loaded, and when.
 
-Every page is one self-contained HTML file (data, code and map inside), so it opens offline and can be saved with **Save as webpage**. **Download PDF** gives a print-ready A4 landscape version.
+Every page is one self-contained HTML file (data, code and map inside), so it opens offline and can be saved with **Save as webpage**. **Download PDF** gives a print-ready A4 portrait version, always in dark mode, with each section on its own page.
 
 ## Run it
 
