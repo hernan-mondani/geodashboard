@@ -30,7 +30,7 @@ All of it is configuration, not code:
 | File | What it controls |
 |---|---|
 | `config/sources.json` | News feeds (any RSS or Atom URL) and indicators (World Bank codes, IMF DataMapper codes). Indicators marked `"library": true` are fetched only when the top theme asks for them. Set `"enabled": false` to switch one off. |
-| `config/themes.json` | The themes and the keywords that count an item toward each. |
+| `config/themes.json` | The themes, the keywords that count an item toward each, and the indicators shown in the country context when a theme leads. |
 | `config/places.json` | Extra names that point to countries, such as demonyms, capitals and regions. |
 
 ## Weekly update
