@@ -243,3 +243,13 @@ footer { color: var(--muted); font-size: 12px; padding-block: 24px 40px; }
 .chip .sw { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 6px; vertical-align: 0; }
 .kinds { display: flex; gap: 12px; align-items: center; font-size: 12px; color: var(--ink-2); margin: 0 0 12px; }
 @media print { .grid.analysis { grid-template-columns: 2fr 1fr; } }
+
+/* portrait PDF: one column throughout */
+@media print {
+  html.portrait .grid.maps, html.portrait .grid.analysis, html.portrait .lede { grid-template-columns: minmax(0, 1fr); }
+  html.portrait body { font-size: 10.5px; }
+}
+@media print {
+  html.portrait .grid.maps .card, html.portrait .grid > .card:not(.wide) { break-inside: auto; }
+}
+@media print { .card .note, .card h4 { break-after: avoid; page-break-after: avoid; } }
