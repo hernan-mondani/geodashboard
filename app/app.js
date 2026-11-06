@@ -12,8 +12,11 @@
   const themeById = new Map(S.themes.map((t) => [t.id, t]));
   const topTheme = themeById.get(S.top_theme);
   const topThemes = S.top_themes.map((id) => themeById.get(id));
-  const seriesVar = ['--s1', '--s2', '--s3'];
-  const themeColor = (id) => { const i = S.top_themes.indexOf(id); return i >= 0 ? css(seriesVar[i]) : css('--muted'); };
+  const themeVar = (id) => `--t${themeById.get(id)?.idx ?? 10}`;
+  const themeColor = (id) => css(themeVar(id));
+  let selTheme = S.top_theme;
+  const top10 = (S.top10 ?? Object.entries(S.mentions).sort((a, b) => b[1] - a[1]).slice(0, 10).map(([iso3, n]) => ({ iso3, n }))).map((t) => t.iso3);
+  function setTheme(id) { selTheme = id; renderThemes(); renderTimeline(); }
   const cname = (iso3) => S.countries[iso3]?.name ?? iso3;
   const sourceName = (id) => S.sources.config.find((s) => s.id === id)?.name ?? id;
   const ind = Object.fromEntries(S.indicators.map((i) => [i.id, i]));
@@ -109,7 +112,7 @@
 
   function renderTopCountries() {
     const ol = $('#top-countries'); ol.replaceChildren();
-    const rows = Object.entries(S.mentions).sort((a, b) => b[1] - a[1]).slice(0, 8);
+    const rows = top10.map((iso) => [iso, S.mentions[iso] || 0]);
     const max = rows[0]?.[1] || 1;
     rows.forEach(([iso, n]) => {
       const li = document.createElement('li');
@@ -129,7 +132,7 @@
   function renderRegion() {
     const el = $('#region-map');
     el.querySelectorAll('svg').forEach((n) => n.remove());
-    const W = el.clientWidth || 700, H = Math.round(W * 0.68);
+    const W = el.clientWidth || 700, H = Math.round(W * 0.95);
     const feats = focusIsos.map(featureFor);
     if (!feats.length) return;
     const c = d3.geoCentroid(feats[0]);
@@ -188,7 +191,9 @@
     const dl = document.createElement('dl');
     const add = (k, v) => { const dt = document.createElement('dt'); dt.textContent = k; const dd = document.createElement('dd'); dd.textContent = v; dl.append(dt, dd); };
     add(`${topTheme.label} mentions`, fmtN(themeMentions[iso] || 0));
-    for (const i of S.indicators) {
+    add('Mentions, all themes', fmtN(S.mentions[iso] || 0));
+    const order = ['population', 'gdp', 'gdp_growth', 'inflation', 'military', 'pol_stability', 'imf_gdp_proj'];
+    for (const i of [...S.indicators].sort((a, b) => (order.indexOf(a.id) + 99) % 99 - (order.indexOf(b.id) + 99) % 99)) {
       const v = latest(i, iso);
       add(i.short, v ? `${fmtVal(i, v.value)} (${v.year})` : 'No data');
     }
@@ -205,7 +210,8 @@
     const vs = i.values.filter((v) => v.iso3 === iso && v.year <= maxYear);
     return vs.length ? vs.reduce((a, b) => (b.year > a.year ? b : a)) : null;
   };
-  const fmtVal = (i, v) => (i.unit === '%' || i.unit === '% of GDP' ? d3.format('.1f')(v) + '%' : d3.format('+.2f')(v));
+  const big = (v) => d3.format('.3~s')(v).replace('G', 'B');
+  const fmtVal = (i, v) => (i.unit === '%' || i.unit === '% of GDP' ? d3.format('.1f')(v) + '%' : i.unit === 'people' ? big(v) : i.unit === 'US$' ? '$' + big(v) : d3.format('+.2f')(v));
 
   // ---------- (iv) charts ----------
   function measure(svg, strings) {
@@ -225,12 +231,13 @@
     const y_bw = 12; const yb = { bandwidth: () => y_bw };
     const tip = tipFor(el);
     const g = svg.append('g').selectAll('g').data(rows).join('g');
-    g.append('text').attr('x', 0).attr('y', (r) => y(r.id) - 5).style('fill', css('--ink')).text((r) => r.label);
+    g.append('text').attr('x', 0).attr('y', (r) => y(r.id) - 5).style('fill', css('--ink')).style('font-weight', (r) => (r.id === selTheme ? 600 : 400)).text((r) => `${r.label} (${r.items})`);
     g.append('rect').attr('x', 0).attr('y', (r) => y(r.id)).attr('height', y_bw).attr('rx', 3)
-      .attr('width', (r) => Math.max(2, x(r.share))).attr('fill', (r) => (r.id === S.top_theme ? css('--s1') : css('--axis')));
+      .attr('width', (r) => Math.max(2, x(r.share))).attr('fill', (r) => themeColor(r.id)).attr('fill-opacity', (r) => (r.id === selTheme ? 1 : 0.4));
     g.append('text').attr('class', 'val').attr('x', (r) => x(r.share) + 6).attr('y', (r) => y(r.id) + y_bw / 2).attr('dy', '.32em').text((r) => d3.format('.0%')(r.share));
-    g.append('rect').attr('x', 0).attr('width', W).attr('y', (r) => y(r.id) - 18).attr('height', rowH).attr('fill', 'transparent')
-      .on('pointermove', (ev, r) => tip.show(ev, [{ head: true, text: r.label }, { text: `${r.items} of ${S.totals.items} items (${d3.format('.0%')(r.share)})` }, { text: 'By source: ' + Object.entries(r.bySource).map(([s, n]) => `${sourceName(s)} ${n}`).join(', ') }]))
+    g.append('rect').attr('x', 0).attr('width', W).attr('y', (r) => y(r.id) - 18).attr('height', rowH).attr('fill', 'transparent').style('cursor', 'pointer')
+      .on('click', (ev, r) => setTheme(r.id))
+      .on('pointermove', (ev, r) => tip.show(ev, [{ head: true, text: r.label }, { text: `${r.items} of ${S.totals.items} items (${d3.format('.0%')(r.share)})` }, { text: 'By source: ' + Object.entries(r.bySource).map(([s, n]) => `${sourceName(s)} ${n}`).join(', ') }, { text: 'Select to follow this theme' }]))
       .on('pointerleave', () => tip.hide());
   }
 
@@ -239,26 +246,31 @@
     const days = Object.keys(topTheme.byDay).map((d) => new Date(d + 'T00:00:00Z'));
     const W = el.clientWidth || 500, H = 200;
     const svg = d3.select(el).insert('svg', ':first-child').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', 'Items per day for the top themes');
-    const maxY = Math.max(2, d3.max(topThemes, (t) => d3.max(Object.values(t.byDay))));
-    const endW = measure(svg, topThemes.map((t) => shortLabel(t.label)));
+    const shown = [...new Set([...S.top_themes, selTheme])].map((id) => themeById.get(id));
+    const maxY = Math.max(2, d3.max(shown, (t) => d3.max(Object.values(t.byDay))));
+    const endW = measure(svg, shown.map((t) => shortLabel(t.label)));
     const m = { t: 10, r: Math.min(endW + 12, W * 0.4), b: 24, l: 26 };
     const x = d3.scaleUtc(d3.extent(days), [m.l, W - m.r]);
     const y = d3.scaleLinear([0, maxY], [H - m.b, m.t]).nice();
     svg.append('g').attr('class', 'grid').selectAll('line').data(y.ticks(Math.min(4, maxY))).join('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y).attr('y2', y);
     svg.append('g').selectAll('text').data(y.ticks(Math.min(4, maxY)).filter(Number.isInteger)).join('text').attr('x', m.l - 6).attr('y', y).attr('dy', '.32em').attr('text-anchor', 'end').text((d) => d);
     const xa = svg.append('g').attr('class', 'axis').attr('transform', `translate(0,${H - m.b})`)
-      .call(d3.axisBottom(x).ticks(Math.min(days.length, Math.floor((W - m.l - m.r) / 60))).tickFormat(fmtShort).tickSizeOuter(0));
+      .call(d3.axisBottom(x).tickValues(days.slice(0, -1).filter((d, i, arr) => i % Math.max(1, Math.ceil(arr.length / Math.floor((W - m.l - m.r) / 60))) === 0)).tickFormat(fmtShort).tickSizeOuter(0));
     xa.attr('font-size', null).attr('font-family', null);
     const line = d3.line().x((d) => x(d[0])).y((d) => y(d[1]));
-    const series = topThemes.map((t) => ({ t, pts: days.map((d) => [d, t.byDay[d.toISOString().slice(0, 10)] || 0]) }));
+    const series = shown.map((t) => ({ t, pts: days.map((d) => [d, t.byDay[d.toISOString().slice(0, 10)] || 0]) }));
     svg.append('g').selectAll('path').data(series).join('path').attr('d', (s) => line(s.pts)).attr('fill', 'none')
-      .attr('stroke', (s) => themeColor(s.t.id)).attr('stroke-width', 2).attr('stroke-linecap', 'round').attr('stroke-linejoin', 'round');
+      .attr('stroke', (s) => themeColor(s.t.id)).attr('stroke-width', (s) => (s.t.id === selTheme ? 3 : 1.5)).attr('stroke-opacity', (s) => (s.t.id === selTheme ? 1 : 0.55)).attr('stroke-linecap', 'round').attr('stroke-linejoin', 'round');
     const ends = series.map((s) => ({ s, y: y(s.pts.at(-1)[1]) })).sort((a, b) => a.y - b.y);
     for (let i = 1; i < ends.length; i++) if (ends[i].y - ends[i - 1].y < 14) ends[i].y = ends[i - 1].y + 14;
-    svg.append('g').selectAll('text').data(ends).join('text').attr('x', W - m.r + 6).attr('y', (e) => e.y).attr('dy', '.32em').style('fill', css('--ink')).text((e) => shortLabel(e.s.t.label));
+    svg.append('g').selectAll('text').data(ends).join('text').attr('x', W - m.r + 6).attr('y', (e) => e.y).attr('dy', '.32em').style('fill', css('--ink')).style('font-weight', (e) => (e.s.t.id === selTheme ? 600 : 400)).text((e) => shortLabel(e.s.t.label));
     // legend
     const lg = $('#timeline-legend'); lg.replaceChildren();
-    topThemes.forEach((t) => { const s = document.createElement('span'); const sw = document.createElement('i'); sw.className = 'sw'; sw.style.background = themeColor(t.id); s.append(sw, t.label); lg.append(s); });
+    S.themes.filter((t) => t.items > 0).forEach((t) => {
+      const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-pressed', String(t.id === selTheme));
+      const sw = document.createElement('i'); sw.className = 'sw'; sw.style.background = themeColor(t.id);
+      b.append(sw, `${t.label} (${t.items})`); b.onclick = () => setTheme(t.id); lg.append(b);
+    });
     // hover
     const tip = tipFor(el);
     const rule = svg.append('line').attr('y1', m.t).attr('y2', H - m.b).attr('stroke', css('--axis')).attr('visibility', 'hidden');
@@ -275,20 +287,27 @@
 
     // event timeline list
     const ul = $('#event-list'); ul.replaceChildren();
-    S.news.filter((n) => n.themes.includes(S.top_theme)).slice(0, 8).forEach((n) => {
-      const li = document.createElement('li');
+    const sel = themeById.get(selTheme);
+    const items = S.news.filter((n) => n.themes.includes(selTheme));
+    $('#event-title').textContent = `${sel.label}: ${items.length} item${items.length === 1 ? '' : 's'}, newest first`;
+    items.forEach((n) => {
+      const li = document.createElement('li'); li.style.setProperty('--dot', themeColor(selTheme));
       const t = document.createElement('time'); t.dateTime = n.date; t.textContent = fmtDay(new Date(n.date));
       const a = document.createElement('a'); a.href = n.link; a.target = '_blank'; a.rel = 'noopener'; a.textContent = n.title;
-      const s = document.createElement('span'); s.textContent = n.publisher;
-      li.append(t, a, s); ul.append(li);
+      const row = document.createElement('div'); row.className = 'row';
+      row.append(kindTag(n), themeTag(selTheme));
+      const s = document.createElement('span'); s.textContent = n.publisher; row.append(s);
+      li.append(t, a, row); ul.append(li);
     });
   }
+  function themeTag(id) { const s = document.createElement('span'); s.className = 'tag theme'; s.style.setProperty('--tc', themeColor(id)); s.textContent = themeById.get(id)?.label ?? id; return s; }
+  function kindTag(n) { const k = n.type === 'analysis' ? 'analysis' : 'news'; const s = document.createElement('span'); s.className = 'tag kind ' + k; s.textContent = k === 'analysis' ? 'Analysis' : 'News'; return s; }
   const shortLabel = (l) => (l.length > 22 ? l.split(/[ ,]/)[0] + '…' : l);
 
   function renderRisk() {
     const el = $('#chart-risk'); el.querySelectorAll('svg').forEach((n) => n.remove());
     const i = ind.pol_stability;
-    const rows = focusIsos.map((iso) => ({ iso, v: latest(i, iso) })).filter((r) => r.v).sort((a, b) => a.v.value - b.v.value);
+    const rows = top10.map((iso) => ({ iso, v: latest(i, iso) })).filter((r) => r.v).sort((a, b) => a.v.value - b.v.value);
     $('#risk-cite').replaceChildren(citeNode(i));
     if (!rows.length) { el.dataset.empty = '1'; return; }
     const W = el.clientWidth || 500, rowH = 26, H = rows.length * rowH + 28;
@@ -324,7 +343,7 @@
     th('GDP growth, 10 yrs', 'opt');
     const tb = table.tBodies[0]; tb.replaceChildren();
     const yr = new Date(S.generated_at).getUTCFullYear();
-    focusIsos.forEach((iso) => {
+    top10.forEach((iso) => {
       const tr = document.createElement('tr');
       const td0 = document.createElement('td'); td0.textContent = cname(iso); tr.append(td0);
       cols.forEach((c) => {
@@ -367,9 +386,11 @@
   let newsFilter = 'top';
   function renderNews() {
     const bar = $('#news-filters'); bar.replaceChildren();
-    const opts = [['top', `${topTheme.label}`], ...topThemes.slice(1).map((t) => [t.id, t.label]), ['all', 'All items']];
-    opts.forEach(([id, label]) => {
-      const b = document.createElement('button'); b.className = 'chip'; b.type = 'button'; b.textContent = label;
+    const opts = [...S.themes.filter((t) => t.items > 0).map((t) => [t.id === S.top_theme ? 'top' : t.id, t.label, t.items, t.id]), ['all', 'All items', S.news.length, null]];
+    opts.forEach(([id, label, count, tid]) => {
+      const b = document.createElement('button'); b.className = 'chip'; b.type = 'button';
+      if (tid) { const sw = document.createElement('i'); sw.className = 'sw'; sw.style.background = themeColor(tid); b.append(sw); }
+      const n = document.createElement('span'); n.className = 'n'; n.textContent = count; b.append(label, n);
       b.setAttribute('aria-pressed', String(newsFilter === id));
       b.onclick = () => { newsFilter = id; renderNews(); };
       bar.append(b);
@@ -383,12 +404,12 @@
       const meta = document.createElement('div'); meta.className = 'meta';
       const pub = document.createElement('b'); pub.textContent = n.publisher;
       const dt = document.createElement('time'); dt.dateTime = n.date; dt.textContent = fmtDate(new Date(n.date));
-      meta.append(pub, dt); if (n.author) { const au = document.createElement('span'); au.textContent = n.author; meta.append(au); }
+      meta.prepend(kindTag(n)); meta.append(pub, dt); if (n.author) { const au = document.createElement('span'); au.textContent = n.author; meta.append(au); }
       const h = document.createElement('h5'); const a = document.createElement('a'); a.href = n.link; a.target = '_blank'; a.rel = 'noopener'; a.textContent = n.title; h.append(a);
       li.append(meta, h);
       if (n.summary) { const p = document.createElement('p'); p.textContent = n.summary.length > 260 ? n.summary.slice(0, 257).replace(/\s\S*$/, '') + '…' : n.summary; li.append(p); }
       const tags = document.createElement('div'); tags.className = 'tags';
-      n.themes.forEach((t) => { const s = document.createElement('span'); s.className = 'tag theme'; s.textContent = themeById.get(t)?.label ?? t; tags.append(s); });
+      n.themes.forEach((t) => tags.append(themeTag(t)));
       n.countries.slice(0, 5).forEach((c) => { const s = document.createElement('span'); s.className = 'tag'; s.textContent = cname(c); tags.append(s); });
       li.append(tags);
       const cp = document.createElement('button'); cp.type = 'button'; cp.className = 'copy'; cp.textContent = 'Copy citation';
@@ -414,7 +435,7 @@
       const tr = document.createElement('tr');
       const td = (content) => { const e = document.createElement('td'); if (content instanceof Node) e.append(content); else e.textContent = content; tr.append(e); return e; };
       td(s.kind === 'indicator' ? s.name : sourceName(s.source));
-      td(s.kind === 'indicator' ? `${s.indicator}` : 'News and analysis feed');
+      td(s.kind === 'indicator' ? s.indicator : s.type === 'analysis' ? 'Analysis feed' : 'News feed');
       const pill = document.createElement('span'); pill.className = 'pill ' + s.status; pill.textContent = s.status === 'ok' ? `Loaded (${d3.format(',')(s.items)})` : s.status === 'empty' ? 'No data' : 'Failed';
       const st = td(pill); if (s.error) { const sm = document.createElement('div'); sm.style.cssText = 'font-size:11px;color:var(--muted)'; sm.textContent = s.error; st.append(sm); }
       const a = document.createElement('a'); a.href = s.url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = s.url?.replace(/^https?:\/\//, '').slice(0, 70) + (s.url?.length > 78 ? '…' : '');

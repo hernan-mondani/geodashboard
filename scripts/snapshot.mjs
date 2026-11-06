@@ -87,18 +87,34 @@ function parseFeed(body) {
       };
     });
   }
-  throw new Error('Not an RSS or Atom feed');
+  if (doc.urlset) {
+    // Google News sitemap (used by Reuters): <url><loc/><news:news><news:title/><news:publication_date/><news:keywords/></news:news></url>
+    return arr(doc.urlset.url).map((u) => {
+      const n = u['news:news'] ?? {};
+      return {
+        title: stripHtml(text(n['news:title'])),
+        link: text(u.loc).trim(),
+        date: new Date(text(n['news:publication_date'])),
+        summary: '',
+        tags: text(n['news:keywords']).split(',').map((k) => k.trim()).filter(Boolean),
+        author: '',
+      };
+    });
+  }
+  throw new Error('Not an RSS, Atom or news sitemap feed');
 }
 
 const statuses = [];
 let items = [];
 for (const src of sources.news.filter((s) => s.enabled !== false)) {
-  for (const url of src.feeds) {
-    const st = { source: src.id, name: src.name, kind: 'news feed', url, retrieved_at: new Date().toISOString() };
+  for (const feed of src.feeds) {
+    const f = typeof feed === 'string' ? { url: feed } : feed;
+    const url = f.url, type = f.type ?? src.type ?? 'news';
+    const st = { source: src.id, name: src.name, kind: 'news feed', type, url, retrieved_at: new Date().toISOString() };
     try {
-      const parsed = parseFeed(await get(url));
+      const parsed = parseFeed(await get(url)).filter((p) => !f.url_contains || p.link.includes(f.url_contains));
       st.status = 'ok'; st.items = parsed.length;
-      items.push(...parsed.map((p) => ({ ...p, source: src.id, publisher: src.publisher })));
+      items.push(...parsed.map((p) => ({ ...p, type, source: src.id, publisher: src.publisher })));
     } catch (e) {
       st.status = 'failed'; st.error = String(e.message || e);
     }
@@ -144,7 +160,7 @@ const day = (d) => d.toISOString().slice(0, 10);
 const days = [];
 for (let t = new Date(Date.UTC(windowStart.getUTCFullYear(), windowStart.getUTCMonth(), windowStart.getUTCDate() + 1)); t <= now; t = new Date(t.getTime() + 86400000)) days.push(day(t));
 
-const themeStats = themesCfg.themes.map((t) => {
+const themeStats = themesCfg.themes.map((t, idx) => {
   const its = weekItems.filter((it) => it.themes.includes(t.id));
   const byCountry = {};
   its.forEach((it) => it.countries.forEach((c) => (byCountry[c] = (byCountry[c] || 0) + it.weights[c])));
@@ -152,7 +168,7 @@ const themeStats = themesCfg.themes.map((t) => {
   its.forEach((it) => { const k = day(it.date); if (k in byDay) byDay[k]++; });
   const bySource = {};
   its.forEach((it) => (bySource[it.source] = (bySource[it.source] || 0) + 1));
-  return { id: t.id, label: t.label, keywords: t.keywords, items: its.length, share: weekItems.length ? its.length / weekItems.length : 0, byCountry, byDay, bySource };
+  return { id: t.id, idx, label: t.label, keywords: t.keywords, items: its.length, share: weekItems.length ? its.length / weekItems.length : 0, byCountry, byDay, bySource };
 }).sort((a, b) => b.items - a.items || a.label.localeCompare(b.label));
 
 const top = themeStats[0];
@@ -166,7 +182,8 @@ const allCountries = {};
 weekItems.forEach((it) => it.countries.forEach((c) => (allCountries[c] = (allCountries[c] || 0) + it.weights[c])));
 
 // ---------- indicators ----------
-const focusIsos = [...new Set([...focus.map((f) => f.iso3), ...rank(allCountries).slice(0, 4).map(([c]) => c)])];
+const top10 = rank(allCountries).slice(0, 10).map(([iso3, n]) => ({ iso3, n }));
+const focusIsos = [...new Set([...focus.map((f) => f.iso3), ...top10.map((t) => t.iso3)])];
 const indicators = [];
 const y1 = now.getUTCFullYear();
 for (const ind of sources.indicators) {
@@ -217,10 +234,11 @@ const snapshot = {
   top_theme: top.id,
   themes: themeStats,
   top_themes: topThemes.map((t) => t.id),
+  top10,
   focus,
   mentions: allCountries,
   countries: countryInfo,
-  news: weekItems.sort((a, b) => b.date - a.date).map((it) => ({ title: it.title, link: it.link, date: it.date.toISOString(), source: it.source, publisher: it.publisher, author: it.author, summary: it.summary.slice(0, 320), tags: it.tags.slice(0, 6), themes: it.themes, countries: it.countries })),
+  news: weekItems.sort((a, b) => b.date - a.date).map((it) => ({ type: it.type, title: it.title, link: it.link, date: it.date.toISOString(), source: it.source, publisher: it.publisher, author: it.author, summary: it.summary.slice(0, 320), tags: it.tags.slice(0, 6), themes: it.themes, countries: it.countries })),
   indicators,
   sources: { config: sources.news.map(({ id, name, publisher, homepage, note, enabled }) => ({ id, name, publisher, homepage, note, enabled })), statuses },
 };

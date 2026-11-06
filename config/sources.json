@@ -1,5 +1,5 @@
 {
-  "_comment": "Edit this file to add, remove or swap data sources. Each news feed is RSS or Atom. Set enabled:false to switch a source off without deleting it.",
+  "_comment": "Edit this file to add, remove or swap data sources. A news feed is RSS, Atom or a Google News sitemap; give it as a URL, or as {url, type, url_contains}. type is news or analysis and sets the tag colour. Set enabled:false to switch a source off without deleting it.",
   "window_days": 7,
   "user_agent": "geo-dashboard/0.1 (academic research; weekly snapshot)",
   "news": [
@@ -8,6 +8,7 @@
       "name": "Geopolitical Monitor",
       "publisher": "Geopolitical Monitor",
       "homepage": "https://www.geopoliticalmonitor.com/",
+      "type": "analysis",
       "feeds": [
         "https://www.geopoliticalmonitor.com/feed/",
         "https://www.geopoliticalmonitor.com/feed/?paged=2"
@@ -20,21 +21,30 @@
       "publisher": "RAND Corporation",
       "homepage": "https://www.rand.org/",
       "feeds": [
-        "https://www.rand.org/pubs/commentary.xml",
-        "https://www.rand.org/news/press.xml"
+        {
+          "url": "https://www.rand.org/pubs/commentary.xml",
+          "type": "analysis"
+        },
+        {
+          "url": "https://www.rand.org/news/press.xml",
+          "type": "news"
+        }
       ],
       "enabled": true
     },
     {
-      "id": "bloomberg",
-      "name": "Bloomberg",
-      "publisher": "Bloomberg L.P.",
-      "homepage": "https://www.bloomberg.com/",
+      "id": "reuters",
+      "name": "Reuters World",
+      "publisher": "Reuters",
+      "homepage": "https://www.reuters.com/world/",
+      "type": "news",
       "feeds": [
-        "https://feeds.bloomberg.com/politics/news.rss",
-        "https://feeds.bloomberg.com/economics/news.rss"
+        {
+          "url": "https://www.reuters.com/arc/outboundfeeds/news-sitemap/?outputType=xml",
+          "url_contains": "/world/"
+        }
       ],
-      "note": "Bloomberg articles are paywalled. Only headlines and links are used.",
+      "note": "Headlines and links from Reuters' public news sitemap, limited to the World section. Articles stay on reuters.com.",
       "enabled": true
     }
   ],
@@ -85,6 +95,24 @@
       "short": "IMF growth projection",
       "unit": "%",
       "publisher": "International Monetary Fund, World Economic Outlook (DataMapper)"
+    },
+    {
+      "id": "population",
+      "provider": "worldbank",
+      "code": "SP.POP.TOTL",
+      "label": "Population, total",
+      "short": "Population",
+      "unit": "people",
+      "publisher": "World Bank, World Development Indicators"
+    },
+    {
+      "id": "gdp",
+      "provider": "worldbank",
+      "code": "NY.GDP.MKTP.CD",
+      "label": "GDP (current US$)",
+      "short": "GDP",
+      "unit": "US$",
+      "publisher": "World Bank, World Development Indicators"
     }
   ]
 }

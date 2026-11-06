@@ -41,5 +41,5 @@ All of it is configuration, not code:
 - World Bank: World Development Indicators and Worldwide Governance Indicators (CC BY 4.0).
 - International Monetary Fund: World Economic Outlook via DataMapper.
 - Geopolitical Monitor and RAND Corporation: headlines, short summaries and links from their public feeds. Full articles stay on the publishers' sites.
-- Bloomberg: headlines and links only, when the feed is reachable; articles are paywalled.
+- Reuters World: headlines and links from the public news sitemap, World section only. Articles stay on reuters.com.
 - Boundaries: Natural Earth via world-atlas (public domain).
