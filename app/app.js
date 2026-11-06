@@ -425,6 +425,24 @@
       ul.append(li);
     });
   }
+  // full list, shown only in the PDF / print version
+  function renderItemsPrint() {
+    const list = [...S.news].sort((a, b) => new Date(b.date) - new Date(a.date));
+    $('#items-note').textContent = `All ${list.length} news and analysis items collected for this period, newest first, with the themes each one counts toward. Titles link to the original.`;
+    const ol = $('#items-list'); ol.replaceChildren();
+    list.forEach((n) => {
+      const li = document.createElement('li');
+      const meta = document.createElement('div'); meta.className = 'meta';
+      const pub = document.createElement('b'); pub.textContent = n.publisher;
+      const dt = document.createElement('time'); dt.dateTime = n.date; dt.textContent = fmtDate(new Date(n.date));
+      meta.append(kindTag(n), pub, dt);
+      if (n.author) { const au = document.createElement('span'); au.textContent = n.author; meta.append(au); }
+      const h = document.createElement('a'); h.className = 'ttl'; h.href = n.link; h.textContent = n.title;
+      const tags = document.createElement('div'); tags.className = 'tags';
+      n.themes.forEach((t) => tags.append(themeTag(t)));
+      li.append(meta, h, tags); ol.append(li);
+    });
+  }
   const citation = (n) => `${n.author ? n.author + '. ' : ''}(${d3.utcFormat('%Y, %B %-d')(new Date(n.date))}). ${n.title}. ${n.publisher}. ${n.link}`;
   function copyText(btn, text) {
     const done = () => { const o = btn.textContent; btn.textContent = 'Copied'; setTimeout(() => (btn.textContent = o), 1400); };
@@ -481,7 +499,7 @@
 
   // ---------- boot ----------
   function drawAll() { renderWorld(); renderRegion(); renderThemes(); renderTimeline(); renderContext(); }
-  renderText(); setupExport(); drawAll(); renderTopCountries(); renderNews(); renderSources();
+  renderText(); setupExport(); drawAll(); renderTopCountries(); renderNews(); renderItemsPrint(); renderSources();
   if (S.focus[0]) selectCountry(S.focus[0].iso3);
   let lastW = innerWidth;
   addEventListener('resize', () => { if (Math.abs(innerWidth - lastW) > 40) { lastW = innerWidth; drawAll(); } });

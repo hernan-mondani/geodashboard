@@ -246,7 +246,7 @@ footer { color: var(--muted); font-size: 12px; padding-block: 24px 40px; }
 @media print {
   .grid.maps, .grid.analysis, .lede { grid-template-columns: minmax(0, 1fr) !important; }
   body { font-size: 10.5px; }
-  /* page plan: 1 title, summary, world view · 2 region + country card · 3 country context · 4 timeline · 5 prevalence · 6-7 sources */
+  /* page plan: 1 title, summary, world view · 2 region + country card · 3 country context · 4 timeline · 5 prevalence · 6+ all items · then sources */
   .print-page { break-before: page; page-break-before: always; }
   .no-print { display: none !important; }
   .lede { padding-block: 10px 0; }
@@ -284,3 +284,15 @@ table.ind .cell small { margin-left: 0; }
 .mult .grid line { stroke: var(--line); }
 @media (max-width: 860px) { .ctx { grid-template-columns: minmax(0, 1fr); } }
 @media print { .ctx { grid-template-columns: minmax(0, 1fr); } }
+
+/* full item list: PDF only */
+.print-only { display: none; }
+.items { margin: 0; padding: 0 0 0 2.4em; display: grid; gap: 0; font-size: 12px; }
+.items li { padding: 6px 0; border-bottom: 1px solid var(--line); break-inside: avoid; page-break-inside: avoid; }
+.items li::marker { color: var(--muted); font-variant-numeric: tabular-nums; }
+.items .meta { display: flex; flex-wrap: wrap; gap: 2px 8px; color: var(--muted); font-size: 10.5px; align-items: center; }
+.items .meta b { color: var(--ink-2); font-weight: 600; }
+.items .ttl { display: block; color: var(--ink); font-weight: 600; text-decoration: none; margin: 2px 0 3px; line-height: 1.3; }
+.items .tags { display: flex; flex-wrap: wrap; gap: 3px; }
+.items .tag { font-size: 10px; }
+@media print { .print-only { display: block !important; } }
