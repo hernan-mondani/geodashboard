@@ -1,0 +1,3532 @@
+{
+ "schema": 1,
+ "week": "2026-W45",
+ "generated_at": "2026-11-06T20:29:43.232Z",
+ "window": {
+  "start": "2026-10-30T20:29:26.717Z",
+  "end": "2026-11-06T20:29:26.717Z",
+  "days": 7,
+  "widened": false
+ },
+ "method": "Themes are counted from the titles, summaries and tags of news and analysis items published in the window, using the keyword lists in config/themes.json. Countries are matched by name and by the aliases in config/places.json. The region of interest is the set of countries most often named in items about the most prevalent theme.",
+ "totals": {
+  "items": 12,
+  "sources": 2
+ },
+ "top_theme": "russia-ukraine",
+ "themes": [
+  {
+   "id": "russia-ukraine",
+   "label": "Russia–Ukraine war",
+   "keywords": [
+    "ukraine",
+    "ukrainian",
+    "kyiv",
+    "donbas",
+    "crimea",
+    "zelensky",
+    "ukraine war",
+    "black sea"
+   ],
+   "items": 5,
+   "share": 0.4166666666666667,
+   "byCountry": {
+    "CHN": 1,
+    "RUS": 4,
+    "UKR": 4.5,
+    "TUR": 0.5,
+    "ROU": 0.5,
+    "BGR": 0.5,
+    "GEO": 0.5,
+    "ARM": 0.5,
+    "AZE": 0.5,
+    "KAZ": 0.5,
+    "UZB": 0.5,
+    "TKM": 0.5,
+    "KGZ": 0.5,
+    "TJK": 0.5,
+    "IRN": 2,
+    "DZA": 1,
+    "CAN": 1,
+    "NER": 1,
+    "MLI": 0.5,
+    "BFA": 0.5,
+    "TCD": 0.5,
+    "MRT": 0.5
+   },
+   "byDay": {
+    "2026-10-31": 0,
+    "2026-11-01": 0,
+    "2026-11-02": 2,
+    "2026-11-03": 0,
+    "2026-11-04": 1,
+    "2026-11-05": 2,
+    "2026-11-06": 0
+   },
+   "bySource": {
+    "geopolitical-monitor": 5
+   }
+  },
+  {
+   "id": "energy-commodities",
+   "label": "Energy and critical resources",
+   "keywords": [
+    "oil",
+    "oil prices",
+    "gas",
+    "lng",
+    "opec",
+    "gold",
+    "global gold market",
+    "critical minerals",
+    "rare earths",
+    "energy"
+   ],
+   "items": 4,
+   "share": 0.3333333333333333,
+   "byCountry": {
+    "BFA": 2,
+    "GIN": 1,
+    "MLI": 2.5,
+    "RUS": 3,
+    "NER": 2.5,
+    "TCD": 1.5,
+    "MRT": 1.5,
+    "GHA": 0.5,
+    "CIV": 0.5,
+    "SEN": 0.5,
+    "USA": 1,
+    "IRN": 2,
+    "UKR": 2,
+    "DZA": 1,
+    "CAN": 1
+   },
+   "byDay": {
+    "2026-10-31": 0,
+    "2026-11-01": 0,
+    "2026-11-02": 2,
+    "2026-11-03": 1,
+    "2026-11-04": 0,
+    "2026-11-05": 0,
+    "2026-11-06": 1
+   },
+   "bySource": {
+    "geopolitical-monitor": 4
+   }
+  },
+  {
+   "id": "russia-west",
+   "label": "Russia and NATO",
+   "keywords": [
+    "nato",
+    "kremlin",
+    "putin",
+    "russia-nato relations",
+    "hybrid warfare",
+    "baltic",
+    "shadow fleet"
+   ],
+   "items": 4,
+   "share": 0.3333333333333333,
+   "byCountry": {
+    "RUS": 4,
+    "UKR": 3,
+    "MLI": 1,
+    "NER": 1,
+    "USA": 1,
+    "BFA": 0.5,
+    "TCD": 0.5,
+    "MRT": 0.5,
+    "IRN": 1
+   },
+   "byDay": {
+    "2026-10-31": 0,
+    "2026-11-01": 0,
+    "2026-11-02": 1,
+    "2026-11-03": 1,
+    "2026-11-04": 1,
+    "2026-11-05": 1,
+    "2026-11-06": 0
+   },
+   "bySource": {
+    "geopolitical-monitor": 4
+   }
+  },
+  {
+   "id": "defense",
+   "label": "Defense spending and arms",
+   "keywords": [
+    "rearm",
+    "rearmed",
+    "arms",
+    "global arms market",
+    "nato defense spending",
+    "defense spending",
+    "military",
+    "drone warfare",
+    "procurement",
+    "shipbuilding"
+   ],
+   "items": 3,
+   "share": 0.25,
+   "byCountry": {
+    "IND": 1,
+    "PAK": 1,
+    "MLI": 1.5,
+    "NER": 2,
+    "RUS": 1,
+    "USA": 1,
+    "BFA": 1,
+    "TCD": 1,
+    "MRT": 1,
+    "DZA": 1,
+    "CAN": 1,
+    "IRN": 1,
+    "UKR": 1
+   },
+   "byDay": {
+    "2026-10-31": 0,
+    "2026-11-01": 0,
+    "2026-11-02": 1,
+    "2026-11-03": 2,
+    "2026-11-04": 0,
+    "2026-11-05": 0,
+    "2026-11-06": 0
+   },
+   "bySource": {
+    "geopolitical-monitor": 3
+   }
+  },
+  {
+   "id": "sahel-africa",
+   "label": "Sahel and African security",
+   "keywords": [
+    "sahel",
+    "mali",
+    "burkina faso",
+    "niger",
+    "wagner",
+    "wagner group",
+    "africa corps",
+    "sudan",
+    "west africa"
+   ],
+   "items": 3,
+   "share": 0.25,
+   "byCountry": {
+    "BFA": 2,
+    "GIN": 1,
+    "MLI": 2.5,
+    "RUS": 2,
+    "NER": 2.5,
+    "TCD": 1.5,
+    "MRT": 1.5,
+    "GHA": 0.5,
+    "CIV": 0.5,
+    "SEN": 0.5,
+    "USA": 1,
+    "DZA": 1,
+    "CAN": 1,
+    "IRN": 1,
+    "UKR": 1
+   },
+   "byDay": {
+    "2026-10-31": 0,
+    "2026-11-01": 0,
+    "2026-11-02": 1,
+    "2026-11-03": 1,
+    "2026-11-04": 0,
+    "2026-11-05": 0,
+    "2026-11-06": 1
+   },
+   "bySource": {
+    "geopolitical-monitor": 3
+   }
+  },
+  {
+   "id": "sanctions-trade",
+   "label": "Sanctions, trade and economic statecraft",
+   "keywords": [
+    "sanction",
+    "sanctions",
+    "tariff",
+    "tariffs",
+    "export controls",
+    "trade war",
+    "supply chains",
+    "russia sanctions"
+   ],
+   "items": 3,
+   "share": 0.25,
+   "byCountry": {
+    "BFA": 1,
+    "GIN": 1,
+    "MLI": 1,
+    "RUS": 3,
+    "NER": 0.5,
+    "TCD": 0.5,
+    "MRT": 0.5,
+    "GHA": 0.5,
+    "CIV": 0.5,
+    "SEN": 0.5,
+    "UKR": 2,
+    "IRN": 1
+   },
+   "byDay": {
+    "2026-10-31": 0,
+    "2026-11-01": 0,
+    "2026-11-02": 1,
+    "2026-11-03": 0,
+    "2026-11-04": 0,
+    "2026-11-05": 1,
+    "2026-11-06": 1
+   },
+   "bySource": {
+    "geopolitical-monitor": 3
+   }
+  },
+  {
+   "id": "iran",
+   "label": "Iran conflict",
+   "keywords": [
+    "iran",
+    "iranian",
+    "tehran",
+    "hormuz",
+    "iran war",
+    "irgc"
+   ],
+   "items": 2,
+   "share": 0.16666666666666666,
+   "byCountry": {
+    "IRN": 2,
+    "RUS": 1,
+    "UKR": 2,
+    "DZA": 1,
+    "CAN": 1,
+    "NER": 1,
+    "MLI": 0.5,
+    "BFA": 0.5,
+    "TCD": 0.5,
+    "MRT": 0.5
+   },
+   "byDay": {
+    "2026-10-31": 0,
+    "2026-11-01": 0,
+    "2026-11-02": 2,
+    "2026-11-03": 0,
+    "2026-11-04": 0,
+    "2026-11-05": 0,
+    "2026-11-06": 0
+   },
+   "bySource": {
+    "geopolitical-monitor": 2
+   }
+  },
+  {
+   "id": "us-china",
+   "label": "US–China rivalry and Taiwan",
+   "keywords": [
+    "taiwan",
+    "taiwanese",
+    "us-china",
+    "beijing",
+    "south china sea",
+    "xi jinping",
+    "great power competition",
+    "indo-pacific"
+   ],
+   "items": 2,
+   "share": 0.16666666666666666,
+   "byCountry": {
+    "CHN": 2,
+    "TWN": 1,
+    "USA": 1,
+    "RUS": 1,
+    "UKR": 0.5,
+    "TUR": 0.5,
+    "ROU": 0.5,
+    "BGR": 0.5,
+    "GEO": 0.5,
+    "ARM": 0.5,
+    "AZE": 0.5,
+    "KAZ": 0.5,
+    "UZB": 0.5,
+    "TKM": 0.5,
+    "KGZ": 0.5,
+    "TJK": 0.5
+   },
+   "byDay": {
+    "2026-10-31": 0,
+    "2026-11-01": 0,
+    "2026-11-02": 0,
+    "2026-11-03": 0,
+    "2026-11-04": 0,
+    "2026-11-05": 1,
+    "2026-11-06": 1
+   },
+   "bySource": {
+    "geopolitical-monitor": 2
+   }
+  },
+  {
+   "id": "tech-security",
+   "label": "AI, cyber and biosecurity",
+   "keywords": [
+    "AI",
+    "artificial intelligence",
+    "cyber",
+    "cyberattack",
+    "biosecurity",
+    "semiconductor",
+    "semiconductors"
+   ],
+   "items": 1,
+   "share": 0.08333333333333333,
+   "byCountry": {},
+   "byDay": {
+    "2026-10-31": 0,
+    "2026-11-01": 0,
+    "2026-11-02": 0,
+    "2026-11-03": 0,
+    "2026-11-04": 1,
+    "2026-11-05": 0,
+    "2026-11-06": 0
+   },
+   "bySource": {
+    "rand": 1
+   }
+  },
+  {
+   "id": "elections-governance",
+   "label": "Elections and governance",
+   "keywords": [
+    "election",
+    "elections",
+    "vote",
+    "referendum",
+    "coup",
+    "protest",
+    "protests",
+    "independence"
+   ],
+   "items": 1,
+   "share": 0.08333333333333333,
+   "byCountry": {
+    "CHN": 1,
+    "TWN": 1,
+    "USA": 1
+   },
+   "byDay": {
+    "2026-10-31": 0,
+    "2026-11-01": 0,
+    "2026-11-02": 0,
+    "2026-11-03": 0,
+    "2026-11-04": 0,
+    "2026-11-05": 0,
+    "2026-11-06": 1
+   },
+   "bySource": {
+    "geopolitical-monitor": 1
+   }
+  },
+  {
+   "id": "south-asia",
+   "label": "India–Pakistan tensions",
+   "keywords": [
+    "india pakistan tension",
+    "kashmir",
+    "pakistan",
+    "sindoor"
+   ],
+   "items": 1,
+   "share": 0.08333333333333333,
+   "byCountry": {
+    "IND": 1,
+    "PAK": 1
+   },
+   "byDay": {
+    "2026-10-31": 0,
+    "2026-11-01": 0,
+    "2026-11-02": 0,
+    "2026-11-03": 1,
+    "2026-11-04": 0,
+    "2026-11-05": 0,
+    "2026-11-06": 0
+   },
+   "bySource": {
+    "geopolitical-monitor": 1
+   }
+  },
+  {
+   "id": "israel-gaza",
+   "label": "Israel, Gaza and the Levant",
+   "keywords": [
+    "israel",
+    "israeli",
+    "gaza",
+    "hamas",
+    "hezbollah",
+    "lebanon",
+    "netanyahu",
+    "west bank",
+    "houthi",
+    "houthis",
+    "yemen"
+   ],
+   "items": 0,
+   "share": 0,
+   "byCountry": {},
+   "byDay": {
+    "2026-10-31": 0,
+    "2026-11-01": 0,
+    "2026-11-02": 0,
+    "2026-11-03": 0,
+    "2026-11-04": 0,
+    "2026-11-05": 0,
+    "2026-11-06": 0
+   },
+   "bySource": {}
+  }
+ ],
+ "top_themes": [
+  "russia-ukraine",
+  "energy-commodities",
+  "russia-west"
+ ],
+ "focus": [
+  {
+   "iso3": "UKR",
+   "n": 4.5
+  },
+  {
+   "iso3": "RUS",
+   "n": 4
+  },
+  {
+   "iso3": "IRN",
+   "n": 2
+  }
+ ],
+ "mentions": {
+  "BFA": 2,
+  "GIN": 1,
+  "MLI": 2.5,
+  "RUS": 6,
+  "NER": 2.5,
+  "TCD": 1.5,
+  "MRT": 1.5,
+  "GHA": 0.5,
+  "CIV": 0.5,
+  "SEN": 0.5,
+  "CHN": 2,
+  "TWN": 1,
+  "USA": 2,
+  "UKR": 4.5,
+  "TUR": 0.5,
+  "ROU": 0.5,
+  "BGR": 0.5,
+  "GEO": 0.5,
+  "ARM": 0.5,
+  "AZE": 0.5,
+  "KAZ": 0.5,
+  "UZB": 0.5,
+  "TKM": 0.5,
+  "KGZ": 0.5,
+  "TJK": 0.5,
+  "IND": 1,
+  "PAK": 1,
+  "IRN": 2,
+  "DZA": 1,
+  "CAN": 1
+ },
+ "countries": {
+  "BFA": {
+   "name": "Burkina Faso",
+   "numeric": "854"
+  },
+  "GIN": {
+   "name": "Guinea",
+   "numeric": "324"
+  },
+  "MLI": {
+   "name": "Mali",
+   "numeric": "466"
+  },
+  "RUS": {
+   "name": "Russia",
+   "numeric": "643"
+  },
+  "NER": {
+   "name": "Niger",
+   "numeric": "562"
+  },
+  "TCD": {
+   "name": "Chad",
+   "numeric": "148"
+  },
+  "MRT": {
+   "name": "Mauritania",
+   "numeric": "478"
+  },
+  "GHA": {
+   "name": "Ghana",
+   "numeric": "288"
+  },
+  "CIV": {
+   "name": "Cote d'Ivoire",
+   "numeric": "384"
+  },
+  "SEN": {
+   "name": "Senegal",
+   "numeric": "686"
+  },
+  "CHN": {
+   "name": "China",
+   "numeric": "156"
+  },
+  "TWN": {
+   "name": "Taiwan",
+   "numeric": "158"
+  },
+  "USA": {
+   "name": "United States",
+   "numeric": "840"
+  },
+  "UKR": {
+   "name": "Ukraine",
+   "numeric": "804"
+  },
+  "TUR": {
+   "name": "Türkiye",
+   "numeric": "792"
+  },
+  "ROU": {
+   "name": "Romania",
+   "numeric": "642"
+  },
+  "BGR": {
+   "name": "Bulgaria",
+   "numeric": "100"
+  },
+  "GEO": {
+   "name": "Georgia",
+   "numeric": "268"
+  },
+  "ARM": {
+   "name": "Armenia",
+   "numeric": "051"
+  },
+  "AZE": {
+   "name": "Azerbaijan",
+   "numeric": "031"
+  },
+  "KAZ": {
+   "name": "Kazakhstan",
+   "numeric": "398"
+  },
+  "UZB": {
+   "name": "Uzbekistan",
+   "numeric": "860"
+  },
+  "TKM": {
+   "name": "Turkmenistan",
+   "numeric": "795"
+  },
+  "KGZ": {
+   "name": "Kyrgyzstan",
+   "numeric": "417"
+  },
+  "TJK": {
+   "name": "Tajikistan",
+   "numeric": "762"
+  },
+  "IND": {
+   "name": "India",
+   "numeric": "356"
+  },
+  "PAK": {
+   "name": "Pakistan",
+   "numeric": "586"
+  },
+  "IRN": {
+   "name": "Iran",
+   "numeric": "364"
+  },
+  "DZA": {
+   "name": "Algeria",
+   "numeric": "012"
+  },
+  "CAN": {
+   "name": "Canada",
+   "numeric": "124"
+  }
+ },
+ "news": [
+  {
+   "title": "Refining Sovereignty: Russia and West Africa’s Gold Refinery Wave",
+   "link": "https://www.geopoliticalmonitor.com/refining-sovereignty-west-africas-gold-refinery-wave/",
+   "date": "2026-11-06T14:30:28.000Z",
+   "source": "geopolitical-monitor",
+   "publisher": "Geopolitical Monitor",
+   "author": "Arman Sidhu",
+   "summary": "Guinea, Burkina Faso, and Mali are building gold refineries several times larger than their own mines, without a London stamp for the bars.",
+   "tags": [
+    "Global Gold Market",
+    "Supply Chains",
+    "The Sahel"
+   ],
+   "themes": [
+    "sahel-africa",
+    "sanctions-trade",
+    "energy-commodities"
+   ],
+   "countries": [
+    "BFA",
+    "GIN",
+    "MLI",
+    "RUS",
+    "NER",
+    "TCD",
+    "MRT",
+    "GHA",
+    "CIV",
+    "SEN"
+   ]
+  },
+  {
+   "title": "Already Independent, Never Asked: Taiwan’s Missing Vote",
+   "link": "https://www.geopoliticalmonitor.com/already-independent-never-asked-taiwans-missing-vote/",
+   "date": "2026-11-06T13:34:35.000Z",
+   "source": "geopolitical-monitor",
+   "publisher": "Geopolitical Monitor",
+   "author": "Meng Kit Tang",
+   "summary": "Taiwan’s president says the island is already independent, but rules both major parties wrote keep the question off the ballot.",
+   "tags": [
+    "Taiwan Conflict",
+    "US-China Rivalry"
+   ],
+   "themes": [
+    "us-china",
+    "elections-governance"
+   ],
+   "countries": [
+    "CHN",
+    "TWN",
+    "USA"
+   ]
+  },
+  {
+   "title": "Moscow and Beijing’s Asymmetric Bargain in the Black Sea and Central Asia",
+   "link": "https://www.geopoliticalmonitor.com/moscow-and-beijings-asymmetric-bargain-in-the-black-sea-and-central-asia/",
+   "date": "2026-11-05T14:20:39.000Z",
+   "source": "geopolitical-monitor",
+   "publisher": "Geopolitical Monitor",
+   "author": "Tolga Demiryol",
+   "summary": "China gives way to Russia on Black Sea security, and Moscow lets Beijing reshape the trade routes around it.",
+   "tags": [
+    "China Belt and Road Initiative (BRI)",
+    "Great Power Competition",
+    "Middle Corridor",
+    "Russia-China Relations",
+    "South Caucasus"
+   ],
+   "themes": [
+    "russia-ukraine",
+    "us-china"
+   ],
+   "countries": [
+    "CHN",
+    "RUS",
+    "UKR",
+    "TUR",
+    "ROU",
+    "BGR",
+    "GEO",
+    "ARM",
+    "AZE",
+    "KAZ",
+    "UZB",
+    "TKM",
+    "KGZ",
+    "TJK"
+   ]
+  },
+  {
+   "title": "Russia’s Shadow Fleet Now Sails Under Its Own Flag",
+   "link": "https://www.geopoliticalmonitor.com/russias-shadow-fleet-now-sails-under-its-own-flag/",
+   "date": "2026-11-05T13:51:27.000Z",
+   "source": "geopolitical-monitor",
+   "publisher": "Geopolitical Monitor",
+   "author": "Simone Chiusa",
+   "summary": "Europe found a legal way to board Russia’s shadow tankers, and Moscow closed it by handing them Russian flags and frigate escorts.",
+   "tags": [
+    "Hybrid Warfare",
+    "Russia Sanctions",
+    "Russia-NATO Relations",
+    "Ukraine War"
+   ],
+   "themes": [
+    "russia-ukraine",
+    "russia-west",
+    "sanctions-trade"
+   ],
+   "countries": [
+    "RUS",
+    "UKR"
+   ]
+  },
+  {
+   "title": "Preparedness for the AI Era Requires a Reserve of Critical Workers",
+   "link": "https://www.rand.org/pubs/commentary/2026/11/preparedness-for-the-ai-era-requires-a-reserve-of-critical.html",
+   "date": "2026-11-04T15:15:00.000Z",
+   "source": "rand",
+   "publisher": "RAND Corporation",
+   "author": "",
+   "summary": "If governments or employers assume that permanent AI automation is right around the corner, vital training and career pipelines could collapse. We could find ourselves without enough people to perform work essential for our society to function.",
+   "tags": [],
+   "themes": [
+    "tech-security"
+   ],
+   "countries": []
+  },
+  {
+   "title": "Frozen Conflicts Are Russia’s Strategy, Not a Path to Peace in Ukraine",
+   "link": "https://www.geopoliticalmonitor.com/frozen-conflicts-are-russias-strategy-not-a-path-to-peace-in-ukraine/",
+   "date": "2026-11-04T12:12:27.000Z",
+   "source": "geopolitical-monitor",
+   "publisher": "Geopolitical Monitor",
+   "author": "Halina Sapeha & Emmanuel Brunet-Jailly",
+   "summary": "Freezing Ukraine’s front line would follow the pattern Russia set in Transnistria, Abkhazia, and South Ossetia.",
+   "tags": [
+    "Border Dispute",
+    "European Union (EU)",
+    "Hybrid Warfare",
+    "NATO",
+    "Russia-NATO Relations",
+    "Ukraine War"
+   ],
+   "themes": [
+    "russia-ukraine",
+    "russia-west"
+   ],
+   "countries": [
+    "RUS",
+    "UKR"
+   ]
+  },
+  {
+   "title": "The Procurement Trap: India’s Post-Sindoor Arms Spree",
+   "link": "https://www.geopoliticalmonitor.com/the-procurement-trap-indias-post-sindoor-arms-spree/",
+   "date": "2026-11-03T14:44:11.000Z",
+   "source": "geopolitical-monitor",
+   "publisher": "Geopolitical Monitor",
+   "author": "Sibra Waseem",
+   "summary": "India has approved more than ₹10 trillion in arms since Operation Sindoor, from 114 Rafale fighters to K-9 Vajra howitzers.",
+   "tags": [
+    "Global Arms Market",
+    "India Foreign Policy",
+    "India Pakistan Tension"
+   ],
+   "themes": [
+    "south-asia",
+    "defense"
+   ],
+   "countries": [
+    "IND",
+    "PAK"
+   ]
+  },
+  {
+   "title": "The Kremlin’s African Bargain: How Washington Can Challenge Russia on the Continent",
+   "link": "https://www.geopoliticalmonitor.com/the-kremlins-african-bargain-how-washington-can-challenge-russia/",
+   "date": "2026-11-03T13:37:55.000Z",
+   "source": "geopolitical-monitor",
+   "publisher": "Geopolitical Monitor",
+   "author": "Ben Poulin",
+   "summary": "Washington is courting Mali’s junta again, two years after Russia’s Africa Corps replaced US troops in Niger.",
+   "tags": [
+    "Critical Minerals",
+    "Private Military Company (PMC)",
+    "The Sahel",
+    "Wagner Group"
+   ],
+   "themes": [
+    "russia-west",
+    "sahel-africa",
+    "energy-commodities",
+    "defense"
+   ],
+   "countries": [
+    "MLI",
+    "NER",
+    "RUS",
+    "USA",
+    "BFA",
+    "TCD",
+    "MRT"
+   ]
+  },
+  {
+   "title": "Lessons from L.A. on Transfer Taxes",
+   "link": "https://www.rand.org/pubs/commentary/2026/11/lessons-from-la-on-transfer-taxes.html",
+   "date": "2026-11-02T22:45:00.000Z",
+   "source": "rand",
+   "publisher": "RAND Corporation",
+   "author": "",
+   "summary": "San Francisco voters have a new proposition on real estate transfer taxes to consider. Aspects of and arguments for the new Prop 1 closely mirror the debate over Los Angeles' Measure ULA, a 2022 ballot initiative that established a similar transfer tax and funding program.",
+   "tags": [],
+   "themes": [],
+   "countries": []
+  },
+  {
+   "title": "Putin’s Iran Gambit: What Is Russia Trying to Achieve?",
+   "link": "https://www.geopoliticalmonitor.com/putins-iran-gambit-what-is-russia-trying-to-achieve/",
+   "date": "2026-11-02T14:36:32.000Z",
+   "source": "geopolitical-monitor",
+   "publisher": "Geopolitical Monitor",
+   "author": "Elkhan Nuriyev",
+   "summary": "Russia wants to preserve Iran as a strategic partner while navigating the economic and geopolitical consequences of a war it cannot control.",
+   "tags": [
+    "Iran War",
+    "Oil Prices",
+    "Supply Chains",
+    "Ukraine War"
+   ],
+   "themes": [
+    "russia-ukraine",
+    "iran",
+    "russia-west",
+    "sanctions-trade",
+    "energy-commodities"
+   ],
+   "countries": [
+    "IRN",
+    "RUS",
+    "UKR"
+   ]
+  },
+  {
+   "title": "Canada’s Security Strategy Goes Realist | Geopolitics Weekly",
+   "link": "https://www.geopoliticalmonitor.com/canadas-security-strategy-goes-realist-geopolitics-weekly/",
+   "date": "2026-11-02T14:09:26.000Z",
+   "source": "geopolitical-monitor",
+   "publisher": "Geopolitical Monitor",
+   "author": "Zachary Fillingham",
+   "summary": "Canada’s new security strategy names no enemy. Plus Algeria sends troops to Niger, and Afghan opium cultivation jumps 330%.",
+   "tags": [
+    "Canada Military",
+    "Canada Politics",
+    "Drone Warfare",
+    "Geopolitics Weekly",
+    "Iran War",
+    "Oil Prices"
+   ],
+   "themes": [
+    "russia-ukraine",
+    "iran",
+    "sahel-africa",
+    "energy-commodities",
+    "defense"
+   ],
+   "countries": [
+    "DZA",
+    "CAN",
+    "IRN",
+    "NER",
+    "UKR",
+    "MLI",
+    "BFA",
+    "TCD",
+    "MRT"
+   ]
+  },
+  {
+   "title": "Why Employers Can't Tame Health Costs",
+   "link": "https://www.rand.org/pubs/commentary/2026/11/why-employers-cant-tame-health-costs.html",
+   "date": "2026-11-02T12:00:00.000Z",
+   "source": "rand",
+   "publisher": "RAND Corporation",
+   "author": "",
+   "summary": "Price transparency alone isn’t helping employers rein in health care costs. What will it take to give them real leverage—and overcome the barriers of today’s system?",
+   "tags": [],
+   "themes": [],
+   "countries": []
+  }
+ ],
+ "indicators": [
+  {
+   "id": "pol_stability",
+   "provider": "worldbank",
+   "code": "GOV_WGI_PV.EST",
+   "wb_source": 3,
+   "label": "Political stability and absence of violence",
+   "short": "Political stability",
+   "unit": "index, -2.5 (weak) to +2.5 (strong)",
+   "publisher": "World Bank, Worldwide Governance Indicators",
+   "role": "risk",
+   "values": [
+    {
+     "iso3": "IRN",
+     "year": 2025,
+     "value": -1.6905921
+    },
+    {
+     "iso3": "IRN",
+     "year": 2024,
+     "value": -1.4410435
+    },
+    {
+     "iso3": "IRN",
+     "year": 2023,
+     "value": -1.2784026
+    },
+    {
+     "iso3": "IRN",
+     "year": 2022,
+     "value": -1.1464054
+    },
+    {
+     "iso3": "IRN",
+     "year": 2021,
+     "value": -1.1649568
+    },
+    {
+     "iso3": "IRN",
+     "year": 2020,
+     "value": -1.2280094
+    },
+    {
+     "iso3": "IRN",
+     "year": 2019,
+     "value": -1.2559212
+    },
+    {
+     "iso3": "IRN",
+     "year": 2018,
+     "value": -0.9874881
+    },
+    {
+     "iso3": "IRN",
+     "year": 2017,
+     "value": -0.7165628
+    },
+    {
+     "iso3": "IRN",
+     "year": 2016,
+     "value": -0.6701176
+    },
+    {
+     "iso3": "IRN",
+     "year": 2015,
+     "value": -0.8137382
+    },
+    {
+     "iso3": "IRN",
+     "year": 2014,
+     "value": -0.7623744
+    },
+    {
+     "iso3": "MLI",
+     "year": 2025,
+     "value": -2.4989101
+    },
+    {
+     "iso3": "MLI",
+     "year": 2024,
+     "value": -2.4673455
+    },
+    {
+     "iso3": "MLI",
+     "year": 2023,
+     "value": -2.5569749
+    },
+    {
+     "iso3": "MLI",
+     "year": 2022,
+     "value": -2.4620949
+    },
+    {
+     "iso3": "MLI",
+     "year": 2021,
+     "value": -2.3312017
+    },
+    {
+     "iso3": "MLI",
+     "year": 2020,
+     "value": -2.0591026
+    },
+    {
+     "iso3": "MLI",
+     "year": 2019,
+     "value": -2.0477059
+    },
+    {
+     "iso3": "MLI",
+     "year": 2018,
+     "value": -1.8815567
+    },
+    {
+     "iso3": "MLI",
+     "year": 2017,
+     "value": -1.7162188
+    },
+    {
+     "iso3": "MLI",
+     "year": 2016,
+     "value": -1.5453483
+    },
+    {
+     "iso3": "MLI",
+     "year": 2015,
+     "value": -1.5532878
+    },
+    {
+     "iso3": "MLI",
+     "year": 2014,
+     "value": -1.5978529
+    },
+    {
+     "iso3": "NER",
+     "year": 2025,
+     "value": -1.7676299
+    },
+    {
+     "iso3": "NER",
+     "year": 2024,
+     "value": -1.7602928
+    },
+    {
+     "iso3": "NER",
+     "year": 2023,
+     "value": -1.6547689
+    },
+    {
+     "iso3": "NER",
+     "year": 2022,
+     "value": -1.2925903
+    },
+    {
+     "iso3": "NER",
+     "year": 2021,
+     "value": -1.4733031
+    },
+    {
+     "iso3": "NER",
+     "year": 2020,
+     "value": -1.500058
+    },
+    {
+     "iso3": "NER",
+     "year": 2019,
+     "value": -1.2045725
+    },
+    {
+     "iso3": "NER",
+     "year": 2018,
+     "value": -1.2050393
+    },
+    {
+     "iso3": "NER",
+     "year": 2017,
+     "value": -1.0496502
+    },
+    {
+     "iso3": "NER",
+     "year": 2016,
+     "value": -0.9596828
+    },
+    {
+     "iso3": "NER",
+     "year": 2015,
+     "value": -0.8173599
+    },
+    {
+     "iso3": "NER",
+     "year": 2014,
+     "value": -0.9780706
+    },
+    {
+     "iso3": "RUS",
+     "year": 2025,
+     "value": -0.9449586
+    },
+    {
+     "iso3": "RUS",
+     "year": 2024,
+     "value": -0.9333376
+    },
+    {
+     "iso3": "RUS",
+     "year": 2023,
+     "value": -0.8360173
+    },
+    {
+     "iso3": "RUS",
+     "year": 2022,
+     "value": -0.7591279
+    },
+    {
+     "iso3": "RUS",
+     "year": 2021,
+     "value": -0.5290376
+    },
+    {
+     "iso3": "RUS",
+     "year": 2020,
+     "value": -0.5281273
+    },
+    {
+     "iso3": "RUS",
+     "year": 2019,
+     "value": -0.41068
+    },
+    {
+     "iso3": "RUS",
+     "year": 2018,
+     "value": -0.3806273
+    },
+    {
+     "iso3": "RUS",
+     "year": 2017,
+     "value": -0.5332253
+    },
+    {
+     "iso3": "RUS",
+     "year": 2016,
+     "value": -0.766909
+    },
+    {
+     "iso3": "RUS",
+     "year": 2015,
+     "value": -0.7769687
+    },
+    {
+     "iso3": "RUS",
+     "year": 2014,
+     "value": -0.7092694
+    },
+    {
+     "iso3": "UKR",
+     "year": 2025,
+     "value": -0.3337994
+    },
+    {
+     "iso3": "UKR",
+     "year": 2024,
+     "value": -0.3542538
+    },
+    {
+     "iso3": "UKR",
+     "year": 2023,
+     "value": -0.5764835
+    },
+    {
+     "iso3": "UKR",
+     "year": 2022,
+     "value": -1.0534838
+    },
+    {
+     "iso3": "UKR",
+     "year": 2021,
+     "value": -0.9861999
+    },
+    {
+     "iso3": "UKR",
+     "year": 2020,
+     "value": -0.9568419
+    },
+    {
+     "iso3": "UKR",
+     "year": 2019,
+     "value": -1.034178
+    },
+    {
+     "iso3": "UKR",
+     "year": 2018,
+     "value": -1.4311324
+    },
+    {
+     "iso3": "UKR",
+     "year": 2017,
+     "value": -1.5775303
+    },
+    {
+     "iso3": "UKR",
+     "year": 2016,
+     "value": -1.6304279
+    },
+    {
+     "iso3": "UKR",
+     "year": 2015,
+     "value": -1.8177221
+    },
+    {
+     "iso3": "UKR",
+     "year": 2014,
+     "value": -1.9811261
+    }
+   ],
+   "link": "https://www.worldbank.org/en/publication/worldwide-governance-indicators",
+   "last_updated": "2026-09-25",
+   "status": "ok"
+  },
+  {
+   "id": "gdp_growth",
+   "provider": "worldbank",
+   "code": "NY.GDP.MKTP.KD.ZG",
+   "label": "GDP growth (annual %)",
+   "short": "GDP growth",
+   "unit": "%",
+   "publisher": "World Bank, World Development Indicators",
+   "values": [
+    {
+     "iso3": "IRN",
+     "year": 2025,
+     "value": -2.82597163290347
+    },
+    {
+     "iso3": "IRN",
+     "year": 2024,
+     "value": 3.66312057949303
+    },
+    {
+     "iso3": "IRN",
+     "year": 2023,
+     "value": 5.33235116079808
+    },
+    {
+     "iso3": "IRN",
+     "year": 2022,
+     "value": 4.35281087521344
+    },
+    {
+     "iso3": "IRN",
+     "year": 2021,
+     "value": 4.13089685034471
+    },
+    {
+     "iso3": "IRN",
+     "year": 2020,
+     "value": 4.44180865358672
+    },
+    {
+     "iso3": "IRN",
+     "year": 2019,
+     "value": -2.36143538770575
+    },
+    {
+     "iso3": "IRN",
+     "year": 2018,
+     "value": -3.74796015711334
+    },
+    {
+     "iso3": "IRN",
+     "year": 2017,
+     "value": 3.02685468694025
+    },
+    {
+     "iso3": "IRN",
+     "year": 2016,
+     "value": 8.8150866425182
+    },
+    {
+     "iso3": "IRN",
+     "year": 2015,
+     "value": -1.42488493937503
+    },
+    {
+     "iso3": "IRN",
+     "year": 2014,
+     "value": 4.98477506709476
+    },
+    {
+     "iso3": "MLI",
+     "year": 2025,
+     "value": 5.59946842896643
+    },
+    {
+     "iso3": "MLI",
+     "year": 2024,
+     "value": 5.01653579205785
+    },
+    {
+     "iso3": "MLI",
+     "year": 2023,
+     "value": 4.76394100040932
+    },
+    {
+     "iso3": "MLI",
+     "year": 2022,
+     "value": 3.70319027585386
+    },
+    {
+     "iso3": "MLI",
+     "year": 2021,
+     "value": 3.10094124463507
+    },
+    {
+     "iso3": "MLI",
+     "year": 2020,
+     "value": -1.16910834857605
+    },
+    {
+     "iso3": "MLI",
+     "year": 2019,
+     "value": 4.99999911699705
+    },
+    {
+     "iso3": "MLI",
+     "year": 2018,
+     "value": 4.86784999935264
+    },
+    {
+     "iso3": "MLI",
+     "year": 2017,
+     "value": 5.37554769647939
+    },
+    {
+     "iso3": "MLI",
+     "year": 2016,
+     "value": 6.00506308559498
+    },
+    {
+     "iso3": "MLI",
+     "year": 2015,
+     "value": 6.23887890181064
+    },
+    {
+     "iso3": "MLI",
+     "year": 2014,
+     "value": 6.50263878386326
+    },
+    {
+     "iso3": "NER",
+     "year": 2025,
+     "value": 7.00782960149
+    },
+    {
+     "iso3": "NER",
+     "year": 2024,
+     "value": 8.32327058280728
+    },
+    {
+     "iso3": "NER",
+     "year": 2023,
+     "value": 2.63516980401258
+    },
+    {
+     "iso3": "NER",
+     "year": 2022,
+     "value": 12.2215497467041
+    },
+    {
+     "iso3": "NER",
+     "year": 2021,
+     "value": 1.11520063869706
+    },
+    {
+     "iso3": "NER",
+     "year": 2020,
+     "value": 4.45481803846413
+    },
+    {
+     "iso3": "NER",
+     "year": 2019,
+     "value": 6.07881528959186
+    },
+    {
+     "iso3": "NER",
+     "year": 2018,
+     "value": 6.89458420864513
+    },
+    {
+     "iso3": "NER",
+     "year": 2017,
+     "value": 5.53198531271451
+    },
+    {
+     "iso3": "NER",
+     "year": 2016,
+     "value": 4.28137558478143
+    },
+    {
+     "iso3": "NER",
+     "year": 2015,
+     "value": 4.39264883207291
+    },
+    {
+     "iso3": "NER",
+     "year": 2014,
+     "value": 6.64213665495603
+    },
+    {
+     "iso3": "RUS",
+     "year": 2025,
+     "value": 1.00117656925738
+    },
+    {
+     "iso3": "RUS",
+     "year": 2024,
+     "value": 4.92167966203073
+    },
+    {
+     "iso3": "RUS",
+     "year": 2023,
+     "value": 4.06661395813023
+    },
+    {
+     "iso3": "RUS",
+     "year": 2022,
+     "value": -1.43537063467896
+    },
+    {
+     "iso3": "RUS",
+     "year": 2021,
+     "value": 5.866491772979
+    },
+    {
+     "iso3": "RUS",
+     "year": 2020,
+     "value": -2.65365449695453
+    },
+    {
+     "iso3": "RUS",
+     "year": 2019,
+     "value": 2.19807571381982
+    },
+    {
+     "iso3": "RUS",
+     "year": 2018,
+     "value": 2.80634082046656
+    },
+    {
+     "iso3": "RUS",
+     "year": 2017,
+     "value": 1.82670527549192
+    },
+    {
+     "iso3": "RUS",
+     "year": 2016,
+     "value": 0.193671130698817
+    },
+    {
+     "iso3": "RUS",
+     "year": 2015,
+     "value": -1.9727192264298
+    },
+    {
+     "iso3": "RUS",
+     "year": 2014,
+     "value": 0.736267221403651
+    },
+    {
+     "iso3": "UKR",
+     "year": 2025,
+     "value": 1.82152376756284
+    },
+    {
+     "iso3": "UKR",
+     "year": 2024,
+     "value": 3.24811808426423
+    },
+    {
+     "iso3": "UKR",
+     "year": 2023,
+     "value": 5.53473354963334
+    },
+    {
+     "iso3": "UKR",
+     "year": 2022,
+     "value": -28.7585842155085
+    },
+    {
+     "iso3": "UKR",
+     "year": 2021,
+     "value": 3.44562065945944
+    },
+    {
+     "iso3": "UKR",
+     "year": 2020,
+     "value": -3.75281793983162
+    },
+    {
+     "iso3": "UKR",
+     "year": 2019,
+     "value": 3.19950386354134
+    },
+    {
+     "iso3": "UKR",
+     "year": 2018,
+     "value": 3.48836234022659
+    },
+    {
+     "iso3": "UKR",
+     "year": 2017,
+     "value": 2.35997228099491
+    },
+    {
+     "iso3": "UKR",
+     "year": 2016,
+     "value": 2.44098194492067
+    },
+    {
+     "iso3": "UKR",
+     "year": 2015,
+     "value": -9.7729872128676
+    },
+    {
+     "iso3": "UKR",
+     "year": 2014,
+     "value": -10.0788949840953
+    }
+   ],
+   "link": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG",
+   "last_updated": "2026-10-08",
+   "status": "ok"
+  },
+  {
+   "id": "inflation",
+   "provider": "worldbank",
+   "code": "FP.CPI.TOTL.ZG",
+   "label": "Inflation, consumer prices (annual %)",
+   "short": "Inflation",
+   "unit": "%",
+   "publisher": "World Bank, World Development Indicators",
+   "values": [
+    {
+     "iso3": "IRN",
+     "year": 2025,
+     "value": 42.1712244965444
+    },
+    {
+     "iso3": "IRN",
+     "year": 2024,
+     "value": 32.4558714029169
+    },
+    {
+     "iso3": "IRN",
+     "year": 2023,
+     "value": 44.5791857572797
+    },
+    {
+     "iso3": "IRN",
+     "year": 2022,
+     "value": 43.4884641742178
+    },
+    {
+     "iso3": "IRN",
+     "year": 2021,
+     "value": 43.3890162681514
+    },
+    {
+     "iso3": "IRN",
+     "year": 2020,
+     "value": 30.5941390387295
+    },
+    {
+     "iso3": "IRN",
+     "year": 2019,
+     "value": 39.9073455697783
+    },
+    {
+     "iso3": "IRN",
+     "year": 2018,
+     "value": 18.0141183371874
+    },
+    {
+     "iso3": "IRN",
+     "year": 2017,
+     "value": 8.04492437660277
+    },
+    {
+     "iso3": "IRN",
+     "year": 2016,
+     "value": 7.24542548952978
+    },
+    {
+     "iso3": "IRN",
+     "year": 2015,
+     "value": 12.4846815611533
+    },
+    {
+     "iso3": "IRN",
+     "year": 2014,
+     "value": 16.6065532357448
+    },
+    {
+     "iso3": "MLI",
+     "year": 2025,
+     "value": 3.27823540357584
+    },
+    {
+     "iso3": "MLI",
+     "year": 2024,
+     "value": 3.20639864099659
+    },
+    {
+     "iso3": "MLI",
+     "year": 2023,
+     "value": 2.05880228274222
+    },
+    {
+     "iso3": "MLI",
+     "year": 2022,
+     "value": 9.62147608489063
+    },
+    {
+     "iso3": "MLI",
+     "year": 2021,
+     "value": 3.92560283104276
+    },
+    {
+     "iso3": "MLI",
+     "year": 2020,
+     "value": 0.438088940320668
+    },
+    {
+     "iso3": "MLI",
+     "year": 2019,
+     "value": -1.65826694846364
+    },
+    {
+     "iso3": "MLI",
+     "year": 2018,
+     "value": 0.299546507387843
+    },
+    {
+     "iso3": "MLI",
+     "year": 2017,
+     "value": 1.75985742927165
+    },
+    {
+     "iso3": "MLI",
+     "year": 2016,
+     "value": -1.79964707083385
+    },
+    {
+     "iso3": "MLI",
+     "year": 2015,
+     "value": 1.4506905760596
+    },
+    {
+     "iso3": "MLI",
+     "year": 2014,
+     "value": 0.883814547137841
+    },
+    {
+     "iso3": "NER",
+     "year": 2025,
+     "value": -4.45470804102568
+    },
+    {
+     "iso3": "NER",
+     "year": 2024,
+     "value": 9.07151997725013
+    },
+    {
+     "iso3": "NER",
+     "year": 2023,
+     "value": 3.70097316425833
+    },
+    {
+     "iso3": "NER",
+     "year": 2022,
+     "value": 4.22621791916392
+    },
+    {
+     "iso3": "NER",
+     "year": 2021,
+     "value": 3.83786802840509
+    },
+    {
+     "iso3": "NER",
+     "year": 2020,
+     "value": 2.8981937602627
+    },
+    {
+     "iso3": "NER",
+     "year": 2019,
+     "value": -2.48979265070854
+    },
+    {
+     "iso3": "NER",
+     "year": 2018,
+     "value": 2.96760366004455
+    },
+    {
+     "iso3": "NER",
+     "year": 2017,
+     "value": 2.79637318871284
+    },
+    {
+     "iso3": "NER",
+     "year": 2016,
+     "value": 1.65388922387805
+    },
+    {
+     "iso3": "NER",
+     "year": 2015,
+     "value": -0.576090369833188
+    },
+    {
+     "iso3": "NER",
+     "year": 2014,
+     "value": -0.930287259984466
+    },
+    {
+     "iso3": "RUS",
+     "year": 2025,
+     "value": 8.71986939402666
+    },
+    {
+     "iso3": "RUS",
+     "year": 2024,
+     "value": 8.43486410496723
+    },
+    {
+     "iso3": "RUS",
+     "year": 2023,
+     "value": 5.86571931748967
+    },
+    {
+     "iso3": "RUS",
+     "year": 2022,
+     "value": 13.7436797398231
+    },
+    {
+     "iso3": "RUS",
+     "year": 2021,
+     "value": 6.69445891957612
+    },
+    {
+     "iso3": "RUS",
+     "year": 2020,
+     "value": 3.38219796948067
+    },
+    {
+     "iso3": "RUS",
+     "year": 2019,
+     "value": 4.47202631837903
+    },
+    {
+     "iso3": "RUS",
+     "year": 2018,
+     "value": 2.8783138261498
+    },
+    {
+     "iso3": "RUS",
+     "year": 2017,
+     "value": 3.68333072334495
+    },
+    {
+     "iso3": "RUS",
+     "year": 2016,
+     "value": 7.04243725413707
+    },
+    {
+     "iso3": "RUS",
+     "year": 2015,
+     "value": 15.5343959935701
+    },
+    {
+     "iso3": "RUS",
+     "year": 2014,
+     "value": 7.82016970013844
+    },
+    {
+     "iso3": "UKR",
+     "year": 2025,
+     "value": 12.7303341026902
+    },
+    {
+     "iso3": "UKR",
+     "year": 2024,
+     "value": 6.50198464669254
+    },
+    {
+     "iso3": "UKR",
+     "year": 2023,
+     "value": 12.8490222828558
+    },
+    {
+     "iso3": "UKR",
+     "year": 2022,
+     "value": 20.1836366617478
+    },
+    {
+     "iso3": "UKR",
+     "year": 2021,
+     "value": 9.36313917695223
+    },
+    {
+     "iso3": "UKR",
+     "year": 2020,
+     "value": 2.73249209419427
+    },
+    {
+     "iso3": "UKR",
+     "year": 2019,
+     "value": 7.88671745611133
+    },
+    {
+     "iso3": "UKR",
+     "year": 2018,
+     "value": 10.9518559353178
+    },
+    {
+     "iso3": "UKR",
+     "year": 2017,
+     "value": 14.4383227488749
+    },
+    {
+     "iso3": "UKR",
+     "year": 2016,
+     "value": 13.9127101997796
+    },
+    {
+     "iso3": "UKR",
+     "year": 2015,
+     "value": 48.6998646434423
+    },
+    {
+     "iso3": "UKR",
+     "year": 2014,
+     "value": 12.0718562874251
+    }
+   ],
+   "link": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG",
+   "last_updated": "2026-10-08",
+   "status": "ok"
+  },
+  {
+   "id": "military",
+   "provider": "worldbank",
+   "code": "MS.MIL.XPND.GD.ZS",
+   "label": "Military expenditure (% of GDP)",
+   "short": "Military spending",
+   "unit": "% of GDP",
+   "publisher": "World Bank, World Development Indicators (SIPRI data)",
+   "values": [
+    {
+     "iso3": "IRN",
+     "year": 2025,
+     "value": 2.0915792291
+    },
+    {
+     "iso3": "IRN",
+     "year": 2024,
+     "value": 2.2187801253
+    },
+    {
+     "iso3": "IRN",
+     "year": 2023,
+     "value": 2.4938109404
+    },
+    {
+     "iso3": "IRN",
+     "year": 2022,
+     "value": 2.2380736046
+    },
+    {
+     "iso3": "IRN",
+     "year": 2021,
+     "value": 2.3176206525
+    },
+    {
+     "iso3": "IRN",
+     "year": 2020,
+     "value": 2.1770102761
+    },
+    {
+     "iso3": "IRN",
+     "year": 2019,
+     "value": 2.1469474501
+    },
+    {
+     "iso3": "IRN",
+     "year": 2018,
+     "value": 2.3562948832
+    },
+    {
+     "iso3": "IRN",
+     "year": 2017,
+     "value": 2.8443384496
+    },
+    {
+     "iso3": "IRN",
+     "year": 2016,
+     "value": 2.7964355628
+    },
+    {
+     "iso3": "IRN",
+     "year": 2015,
+     "value": 2.5570908069
+    },
+    {
+     "iso3": "IRN",
+     "year": 2014,
+     "value": 2.1165570614
+    },
+    {
+     "iso3": "MLI",
+     "year": 2025,
+     "value": 3.8741279169
+    },
+    {
+     "iso3": "MLI",
+     "year": 2024,
+     "value": 4.2486191683
+    },
+    {
+     "iso3": "MLI",
+     "year": 2023,
+     "value": 3.8465476863
+    },
+    {
+     "iso3": "MLI",
+     "year": 2022,
+     "value": 3.0909171719
+    },
+    {
+     "iso3": "MLI",
+     "year": 2021,
+     "value": 3.381775207
+    },
+    {
+     "iso3": "MLI",
+     "year": 2020,
+     "value": 3.3995582143
+    },
+    {
+     "iso3": "MLI",
+     "year": 2019,
+     "value": 2.7527165814
+    },
+    {
+     "iso3": "MLI",
+     "year": 2018,
+     "value": 2.8235955373
+    },
+    {
+     "iso3": "MLI",
+     "year": 2017,
+     "value": 3.0286011137
+    },
+    {
+     "iso3": "MLI",
+     "year": 2016,
+     "value": 2.5861308736
+    },
+    {
+     "iso3": "MLI",
+     "year": 2015,
+     "value": 2.360174452
+    },
+    {
+     "iso3": "MLI",
+     "year": 2014,
+     "value": 1.515933832
+    },
+    {
+     "iso3": "NER",
+     "year": 2025,
+     "value": 2.1357835045
+    },
+    {
+     "iso3": "NER",
+     "year": 2024,
+     "value": 2.1962316177
+    },
+    {
+     "iso3": "NER",
+     "year": 2023,
+     "value": 1.9761600098
+    },
+    {
+     "iso3": "NER",
+     "year": 2022,
+     "value": 1.5729764924
+    },
+    {
+     "iso3": "NER",
+     "year": 2021,
+     "value": 1.3573009312
+    },
+    {
+     "iso3": "NER",
+     "year": 2020,
+     "value": 1.7336075217
+    },
+    {
+     "iso3": "NER",
+     "year": 2019,
+     "value": 1.9173360065
+    },
+    {
+     "iso3": "NER",
+     "year": 2018,
+     "value": 1.793808817
+    },
+    {
+     "iso3": "NER",
+     "year": 2017,
+     "value": 1.8098429244
+    },
+    {
+     "iso3": "NER",
+     "year": 2016,
+     "value": 1.5996462432
+    },
+    {
+     "iso3": "NER",
+     "year": 2014,
+     "value": 1.3385981974
+    },
+    {
+     "iso3": "RUS",
+     "year": 2025,
+     "value": 7.5014846549
+    },
+    {
+     "iso3": "RUS",
+     "year": 2024,
+     "value": 6.8741527114
+    },
+    {
+     "iso3": "RUS",
+     "year": 2023,
+     "value": 5.2717027939
+    },
+    {
+     "iso3": "RUS",
+     "year": 2022,
+     "value": 4.5558544287
+    },
+    {
+     "iso3": "RUS",
+     "year": 2021,
+     "value": 3.6036875729
+    },
+    {
+     "iso3": "RUS",
+     "year": 2020,
+     "value": 4.1447171324
+    },
+    {
+     "iso3": "RUS",
+     "year": 2019,
+     "value": 3.8474201139
+    },
+    {
+     "iso3": "RUS",
+     "year": 2018,
+     "value": 3.7198224396
+    },
+    {
+     "iso3": "RUS",
+     "year": 2017,
+     "value": 4.2489960517
+    },
+    {
+     "iso3": "RUS",
+     "year": 2016,
+     "value": 5.425147705
+    },
+    {
+     "iso3": "RUS",
+     "year": 2015,
+     "value": 4.8715147468
+    },
+    {
+     "iso3": "RUS",
+     "year": 2014,
+     "value": 4.1129929782
+    },
+    {
+     "iso3": "UKR",
+     "year": 2025,
+     "value": 39.561018358
+    },
+    {
+     "iso3": "UKR",
+     "year": 2024,
+     "value": 33.9560445975
+    },
+    {
+     "iso3": "UKR",
+     "year": 2023,
+     "value": 36.0314128923
+    },
+    {
+     "iso3": "UKR",
+     "year": 2022,
+     "value": 25.6424104715
+    },
+    {
+     "iso3": "UKR",
+     "year": 2021,
+     "value": 3.4254919956
+    },
+    {
+     "iso3": "UKR",
+     "year": 2020,
+     "value": 4.4003147028
+    },
+    {
+     "iso3": "UKR",
+     "year": 2019,
+     "value": 4.0679376504
+    },
+    {
+     "iso3": "UKR",
+     "year": 2018,
+     "value": 3.6351660799
+    },
+    {
+     "iso3": "UKR",
+     "year": 2017,
+     "value": 3.2414929155
+    },
+    {
+     "iso3": "UKR",
+     "year": 2016,
+     "value": 3.6686178689
+    },
+    {
+     "iso3": "UKR",
+     "year": 2015,
+     "value": 3.8478484761
+    },
+    {
+     "iso3": "UKR",
+     "year": 2014,
+     "value": 2.9673682585
+    }
+   ],
+   "link": "https://data.worldbank.org/indicator/MS.MIL.XPND.GD.ZS",
+   "last_updated": "2026-10-08",
+   "status": "ok"
+  },
+  {
+   "id": "imf_gdp_proj",
+   "provider": "imf",
+   "code": "NGDP_RPCH",
+   "label": "Real GDP growth, IMF World Economic Outlook projection",
+   "short": "IMF growth projection",
+   "unit": "%",
+   "publisher": "International Monetary Fund, World Economic Outlook (DataMapper)",
+   "values": [
+    {
+     "iso3": "IRN",
+     "year": 1980,
+     "value": -21.6
+    },
+    {
+     "iso3": "IRN",
+     "year": 1981,
+     "value": -5.7
+    },
+    {
+     "iso3": "IRN",
+     "year": 1982,
+     "value": 23.2
+    },
+    {
+     "iso3": "IRN",
+     "year": 1983,
+     "value": 11.1
+    },
+    {
+     "iso3": "IRN",
+     "year": 1984,
+     "value": -7.1
+    },
+    {
+     "iso3": "IRN",
+     "year": 1985,
+     "value": 1.9
+    },
+    {
+     "iso3": "IRN",
+     "year": 1986,
+     "value": -9.8
+    },
+    {
+     "iso3": "IRN",
+     "year": 1987,
+     "value": -0.2
+    },
+    {
+     "iso3": "IRN",
+     "year": 1988,
+     "value": -6.1
+    },
+    {
+     "iso3": "IRN",
+     "year": 1989,
+     "value": 6.1
+    },
+    {
+     "iso3": "IRN",
+     "year": 1990,
+     "value": 13.6
+    },
+    {
+     "iso3": "IRN",
+     "year": 1991,
+     "value": 12.7
+    },
+    {
+     "iso3": "IRN",
+     "year": 1992,
+     "value": 3.3
+    },
+    {
+     "iso3": "IRN",
+     "year": 1993,
+     "value": -1.5
+    },
+    {
+     "iso3": "IRN",
+     "year": 1994,
+     "value": -1.7
+    },
+    {
+     "iso3": "IRN",
+     "year": 1995,
+     "value": 2.4
+    },
+    {
+     "iso3": "IRN",
+     "year": 1996,
+     "value": 6.4
+    },
+    {
+     "iso3": "IRN",
+     "year": 1997,
+     "value": 1.4
+    },
+    {
+     "iso3": "IRN",
+     "year": 1998,
+     "value": 2.1
+    },
+    {
+     "iso3": "IRN",
+     "year": 1999,
+     "value": 2
+    },
+    {
+     "iso3": "IRN",
+     "year": 2000,
+     "value": 5.8
+    },
+    {
+     "iso3": "IRN",
+     "year": 2001,
+     "value": 2.4
+    },
+    {
+     "iso3": "IRN",
+     "year": 2002,
+     "value": 8.1
+    },
+    {
+     "iso3": "IRN",
+     "year": 2003,
+     "value": 8.6
+    },
+    {
+     "iso3": "IRN",
+     "year": 2004,
+     "value": 4.3
+    },
+    {
+     "iso3": "IRN",
+     "year": 2005,
+     "value": 3.2
+    },
+    {
+     "iso3": "IRN",
+     "year": 2006,
+     "value": 5
+    },
+    {
+     "iso3": "IRN",
+     "year": 2007,
+     "value": 8.2
+    },
+    {
+     "iso3": "IRN",
+     "year": 2008,
+     "value": 0.3
+    },
+    {
+     "iso3": "IRN",
+     "year": 2009,
+     "value": 1
+    },
+    {
+     "iso3": "IRN",
+     "year": 2010,
+     "value": 5.8
+    },
+    {
+     "iso3": "IRN",
+     "year": 2011,
+     "value": 5.7
+    },
+    {
+     "iso3": "IRN",
+     "year": 2012,
+     "value": -3.7
+    },
+    {
+     "iso3": "IRN",
+     "year": 2013,
+     "value": -1.5
+    },
+    {
+     "iso3": "IRN",
+     "year": 2014,
+     "value": 5
+    },
+    {
+     "iso3": "IRN",
+     "year": 2015,
+     "value": -1.4
+    },
+    {
+     "iso3": "IRN",
+     "year": 2016,
+     "value": 6.5
+    },
+    {
+     "iso3": "IRN",
+     "year": 2017,
+     "value": 3
+    },
+    {
+     "iso3": "IRN",
+     "year": 2018,
+     "value": -3.7
+    },
+    {
+     "iso3": "IRN",
+     "year": 2019,
+     "value": -2.4
+    },
+    {
+     "iso3": "IRN",
+     "year": 2020,
+     "value": 4.4
+    },
+    {
+     "iso3": "IRN",
+     "year": 2021,
+     "value": 4.1
+    },
+    {
+     "iso3": "IRN",
+     "year": 2022,
+     "value": 4.4
+    },
+    {
+     "iso3": "IRN",
+     "year": 2023,
+     "value": 5.3
+    },
+    {
+     "iso3": "IRN",
+     "year": 2024,
+     "value": 3.7
+    },
+    {
+     "iso3": "IRN",
+     "year": 2025,
+     "value": -0.9
+    },
+    {
+     "iso3": "IRN",
+     "year": 2026,
+     "value": -7.6
+    },
+    {
+     "iso3": "IRN",
+     "year": 2027,
+     "value": 3.6
+    },
+    {
+     "iso3": "IRN",
+     "year": 2028,
+     "value": 1.5
+    },
+    {
+     "iso3": "IRN",
+     "year": 2029,
+     "value": 1.8
+    },
+    {
+     "iso3": "IRN",
+     "year": 2030,
+     "value": 2
+    },
+    {
+     "iso3": "IRN",
+     "year": 2031,
+     "value": 2
+    },
+    {
+     "iso3": "MLI",
+     "year": 1980,
+     "value": 3.3
+    },
+    {
+     "iso3": "MLI",
+     "year": 1981,
+     "value": 2.2
+    },
+    {
+     "iso3": "MLI",
+     "year": 1982,
+     "value": -8.4
+    },
+    {
+     "iso3": "MLI",
+     "year": 1983,
+     "value": -2.3
+    },
+    {
+     "iso3": "MLI",
+     "year": 1984,
+     "value": -2.8
+    },
+    {
+     "iso3": "MLI",
+     "year": 1985,
+     "value": 13.2
+    },
+    {
+     "iso3": "MLI",
+     "year": 1986,
+     "value": -0.8
+    },
+    {
+     "iso3": "MLI",
+     "year": 1987,
+     "value": -0.8
+    },
+    {
+     "iso3": "MLI",
+     "year": 1988,
+     "value": 10.8
+    },
+    {
+     "iso3": "MLI",
+     "year": 1989,
+     "value": 3.6
+    },
+    {
+     "iso3": "MLI",
+     "year": 1990,
+     "value": -5.3
+    },
+    {
+     "iso3": "MLI",
+     "year": 1991,
+     "value": 12.7
+    },
+    {
+     "iso3": "MLI",
+     "year": 1992,
+     "value": -5.1
+    },
+    {
+     "iso3": "MLI",
+     "year": 1993,
+     "value": 4.3
+    },
+    {
+     "iso3": "MLI",
+     "year": 1994,
+     "value": 5.6
+    },
+    {
+     "iso3": "MLI",
+     "year": 1995,
+     "value": 0.7
+    },
+    {
+     "iso3": "MLI",
+     "year": 1996,
+     "value": 6.4
+    },
+    {
+     "iso3": "MLI",
+     "year": 1997,
+     "value": 4.1
+    },
+    {
+     "iso3": "MLI",
+     "year": 1998,
+     "value": 6.7
+    },
+    {
+     "iso3": "MLI",
+     "year": 1999,
+     "value": 4.7
+    },
+    {
+     "iso3": "MLI",
+     "year": 2000,
+     "value": -0.7
+    },
+    {
+     "iso3": "MLI",
+     "year": 2001,
+     "value": 15.8
+    },
+    {
+     "iso3": "MLI",
+     "year": 2002,
+     "value": 3
+    },
+    {
+     "iso3": "MLI",
+     "year": 2003,
+     "value": 9.8
+    },
+    {
+     "iso3": "MLI",
+     "year": 2004,
+     "value": 1.5
+    },
+    {
+     "iso3": "MLI",
+     "year": 2005,
+     "value": 2.5
+    },
+    {
+     "iso3": "MLI",
+     "year": 2006,
+     "value": 3.7
+    },
+    {
+     "iso3": "MLI",
+     "year": 2007,
+     "value": 1.8
+    },
+    {
+     "iso3": "MLI",
+     "year": 2008,
+     "value": 3.6
+    },
+    {
+     "iso3": "MLI",
+     "year": 2009,
+     "value": 5.5
+    },
+    {
+     "iso3": "MLI",
+     "year": 2010,
+     "value": 5.6
+    },
+    {
+     "iso3": "MLI",
+     "year": 2011,
+     "value": 2.9
+    },
+    {
+     "iso3": "MLI",
+     "year": 2012,
+     "value": -1.1
+    },
+    {
+     "iso3": "MLI",
+     "year": 2013,
+     "value": 3.3
+    },
+    {
+     "iso3": "MLI",
+     "year": 2014,
+     "value": 6.5
+    },
+    {
+     "iso3": "MLI",
+     "year": 2015,
+     "value": 6.2
+    },
+    {
+     "iso3": "MLI",
+     "year": 2016,
+     "value": 6
+    },
+    {
+     "iso3": "MLI",
+     "year": 2017,
+     "value": 5.4
+    },
+    {
+     "iso3": "MLI",
+     "year": 2018,
+     "value": 4.9
+    },
+    {
+     "iso3": "MLI",
+     "year": 2019,
+     "value": 5
+    },
+    {
+     "iso3": "MLI",
+     "year": 2020,
+     "value": -1.2
+    },
+    {
+     "iso3": "MLI",
+     "year": 2021,
+     "value": 3.1
+    },
+    {
+     "iso3": "MLI",
+     "year": 2022,
+     "value": 3.7
+    },
+    {
+     "iso3": "MLI",
+     "year": 2023,
+     "value": 4.8
+    },
+    {
+     "iso3": "MLI",
+     "year": 2024,
+     "value": 5
+    },
+    {
+     "iso3": "MLI",
+     "year": 2025,
+     "value": 4.9
+    },
+    {
+     "iso3": "MLI",
+     "year": 2026,
+     "value": 5.5
+    },
+    {
+     "iso3": "MLI",
+     "year": 2027,
+     "value": 5.7
+    },
+    {
+     "iso3": "MLI",
+     "year": 2028,
+     "value": 5.5
+    },
+    {
+     "iso3": "MLI",
+     "year": 2029,
+     "value": 5.3
+    },
+    {
+     "iso3": "MLI",
+     "year": 2030,
+     "value": 5.3
+    },
+    {
+     "iso3": "MLI",
+     "year": 2031,
+     "value": 5.2
+    },
+    {
+     "iso3": "NER",
+     "year": 1980,
+     "value": 4.9
+    },
+    {
+     "iso3": "NER",
+     "year": 1981,
+     "value": -0.2
+    },
+    {
+     "iso3": "NER",
+     "year": 1982,
+     "value": 2.2
+    },
+    {
+     "iso3": "NER",
+     "year": 1983,
+     "value": -3.9
+    },
+    {
+     "iso3": "NER",
+     "year": 1984,
+     "value": -16.8
+    },
+    {
+     "iso3": "NER",
+     "year": 1985,
+     "value": 7.7
+    },
+    {
+     "iso3": "NER",
+     "year": 1986,
+     "value": 6.4
+    },
+    {
+     "iso3": "NER",
+     "year": 1987,
+     "value": 0.1
+    },
+    {
+     "iso3": "NER",
+     "year": 1988,
+     "value": 6.9
+    },
+    {
+     "iso3": "NER",
+     "year": 1989,
+     "value": 1
+    },
+    {
+     "iso3": "NER",
+     "year": 1990,
+     "value": -1.3
+    },
+    {
+     "iso3": "NER",
+     "year": 1991,
+     "value": -0.4
+    },
+    {
+     "iso3": "NER",
+     "year": 1992,
+     "value": 2
+    },
+    {
+     "iso3": "NER",
+     "year": 1993,
+     "value": 0.3
+    },
+    {
+     "iso3": "NER",
+     "year": 1994,
+     "value": 1.9
+    },
+    {
+     "iso3": "NER",
+     "year": 1995,
+     "value": 2.5
+    },
+    {
+     "iso3": "NER",
+     "year": 1996,
+     "value": 0.1
+    },
+    {
+     "iso3": "NER",
+     "year": 1997,
+     "value": 1.5
+    },
+    {
+     "iso3": "NER",
+     "year": 1998,
+     "value": 10
+    },
+    {
+     "iso3": "NER",
+     "year": 1999,
+     "value": -0.2
+    },
+    {
+     "iso3": "NER",
+     "year": 2000,
+     "value": -1.2
+    },
+    {
+     "iso3": "NER",
+     "year": 2001,
+     "value": 7.3
+    },
+    {
+     "iso3": "NER",
+     "year": 2002,
+     "value": 4.9
+    },
+    {
+     "iso3": "NER",
+     "year": 2003,
+     "value": 2.2
+    },
+    {
+     "iso3": "NER",
+     "year": 2004,
+     "value": 0.4
+    },
+    {
+     "iso3": "NER",
+     "year": 2005,
+     "value": 7.3
+    },
+    {
+     "iso3": "NER",
+     "year": 2006,
+     "value": 5.9
+    },
+    {
+     "iso3": "NER",
+     "year": 2007,
+     "value": 3.1
+    },
+    {
+     "iso3": "NER",
+     "year": 2008,
+     "value": 7.7
+    },
+    {
+     "iso3": "NER",
+     "year": 2009,
+     "value": 2
+    },
+    {
+     "iso3": "NER",
+     "year": 2010,
+     "value": 8.6
+    },
+    {
+     "iso3": "NER",
+     "year": 2011,
+     "value": 2.4
+    },
+    {
+     "iso3": "NER",
+     "year": 2012,
+     "value": 10.5
+    },
+    {
+     "iso3": "NER",
+     "year": 2013,
+     "value": 5.3
+    },
+    {
+     "iso3": "NER",
+     "year": 2014,
+     "value": 6.6
+    },
+    {
+     "iso3": "NER",
+     "year": 2015,
+     "value": 4.4
+    },
+    {
+     "iso3": "NER",
+     "year": 2016,
+     "value": 5.7
+    },
+    {
+     "iso3": "NER",
+     "year": 2017,
+     "value": 5
+    },
+    {
+     "iso3": "NER",
+     "year": 2018,
+     "value": 7
+    },
+    {
+     "iso3": "NER",
+     "year": 2019,
+     "value": 6.1
+    },
+    {
+     "iso3": "NER",
+     "year": 2020,
+     "value": 3.5
+    },
+    {
+     "iso3": "NER",
+     "year": 2021,
+     "value": 1.4
+    },
+    {
+     "iso3": "NER",
+     "year": 2022,
+     "value": 11.9
+    },
+    {
+     "iso3": "NER",
+     "year": 2023,
+     "value": 2.5
+    },
+    {
+     "iso3": "NER",
+     "year": 2024,
+     "value": 8.3
+    },
+    {
+     "iso3": "NER",
+     "year": 2025,
+     "value": 6.9
+    },
+    {
+     "iso3": "NER",
+     "year": 2026,
+     "value": 7
+    },
+    {
+     "iso3": "NER",
+     "year": 2027,
+     "value": 6.5
+    },
+    {
+     "iso3": "NER",
+     "year": 2028,
+     "value": 6
+    },
+    {
+     "iso3": "NER",
+     "year": 2029,
+     "value": 6
+    },
+    {
+     "iso3": "NER",
+     "year": 2030,
+     "value": 6
+    },
+    {
+     "iso3": "NER",
+     "year": 2031,
+     "value": 6
+    },
+    {
+     "iso3": "RUS",
+     "year": 1993,
+     "value": -8.7
+    },
+    {
+     "iso3": "RUS",
+     "year": 1994,
+     "value": -12.7
+    },
+    {
+     "iso3": "RUS",
+     "year": 1995,
+     "value": -4.1
+    },
+    {
+     "iso3": "RUS",
+     "year": 1996,
+     "value": -3.6
+    },
+    {
+     "iso3": "RUS",
+     "year": 1997,
+     "value": 1.4
+    },
+    {
+     "iso3": "RUS",
+     "year": 1998,
+     "value": -5.3
+    },
+    {
+     "iso3": "RUS",
+     "year": 1999,
+     "value": 6.3
+    },
+    {
+     "iso3": "RUS",
+     "year": 2000,
+     "value": 10.1
+    },
+    {
+     "iso3": "RUS",
+     "year": 2001,
+     "value": 5.1
+    },
+    {
+     "iso3": "RUS",
+     "year": 2002,
+     "value": 4.7
+    },
+    {
+     "iso3": "RUS",
+     "year": 2003,
+     "value": 7.4
+    },
+    {
+     "iso3": "RUS",
+     "year": 2004,
+     "value": 7.1
+    },
+    {
+     "iso3": "RUS",
+     "year": 2005,
+     "value": 6.4
+    },
+    {
+     "iso3": "RUS",
+     "year": 2006,
+     "value": 8.2
+    },
+    {
+     "iso3": "RUS",
+     "year": 2007,
+     "value": 8.6
+    },
+    {
+     "iso3": "RUS",
+     "year": 2008,
+     "value": 5.2
+    },
+    {
+     "iso3": "RUS",
+     "year": 2009,
+     "value": -7.8
+    },
+    {
+     "iso3": "RUS",
+     "year": 2010,
+     "value": 4.5
+    },
+    {
+     "iso3": "RUS",
+     "year": 2011,
+     "value": 4
+    },
+    {
+     "iso3": "RUS",
+     "year": 2012,
+     "value": 4
+    },
+    {
+     "iso3": "RUS",
+     "year": 2013,
+     "value": 1.8
+    },
+    {
+     "iso3": "RUS",
+     "year": 2014,
+     "value": 0.7
+    },
+    {
+     "iso3": "RUS",
+     "year": 2015,
+     "value": -2
+    },
+    {
+     "iso3": "RUS",
+     "year": 2016,
+     "value": 0.2
+    },
+    {
+     "iso3": "RUS",
+     "year": 2017,
+     "value": 1.8
+    },
+    {
+     "iso3": "RUS",
+     "year": 2018,
+     "value": 2.8
+    },
+    {
+     "iso3": "RUS",
+     "year": 2019,
+     "value": 2.2
+    },
+    {
+     "iso3": "RUS",
+     "year": 2020,
+     "value": -2.7
+    },
+    {
+     "iso3": "RUS",
+     "year": 2021,
+     "value": 5.9
+    },
+    {
+     "iso3": "RUS",
+     "year": 2022,
+     "value": -1.4
+    },
+    {
+     "iso3": "RUS",
+     "year": 2023,
+     "value": 4.1
+    },
+    {
+     "iso3": "RUS",
+     "year": 2024,
+     "value": 4.9
+    },
+    {
+     "iso3": "RUS",
+     "year": 2025,
+     "value": 1
+    },
+    {
+     "iso3": "RUS",
+     "year": 2026,
+     "value": 0.9
+    },
+    {
+     "iso3": "RUS",
+     "year": 2027,
+     "value": 0.9
+    },
+    {
+     "iso3": "RUS",
+     "year": 2028,
+     "value": 1
+    },
+    {
+     "iso3": "RUS",
+     "year": 2029,
+     "value": 1
+    },
+    {
+     "iso3": "RUS",
+     "year": 2030,
+     "value": 1
+    },
+    {
+     "iso3": "RUS",
+     "year": 2031,
+     "value": 1
+    },
+    {
+     "iso3": "UKR",
+     "year": 1992,
+     "value": -9.9
+    },
+    {
+     "iso3": "UKR",
+     "year": 1993,
+     "value": -14.2
+    },
+    {
+     "iso3": "UKR",
+     "year": 1994,
+     "value": -22.9
+    },
+    {
+     "iso3": "UKR",
+     "year": 1995,
+     "value": -12.2
+    },
+    {
+     "iso3": "UKR",
+     "year": 1996,
+     "value": -10
+    },
+    {
+     "iso3": "UKR",
+     "year": 1997,
+     "value": -3
+    },
+    {
+     "iso3": "UKR",
+     "year": 1998,
+     "value": -1.9
+    },
+    {
+     "iso3": "UKR",
+     "year": 1999,
+     "value": -0.2
+    },
+    {
+     "iso3": "UKR",
+     "year": 2000,
+     "value": 5.9
+    },
+    {
+     "iso3": "UKR",
+     "year": 2001,
+     "value": 8.8
+    },
+    {
+     "iso3": "UKR",
+     "year": 2002,
+     "value": 5.3
+    },
+    {
+     "iso3": "UKR",
+     "year": 2003,
+     "value": 9.5
+    },
+    {
+     "iso3": "UKR",
+     "year": 2004,
+     "value": 11.8
+    },
+    {
+     "iso3": "UKR",
+     "year": 2005,
+     "value": 3.1
+    },
+    {
+     "iso3": "UKR",
+     "year": 2006,
+     "value": 7.6
+    },
+    {
+     "iso3": "UKR",
+     "year": 2007,
+     "value": 8.2
+    },
+    {
+     "iso3": "UKR",
+     "year": 2008,
+     "value": 2.2
+    },
+    {
+     "iso3": "UKR",
+     "year": 2009,
+     "value": -15.1
+    },
+    {
+     "iso3": "UKR",
+     "year": 2010,
+     "value": 4.1
+    },
+    {
+     "iso3": "UKR",
+     "year": 2011,
+     "value": 5.4
+    },
+    {
+     "iso3": "UKR",
+     "year": 2012,
+     "value": 0.2
+    },
+    {
+     "iso3": "UKR",
+     "year": 2013,
+     "value": 0
+    },
+    {
+     "iso3": "UKR",
+     "year": 2014,
+     "value": -10
+    },
+    {
+     "iso3": "UKR",
+     "year": 2015,
+     "value": -9.8
+    },
+    {
+     "iso3": "UKR",
+     "year": 2016,
+     "value": 2.4
+    },
+    {
+     "iso3": "UKR",
+     "year": 2017,
+     "value": 2.4
+    },
+    {
+     "iso3": "UKR",
+     "year": 2018,
+     "value": 3.5
+    },
+    {
+     "iso3": "UKR",
+     "year": 2019,
+     "value": 3.2
+    },
+    {
+     "iso3": "UKR",
+     "year": 2020,
+     "value": -3.8
+    },
+    {
+     "iso3": "UKR",
+     "year": 2021,
+     "value": 3.4
+    },
+    {
+     "iso3": "UKR",
+     "year": 2022,
+     "value": -28.8
+    },
+    {
+     "iso3": "UKR",
+     "year": 2023,
+     "value": 5.5
+    },
+    {
+     "iso3": "UKR",
+     "year": 2024,
+     "value": 3.2
+    },
+    {
+     "iso3": "UKR",
+     "year": 2025,
+     "value": 1.8
+    },
+    {
+     "iso3": "UKR",
+     "year": 2026,
+     "value": 1
+    },
+    {
+     "iso3": "UKR",
+     "year": 2027,
+     "value": 3.5
+    },
+    {
+     "iso3": "UKR",
+     "year": 2028,
+     "value": 4.2
+    },
+    {
+     "iso3": "UKR",
+     "year": 2029,
+     "value": 3.9
+    },
+    {
+     "iso3": "UKR",
+     "year": 2030,
+     "value": 3.7
+    },
+    {
+     "iso3": "UKR",
+     "year": 2031,
+     "value": 3.6
+    }
+   ],
+   "link": "https://www.imf.org/external/datamapper/NGDP_RPCH@WEO",
+   "status": "ok"
+  }
+ ],
+ "sources": {
+  "config": [
+   {
+    "id": "geopolitical-monitor",
+    "name": "Geopolitical Monitor",
+    "publisher": "Geopolitical Monitor",
+    "homepage": "https://www.geopoliticalmonitor.com/",
+    "enabled": true
+   },
+   {
+    "id": "rand",
+    "name": "RAND Corporation",
+    "publisher": "RAND Corporation",
+    "homepage": "https://www.rand.org/",
+    "enabled": true
+   },
+   {
+    "id": "bloomberg",
+    "name": "Bloomberg",
+    "publisher": "Bloomberg L.P.",
+    "homepage": "https://www.bloomberg.com/",
+    "note": "Bloomberg articles are paywalled. Only headlines and links are used.",
+    "enabled": true
+   }
+  ],
+  "statuses": [
+   {
+    "source": "geopolitical-monitor",
+    "name": "Geopolitical Monitor",
+    "kind": "news feed",
+    "url": "https://www.geopoliticalmonitor.com/feed/",
+    "retrieved_at": "2026-11-06T20:29:26.717Z",
+    "status": "ok",
+    "items": 10
+   },
+   {
+    "source": "geopolitical-monitor",
+    "name": "Geopolitical Monitor",
+    "kind": "news feed",
+    "url": "https://www.geopoliticalmonitor.com/feed/?paged=2",
+    "retrieved_at": "2026-11-06T20:29:27.308Z",
+    "status": "ok",
+    "items": 10
+   },
+   {
+    "source": "rand",
+    "name": "RAND Corporation",
+    "kind": "news feed",
+    "url": "https://www.rand.org/pubs/commentary.xml",
+    "retrieved_at": "2026-11-06T20:29:27.416Z",
+    "status": "ok",
+    "items": 20
+   },
+   {
+    "source": "rand",
+    "name": "RAND Corporation",
+    "kind": "news feed",
+    "url": "https://www.rand.org/news/press.xml",
+    "retrieved_at": "2026-11-06T20:29:27.885Z",
+    "status": "ok",
+    "items": 20
+   },
+   {
+    "source": "bloomberg",
+    "name": "Bloomberg",
+    "kind": "news feed",
+    "url": "https://feeds.bloomberg.com/politics/news.rss",
+    "retrieved_at": "2026-11-06T20:29:27.937Z",
+    "status": "failed",
+    "error": "fetch failed"
+   },
+   {
+    "source": "bloomberg",
+    "name": "Bloomberg",
+    "kind": "news feed",
+    "url": "https://feeds.bloomberg.com/economics/news.rss",
+    "retrieved_at": "2026-11-06T20:29:33.549Z",
+    "status": "failed",
+    "error": "fetch failed"
+   },
+   {
+    "source": "worldbank",
+    "name": "World Bank, Worldwide Governance Indicators",
+    "kind": "indicator",
+    "indicator": "GOV_WGI_PV.EST",
+    "retrieved_at": "2026-11-06T20:29:39.731Z",
+    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;MLI;NER/indicator/GOV_WGI_PV.EST?format=json&date=2014:2026&per_page=1000&source=3",
+    "status": "ok",
+    "items": 60
+   },
+   {
+    "source": "worldbank",
+    "name": "World Bank, World Development Indicators",
+    "kind": "indicator",
+    "indicator": "NY.GDP.MKTP.KD.ZG",
+    "retrieved_at": "2026-11-06T20:29:40.257Z",
+    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;MLI;NER/indicator/NY.GDP.MKTP.KD.ZG?format=json&date=2014:2026&per_page=1000",
+    "status": "ok",
+    "items": 60
+   },
+   {
+    "source": "worldbank",
+    "name": "World Bank, World Development Indicators",
+    "kind": "indicator",
+    "indicator": "FP.CPI.TOTL.ZG",
+    "retrieved_at": "2026-11-06T20:29:40.744Z",
+    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;MLI;NER/indicator/FP.CPI.TOTL.ZG?format=json&date=2014:2026&per_page=1000",
+    "status": "ok",
+    "items": 60
+   },
+   {
+    "source": "worldbank",
+    "name": "World Bank, World Development Indicators (SIPRI data)",
+    "kind": "indicator",
+    "indicator": "MS.MIL.XPND.GD.ZS",
+    "retrieved_at": "2026-11-06T20:29:41.086Z",
+    "url": "https://api.worldbank.org/v2/country/UKR;RUS;IRN;MLI;NER/indicator/MS.MIL.XPND.GD.ZS?format=json&date=2014:2026&per_page=1000",
+    "status": "ok",
+    "items": 59
+   },
+   {
+    "source": "imf",
+    "name": "International Monetary Fund, World Economic Outlook (DataMapper)",
+    "kind": "indicator",
+    "indicator": "NGDP_RPCH",
+    "retrieved_at": "2026-11-06T20:29:41.337Z",
+    "url": "https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH/UKR/RUS/IRN/MLI/NER?periods=2025,2026,2027",
+    "status": "ok",
+    "items": 235
+   }
+  ]
+ }
+}

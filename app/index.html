@@ -1,0 +1,147 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Geopolitical Dashboard</title>
+<meta name="description" content="Weekly snapshot of the most prevalent geopolitical themes, with maps, indicators, news and full source citations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600&display=swap">
+<style>/*STYLE*/</style>
+</head>
+<body data-pdf="/*PDF*/" data-base="/*BASE*/">
+<header class="mast">
+  <div class="wrap">
+    <div>
+      <h1>Geopolitical Dashboard</h1>
+      <p class="dateline" id="dateline">—</p>
+    </div>
+    <div class="tools">
+      <select class="sel" id="week-select" aria-label="Choose a week" hidden></select>
+      <button class="btn" id="btn-html" type="button"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 2v8m0 0 3-3m-3 3L5 7M3 13h10"/></svg>Save as webpage</button>
+      <button class="btn primary" id="btn-pdf" type="button"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 2v8m0 0 3-3m-3 3L5 7M3 13h10"/></svg>Download PDF</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap lede">
+    <div>
+      <p class="eyebrow">Most prevalent theme this period</p>
+      <h2 id="top-theme">—</h2>
+      <p id="lede-text">—</p>
+    </div>
+    <dl class="facts">
+      <div><dt>Share of coverage</dt><dd id="f-theme">—<small id="f-theme-sub"></small></dd></div>
+      <div><dt>Region of interest</dt><dd id="f-region">—<small id="f-region-sub"></small></dd></div>
+      <div><dt>Items analysed</dt><dd id="f-items">—<small id="f-items-sub"></small></dd></div>
+    </dl>
+  </div>
+
+  <section class="band" aria-labelledby="maps-h">
+    <div class="wrap">
+      <h3 id="maps-h" class="sec-title">Where it is happening</h3>
+      <div class="grid maps">
+        <div class="card">
+          <h4>World view</h4>
+          <p class="note">Countries shaded by how often coverage of the top theme names them. The ring marks the region of interest.</p>
+          <div class="map" id="world-map"></div>
+          <h4 style="margin-top:16px">Most-named countries, all themes</h4>
+          <p class="note">Blue bars are also named in coverage of the top theme. Select one to zoom the regional map.</p>
+          <ol class="rank" id="top-countries"></ol>
+          <p class="cite">Boundaries: Natural Earth via world-atlas (public domain). Mentions counted from the news items listed below.</p>
+        </div>
+        <div class="card">
+          <h4>Region of interest</h4>
+          <p class="note">Drag to pan, scroll or pinch to zoom. Select a country for its indicators.</p>
+          <div class="map" id="region-map">
+            <div class="zoombar"><button type="button" data-z="in" aria-label="Zoom in">+</button><button type="button" data-z="out" aria-label="Zoom out">−</button><button type="button" data-z="reset" aria-label="Reset view">⟲</button></div>
+          </div>
+          <div class="legend" id="region-legend"></div>
+          <div class="detail" id="country-detail"><p class="hint">Select a country on the map.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="charts-h">
+    <div class="wrap">
+      <h3 id="charts-h" class="sec-title">Theme analysis</h3>
+      <div class="grid">
+        <div class="card">
+          <h4>Theme prevalence</h4>
+          <p class="note">Share of this period's items that touch each theme. An item can count toward several themes.</p>
+          <div class="chart" id="chart-themes"></div>
+          <p class="cite">Source: keyword classification of the items in the news list (method below).</p>
+        </div>
+        <div class="card">
+          <h4>Event timeline</h4>
+          <p class="note">Items per day for the three leading themes, then the latest items on the top theme.</p>
+          <div class="chart" id="chart-timeline"></div>
+          <div class="legend" id="timeline-legend"></div>
+          <ol class="tl" id="event-list"></ol>
+        </div>
+        <div class="card">
+          <h4>Risk score: political stability</h4>
+          <p class="note">World Bank governance estimate for countries in the region of interest. Below zero means less stable than the world average, so higher risk.</p>
+          <div class="chart" id="chart-risk"></div>
+          <p class="cite" id="risk-cite"></p>
+        </div>
+        <div class="card wide">
+          <h4>Economic and security indicators</h4>
+          <p class="note">Latest reported year for each country. Select a row to find it on the map.</p>
+          <div class="tablewrap">
+            <table class="ind" id="ind-table"><thead><tr></tr></thead><tbody></tbody></table>
+          </div>
+          <p class="cite" id="ind-cite"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="news-h">
+    <div class="wrap">
+      <h3 id="news-h" class="sec-title">Relevant news and analysis</h3>
+      <div class="filters" id="news-filters" role="group" aria-label="Filter by theme"></div>
+      <ul class="news" id="news-list"></ul>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="src-h">
+    <div class="wrap">
+      <h3 id="src-h" class="sec-title">Sources and citation</h3>
+      <div class="card">
+        <p class="note" id="src-note"></p>
+        <div class="tablewrap">
+          <table class="src" id="src-table">
+            <thead><tr><th>Source</th><th>Dataset</th><th>Status</th><th>Request</th><th>Retrieved</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="method">
+        <div class="card">
+          <h4>Method</h4>
+          <p id="method-text"></p>
+          <p>Theme keywords, country aliases and the list of sources are plain configuration files, so they can be changed without touching the code.</p>
+        </div>
+        <div class="card">
+          <h4>How to cite this snapshot</h4>
+          <p class="citebox" id="cite-dashboard"></p>
+          <button class="copy" id="cite-copy" type="button">Copy citation</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">Each weekly snapshot is fixed once published. Indicator values are the latest each provider had released when the snapshot was taken.</div></footer>
+
+<script>/*D3*/</script>
+<script>/*TOPOJSON*/</script>
+<script>window.WORLD = /*WORLD*/;</script>
+<script>window.WEEKS = /*WEEKS*/;</script>
+<script type="application/json" id="snapshot-json">/*SNAPSHOT*/</script>
+<script>window.SNAPSHOT = JSON.parse(document.getElementById('snapshot-json').textContent);</script>
+<script>/*APP*/</script>
+</body>
+</html>

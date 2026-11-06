@@ -1,0 +1,90 @@
+{
+  "_comment": "Edit this file to add, remove or swap data sources. Each news feed is RSS or Atom. Set enabled:false to switch a source off without deleting it.",
+  "window_days": 7,
+  "user_agent": "geo-dashboard/0.1 (academic research; weekly snapshot)",
+  "news": [
+    {
+      "id": "geopolitical-monitor",
+      "name": "Geopolitical Monitor",
+      "publisher": "Geopolitical Monitor",
+      "homepage": "https://www.geopoliticalmonitor.com/",
+      "feeds": [
+        "https://www.geopoliticalmonitor.com/feed/",
+        "https://www.geopoliticalmonitor.com/feed/?paged=2"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "rand",
+      "name": "RAND Corporation",
+      "publisher": "RAND Corporation",
+      "homepage": "https://www.rand.org/",
+      "feeds": [
+        "https://www.rand.org/pubs/commentary.xml",
+        "https://www.rand.org/news/press.xml"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "bloomberg",
+      "name": "Bloomberg",
+      "publisher": "Bloomberg L.P.",
+      "homepage": "https://www.bloomberg.com/",
+      "feeds": [
+        "https://feeds.bloomberg.com/politics/news.rss",
+        "https://feeds.bloomberg.com/economics/news.rss"
+      ],
+      "note": "Bloomberg articles are paywalled. Only headlines and links are used.",
+      "enabled": true
+    }
+  ],
+  "indicators": [
+    {
+      "id": "pol_stability",
+      "provider": "worldbank",
+      "code": "GOV_WGI_PV.EST",
+      "wb_source": 3,
+      "label": "Political stability and absence of violence",
+      "short": "Political stability",
+      "unit": "index, -2.5 (weak) to +2.5 (strong)",
+      "publisher": "World Bank, Worldwide Governance Indicators",
+      "role": "risk"
+    },
+    {
+      "id": "gdp_growth",
+      "provider": "worldbank",
+      "code": "NY.GDP.MKTP.KD.ZG",
+      "label": "GDP growth (annual %)",
+      "short": "GDP growth",
+      "unit": "%",
+      "publisher": "World Bank, World Development Indicators"
+    },
+    {
+      "id": "inflation",
+      "provider": "worldbank",
+      "code": "FP.CPI.TOTL.ZG",
+      "label": "Inflation, consumer prices (annual %)",
+      "short": "Inflation",
+      "unit": "%",
+      "publisher": "World Bank, World Development Indicators"
+    },
+    {
+      "id": "military",
+      "provider": "worldbank",
+      "code": "MS.MIL.XPND.GD.ZS",
+      "label": "Military expenditure (% of GDP)",
+      "short": "Military spending",
+      "unit": "% of GDP",
+      "publisher": "World Bank, World Development Indicators (SIPRI data)"
+    },
+    {
+      "id": "imf_gdp_proj",
+      "provider": "imf",
+      "code": "NGDP_RPCH",
+      "label": "Real GDP growth, IMF World Economic Outlook projection",
+      "short": "IMF growth projection",
+      "unit": "%",
+      "publisher": "International Monetary Fund, World Economic Outlook (DataMapper)"
+    }
+  ]
+}
