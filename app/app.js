@@ -398,7 +398,31 @@
     const box = $('#mk-charts'); box.replaceChildren();
     const ws = new Date(M.window.start), we = new Date(M.window.end);
     const xStart = d3.min(M.series, (m) => new Date(m.values[0]?.date + 'T12:00:00Z'));
-    M.series.forEach((m) => {
+    // three rows, each a four-column grid so every tile has the same width and height
+    const ROWS = [['Commodities', ['brent', 'wti', 'gold']], ['Stock markets', ['spx', 'sx5e', 'n225', 'sse']], ['Currencies and rates', null]];
+    const known = ROWS.flatMap(([, ids]) => ids ?? []);
+    const rowOf = (id) => (known.includes(id) ? ROWS.findIndex(([, ids]) => ids?.includes(id)) : 2);
+    const rank = (id) => (known.includes(id) ? known.indexOf(id) : 100);
+    const items = [...M.series.map((m) => ({ m, ok: true })), ...(M.missing ?? []).map((m) => ({ m, ok: false }))]
+      .sort((p, q) => rank(p.m.id) - rank(q.m.id));
+    const grids = ROWS.map(([label]) => {
+      const sec = document.createElement('div'); sec.className = 'mk-group';
+      const h = document.createElement('h5'); h.className = 'ctx-h'; h.textContent = label;
+      const g = document.createElement('div'); g.className = 'mk-row';
+      sec.append(h, g); box.append(sec); return g;
+    });
+    const line = css('--div-neg');
+    items.forEach(({ m, ok }) => {
+      const grid = grids[rowOf(m.id)];
+      const fig = document.createElement('figure'); fig.className = 'mult' + (ok ? '' : ' mk-missing'); fig.dataset.id = m.id;
+      const cap = document.createElement('figcaption');
+      const nm = document.createElement('span'); nm.textContent = m.label + (m.isos?.length ? ` (${m.isos.map(cname).join(', ')})` : '');
+      cap.append(nm); fig.append(cap); grid.append(fig);
+      if (!ok) {
+        const w = document.createElement('small'); w.textContent = 'not available this week'; cap.append(w);
+        const ph = document.createElement('div'); ph.className = 'ph'; ph.textContent = `${m.provider} did not return data (${m.column})`; fig.append(ph);
+        return;
+      }
       const pts = m.values.map((v) => ({ d: new Date(v.date + 'T12:00:00Z'), v: v.value }));
       if (pts.length < 2) return;
       const last = pts.at(-1);
@@ -406,41 +430,28 @@
       const stale = last.d < ws;
       const pct = m.unit === '%' ? last.v - before.v : (last.v / before.v - 1) * 100;
       const fmtV = m.unit === 'US$' ? d3.format('$,.2f') : m.unit === '%' ? (v) => d3.format('.2f')(v) + '%' : m.unit === 'index' ? (v) => d3.format(v >= 1000 ? ',.0f' : '.1f')(v) : (v) => (v >= 100 ? d3.format(',.0f')(v) : v >= 10 ? d3.format('.2f')(v) : d3.format('.4f')(v));
-      const fig = document.createElement('figure'); fig.className = 'mult'; fig.dataset.id = m.id;
-      const cap = document.createElement('figcaption');
-      const nm = document.createElement('span'); nm.textContent = m.label;
+      const sub = document.createElement('div'); sub.className = 'mk-val';
       const vl = document.createElement('b'); vl.textContent = fmtV(last.v);
       const ch = document.createElement('small'); ch.textContent = stale ? `latest ${fmtDate(last.d)}, before this period` : m.unit === '%' ? `${d3.format('+.2f')(pct)} pts this period` : `${d3.format('+.1f')(pct)}% this period`;
-      cap.append(nm, vl, ch);
-      if (m.isos?.length) { const w = document.createElement('small'); w.textContent = m.isos.map(cname).join(', '); cap.append(w); }
-      fig.append(cap); box.append(fig);
-      const W = fig.clientWidth || 260, H = 78, mg = { l: 4, r: 4, t: 8, b: 16 };
+      sub.append(vl, ch); cap.append(sub);
+      const W = 260, H = 84, mg = { l: 2, r: 2, t: 8, b: 4 };
       const x = d3.scaleUtc([xStart, we], [mg.l, W - mg.r]);
       const y = d3.scaleLinear(d3.extent(pts, (p) => p.v), [H - mg.b, mg.t]).nice();
-      const svg = d3.select(fig).append('svg').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', `${m.label}, last six months`);
+      const svg = d3.select(fig).append('svg').attr('viewBox', `0 0 ${W} ${H}`).attr('preserveAspectRatio', 'none').attr('role', 'img').attr('aria-label', `${m.label}, last six months`);
       const x0 = Math.max(mg.l, x(ws)), x1 = Math.min(W - mg.r, x(we));
       svg.append('rect').attr('x', x0).attr('width', Math.max(2, x1 - x0)).attr('y', mg.t).attr('height', H - mg.b - mg.t).attr('fill', css('--accent')).attr('fill-opacity', 0.14);
-      svg.append('line').attr('x1', mg.l).attr('x2', W - mg.r).attr('y1', H - mg.b).attr('y2', H - mg.b).attr('stroke', css('--axis'));
-      svg.append('g').selectAll('text').data([pts[0].d, we]).join('text').attr('x', x).attr('y', H - 3).attr('text-anchor', (v, i) => (i ? 'end' : 'start')).text(d3.utcFormat('%b %-d'));
-      svg.append('path').attr('d', d3.line().x((p) => x(p.d)).y((p) => y(p.v))(pts)).attr('fill', 'none').attr('stroke', css('--ink-2')).attr('stroke-width', 1.6).attr('stroke-linejoin', 'round');
-      svg.append('circle').attr('cx', x(last.d)).attr('cy', y(last.v)).attr('r', 3).attr('fill', css('--ink'));
+      svg.append('line').attr('x1', mg.l).attr('x2', W - mg.r).attr('y1', H - mg.b).attr('y2', H - mg.b).attr('stroke', css('--axis')).attr('vector-effect', 'non-scaling-stroke');
+      svg.append('path').attr('d', d3.line().x((p) => x(p.d)).y((p) => y(p.v))(pts)).attr('fill', 'none').attr('stroke', line).attr('stroke-width', 2).attr('stroke-linejoin', 'round').attr('vector-effect', 'non-scaling-stroke');
+      const axis = document.createElement('div'); axis.className = 'mk-axis';
+      const a0 = document.createElement('span'); a0.textContent = d3.utcFormat('%b %-d')(xStart);
+      const a1 = document.createElement('span'); a1.textContent = d3.utcFormat('%b %-d')(we);
+      axis.append(a0, a1);
+      const dot = document.createElement('i'); dot.className = 'mk-dot'; dot.style.left = `${(x(last.d) / W) * 100}%`; dot.style.top = `${y(last.v)}px`; dot.style.background = line;
+      const wrap = document.createElement('div'); wrap.className = 'mk-plot'; wrap.append(svg.node(), dot); fig.append(wrap, axis);
       const tip = tipFor(fig);
       svg.append('rect').attr('x', 0).attr('y', 0).attr('width', W).attr('height', H).attr('fill', 'transparent')
-        .on('pointermove', (ev) => { const [px] = d3.pointer(ev); const p = d3.least(pts, (q) => Math.abs(x(q.d) - px)); tip.show(ev, [{ head: true, text: m.label }, { text: `${fmtDate(p.d)}: ${fmtV(p.v)}` }]); })
+        .on('pointermove', (ev) => { const r = svg.node().getBoundingClientRect(); const px = ((ev.clientX - r.left) / r.width) * W; const p = d3.least(pts, (q) => Math.abs(x(q.d) - px)); tip.show(ev, [{ head: true, text: m.label }, { text: `${fmtDate(p.d)}: ${fmtV(p.v)}` }]); })
         .on('pointerleave', () => tip.hide());
-    });
-    // placeholders for configured series that did not load this week, in their configured place
-    (M.missing ?? []).forEach((m) => {
-      const fig = document.createElement('figure'); fig.className = 'mult mk-missing';
-      const cap = document.createElement('figcaption');
-      const nm = document.createElement('span'); nm.textContent = m.label;
-      const w = document.createElement('small'); w.textContent = 'not available this week';
-      cap.append(nm, w); fig.append(cap);
-      const ph = document.createElement('div'); ph.className = 'ph'; ph.textContent = `${m.provider} did not return data (${m.column})`;
-      fig.append(ph);
-      const order = ['brent', 'wti', 'gold', 'spx', 'sx5e', 'n225', 'sse'];
-      const after = [...box.children].find((f) => order.indexOf(f.dataset.id) > order.indexOf(m.id));
-      fig.dataset.id = m.id; box.insertBefore(fig, after ?? null);
     });
     const missing = (M.no_rate ?? []).filter((i) => i !== 'USA');
     $('#mk-note').textContent = `Daily closes over the last six months: oil and gold, four leading stock indexes, the US dollar and Treasury yield, and the region's currencies. The shaded band is this snapshot's period, and the change beside each name runs from the last value before it to the latest.${missing.length ? ` No reference exchange rate is published for ${missing.map(cname).join(', ')}.` : ''}`;

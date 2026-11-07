@@ -299,8 +299,6 @@ table.ind .cell small { margin-left: 0; }
 @media print { .print-only { display: block !important; } }
 
 /* market signals */
-.multiples.mk { grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); }
-.mk .mult figcaption small:last-child:not(:nth-child(3)) { flex-basis: 100%; }
 /* Chromium drops grid items that follow one split across pages, so print the card grids as plain blocks */
 @media print {
   .grid.maps, .grid.analysis { display: block !important; }
@@ -316,4 +314,19 @@ table.ind .cell small { margin-left: 0; }
 .kbtn .desc { color: var(--muted); }
 .kbtn .tag:not(.kind) { border: 1px solid var(--axis); }
 @media (max-width: 640px) { .kbtn .desc { display: none; } }
-.mk-missing .ph { height: 78px; margin-top: 4px; display: grid; place-items: center; text-align: center; padding: 0 10px; font-size: 11px; color: var(--muted); border: 1px dashed var(--axis); border-radius: 6px; }
+/* market signals: three rows on one four-column grid, every tile the same size */
+.multiples.mk { display: grid; gap: 14px; grid-template-columns: minmax(0, 1fr); }
+.mk-group .ctx-h { margin: 0 0 6px; }
+.mk-row { display: grid; gap: 10px 14px; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.mk-row .mult figcaption { display: block; }
+.mk-row .mult figcaption > span { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600; color: var(--ink); }
+.mk-val { display: flex; gap: 8px; align-items: baseline; min-height: 1.5em; }
+.mk-val b { font-variant-numeric: tabular-nums; }
+.mk-val small, .mk-missing figcaption small { color: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mk-missing figcaption small { display: block; min-height: 1.5em; line-height: 1.5em; }
+.mk-plot { position: relative; height: 84px; margin-top: 2px; }
+.mk-plot svg { display: block; width: 100%; height: 84px; }
+.mk-dot { position: absolute; width: 7px; height: 7px; border-radius: 50%; transform: translate(-50%, -50%); pointer-events: none; }
+.mk-axis { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-top: 2px; }
+.mk-missing .ph { height: 84px; margin-top: 2px; margin-bottom: 17px; display: grid; place-items: center; text-align: center; padding: 0 10px; font-size: 11px; color: var(--muted); border: 1px dashed var(--axis); border-radius: 6px; }
+@media (max-width: 760px) { .mk-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
