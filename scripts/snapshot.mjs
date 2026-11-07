@@ -380,7 +380,7 @@ const snapshot = {
   week,
   generated_at: new Date().toISOString(),
   window: { start: windowStart.toISOString(), end: now.toISOString(), days: windowDays, widened: windowDays !== (sources.window_days ?? 7) },
-  method: 'Themes are counted from the titles, summaries and tags of the news, analysis and official items published in the window, using the keyword lists in config/themes.json. Countries are matched by name and by the aliases in config/places.json. The region of interest is the set of countries most often named in items about the most prevalent theme. Ties between themes are broken by the number of distinct sources covering them, then by how many country mentions they carry.',
+  method: 'Themes are counted from the titles, summaries and tags of the news, analysis and official items published in the window, using the keyword lists in config/themes.json. Countries are matched by name and by the aliases in config/places.json. Country counts are weighted: an item that names a country directly counts 1 for it, while an item that only names a region covering several countries (such as "the Sahel" or "West Africa") counts 0.5 for each of them, and a country counts at most once per item. This is why some counts are fractions: 2.5 can mean two items naming the country and one naming its region. The region of interest is the set of countries most often named in items about the most prevalent theme. Ties between themes are broken by the number of distinct sources covering them, then by how many country mentions they carry.',
   totals: { items: weekItems.length, sources: [...new Set(weekItems.map((i) => i.source))].length },
   top_theme: top.id,
   themes: themeStats,
