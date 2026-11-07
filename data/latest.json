@@ -1,10 +1,10 @@
 {
  "schema": 1,
  "week": "2026-W45",
- "generated_at": "2026-11-07T08:40:28.254Z",
+ "generated_at": "2026-11-07T08:48:41.321Z",
  "window": {
-  "start": "2026-10-31T08:40:22.692Z",
-  "end": "2026-11-07T08:40:22.692Z",
+  "start": "2026-10-31T08:48:36.497Z",
+  "end": "2026-11-07T08:48:36.497Z",
   "days": 7,
   "widened": false
  },
@@ -14057,8 +14057,8 @@
    }
   ],
   "window": {
-   "start": "2026-10-31T08:40:22.692Z",
-   "end": "2026-11-07T08:40:22.692Z"
+   "start": "2026-10-31T08:48:36.497Z",
+   "end": "2026-11-07T08:48:36.497Z"
   },
   "no_rate": [
    "YEM",
@@ -14119,7 +14119,7 @@
     "kind": "news feed",
     "type": "analysis",
     "url": "https://www.geopoliticalmonitor.com/feed/",
-    "retrieved_at": "2026-11-07T08:40:22.692Z",
+    "retrieved_at": "2026-11-07T08:48:36.497Z",
     "status": "ok",
     "items": 10
    },
@@ -14129,7 +14129,7 @@
     "kind": "news feed",
     "type": "analysis",
     "url": "https://www.geopoliticalmonitor.com/feed/?paged=2",
-    "retrieved_at": "2026-11-07T08:40:22.862Z",
+    "retrieved_at": "2026-11-07T08:48:36.659Z",
     "status": "ok",
     "items": 10
    },
@@ -14139,7 +14139,7 @@
     "kind": "news feed",
     "type": "analysis",
     "url": "https://www.rand.org/pubs/commentary.xml",
-    "retrieved_at": "2026-11-07T08:40:23.358Z",
+    "retrieved_at": "2026-11-07T08:48:37.149Z",
     "status": "ok",
     "items": 20
    },
@@ -14149,7 +14149,7 @@
     "kind": "news feed",
     "type": "news",
     "url": "https://www.rand.org/news/press.xml",
-    "retrieved_at": "2026-11-07T08:40:23.442Z",
+    "retrieved_at": "2026-11-07T08:48:37.205Z",
     "status": "ok",
     "items": 20
    },
@@ -14159,7 +14159,7 @@
     "kind": "news feed",
     "type": "news",
     "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
-    "retrieved_at": "2026-11-07T08:40:23.453Z",
+    "retrieved_at": "2026-11-07T08:48:37.222Z",
     "status": "ok",
     "items": 28
    },
@@ -14169,7 +14169,7 @@
     "kind": "news feed",
     "type": "news",
     "url": "https://news.un.org/feed/subscribe/en/news/all/rss.xml",
-    "retrieved_at": "2026-11-07T08:40:23.574Z",
+    "retrieved_at": "2026-11-07T08:48:37.268Z",
     "status": "ok",
     "items": 30
    },
@@ -14179,7 +14179,7 @@
     "kind": "news feed",
     "type": "official",
     "url": "https://press.un.org/en/rss.xml",
-    "retrieved_at": "2026-11-07T08:40:23.698Z",
+    "retrieved_at": "2026-11-07T08:48:37.392Z",
     "status": "ok",
     "items": 10
    },
@@ -14189,7 +14189,7 @@
     "kind": "news feed",
     "type": "official",
     "url": "https://ofac.treasury.gov/recent-actions",
-    "retrieved_at": "2026-11-07T08:40:23.795Z",
+    "retrieved_at": "2026-11-07T08:48:37.478Z",
     "status": "ok",
     "items": 10
    },
@@ -14198,7 +14198,7 @@
     "name": "World Bank, Worldwide Governance Indicators",
     "kind": "indicator",
     "indicator": "GOV_WGI_PV.EST",
-    "retrieved_at": "2026-11-07T08:40:24.645Z",
+    "retrieved_at": "2026-11-07T08:48:38.439Z",
     "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;SDN;ESP;AFG;MLI/indicator/GOV_WGI_PV.EST?format=json&date=2014:2026&per_page=1000&source=3",
     "status": "ok",
     "items": 108
@@ -14208,7 +14208,7 @@
     "name": "World Bank, World Development Indicators",
     "kind": "indicator",
     "indicator": "NY.GDP.MKTP.KD.ZG",
-    "retrieved_at": "2026-11-07T08:40:24.827Z",
+    "retrieved_at": "2026-11-07T08:48:38.589Z",
     "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;SDN;ESP;AFG;MLI/indicator/NY.GDP.MKTP.KD.ZG?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
     "items": 100
@@ -14218,7 +14218,7 @@
     "name": "World Bank, World Development Indicators",
     "kind": "indicator",
     "indicator": "FP.CPI.TOTL.ZG",
-    "retrieved_at": "2026-11-07T08:40:24.905Z",
+    "retrieved_at": "2026-11-07T08:48:38.676Z",
     "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;SDN;ESP;AFG;MLI/indicator/FP.CPI.TOTL.ZG?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
     "items": 92
@@ -14228,7 +14228,7 @@
     "name": "World Bank, World Development Indicators (SIPRI data)",
     "kind": "indicator",
     "indicator": "MS.MIL.XPND.GD.ZS",
-    "retrieved_at": "2026-11-07T08:40:25.006Z",
+    "retrieved_at": "2026-11-07T08:48:38.763Z",
     "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;SDN;ESP;AFG;MLI/indicator/MS.MIL.XPND.GD.ZS?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
     "items": 88
@@ -14238,7 +14238,7 @@
     "name": "International Monetary Fund, World Economic Outlook (DataMapper)",
     "kind": "indicator",
     "indicator": "NGDP_RPCH",
-    "retrieved_at": "2026-11-07T08:40:25.050Z",
+    "retrieved_at": "2026-11-07T08:48:38.795Z",
     "url": "https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH/YEM/ESH/RUS/USA/UKR/IRN/SDN/ESP/AFG/MLI?periods=2025,2026,2027",
     "status": "ok",
     "items": 379
@@ -14248,7 +14248,7 @@
     "name": "World Bank, World Development Indicators",
     "kind": "indicator",
     "indicator": "SP.POP.TOTL",
-    "retrieved_at": "2026-11-07T08:40:25.513Z",
+    "retrieved_at": "2026-11-07T08:48:39.292Z",
     "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;SDN;ESP;AFG;MLI/indicator/SP.POP.TOTL?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
     "items": 108
@@ -14258,7 +14258,7 @@
     "name": "World Bank, World Development Indicators",
     "kind": "indicator",
     "indicator": "NY.GDP.MKTP.CD",
-    "retrieved_at": "2026-11-07T08:40:25.585Z",
+    "retrieved_at": "2026-11-07T08:48:39.365Z",
     "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;SDN;ESP;AFG;MLI/indicator/NY.GDP.MKTP.CD?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
     "items": 100
@@ -14268,7 +14268,7 @@
     "name": "World Bank, World Development Indicators (UCDP/PRIO data)",
     "kind": "indicator",
     "indicator": "VC.BTL.DETH",
-    "retrieved_at": "2026-11-07T08:40:25.644Z",
+    "retrieved_at": "2026-11-07T08:48:39.389Z",
     "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;SDN;ESP;AFG;MLI/indicator/VC.BTL.DETH?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
     "items": 72
@@ -14278,7 +14278,7 @@
     "name": "World Bank, World Development Indicators (IDMC data)",
     "kind": "indicator",
     "indicator": "VC.IDP.NWCV",
-    "retrieved_at": "2026-11-07T08:40:25.727Z",
+    "retrieved_at": "2026-11-07T08:48:39.464Z",
     "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;SDN;ESP;AFG;MLI/indicator/VC.IDP.NWCV?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
     "items": 50
@@ -14289,7 +14289,7 @@
     "kind": "market",
     "indicator": "RBRTE",
     "url": "https://www.eia.gov/dnav/pet/hist/RBRTED.htm",
-    "retrieved_at": "2026-11-07T08:40:25.806Z",
+    "retrieved_at": "2026-11-07T08:48:39.556Z",
     "status": "ok",
     "items": 125
    },
@@ -14299,7 +14299,7 @@
     "kind": "market",
     "indicator": "RWTC",
     "url": "https://www.eia.gov/dnav/pet/hist/RWTCD.htm",
-    "retrieved_at": "2026-11-07T08:40:26.065Z",
+    "retrieved_at": "2026-11-07T08:48:39.772Z",
     "status": "ok",
     "items": 123
    },
@@ -14309,7 +14309,7 @@
     "kind": "market",
     "indicator": "GC=F",
     "url": "https://query1.finance.yahoo.com/v7/finance/spark?symbols=GC%3DF,ZW%3DF,%5EGSPC,%5ESTOXX50E,%5EN225,000001.SS&range=6mo&interval=1d",
-    "retrieved_at": "2026-11-07T08:40:26.432Z",
+    "retrieved_at": "2026-11-07T08:48:39.968Z",
     "status": "ok",
     "items": 126
    },
@@ -14319,7 +14319,7 @@
     "kind": "market",
     "indicator": "ZW=F",
     "url": "https://query1.finance.yahoo.com/v7/finance/spark?symbols=GC%3DF,ZW%3DF,%5EGSPC,%5ESTOXX50E,%5EN225,000001.SS&range=6mo&interval=1d",
-    "retrieved_at": "2026-11-07T08:40:26.433Z",
+    "retrieved_at": "2026-11-07T08:48:39.968Z",
     "status": "ok",
     "items": 125
    },
@@ -14329,7 +14329,7 @@
     "kind": "market",
     "indicator": "^GSPC",
     "url": "https://query1.finance.yahoo.com/v7/finance/spark?symbols=GC%3DF,ZW%3DF,%5EGSPC,%5ESTOXX50E,%5EN225,000001.SS&range=6mo&interval=1d",
-    "retrieved_at": "2026-11-07T08:40:26.433Z",
+    "retrieved_at": "2026-11-07T08:48:39.968Z",
     "status": "ok",
     "items": 126
    },
@@ -14339,7 +14339,7 @@
     "kind": "market",
     "indicator": "^STOXX50E",
     "url": "https://query1.finance.yahoo.com/v7/finance/spark?symbols=GC%3DF,ZW%3DF,%5EGSPC,%5ESTOXX50E,%5EN225,000001.SS&range=6mo&interval=1d",
-    "retrieved_at": "2026-11-07T08:40:26.433Z",
+    "retrieved_at": "2026-11-07T08:48:39.968Z",
     "status": "ok",
     "items": 128
    },
@@ -14349,7 +14349,7 @@
     "kind": "market",
     "indicator": "^N225",
     "url": "https://query1.finance.yahoo.com/v7/finance/spark?symbols=GC%3DF,ZW%3DF,%5EGSPC,%5ESTOXX50E,%5EN225,000001.SS&range=6mo&interval=1d",
-    "retrieved_at": "2026-11-07T08:40:26.433Z",
+    "retrieved_at": "2026-11-07T08:48:39.968Z",
     "status": "ok",
     "items": 123
    },
@@ -14359,7 +14359,7 @@
     "kind": "market",
     "indicator": "000001.SS",
     "url": "https://query1.finance.yahoo.com/v7/finance/spark?symbols=GC%3DF,ZW%3DF,%5EGSPC,%5ESTOXX50E,%5EN225,000001.SS&range=6mo&interval=1d",
-    "retrieved_at": "2026-11-07T08:40:26.433Z",
+    "retrieved_at": "2026-11-07T08:48:39.968Z",
     "status": "ok",
     "items": 123
    },
@@ -14369,7 +14369,7 @@
     "kind": "market",
     "indicator": "JRXWTFB_N.B, JRXWTFO_N.B",
     "url": "https://www.federalreserve.gov/datadownload/Output.aspx?rel=H10&series=122e3bcb627e8e53f1bf72a1a09cfb81&from=2026-05-11&to=2026-11-07&filetype=csv&label=include&layout=seriescolumn",
-    "retrieved_at": "2026-11-07T08:40:26.433Z",
+    "retrieved_at": "2026-11-07T08:48:39.969Z",
     "status": "ok",
     "items": 125
    },
@@ -14379,7 +14379,7 @@
     "kind": "market",
     "indicator": "RIFLGFCY10_N.B",
     "url": "https://www.federalreserve.gov/datadownload/Output.aspx?rel=H15&series=bf17364827e38702b42a58cf8eaa3f78&from=2026-05-11&to=2026-11-07&filetype=csv&label=include&layout=seriescolumn",
-    "retrieved_at": "2026-11-07T08:40:26.612Z",
+    "retrieved_at": "2026-11-07T08:48:40.119Z",
     "status": "ok",
     "items": 129
    },
@@ -14389,7 +14389,7 @@
     "kind": "market",
     "indicator": "EXR USD",
     "url": "https://data-api.ecb.europa.eu/service/data/EXR/D.USD.EUR.SP00.A?format=csvdata&startPeriod=2026-05-11&endPeriod=2026-11-07",
-    "retrieved_at": "2026-11-07T08:40:26.766Z",
+    "retrieved_at": "2026-11-07T08:48:40.259Z",
     "status": "ok",
     "items": 130
    }
