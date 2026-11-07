@@ -1,0 +1,75 @@
+name: Weekly snapshot
+
+on:
+  # Saturdays at 00:00 Central European Time. GitHub schedules in UTC, so this fires at 22:00 and 23:00 UTC on
+  # Fridays, which is midnight in summer and in winter. The gate job lets a scheduled run go ahead only once it is
+  # Saturday in Europe/Berlin and no snapshot was committed in the last 12 hours, so a late trigger still runs and
+  # the second trigger does not repeat the work.
+  schedule:
+    - cron: "0 22 * * 5"
+    - cron: "0 23 * * 5"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: weekly-snapshot
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      go: ${{ steps.when.outputs.go }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 30
+      - name: Only once, on Saturday in Central European Time
+        id: when
+        run: |
+          go=true
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            if [ "$(TZ=Europe/Berlin date +%u)" != "6" ]; then go=false; echo "Not yet Saturday in Europe/Berlin."; fi
+            if git log --since="12 hours ago" --grep="^Weekly snapshot" --format=%h | grep -q .; then go=false; echo "Already ran for this week."; fi
+          fi
+          echo "go=$go" >> "$GITHUB_OUTPUT"
+  build:
+    needs: gate
+    if: needs.gate.outputs.go == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Install a browser for the PDF
+        run: npm install --no-save playwright@1.48.2 && npx playwright install --with-deps chromium
+      - name: Take this week's snapshot
+        run: node scripts/snapshot.mjs
+      - name: Build pages and PDF
+        run: node scripts/build.mjs --pdf
+      - name: Keep the snapshot in the repository
+        run: |
+          git config user.name "weekly-snapshot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data
+          git commit -m "Weekly snapshot $(date -u +%G-W%V)" || echo "No changes"
+          git push
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

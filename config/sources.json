@@ -1,0 +1,416 @@
+{
+  "_comment": "Edit this file to add, remove or swap data sources. A news feed is RSS, Atom or a Google News sitemap; give it as a URL, or as {url, type, url_contains, format}. type is news, analysis or official and sets the tag colour. format 'ofac-html' reads the US Treasury OFAC Recent Actions page. Set enabled:false to switch a source off without deleting it.",
+  "window_days": 7,
+  "user_agent": "geo-dashboard/0.1 (academic research; weekly snapshot)",
+  "news": [
+    {
+      "id": "geopolitical-monitor",
+      "name": "Geopolitical Monitor",
+      "publisher": "Geopolitical Monitor",
+      "homepage": "https://www.geopoliticalmonitor.com/",
+      "type": "analysis",
+      "feeds": [
+        "https://www.geopoliticalmonitor.com/feed/",
+        "https://www.geopoliticalmonitor.com/feed/?paged=2"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "rand",
+      "name": "RAND Corporation",
+      "publisher": "RAND Corporation",
+      "homepage": "https://www.rand.org/",
+      "feeds": [
+        {
+          "url": "https://www.rand.org/pubs/commentary.xml",
+          "type": "analysis"
+        },
+        {
+          "url": "https://www.rand.org/news/press.xml",
+          "type": "news"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "id": "bbc-world",
+      "name": "BBC News World",
+      "publisher": "BBC News",
+      "homepage": "https://www.bbc.com/news/world",
+      "type": "news",
+      "feeds": [
+        "https://feeds.bbci.co.uk/news/world/rss.xml"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "un-news",
+      "name": "UN News",
+      "publisher": "United Nations",
+      "homepage": "https://news.un.org/en/",
+      "type": "news",
+      "feeds": [
+        "https://news.un.org/feed/subscribe/en/news/all/rss.xml"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "un-press",
+      "name": "UN Meetings Coverage and Press Releases",
+      "publisher": "United Nations",
+      "homepage": "https://press.un.org/en",
+      "type": "official",
+      "feeds": [
+        "https://press.un.org/en/rss.xml"
+      ],
+      "note": "Security Council, General Assembly and Secretary-General statements. The feed holds the latest 10 releases.",
+      "enabled": true
+    },
+    {
+      "id": "ofac",
+      "name": "US Treasury OFAC Recent Actions",
+      "publisher": "US Department of the Treasury (OFAC)",
+      "homepage": "https://ofac.treasury.gov/recent-actions",
+      "type": "official",
+      "feeds": [
+        {
+          "url": "https://ofac.treasury.gov/recent-actions",
+          "format": "ofac-html"
+        }
+      ],
+      "note": "Sanctions designations, removals and general licences.",
+      "enabled": true
+    }
+  ],
+  "indicators": [
+    {
+      "id": "pol_stability",
+      "provider": "worldbank",
+      "code": "GOV_WGI_PV.EST",
+      "wb_source": 3,
+      "label": "Political stability and absence of violence",
+      "short": "Political stability",
+      "unit": "index, -2.5 (weak) to +2.5 (strong)",
+      "publisher": "World Bank, Worldwide Governance Indicators",
+      "role": "risk"
+    },
+    {
+      "id": "gdp_growth",
+      "provider": "worldbank",
+      "code": "NY.GDP.MKTP.KD.ZG",
+      "label": "GDP growth (annual %)",
+      "short": "GDP growth",
+      "unit": "%",
+      "publisher": "World Bank, World Development Indicators"
+    },
+    {
+      "id": "inflation",
+      "provider": "worldbank",
+      "code": "FP.CPI.TOTL.ZG",
+      "label": "Inflation, consumer prices (annual %)",
+      "short": "Inflation",
+      "unit": "%",
+      "publisher": "World Bank, World Development Indicators"
+    },
+    {
+      "id": "military",
+      "provider": "worldbank",
+      "code": "MS.MIL.XPND.GD.ZS",
+      "label": "Military expenditure (% of GDP)",
+      "short": "Military spending",
+      "unit": "% of GDP",
+      "publisher": "World Bank, World Development Indicators (SIPRI data)"
+    },
+    {
+      "id": "imf_gdp_proj",
+      "provider": "imf",
+      "code": "NGDP_RPCH",
+      "label": "Real GDP growth, IMF World Economic Outlook projection",
+      "short": "IMF growth projection",
+      "unit": "%",
+      "publisher": "International Monetary Fund, World Economic Outlook (DataMapper)"
+    },
+    {
+      "id": "population",
+      "provider": "worldbank",
+      "code": "SP.POP.TOTL",
+      "label": "Population, total",
+      "short": "Population",
+      "unit": "people",
+      "publisher": "World Bank, World Development Indicators"
+    },
+    {
+      "id": "gdp",
+      "provider": "worldbank",
+      "code": "NY.GDP.MKTP.CD",
+      "label": "GDP (current US$)",
+      "short": "GDP",
+      "unit": "US$",
+      "publisher": "World Bank, World Development Indicators"
+    },
+    {
+      "id": "battle_deaths",
+      "provider": "worldbank",
+      "code": "VC.BTL.DETH",
+      "label": "Battle-related deaths (number of people)",
+      "short": "Battle-related deaths",
+      "unit": "people",
+      "publisher": "World Bank, World Development Indicators (UCDP/PRIO data)",
+      "library": true
+    },
+    {
+      "id": "conflict_displacement",
+      "provider": "worldbank",
+      "code": "VC.IDP.NWCV",
+      "label": "Internally displaced persons, new displacement associated with conflict and violence",
+      "short": "New conflict displacement",
+      "unit": "people",
+      "publisher": "World Bank, World Development Indicators (IDMC data)",
+      "library": true
+    },
+    {
+      "id": "arms_imports",
+      "provider": "worldbank",
+      "code": "MS.MIL.MPRT.KD",
+      "label": "Arms imports (SIPRI trend indicator values)",
+      "short": "Arms imports",
+      "unit": "TIV",
+      "publisher": "World Bank, World Development Indicators (SIPRI data)",
+      "library": true
+    },
+    {
+      "id": "fuel_exports",
+      "provider": "worldbank",
+      "code": "TX.VAL.FUEL.ZS.UN",
+      "label": "Fuel exports (% of merchandise exports)",
+      "short": "Fuel exports",
+      "unit": "% of exports",
+      "publisher": "World Bank, World Development Indicators",
+      "library": true
+    },
+    {
+      "id": "fuel_imports",
+      "provider": "worldbank",
+      "code": "TM.VAL.FUEL.ZS.UN",
+      "label": "Fuel imports (% of merchandise imports)",
+      "short": "Fuel imports",
+      "unit": "% of imports",
+      "publisher": "World Bank, World Development Indicators",
+      "library": true
+    },
+    {
+      "id": "energy_imports",
+      "provider": "worldbank",
+      "code": "EG.IMP.CONS.ZS",
+      "label": "Energy imports, net (% of energy use)",
+      "short": "Net energy imports",
+      "unit": "% of energy use",
+      "publisher": "World Bank, World Development Indicators",
+      "library": true
+    },
+    {
+      "id": "trade",
+      "provider": "worldbank",
+      "code": "NE.TRD.GNFS.ZS",
+      "label": "Trade (% of GDP)",
+      "short": "Trade",
+      "unit": "% of GDP",
+      "publisher": "World Bank, World Development Indicators",
+      "library": true
+    },
+    {
+      "id": "fdi",
+      "provider": "worldbank",
+      "code": "BX.KLT.DINV.WD.GD.ZS",
+      "label": "Foreign direct investment, net inflows (% of GDP)",
+      "short": "FDI inflows",
+      "unit": "% of GDP",
+      "publisher": "World Bank, World Development Indicators",
+      "library": true
+    },
+    {
+      "id": "hightech_exports",
+      "provider": "worldbank",
+      "code": "TX.VAL.TECH.MF.ZS",
+      "label": "High-technology exports (% of manufactured exports)",
+      "short": "High-tech exports",
+      "unit": "% of manufactured exports",
+      "publisher": "World Bank, World Development Indicators",
+      "library": true
+    },
+    {
+      "id": "internet",
+      "provider": "worldbank",
+      "code": "IT.NET.USER.ZS",
+      "label": "Individuals using the Internet (% of population)",
+      "short": "Internet users",
+      "unit": "% of population",
+      "publisher": "World Bank, World Development Indicators",
+      "library": true
+    },
+    {
+      "id": "rnd",
+      "provider": "worldbank",
+      "code": "GB.XPD.RSDV.GD.ZS",
+      "label": "Research and development expenditure (% of GDP)",
+      "short": "R&D spending",
+      "unit": "% of GDP",
+      "publisher": "World Bank, World Development Indicators",
+      "library": true
+    },
+    {
+      "id": "voice",
+      "provider": "worldbank",
+      "code": "GOV_WGI_VA.EST",
+      "label": "Voice and accountability",
+      "short": "Voice and accountability",
+      "unit": "index, -2.5 (weak) to +2.5 (strong)",
+      "publisher": "World Bank, Worldwide Governance Indicators",
+      "library": true,
+      "wb_source": 3
+    },
+    {
+      "id": "rule_of_law",
+      "provider": "worldbank",
+      "code": "GOV_WGI_RL.EST",
+      "label": "Rule of law",
+      "short": "Rule of law",
+      "unit": "index, -2.5 (weak) to +2.5 (strong)",
+      "publisher": "World Bank, Worldwide Governance Indicators",
+      "library": true,
+      "wb_source": 3
+    }
+  ],
+  "_comment_indicators": "Indicators without library:true are fetched every week. Those with library:true are fetched only when the week's top theme lists them in config/themes.json.",
+  "markets": {
+    "_comment": "Market signals. eia = US Energy Information Administration daily spot prices (series code); fed = Federal Reserve Board Data Download Program packages (series column codes); ecb = ECB euro reference rates, converted to units per US dollar for the currencies of the countries in the region of interest. yahoo = Yahoo Finance chart data (unofficial endpoint, daily closes; requests are spaced out to respect its rate limit).",
+    "days": 180,
+    "eia": [
+      {
+        "id": "brent",
+        "label": "Brent crude oil",
+        "unit": "US$",
+        "series": "RBRTE",
+        "note": "Europe Brent spot price FOB, dollars per barrel."
+      },
+      {
+        "id": "wti",
+        "label": "WTI crude oil",
+        "unit": "US$",
+        "series": "RWTC",
+        "note": "Cushing, OK WTI spot price FOB, dollars per barrel."
+      }
+    ],
+    "yahoo": [
+      {
+        "id": "gold",
+        "label": "Gold",
+        "unit": "US$",
+        "symbol": "GC=F",
+        "note": "COMEX gold futures, front month, dollars per troy ounce."
+      },
+      {
+        "id": "wheat",
+        "label": "Wheat",
+        "unit": "USc",
+        "symbol": "ZW=F",
+        "note": "CBOT wheat futures, front month, US cents per bushel."
+      },
+      {
+        "id": "spx",
+        "label": "S&P 500 (New York)",
+        "unit": "index",
+        "symbol": "^GSPC",
+        "note": "US large caps listed on NYSE and Nasdaq."
+      },
+      {
+        "id": "sx5e",
+        "label": "Euro Stoxx 50 (euro area)",
+        "unit": "index",
+        "symbol": "^STOXX50E",
+        "note": "Blue chips of the euro area, largely Euronext and Xetra listings."
+      },
+      {
+        "id": "n225",
+        "label": "Nikkei 225 (Tokyo)",
+        "unit": "index",
+        "symbol": "^N225",
+        "note": "Tokyo Stock Exchange (Japan Exchange Group)."
+      },
+      {
+        "id": "sse",
+        "label": "Shanghai Composite",
+        "unit": "index",
+        "symbol": "000001.SS",
+        "note": "All shares listed on the Shanghai Stock Exchange."
+      }
+    ],
+    "fed": [
+      {
+        "id": "usd_broad",
+        "label": "US dollar, broad index",
+        "unit": "index",
+        "release": "H.10",
+        "package": "122e3bcb627e8e53f1bf72a1a09cfb81",
+        "column": "JRXWTFB_N.B",
+        "note": "Nominal broad dollar index. Rises when the dollar strengthens."
+      },
+      {
+        "id": "usd_eme",
+        "label": "US dollar vs emerging markets",
+        "unit": "index",
+        "release": "H.10",
+        "package": "122e3bcb627e8e53f1bf72a1a09cfb81",
+        "column": "JRXWTFO_N.B",
+        "note": "Nominal emerging market economies dollar index. Rises when emerging-market currencies weaken."
+      },
+      {
+        "id": "ust10",
+        "label": "US 10-year Treasury yield",
+        "unit": "%",
+        "release": "H.15",
+        "package": "bf17364827e38702b42a58cf8eaa3f78",
+        "column": "RIFLGFCY10_N.B",
+        "note": "Market yield at 10-year constant maturity."
+      }
+    ],
+    "ecb_currencies": {
+      "AUS": "AUD",
+      "BRA": "BRL",
+      "CAN": "CAD",
+      "CHE": "CHF",
+      "CHN": "CNY",
+      "CZE": "CZK",
+      "DNK": "DKK",
+      "GBR": "GBP",
+      "HKG": "HKD",
+      "HUN": "HUF",
+      "IDN": "IDR",
+      "ISR": "ILS",
+      "PSE": "ILS",
+      "IND": "INR",
+      "ISL": "ISK",
+      "JPN": "JPY",
+      "KOR": "KRW",
+      "MEX": "MXN",
+      "MYS": "MYR",
+      "NOR": "NOK",
+      "NZL": "NZD",
+      "PHL": "PHP",
+      "POL": "PLN",
+      "ROU": "RON",
+      "SWE": "SEK",
+      "SGP": "SGD",
+      "THA": "THB",
+      "TUR": "TRY",
+      "ZAF": "ZAR",
+      "ARG": "ARS",
+      "DZA": "DZD",
+      "MAR": "MAD",
+      "TWN": "TWD"
+    },
+    "ecb_always": [
+      "EUR"
+    ]
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "_comment": "Extra names that point to countries (ISO 3166 alpha-3). Country names themselves are matched automatically. A region name can list several countries. Aliases written in capitals (US, UK, EU) match only in capitals.",
+  "aliases": {
+    "russian": [
+      "RUS"
+    ],
+    "moscow": [
+      "RUS"
+    ],
+    "kremlin": [
+      "RUS"
+    ],
+    "putin": [
+      "RUS"
+    ],
+    "ukrainian": [
+      "UKR"
+    ],
+    "kyiv": [
+      "UKR"
+    ],
+    "crimea": [
+      "UKR"
+    ],
+    "donbas": [
+      "UKR"
+    ],
+    "chinese": [
+      "CHN"
+    ],
+    "beijing": [
+      "CHN"
+    ],
+    "xi jinping": [
+      "CHN"
+    ],
+    "taiwanese": [
+      "TWN"
+    ],
+    "taipei": [
+      "TWN"
+    ],
+    "iranian": [
+      "IRN"
+    ],
+    "tehran": [
+      "IRN"
+    ],
+    "hormuz": [
+      "IRN",
+      "OMN",
+      "ARE"
+    ],
+    "israeli": [
+      "ISR"
+    ],
+    "netanyahu": [
+      "ISR"
+    ],
+    "gaza": [
+      "PSE"
+    ],
+    "west bank": [
+      "PSE"
+    ],
+    "hamas": [
+      "PSE"
+    ],
+    "hezbollah": [
+      "LBN"
+    ],
+    "houthi": [
+      "YEM"
+    ],
+    "houthis": [
+      "YEM"
+    ],
+    "american": [
+      "USA"
+    ],
+    "U.S.": [
+      "USA"
+    ],
+    "US": [
+      "USA"
+    ],
+    "washington": [
+      "USA"
+    ],
+    "america": [
+      "USA"
+    ],
+    "america's": [
+      "USA"
+    ],
+    "indian": [
+      "IND"
+    ],
+    "new delhi": [
+      "IND"
+    ],
+    "pakistani": [
+      "PAK"
+    ],
+    "islamabad": [
+      "PAK"
+    ],
+    "kashmir": [
+      "IND",
+      "PAK"
+    ],
+    "german": [
+      "DEU"
+    ],
+    "germany": [
+      "DEU"
+    ],
+    "french": [
+      "FRA"
+    ],
+    "british": [
+      "GBR"
+    ],
+    "UK": [
+      "GBR"
+    ],
+    "canadian": [
+      "CAN"
+    ],
+    "sahel": [
+      "MLI",
+      "BFA",
+      "NER",
+      "TCD",
+      "MRT"
+    ],
+    "west africa": [
+      "MLI",
+      "BFA",
+      "NER",
+      "GHA",
+      "CIV",
+      "SEN",
+      "GIN"
+    ],
+    "black sea": [
+      "UKR",
+      "RUS",
+      "TUR",
+      "ROU",
+      "BGR",
+      "GEO"
+    ],
+    "south caucasus": [
+      "GEO",
+      "ARM",
+      "AZE"
+    ],
+    "central asia": [
+      "KAZ",
+      "UZB",
+      "TKM",
+      "KGZ",
+      "TJK"
+    ],
+    "baltic": [
+      "EST",
+      "LVA",
+      "LTU"
+    ],
+    "south china sea": [
+      "CHN",
+      "PHL",
+      "VNM",
+      "MYS"
+    ],
+    "ROK": [
+      "KOR"
+    ],
+    "south korea": [
+      "KOR"
+    ],
+    "north korea": [
+      "PRK"
+    ],
+    "korean": [
+      "KOR"
+    ],
+    "saudi": [
+      "SAU"
+    ],
+    "emirati": [
+      "ARE"
+    ],
+    "UAE": [
+      "ARE"
+    ],
+    "turkish": [
+      "TUR"
+    ],
+    "türkiye": [
+      "TUR"
+    ],
+    "european union": [],
+    "EU": [],
+    "nato": []
+  }
+}
