@@ -3,6 +3,11 @@
 (function () {
   'use strict';
   const PRISTINE = '<!doctype html>\n' + document.documentElement.outerHTML;
+  // Colour mode: dark by default; ?theme=light|dark in the URL or the viewer's last choice overrides it.
+  const urlTheme = new URLSearchParams(location.search).get('theme');
+  let savedTheme = null; try { savedTheme = localStorage.getItem('geo-theme'); } catch (e) { /* storage blocked */ }
+  const theme0 = ['light', 'dark'].includes(urlTheme) ? urlTheme : ['light', 'dark'].includes(savedTheme) ? savedTheme : 'dark';
+  document.documentElement.setAttribute('data-theme', theme0);
   const S = window.SNAPSHOT;
   const $ = (sel, el = document) => el.querySelector(sel);
   const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
@@ -439,7 +444,7 @@
       const y = d3.scaleLinear(d3.extent(pts, (p) => p.v), [H - mg.b, mg.t]).nice();
       const svg = d3.select(fig).append('svg').attr('viewBox', `0 0 ${W} ${H}`).attr('preserveAspectRatio', 'none').attr('role', 'img').attr('aria-label', `${m.label}, last six months`);
       const x0 = Math.max(mg.l, x(ws)), x1 = Math.min(W - mg.r, x(we));
-      svg.append('rect').attr('x', x0).attr('width', Math.max(2, x1 - x0)).attr('y', mg.t).attr('height', H - mg.b - mg.t).attr('fill', css('--accent')).attr('fill-opacity', 0.14);
+      svg.append('rect').attr('x', x0).attr('width', Math.max(2, x1 - x0)).attr('y', mg.t).attr('height', H - mg.b - mg.t).attr('fill', css('--band'));
       svg.append('line').attr('x1', mg.l).attr('x2', W - mg.r).attr('y1', H - mg.b).attr('y2', H - mg.b).attr('stroke', css('--axis')).attr('vector-effect', 'non-scaling-stroke');
       svg.append('path').attr('d', d3.line().x((p) => x(p.d)).y((p) => y(p.v))(pts)).attr('fill', 'none').attr('stroke', line).attr('stroke-width', 2).attr('stroke-linejoin', 'round').attr('vector-effect', 'non-scaling-stroke');
       const axis = document.createElement('div'); axis.className = 'mk-axis';
@@ -575,10 +580,26 @@
       const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `geopolitical-dashboard-${S.week}.html`;
       document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
     };
-    const pdf = document.body.dataset.pdf;
+    // The PDF follows the colour mode: the pre-built dark or light file on the website, the print dialog elsewhere.
     $('#btn-pdf').onclick = () => {
+      const dark = document.documentElement.getAttribute('data-theme') !== 'light';
+      const pdf = dark ? document.body.dataset.pdf : document.body.dataset.pdfLight;
       if (pdf && location.protocol.startsWith('http')) { const a = document.createElement('a'); a.href = pdf; a.download = ''; document.body.append(a); a.click(); a.remove(); }
       else window.print();
+    };
+    const tb = $('#btn-theme');
+    const label = () => {
+      const dark = document.documentElement.getAttribute('data-theme') !== 'light';
+      tb.querySelector('span').textContent = dark ? 'Light mode' : 'Dark mode';
+      tb.setAttribute('aria-pressed', String(!dark));
+      tb.title = dark ? 'Switch to light mode (the PDF follows)' : 'Switch to dark mode (the PDF follows)';
+    };
+    label();
+    tb.onclick = () => {
+      const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('geo-theme', next); } catch (e) { /* storage blocked */ }
+      label(); redraw();
     };
     const weeks = window.WEEKS || [];
     const sel = $('#week-select');
@@ -595,9 +616,10 @@
   if (S.focus[0]) selectCountry(S.focus[0].iso3);
   let lastW = innerWidth;
   addEventListener('resize', () => { if (Math.abs(innerWidth - lastW) > 40) { lastW = innerWidth; drawAll(); } });
-  matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', drawAll);
-  // PDF exports are always dark: switch the theme for the print, then restore it.
-  let themeBeforePrint = null;
-  addEventListener('beforeprint', () => { themeBeforePrint = document.documentElement.getAttribute('data-theme'); document.documentElement.setAttribute('data-theme', 'dark'); drawAll(); });
-  addEventListener('afterprint', () => { if (themeBeforePrint) document.documentElement.setAttribute('data-theme', themeBeforePrint); else document.documentElement.removeAttribute('data-theme'); drawAll(); });
+  // Charts are sized to their card, so re-draw them for the print layout and again afterwards
+  addEventListener('beforeprint', drawAll);
+  addEventListener('afterprint', drawAll);
+  matchMedia('print').addEventListener?.('change', drawAll);
+  // Re-draw everything that reads colours from the theme
+  function redraw() { drawAll(); renderTopCountries(); renderNews(); renderItemsPrint(); const sel = document.querySelector('#region-map .country.sel'); if (sel) selectCountry(sel.dataset.iso); }
 })();

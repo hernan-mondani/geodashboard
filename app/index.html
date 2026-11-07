@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600&display=swap">
 <style>/*STYLE*/</style>
 </head>
-<body data-pdf="/*PDF*/" data-base="/*BASE*/">
+<body data-pdf="/*PDF*/" data-pdf-light="/*PDFLIGHT*/" data-base="/*BASE*/">
 <header class="mast">
   <div class="wrap">
     <div>
@@ -17,6 +17,7 @@
     </div>
     <div class="tools">
       <select class="sel" id="week-select" aria-label="Choose a week" hidden></select>
+      <button class="btn" id="btn-theme" type="button" aria-pressed="false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="8" cy="8" r="5.5"/><path d="M8 2.5a5.5 5.5 0 0 0 0 11z" fill="currentColor"/></svg><span>Light mode</span></button>
       <button class="btn" id="btn-html" type="button"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 2v8m0 0 3-3m-3 3L5 7M3 13h10"/></svg>Save as webpage</button>
       <button class="btn primary" id="btn-pdf" type="button"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 2v8m0 0 3-3m-3 3L5 7M3 13h10"/></svg>Download PDF</button>
     </div>

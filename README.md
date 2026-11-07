@@ -13,7 +13,7 @@ A weekly, citable snapshot of the most prevalent geopolitical theme: where it is
 7. A type filter on the news list (News, Analysis, Official) that combines with the theme filter.
 8. A sources table that shows every request made for the snapshot, whether it loaded, and when.
 
-Every page is one self-contained HTML file (data, code and map inside), so it opens offline and can be saved with **Save as webpage**. **Download PDF** gives a print-ready A4 portrait version, always in dark mode, laid out as: summary and world view; region map and country card; country context; event timeline; theme prevalence; market signals; the full list of items (about 5 pages for 80 items); sources and citation.
+Every page is one self-contained HTML file (data, code and map inside), so it opens offline and can be saved with **Save as webpage**. The page opens in dark mode; the **Light mode / Dark mode** button switches it and remembers the choice. **Download PDF** gives a print-ready A4 portrait version in the mode on screen (both are pre-built each week), laid out as: summary and world view; region map and country card; country context; event timeline; theme prevalence; market signals; the full list of items (about 5 pages for 80 items); sources and citation.
 
 ## Run it
 
@@ -37,7 +37,7 @@ All of it is configuration, not code:
 
 ## Weekly update
 
-`.github/workflows/weekly.yml` runs every Monday at 06:00 UTC. It takes the snapshot, commits it to `data/`, builds the pages and PDF, and publishes `dist/` to GitHub Pages. Past weeks stay available in `dist/weeks/` and in the week picker.
+`.github/workflows/weekly.yml` runs every Saturday at 00:00 Central European Time (it is scheduled at 22:00 and 23:00 UTC on Fridays, and a gate step keeps only one run, so the time holds in summer and winter). The snapshot covers the seven days up to that moment. It takes the snapshot, commits it to `data/`, builds the pages and PDF, and publishes `dist/` to GitHub Pages. Past weeks stay available in `dist/weeks/` and in the week picker.
 
 ## Sources and licences
 
