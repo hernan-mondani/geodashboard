@@ -321,9 +321,14 @@ if (mk) {
     const url = `https://www.federalreserve.gov/datadownload/Output.aspx?rel=${rel}&series=${pkg}&from=${since}&to=${until}&filetype=csv&label=include&layout=seriescolumn`;
     const st = { source: 'federal-reserve', name: 'Federal Reserve Board', kind: 'market', indicator: list.map((s) => s.column).join(', '), url, retrieved_at: new Date().toISOString() };
     try {
-      const rows = (await get(url)).trim().split(/\r?\n/).map((l) => l.split(',').map((c) => c.replace(/^"|"$/g, '')));
-      const head = rows.find((r) => r[0] === 'Time Period');
-      if (!head) throw new Error('Unexpected file layout');
+      // the service occasionally answers with an error page instead of the CSV, so try twice
+      let rows, head;
+      for (let k = 0; k < 2 && !head; k++) {
+        if (k) await sleep(5000);
+        rows = (await get(url)).trim().split(/\r?\n/).map((l) => l.split(',').map((c) => c.replace(/^"|"$/g, '')));
+        head = rows.find((r) => r[0] === 'Time Period');
+      }
+      if (!head) throw new Error(`Unexpected file layout: ${rows[0]?.join(' ').slice(0, 80)}`);
       const data = rows.filter((r) => /^\d{4}-\d{2}-\d{2}$/.test(r[0]));
       for (const s of list) {
         const col = head.indexOf(s.column);

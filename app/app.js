@@ -399,7 +399,7 @@
     const ws = new Date(M.window.start), we = new Date(M.window.end);
     const xStart = d3.min(M.series, (m) => new Date(m.values[0]?.date + 'T12:00:00Z'));
     // three rows, each a four-column grid so every tile has the same width and height
-    const ROWS = [['Commodities', ['brent', 'wti', 'gold']], ['Stock markets', ['spx', 'sx5e', 'n225', 'sse']], ['Currencies and rates', null]];
+    const ROWS = [['Commodities', ['brent', 'wti', 'gold', 'wheat']], ['Stock markets', ['spx', 'sx5e', 'n225', 'sse']], ['Currencies and rates', null]];
     const known = ROWS.flatMap(([, ids]) => ids ?? []);
     const rowOf = (id) => (known.includes(id) ? ROWS.findIndex(([, ids]) => ids?.includes(id)) : 2);
     const rank = (id) => (known.includes(id) ? known.indexOf(id) : 100);
@@ -429,7 +429,7 @@
       const before = d3.least(pts.filter((p) => p.d < ws), (p) => -p.d) ?? pts[0];
       const stale = last.d < ws;
       const pct = m.unit === '%' ? last.v - before.v : (last.v / before.v - 1) * 100;
-      const fmtV = m.unit === 'US$' ? d3.format('$,.2f') : m.unit === '%' ? (v) => d3.format('.2f')(v) + '%' : m.unit === 'index' ? (v) => d3.format(v >= 1000 ? ',.0f' : '.1f')(v) : (v) => (v >= 100 ? d3.format(',.0f')(v) : v >= 10 ? d3.format('.2f')(v) : d3.format('.4f')(v));
+      const fmtV = m.unit === 'US$' ? d3.format('$,.2f') : m.unit === 'USc' ? (v) => `${d3.format(',.2f')(v)}¢/bu` : m.unit === '%' ? (v) => d3.format('.2f')(v) + '%' : m.unit === 'index' ? (v) => d3.format(v >= 1000 ? ',.0f' : '.1f')(v) : (v) => (v >= 100 ? d3.format(',.0f')(v) : v >= 10 ? d3.format('.2f')(v) : d3.format('.4f')(v));
       const sub = document.createElement('div'); sub.className = 'mk-val';
       const vl = document.createElement('b'); vl.textContent = fmtV(last.v);
       const ch = document.createElement('small'); ch.textContent = stale ? `latest ${fmtDate(last.d)}, before this period` : m.unit === '%' ? `${d3.format('+.2f')(pct)} pts this period` : `${d3.format('+.1f')(pct)}% this period`;
@@ -454,7 +454,7 @@
         .on('pointerleave', () => tip.hide());
     });
     const missing = (M.no_rate ?? []).filter((i) => i !== 'USA');
-    $('#mk-note').textContent = `Daily closes over the last six months: oil and gold, four leading stock indexes, the US dollar and Treasury yield, and the region's currencies. The shaded band is this snapshot's period, and the change beside each name runs from the last value before it to the latest.${missing.length ? ` No reference exchange rate is published for ${missing.map(cname).join(', ')}.` : ''}`;
+    $('#mk-note').textContent = `Daily closes over the last six months: oil, gold and wheat, four leading stock indexes, the US dollar and Treasury yield, and the region's currencies. The shaded band is this snapshot's period, and the change beside each name runs from the last value before it to the latest.${missing.length ? ` No reference exchange rate is published for ${missing.map(cname).join(', ')}.` : ''}`;
     const c = $('#mk-cite'); c.replaceChildren();
     const groups = d3.groups(M.series, (m) => m.provider + '|' + m.dataset);
     groups.forEach(([k, list], i) => {

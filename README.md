@@ -9,7 +9,7 @@ A weekly, citable snapshot of the most prevalent geopolitical theme: where it is
 3. A list of the relevant items, tagged News, Analysis or Official (UN and government statements, sanctions notices), each with its source, date, link and a ready-made citation.
 4. A country context block for the region's countries: indicators chosen for the week's top theme (set per theme in `config/themes.json`), plus a 10-year political-stability trend as the risk score.
 5. Charts for the leading themes: theme prevalence and an event timeline.
-6. Market signals: Brent and WTI oil (US EIA), gold and four leading stock indexes, S&P 500, Euro Stoxx 50, Nikkei 225 and Shanghai Composite (Yahoo Finance), US dollar indexes and the 10-year Treasury yield (Federal Reserve Board), and the region's currencies against the dollar (ECB reference rates). A series that fails to load shows as a placeholder.
+6. Market signals: Brent and WTI oil (US EIA), gold, wheat and four leading stock indexes, S&P 500, Euro Stoxx 50, Nikkei 225 and Shanghai Composite (Yahoo Finance), US dollar indexes and the 10-year Treasury yield (Federal Reserve Board), and the region's currencies against the dollar (ECB reference rates). A series that fails to load shows as a placeholder.
 7. A type filter on the news list (News, Analysis, Official) that combines with the theme filter.
 8. A sources table that shows every request made for the snapshot, whether it loaded, and when.
 

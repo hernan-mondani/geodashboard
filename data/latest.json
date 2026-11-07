@@ -1,16 +1,16 @@
 {
  "schema": 1,
  "week": "2026-W45",
- "generated_at": "2026-11-06T23:06:57.840Z",
+ "generated_at": "2026-11-07T07:30:24.551Z",
  "window": {
-  "start": "2026-10-30T23:06:27.758Z",
-  "end": "2026-11-06T23:06:27.758Z",
+  "start": "2026-10-31T07:30:17.385Z",
+  "end": "2026-11-07T07:30:17.385Z",
   "days": 7,
   "widened": false
  },
  "method": "Themes are counted from the titles, summaries and tags of the news, analysis and official items published in the window, using the keyword lists in config/themes.json. Countries are matched by name and by the aliases in config/places.json. The region of interest is the set of countries most often named in items about the most prevalent theme. Ties between themes are broken by the number of distinct sources covering them, then by how many country mentions they carry.",
  "totals": {
-  "items": 81,
+  "items": 83,
   "sources": 6
  },
  "top_theme": "israel-gaza",
@@ -33,7 +33,7 @@
     "yemen"
    ],
    "items": 8,
-   "share": 0.09876543209876543,
+   "share": 0.0963855421686747,
    "byCountry": {
     "ISR": 1,
     "USA": 1,
@@ -48,13 +48,13 @@
     "IRN": 1
    },
    "byDay": {
-    "2026-10-31": 1,
     "2026-11-01": 0,
     "2026-11-02": 1,
     "2026-11-03": 1,
     "2026-11-04": 2,
     "2026-11-05": 2,
-    "2026-11-06": 1
+    "2026-11-06": 1,
+    "2026-11-07": 0
    },
    "bySource": {
     "bbc-world": 1,
@@ -75,7 +75,7 @@
     "irgc"
    ],
    "items": 7,
-   "share": 0.08641975308641975,
+   "share": 0.08433734939759036,
    "byCountry": {
     "IRN": 6.5,
     "RUS": 1,
@@ -95,13 +95,13 @@
     "VEN": 1
    },
    "byDay": {
-    "2026-10-31": 0,
     "2026-11-01": 0,
     "2026-11-02": 3,
     "2026-11-03": 0,
     "2026-11-04": 2,
     "2026-11-05": 0,
-    "2026-11-06": 2
+    "2026-11-06": 2,
+    "2026-11-07": 0
    },
    "bySource": {
     "geopolitical-monitor": 2,
@@ -126,7 +126,7 @@
     "west africa"
    ],
    "items": 7,
-   "share": 0.08641975308641975,
+   "share": 0.08433734939759036,
    "byCountry": {
     "BFA": 2,
     "GIN": 1,
@@ -147,13 +147,13 @@
     "SSD": 1
    },
    "byDay": {
-    "2026-10-31": 0,
     "2026-11-01": 0,
     "2026-11-02": 1,
     "2026-11-03": 2,
     "2026-11-04": 0,
     "2026-11-05": 1,
-    "2026-11-06": 3
+    "2026-11-06": 3,
+    "2026-11-07": 0
    },
    "bySource": {
     "geopolitical-monitor": 3,
@@ -176,23 +176,23 @@
     "independence"
    ],
    "items": 7,
-   "share": 0.08641975308641975,
+   "share": 0.08433734939759036,
    "byCountry": {
     "CHN": 1,
     "TWN": 1,
-    "USA": 2,
+    "USA": 1,
     "SOM": 1,
     "SDN": 1,
     "SSD": 1
    },
    "byDay": {
-    "2026-10-31": 0,
     "2026-11-01": 0,
     "2026-11-02": 0,
     "2026-11-03": 0,
     "2026-11-04": 0,
     "2026-11-05": 1,
-    "2026-11-06": 6
+    "2026-11-06": 6,
+    "2026-11-07": 0
    },
    "bySource": {
     "geopolitical-monitor": 1,
@@ -215,7 +215,7 @@
     "black sea"
    ],
    "items": 7,
-   "share": 0.08641975308641975,
+   "share": 0.08433734939759036,
    "byCountry": {
     "CHN": 1,
     "RUS": 6,
@@ -241,13 +241,13 @@
     "MRT": 0.5
    },
    "byDay": {
-    "2026-10-31": 0,
     "2026-11-01": 0,
     "2026-11-02": 3,
     "2026-11-03": 1,
     "2026-11-04": 1,
     "2026-11-05": 2,
-    "2026-11-06": 0
+    "2026-11-06": 0,
+    "2026-11-07": 0
    },
    "bySource": {
     "geopolitical-monitor": 5,
@@ -271,7 +271,7 @@
     "energy"
    ],
    "items": 7,
-   "share": 0.08641975308641975,
+   "share": 0.08433734939759036,
    "byCountry": {
     "BFA": 2,
     "GIN": 1,
@@ -292,99 +292,17 @@
     "ARE": 0.5
    },
    "byDay": {
-    "2026-10-31": 0,
     "2026-11-01": 0,
     "2026-11-02": 2,
     "2026-11-03": 1,
     "2026-11-04": 2,
     "2026-11-05": 0,
-    "2026-11-06": 2
+    "2026-11-06": 2,
+    "2026-11-07": 0
    },
    "bySource": {
     "geopolitical-monitor": 4,
     "un-news": 3
-   }
-  },
-  {
-   "id": "tech-security",
-   "idx": 10,
-   "label": "AI, cyber and biosecurity",
-   "keywords": [
-    "AI",
-    "artificial intelligence",
-    "cyber",
-    "cyberattack",
-    "biosecurity",
-    "semiconductor",
-    "semiconductors"
-   ],
-   "items": 4,
-   "share": 0.04938271604938271,
-   "byCountry": {
-    "USA": 1,
-    "CUB": 1
-   },
-   "byDay": {
-    "2026-10-31": 0,
-    "2026-11-01": 0,
-    "2026-11-02": 0,
-    "2026-11-03": 0,
-    "2026-11-04": 1,
-    "2026-11-05": 1,
-    "2026-11-06": 2
-   },
-   "bySource": {
-    "rand": 1,
-    "bbc-world": 2,
-    "ofac": 1
-   }
-  },
-  {
-   "id": "defense",
-   "idx": 9,
-   "label": "Defense spending and arms",
-   "keywords": [
-    "rearm",
-    "rearmed",
-    "arms",
-    "global arms market",
-    "nato defense spending",
-    "defense spending",
-    "military",
-    "drone warfare",
-    "procurement",
-    "shipbuilding"
-   ],
-   "items": 4,
-   "share": 0.04938271604938271,
-   "byCountry": {
-    "IND": 1,
-    "PAK": 1,
-    "MLI": 1.5,
-    "NER": 2,
-    "RUS": 1,
-    "USA": 1,
-    "BFA": 1,
-    "TCD": 1,
-    "MRT": 1,
-    "DZA": 1,
-    "CAN": 1,
-    "IRN": 1,
-    "UKR": 1,
-    "CAF": 1
-   },
-   "byDay": {
-    "2026-10-31": 0,
-    "2026-11-01": 0,
-    "2026-11-02": 1,
-    "2026-11-03": 2,
-    "2026-11-04": 0,
-    "2026-11-05": 1,
-    "2026-11-06": 0
-   },
-   "bySource": {
-    "geopolitical-monitor": 3,
-    "un-press": 1
    }
   },
   {
@@ -402,7 +320,7 @@
     "russia sanctions"
    ],
    "items": 4,
-   "share": 0.04938271604938271,
+   "share": 0.04819277108433735,
    "byCountry": {
     "BFA": 1,
     "GIN": 1,
@@ -419,13 +337,13 @@
     "YEM": 1
    },
    "byDay": {
-    "2026-10-31": 0,
     "2026-11-01": 0,
     "2026-11-02": 1,
     "2026-11-03": 0,
     "2026-11-04": 0,
     "2026-11-05": 2,
-    "2026-11-06": 1
+    "2026-11-06": 1,
+    "2026-11-07": 0
    },
    "bySource": {
     "geopolitical-monitor": 3,
@@ -446,7 +364,7 @@
     "shadow fleet"
    ],
    "items": 4,
-   "share": 0.04938271604938271,
+   "share": 0.04819277108433735,
    "byCountry": {
     "RUS": 4,
     "UKR": 3,
@@ -459,16 +377,95 @@
     "IRN": 1
    },
    "byDay": {
-    "2026-10-31": 0,
     "2026-11-01": 0,
     "2026-11-02": 1,
     "2026-11-03": 1,
     "2026-11-04": 1,
     "2026-11-05": 1,
-    "2026-11-06": 0
+    "2026-11-06": 0,
+    "2026-11-07": 0
    },
    "bySource": {
     "geopolitical-monitor": 4
+   }
+  },
+  {
+   "id": "tech-security",
+   "idx": 10,
+   "label": "AI, cyber and biosecurity",
+   "keywords": [
+    "AI",
+    "artificial intelligence",
+    "cyber",
+    "cyberattack",
+    "biosecurity",
+    "semiconductor",
+    "semiconductors"
+   ],
+   "items": 3,
+   "share": 0.03614457831325301,
+   "byCountry": {
+    "CUB": 1
+   },
+   "byDay": {
+    "2026-11-01": 0,
+    "2026-11-02": 0,
+    "2026-11-03": 0,
+    "2026-11-04": 1,
+    "2026-11-05": 1,
+    "2026-11-06": 1,
+    "2026-11-07": 0
+   },
+   "bySource": {
+    "rand": 1,
+    "bbc-world": 1,
+    "ofac": 1
+   }
+  },
+  {
+   "id": "defense",
+   "idx": 9,
+   "label": "Defense spending and arms",
+   "keywords": [
+    "rearm",
+    "rearmed",
+    "arms",
+    "global arms market",
+    "nato defense spending",
+    "defense spending",
+    "military",
+    "drone warfare",
+    "procurement",
+    "shipbuilding"
+   ],
+   "items": 3,
+   "share": 0.03614457831325301,
+   "byCountry": {
+    "IND": 1,
+    "PAK": 1,
+    "MLI": 1.5,
+    "NER": 2,
+    "RUS": 1,
+    "USA": 1,
+    "BFA": 1,
+    "TCD": 1,
+    "MRT": 1,
+    "DZA": 1,
+    "CAN": 1,
+    "IRN": 1,
+    "UKR": 1
+   },
+   "byDay": {
+    "2026-11-01": 0,
+    "2026-11-02": 1,
+    "2026-11-03": 2,
+    "2026-11-04": 0,
+    "2026-11-05": 0,
+    "2026-11-06": 0,
+    "2026-11-07": 0
+   },
+   "bySource": {
+    "geopolitical-monitor": 3
    }
   },
   {
@@ -486,7 +483,7 @@
     "indo-pacific"
    ],
    "items": 2,
-   "share": 0.024691358024691357,
+   "share": 0.024096385542168676,
    "byCountry": {
     "CHN": 2,
     "TWN": 1,
@@ -506,13 +503,13 @@
     "TJK": 0.5
    },
    "byDay": {
-    "2026-10-31": 0,
     "2026-11-01": 0,
     "2026-11-02": 0,
     "2026-11-03": 0,
     "2026-11-04": 0,
     "2026-11-05": 1,
-    "2026-11-06": 1
+    "2026-11-06": 1,
+    "2026-11-07": 0
    },
    "bySource": {
     "geopolitical-monitor": 2
@@ -529,19 +526,19 @@
     "sindoor"
    ],
    "items": 1,
-   "share": 0.012345679012345678,
+   "share": 0.012048192771084338,
    "byCountry": {
     "IND": 1,
     "PAK": 1
    },
    "byDay": {
-    "2026-10-31": 0,
     "2026-11-01": 0,
     "2026-11-02": 0,
     "2026-11-03": 1,
     "2026-11-04": 0,
     "2026-11-05": 0,
-    "2026-11-06": 0
+    "2026-11-06": 0,
+    "2026-11-07": 0
    },
    "bySource": {
     "geopolitical-monitor": 1
@@ -560,7 +557,7 @@
   },
   {
    "iso3": "USA",
-   "n": 7
+   "n": 8
   },
   {
    "iso3": "UKR",
@@ -575,12 +572,12 @@
    "n": 5
   },
   {
-   "iso3": "ESP",
+   "iso3": "SDN",
    "n": 4
   },
   {
-   "iso3": "SDN",
-   "n": 4
+   "iso3": "ESP",
+   "n": 3
   },
   {
    "iso3": "AFG",
@@ -623,7 +620,7 @@
   "SEN": 0.5,
   "CHN": 2,
   "TWN": 1,
-  "USA": 7,
+  "USA": 8,
   "UKR": 6.5,
   "TUR": 0.5,
   "ROU": 0.5,
@@ -636,21 +633,19 @@
   "TKM": 0.5,
   "KGZ": 0.5,
   "TJK": 0.5,
-  "IND": 2,
+  "IND": 1,
   "PAK": 1,
   "IRN": 6.5,
   "DZA": 1,
   "CAN": 1,
+  "PRY": 2,
+  "URY": 2,
+  "ESP": 3,
   "FRA": 1,
-  "ESP": 4,
   "ARG": 1,
   "PER": 1,
-  "URY": 1,
-  "SOM": 1,
-  "PRY": 1,
+  "SOM": 2,
   "ISR": 1,
-  "IDN": 1,
-  "GBR": 1,
   "AFG": 3,
   "COG": 2,
   "COD": 2,
@@ -669,7 +664,6 @@
   "ETH": 1,
   "MEX": 1,
   "SSD": 1,
-  "CAF": 1,
   "CUB": 1,
   "VEN": 1
  },
@@ -794,13 +788,21 @@
    "name": "Canada",
    "numeric": "124"
   },
-  "FRA": {
-   "name": "France",
-   "numeric": "250"
+  "PRY": {
+   "name": "Paraguay",
+   "numeric": "600"
+  },
+  "URY": {
+   "name": "Uruguay",
+   "numeric": "858"
   },
   "ESP": {
    "name": "Spain",
    "numeric": "724"
+  },
+  "FRA": {
+   "name": "France",
+   "numeric": "250"
   },
   "ARG": {
    "name": "Argentina",
@@ -810,29 +812,13 @@
    "name": "Peru",
    "numeric": "604"
   },
-  "URY": {
-   "name": "Uruguay",
-   "numeric": "858"
-  },
   "SOM": {
    "name": "Somalia",
    "numeric": "706"
   },
-  "PRY": {
-   "name": "Paraguay",
-   "numeric": "600"
-  },
   "ISR": {
    "name": "Israel",
    "numeric": "376"
-  },
-  "IDN": {
-   "name": "Indonesia",
-   "numeric": "360"
-  },
-  "GBR": {
-   "name": "United Kingdom",
-   "numeric": "826"
   },
   "AFG": {
    "name": "Afghanistan",
@@ -906,10 +892,6 @@
    "name": "South Sudan",
    "numeric": "728"
   },
-  "CAF": {
-   "name": "Central African Republic",
-   "numeric": "140"
-  },
   "CUB": {
    "name": "Cuba",
    "numeric": "192"
@@ -920,6 +902,108 @@
   }
  },
  "news": [
+  {
+   "type": "news",
+   "title": "Paraguay's President Santiago Peña impeached and arrested after bank collapse",
+   "link": "https://www.bbc.co.uk/news/articles/c68jzzvjgdy9o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-07T07:20:00.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "Santiago Peña was ousted due to a banking crisis which left millions of people unable to access their money.",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "PRY"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "Pope in 'pretty good health' as he starts Latin America tour",
+   "link": "https://www.bbc.co.uk/news/articles/c60e0001ve9wo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-07T06:59:48.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "Pope Leo travels to Uruguay just three weeks after having surgery for lung cancer.",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "URY",
+    "USA"
+   ]
+  },
+  {
+   "type": "news",
+   "title": "This man refused life-saving treatment because of his religion - days later the rules changed",
+   "link": "https://www.bbc.co.uk/news/articles/cx5ynly549njo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-07T01:27:47.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "Jehovah's Witness leaders relaxed strict rules on blood transfusions, but the change came 23 days too late for Isaac Valdez.",
+   "tags": [],
+   "themes": [],
+   "countries": []
+  },
+  {
+   "type": "news",
+   "title": "The young Somali woman changing how the world sees Mogadishu",
+   "link": "https://www.bbc.co.uk/news/articles/cq0k0lg48705o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-07T01:19:49.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "For some tourists, the contrast between Somalia's reputation and what they experience on the ground can be striking.",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "SOM"
+   ]
+  },
+  {
+   "type": "official",
+   "title": "Peacekeeping Reform Must Not ‘Hollow Out’ Core UN Capabilities, Fourth Committee Told",
+   "link": "https://press.un.org/en/2026/gaspd851.doc.htm",
+   "date": "2026-11-07T00:51:43.000Z",
+   "source": "un-press",
+   "publisher": "United Nations",
+   "author": "United Nations",
+   "summary": "Continuing its consideration of peacekeeping operations, the Fourth Committee (Special Political and Decolonization) heard today that reform is essential to adapt peacekeeping to geopolitical and financial challenges but must be carried out strategically to preserve its advantages.",
+   "tags": [],
+   "themes": [],
+   "countries": []
+  },
+  {
+   "type": "news",
+   "title": "Cornell faculty pass no-confidence vote over leadership's handling of Jane Doe allegations",
+   "link": "https://www.bbc.co.uk/news/articles/c933xxl8yv0go?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T23:46:08.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "Friday's resolution by academic staff is largely symbolic as they do not have the power to remove those in charge of the university.",
+   "tags": [],
+   "themes": [
+    "elections-governance"
+   ],
+   "countries": []
+  },
+  {
+   "type": "news",
+   "title": "With Stephen Miller pick, Trump readies for a battle",
+   "link": "https://www.bbc.co.uk/news/articles/crp3gg2z171go?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T23:24:15.000Z",
+   "source": "bbc-world",
+   "publisher": "BBC News",
+   "author": "",
+   "summary": "The US president's promotion of Miller, a loyal partisan firebrand to be his new chief of staff sets up likely clashes with Congress.",
+   "tags": [],
+   "themes": [],
+   "countries": [
+    "USA"
+   ]
+  },
   {
    "type": "official",
    "title": "Fifth Committee Nominates New Members for Advisory Committee on Administrative and Budgetary Questions, Four Subsidiary Bodies of General Assembly",
@@ -1330,36 +1414,6 @@
   },
   {
    "type": "news",
-   "title": "Homes and temples glow across India as Diwali celebrations begin",
-   "link": "https://www.bbc.co.uk/news/articles/cm70pdwz122ro?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-06T10:21:30.000Z",
-   "source": "bbc-world",
-   "publisher": "BBC News",
-   "author": "",
-   "summary": "Millions of Indians will mark the festival of lights with glowing lamps, fireworks and traditional sweets",
-   "tags": [],
-   "themes": [],
-   "countries": [
-    "IND"
-   ]
-  },
-  {
-   "type": "news",
-   "title": "What to know about the presidential wiretapping scandal rocking Indonesia",
-   "link": "https://www.bbc.co.uk/news/articles/cwkg55155mrro?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-06T10:10:38.000Z",
-   "source": "bbc-world",
-   "publisher": "BBC News",
-   "author": "",
-   "summary": "The scandal involves senior members of President Prabowo Subianto's government, and hint at growing tensions among its elites.",
-   "tags": [],
-   "themes": [],
-   "countries": [
-    "IDN"
-   ]
-  },
-  {
-   "type": "news",
    "title": "Somalia's top court rejects president's term extension amid political crisis",
    "link": "https://www.bbc.co.uk/news/articles/c977ppnezep6o?at_medium=RSS&at_campaign=rss",
    "date": "2026-11-06T08:18:10.000Z",
@@ -1404,40 +1458,6 @@
    "tags": [],
    "themes": [],
    "countries": []
-  },
-  {
-   "type": "news",
-   "title": "Did a data centre revolt affect the US midterm election results?",
-   "link": "https://www.bbc.co.uk/news/articles/crvg9yyz5437o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-06T06:01:13.000Z",
-   "source": "bbc-world",
-   "publisher": "BBC News",
-   "author": "",
-   "summary": "BBC Verify examines whether US voters were influenced by the data centre boom - and the impact anti-AI sentiment could have on the industry.",
-   "tags": [],
-   "themes": [
-    "tech-security",
-    "elections-governance"
-   ],
-   "countries": [
-    "USA"
-   ]
-  },
-  {
-   "type": "news",
-   "title": "A wildfire killed their loved ones in Spain. These British families demand to know why",
-   "link": "https://www.bbc.co.uk/news/articles/cm3vq4wyeld1o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-06T06:00:46.000Z",
-   "source": "bbc-world",
-   "publisher": "BBC News",
-   "author": "",
-   "summary": "Nine British nationals were among the 15 people who died when fire ripped through the village of Bédar this summer.",
-   "tags": [],
-   "themes": [],
-   "countries": [
-    "ESP",
-    "GBR"
-   ]
   },
   {
    "type": "official",
@@ -1546,23 +1566,6 @@
    "countries": [
     "SDN",
     "SSD"
-   ]
-  },
-  {
-   "type": "official",
-   "title": "Daily Press Briefing by the Office of the Spokesman for the Secretary-General",
-   "link": "https://press.un.org/en/2026/db261105.doc.htm",
-   "date": "2026-11-05T20:51:33.000Z",
-   "source": "un-press",
-   "publisher": "United Nations",
-   "author": "United Nations",
-   "summary": "The UN Multidimensional Integrated Stabilization Mission in the Central African Republic reports that 137 members of the Azande Ani Kpi Gbe armed group have voluntarily surrendered military weapons and ammunition in Obo, in the south-east, after intensive outreach by local authorities, with the Mission’s support.",
-   "tags": [],
-   "themes": [
-    "defense"
-   ],
-   "countries": [
-    "CAF"
    ]
   },
   {
@@ -9440,7 +9443,522 @@
      },
      {
       "date": "2026-11-06",
-      "value": 4079.5
+      "value": 4074.9
+     }
+    ]
+   },
+   {
+    "id": "wheat",
+    "label": "Wheat",
+    "unit": "USc",
+    "symbol": "ZW=F",
+    "note": "CBOT wheat futures, front month, US cents per bushel.",
+    "currency": "USX",
+    "provider": "Yahoo Finance",
+    "dataset": "Daily closing prices",
+    "release": "Yahoo",
+    "column": "ZW=F",
+    "link": "https://finance.yahoo.com/quote/ZW%3DF/history/",
+    "values": [
+     {
+      "date": "2026-05-11",
+      "value": 622.25
+     },
+     {
+      "date": "2026-05-12",
+      "value": 665
+     },
+     {
+      "date": "2026-05-13",
+      "value": 665
+     },
+     {
+      "date": "2026-05-14",
+      "value": 647
+     },
+     {
+      "date": "2026-05-15",
+      "value": 635.75
+     },
+     {
+      "date": "2026-05-18",
+      "value": 664.5
+     },
+     {
+      "date": "2026-05-19",
+      "value": 667.25
+     },
+     {
+      "date": "2026-05-20",
+      "value": 660.5
+     },
+     {
+      "date": "2026-05-21",
+      "value": 647.5
+     },
+     {
+      "date": "2026-05-22",
+      "value": 646.25
+     },
+     {
+      "date": "2026-05-26",
+      "value": 635.5
+     },
+     {
+      "date": "2026-05-27",
+      "value": 622.5
+     },
+     {
+      "date": "2026-05-28",
+      "value": 624
+     },
+     {
+      "date": "2026-05-29",
+      "value": 610.5
+     },
+     {
+      "date": "2026-06-01",
+      "value": 608.75
+     },
+     {
+      "date": "2026-06-02",
+      "value": 603
+     },
+     {
+      "date": "2026-06-03",
+      "value": 587.25
+     },
+     {
+      "date": "2026-06-04",
+      "value": 581.75
+     },
+     {
+      "date": "2026-06-05",
+      "value": 580
+     },
+     {
+      "date": "2026-06-08",
+      "value": 583.25
+     },
+     {
+      "date": "2026-06-09",
+      "value": 585.25
+     },
+     {
+      "date": "2026-06-10",
+      "value": 587.5
+     },
+     {
+      "date": "2026-06-11",
+      "value": 586.75
+     },
+     {
+      "date": "2026-06-12",
+      "value": 584.5
+     },
+     {
+      "date": "2026-06-15",
+      "value": 589.75
+     },
+     {
+      "date": "2026-06-16",
+      "value": 596
+     },
+     {
+      "date": "2026-06-17",
+      "value": 612.75
+     },
+     {
+      "date": "2026-06-18",
+      "value": 605.75
+     },
+     {
+      "date": "2026-06-22",
+      "value": 597.5
+     },
+     {
+      "date": "2026-06-23",
+      "value": 586.75
+     },
+     {
+      "date": "2026-06-24",
+      "value": 585.75
+     },
+     {
+      "date": "2026-06-25",
+      "value": 591
+     },
+     {
+      "date": "2026-06-26",
+      "value": 578.25
+     },
+     {
+      "date": "2026-06-29",
+      "value": 569.5
+     },
+     {
+      "date": "2026-07-01",
+      "value": 592
+     },
+     {
+      "date": "2026-07-02",
+      "value": 590.5
+     },
+     {
+      "date": "2026-07-06",
+      "value": 606
+     },
+     {
+      "date": "2026-07-07",
+      "value": 609.25
+     },
+     {
+      "date": "2026-07-08",
+      "value": 599.5
+     },
+     {
+      "date": "2026-07-09",
+      "value": 611.25
+     },
+     {
+      "date": "2026-07-10",
+      "value": 632
+     },
+     {
+      "date": "2026-07-13",
+      "value": 627
+     },
+     {
+      "date": "2026-07-14",
+      "value": 631.25
+     },
+     {
+      "date": "2026-07-15",
+      "value": 677.5
+     },
+     {
+      "date": "2026-07-16",
+      "value": 674.75
+     },
+     {
+      "date": "2026-07-17",
+      "value": 682.75
+     },
+     {
+      "date": "2026-07-20",
+      "value": 674
+     },
+     {
+      "date": "2026-07-21",
+      "value": 678
+     },
+     {
+      "date": "2026-07-22",
+      "value": 705.75
+     },
+     {
+      "date": "2026-07-23",
+      "value": 696.25
+     },
+     {
+      "date": "2026-07-24",
+      "value": 678
+     },
+     {
+      "date": "2026-07-27",
+      "value": 660
+     },
+     {
+      "date": "2026-07-28",
+      "value": 662.5
+     },
+     {
+      "date": "2026-07-29",
+      "value": 660.75
+     },
+     {
+      "date": "2026-07-30",
+      "value": 663.5
+     },
+     {
+      "date": "2026-07-31",
+      "value": 639.25
+     },
+     {
+      "date": "2026-08-03",
+      "value": 651
+     },
+     {
+      "date": "2026-08-04",
+      "value": 638.5
+     },
+     {
+      "date": "2026-08-05",
+      "value": 642.25
+     },
+     {
+      "date": "2026-08-06",
+      "value": 631.25
+     },
+     {
+      "date": "2026-08-07",
+      "value": 639.75
+     },
+     {
+      "date": "2026-08-10",
+      "value": 640.5
+     },
+     {
+      "date": "2026-08-11",
+      "value": 630.25
+     },
+     {
+      "date": "2026-08-12",
+      "value": 652.75
+     },
+     {
+      "date": "2026-08-13",
+      "value": 652.75
+     },
+     {
+      "date": "2026-08-14",
+      "value": 674.75
+     },
+     {
+      "date": "2026-08-17",
+      "value": 674.75
+     },
+     {
+      "date": "2026-08-18",
+      "value": 664.5
+     },
+     {
+      "date": "2026-08-19",
+      "value": 680.25
+     },
+     {
+      "date": "2026-08-20",
+      "value": 682.75
+     },
+     {
+      "date": "2026-08-21",
+      "value": 681.5
+     },
+     {
+      "date": "2026-08-24",
+      "value": 681.75
+     },
+     {
+      "date": "2026-08-25",
+      "value": 685.5
+     },
+     {
+      "date": "2026-08-26",
+      "value": 730.5
+     },
+     {
+      "date": "2026-08-27",
+      "value": 742.75
+     },
+     {
+      "date": "2026-08-28",
+      "value": 767
+     },
+     {
+      "date": "2026-08-31",
+      "value": 756.5
+     },
+     {
+      "date": "2026-09-01",
+      "value": 764
+     },
+     {
+      "date": "2026-09-02",
+      "value": 754.75
+     },
+     {
+      "date": "2026-09-03",
+      "value": 736
+     },
+     {
+      "date": "2026-09-04",
+      "value": 716
+     },
+     {
+      "date": "2026-09-08",
+      "value": 730.25
+     },
+     {
+      "date": "2026-09-09",
+      "value": 711.25
+     },
+     {
+      "date": "2026-09-10",
+      "value": 723.25
+     },
+     {
+      "date": "2026-09-11",
+      "value": 707
+     },
+     {
+      "date": "2026-09-14",
+      "value": 707
+     },
+     {
+      "date": "2026-09-15",
+      "value": 728.5
+     },
+     {
+      "date": "2026-09-16",
+      "value": 730.75
+     },
+     {
+      "date": "2026-09-17",
+      "value": 727
+     },
+     {
+      "date": "2026-09-18",
+      "value": 714.25
+     },
+     {
+      "date": "2026-09-21",
+      "value": 726.75
+     },
+     {
+      "date": "2026-09-22",
+      "value": 717.25
+     },
+     {
+      "date": "2026-09-23",
+      "value": 708.5
+     },
+     {
+      "date": "2026-09-24",
+      "value": 707
+     },
+     {
+      "date": "2026-09-25",
+      "value": 703.25
+     },
+     {
+      "date": "2026-09-28",
+      "value": 688.75
+     },
+     {
+      "date": "2026-09-29",
+      "value": 692.75
+     },
+     {
+      "date": "2026-09-30",
+      "value": 675.75
+     },
+     {
+      "date": "2026-10-01",
+      "value": 682.75
+     },
+     {
+      "date": "2026-10-02",
+      "value": 683
+     },
+     {
+      "date": "2026-10-05",
+      "value": 692.25
+     },
+     {
+      "date": "2026-10-06",
+      "value": 704.25
+     },
+     {
+      "date": "2026-10-07",
+      "value": 686.5
+     },
+     {
+      "date": "2026-10-08",
+      "value": 683.25
+     },
+     {
+      "date": "2026-10-09",
+      "value": 671
+     },
+     {
+      "date": "2026-10-12",
+      "value": 672.25
+     },
+     {
+      "date": "2026-10-13",
+      "value": 669.25
+     },
+     {
+      "date": "2026-10-14",
+      "value": 673.25
+     },
+     {
+      "date": "2026-10-15",
+      "value": 670
+     },
+     {
+      "date": "2026-10-16",
+      "value": 660.5
+     },
+     {
+      "date": "2026-10-19",
+      "value": 655.25
+     },
+     {
+      "date": "2026-10-20",
+      "value": 643.25
+     },
+     {
+      "date": "2026-10-21",
+      "value": 628.25
+     },
+     {
+      "date": "2026-10-22",
+      "value": 624.75
+     },
+     {
+      "date": "2026-10-23",
+      "value": 625
+     },
+     {
+      "date": "2026-10-26",
+      "value": 616
+     },
+     {
+      "date": "2026-10-27",
+      "value": 610.25
+     },
+     {
+      "date": "2026-10-28",
+      "value": 599
+     },
+     {
+      "date": "2026-10-29",
+      "value": 603.75
+     },
+     {
+      "date": "2026-10-30",
+      "value": 603.5
+     },
+     {
+      "date": "2026-11-02",
+      "value": 606.5
+     },
+     {
+      "date": "2026-11-03",
+      "value": 599.75
+     },
+     {
+      "date": "2026-11-04",
+      "value": 598.5
+     },
+     {
+      "date": "2026-11-05",
+      "value": 599.25
+     },
+     {
+      "date": "2026-11-06",
+      "value": 591.25
      }
     ]
    },
@@ -10483,6 +11001,10 @@
      {
       "date": "2026-11-05",
       "value": 6231.54
+     },
+     {
+      "date": "2026-11-06",
+      "value": 6170.49
      }
     ]
    },
@@ -10986,6 +11508,10 @@
      {
       "date": "2026-11-05",
       "value": 61077.9
+     },
+     {
+      "date": "2026-11-06",
+      "value": 57434.77
      }
     ]
    },
@@ -11489,6 +12015,10 @@
      {
       "date": "2026-11-05",
       "value": 3689.911
+     },
+     {
+      "date": "2026-11-06",
+      "value": 3649.177
      }
     ]
    },
@@ -11499,7 +12029,7 @@
     "release": "H.10",
     "package": "122e3bcb627e8e53f1bf72a1a09cfb81",
     "column": "JRXWTFB_N.B",
-    "note": "Nominal broad dollar index, Jan 2006 = 100. Rises when the dollar strengthens.",
+    "note": "Nominal broad dollar index. Rises when the dollar strengthens.",
     "provider": "Federal Reserve Board",
     "dataset": "H.10 Foreign Exchange Rates",
     "link": "https://www.federalreserve.gov/releases/h10/",
@@ -13527,8 +14057,8 @@
    }
   ],
   "window": {
-   "start": "2026-10-30T23:06:27.758Z",
-   "end": "2026-11-06T23:06:27.758Z"
+   "start": "2026-10-31T07:30:17.385Z",
+   "end": "2026-11-07T07:30:17.385Z"
   },
   "no_rate": [
    "YEM",
@@ -13589,7 +14119,7 @@
     "kind": "news feed",
     "type": "analysis",
     "url": "https://www.geopoliticalmonitor.com/feed/",
-    "retrieved_at": "2026-11-06T23:06:27.758Z",
+    "retrieved_at": "2026-11-07T07:30:17.386Z",
     "status": "ok",
     "items": 10
    },
@@ -13599,7 +14129,7 @@
     "kind": "news feed",
     "type": "analysis",
     "url": "https://www.geopoliticalmonitor.com/feed/?paged=2",
-    "retrieved_at": "2026-11-06T23:06:28.228Z",
+    "retrieved_at": "2026-11-07T07:30:17.626Z",
     "status": "ok",
     "items": 10
    },
@@ -13609,7 +14139,7 @@
     "kind": "news feed",
     "type": "analysis",
     "url": "https://www.rand.org/pubs/commentary.xml",
-    "retrieved_at": "2026-11-06T23:06:28.314Z",
+    "retrieved_at": "2026-11-07T07:30:17.683Z",
     "status": "ok",
     "items": 20
    },
@@ -13619,7 +14149,7 @@
     "kind": "news feed",
     "type": "news",
     "url": "https://www.rand.org/news/press.xml",
-    "retrieved_at": "2026-11-06T23:06:28.784Z",
+    "retrieved_at": "2026-11-07T07:30:17.950Z",
     "status": "ok",
     "items": 20
    },
@@ -13629,9 +14159,9 @@
     "kind": "news feed",
     "type": "news",
     "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
-    "retrieved_at": "2026-11-06T23:06:28.836Z",
+    "retrieved_at": "2026-11-07T07:30:18.001Z",
     "status": "ok",
-    "items": 26
+    "items": 28
    },
    {
     "source": "un-news",
@@ -13639,7 +14169,7 @@
     "kind": "news feed",
     "type": "news",
     "url": "https://news.un.org/feed/subscribe/en/news/all/rss.xml",
-    "retrieved_at": "2026-11-06T23:06:29.249Z",
+    "retrieved_at": "2026-11-07T07:30:18.408Z",
     "status": "ok",
     "items": 30
    },
@@ -13649,7 +14179,7 @@
     "kind": "news feed",
     "type": "official",
     "url": "https://press.un.org/en/rss.xml",
-    "retrieved_at": "2026-11-06T23:06:29.686Z",
+    "retrieved_at": "2026-11-07T07:30:18.760Z",
     "status": "ok",
     "items": 10
    },
@@ -13659,7 +14189,7 @@
     "kind": "news feed",
     "type": "official",
     "url": "https://ofac.treasury.gov/recent-actions",
-    "retrieved_at": "2026-11-06T23:06:30.014Z",
+    "retrieved_at": "2026-11-07T07:30:18.996Z",
     "status": "ok",
     "items": 10
    },
@@ -13668,8 +14198,8 @@
     "name": "World Bank, Worldwide Governance Indicators",
     "kind": "indicator",
     "indicator": "GOV_WGI_PV.EST",
-    "retrieved_at": "2026-11-06T23:06:31.229Z",
-    "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;ESP;SDN;AFG;MLI/indicator/GOV_WGI_PV.EST?format=json&date=2014:2026&per_page=1000&source=3",
+    "retrieved_at": "2026-11-07T07:30:20.375Z",
+    "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;SDN;ESP;AFG;MLI/indicator/GOV_WGI_PV.EST?format=json&date=2014:2026&per_page=1000&source=3",
     "status": "ok",
     "items": 108
    },
@@ -13678,8 +14208,8 @@
     "name": "World Bank, World Development Indicators",
     "kind": "indicator",
     "indicator": "NY.GDP.MKTP.KD.ZG",
-    "retrieved_at": "2026-11-06T23:06:31.724Z",
-    "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;ESP;SDN;AFG;MLI/indicator/NY.GDP.MKTP.KD.ZG?format=json&date=2014:2026&per_page=1000",
+    "retrieved_at": "2026-11-07T07:30:20.812Z",
+    "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;SDN;ESP;AFG;MLI/indicator/NY.GDP.MKTP.KD.ZG?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
     "items": 100
    },
@@ -13688,8 +14218,8 @@
     "name": "World Bank, World Development Indicators",
     "kind": "indicator",
     "indicator": "FP.CPI.TOTL.ZG",
-    "retrieved_at": "2026-11-06T23:06:31.798Z",
-    "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;ESP;SDN;AFG;MLI/indicator/FP.CPI.TOTL.ZG?format=json&date=2014:2026&per_page=1000",
+    "retrieved_at": "2026-11-07T07:30:20.873Z",
+    "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;SDN;ESP;AFG;MLI/indicator/FP.CPI.TOTL.ZG?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
     "items": 92
    },
@@ -13698,8 +14228,8 @@
     "name": "World Bank, World Development Indicators (SIPRI data)",
     "kind": "indicator",
     "indicator": "MS.MIL.XPND.GD.ZS",
-    "retrieved_at": "2026-11-06T23:06:31.889Z",
-    "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;ESP;SDN;AFG;MLI/indicator/MS.MIL.XPND.GD.ZS?format=json&date=2014:2026&per_page=1000",
+    "retrieved_at": "2026-11-07T07:30:20.926Z",
+    "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;SDN;ESP;AFG;MLI/indicator/MS.MIL.XPND.GD.ZS?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
     "items": 88
    },
@@ -13708,8 +14238,8 @@
     "name": "International Monetary Fund, World Economic Outlook (DataMapper)",
     "kind": "indicator",
     "indicator": "NGDP_RPCH",
-    "retrieved_at": "2026-11-06T23:06:31.991Z",
-    "url": "https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH/YEM/ESH/RUS/USA/UKR/IRN/ESP/SDN/AFG/MLI?periods=2025,2026,2027",
+    "retrieved_at": "2026-11-07T07:30:20.982Z",
+    "url": "https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH/YEM/ESH/RUS/USA/UKR/IRN/SDN/ESP/AFG/MLI?periods=2025,2026,2027",
     "status": "ok",
     "items": 379
    },
@@ -13718,8 +14248,8 @@
     "name": "World Bank, World Development Indicators",
     "kind": "indicator",
     "indicator": "SP.POP.TOTL",
-    "retrieved_at": "2026-11-06T23:06:32.760Z",
-    "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;ESP;SDN;AFG;MLI/indicator/SP.POP.TOTL?format=json&date=2014:2026&per_page=1000",
+    "retrieved_at": "2026-11-07T07:30:21.756Z",
+    "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;SDN;ESP;AFG;MLI/indicator/SP.POP.TOTL?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
     "items": 108
    },
@@ -13728,8 +14258,8 @@
     "name": "World Bank, World Development Indicators",
     "kind": "indicator",
     "indicator": "NY.GDP.MKTP.CD",
-    "retrieved_at": "2026-11-06T23:06:32.835Z",
-    "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;ESP;SDN;AFG;MLI/indicator/NY.GDP.MKTP.CD?format=json&date=2014:2026&per_page=1000",
+    "retrieved_at": "2026-11-07T07:30:21.809Z",
+    "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;SDN;ESP;AFG;MLI/indicator/NY.GDP.MKTP.CD?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
     "items": 100
    },
@@ -13738,8 +14268,8 @@
     "name": "World Bank, World Development Indicators (UCDP/PRIO data)",
     "kind": "indicator",
     "indicator": "VC.BTL.DETH",
-    "retrieved_at": "2026-11-06T23:06:33.006Z",
-    "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;ESP;SDN;AFG;MLI/indicator/VC.BTL.DETH?format=json&date=2014:2026&per_page=1000",
+    "retrieved_at": "2026-11-07T07:30:21.875Z",
+    "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;SDN;ESP;AFG;MLI/indicator/VC.BTL.DETH?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
     "items": 72
    },
@@ -13748,8 +14278,8 @@
     "name": "World Bank, World Development Indicators (IDMC data)",
     "kind": "indicator",
     "indicator": "VC.IDP.NWCV",
-    "retrieved_at": "2026-11-06T23:06:33.124Z",
-    "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;ESP;SDN;AFG;MLI/indicator/VC.IDP.NWCV?format=json&date=2014:2026&per_page=1000",
+    "retrieved_at": "2026-11-07T07:30:21.943Z",
+    "url": "https://api.worldbank.org/v2/country/YEM;RUS;USA;UKR;IRN;SDN;ESP;AFG;MLI/indicator/VC.IDP.NWCV?format=json&date=2014:2026&per_page=1000",
     "status": "ok",
     "items": 50
    },
@@ -13759,7 +14289,7 @@
     "kind": "market",
     "indicator": "RBRTE",
     "url": "https://www.eia.gov/dnav/pet/hist/RBRTED.htm",
-    "retrieved_at": "2026-11-06T23:06:33.236Z",
+    "retrieved_at": "2026-11-07T07:30:22.020Z",
     "status": "ok",
     "items": 125
    },
@@ -13769,7 +14299,7 @@
     "kind": "market",
     "indicator": "RWTC",
     "url": "https://www.eia.gov/dnav/pet/hist/RWTCD.htm",
-    "retrieved_at": "2026-11-06T23:06:33.862Z",
+    "retrieved_at": "2026-11-07T07:30:22.437Z",
     "status": "ok",
     "items": 123
    },
@@ -13778,8 +14308,8 @@
     "name": "Yahoo Finance",
     "kind": "market",
     "indicator": "GC=F",
-    "url": "https://query1.finance.yahoo.com/v7/finance/spark?symbols=GC%3DF,%5EGSPC,%5ESTOXX50E,%5EN225,000001.SS&range=6mo&interval=1d",
-    "retrieved_at": "2026-11-06T23:06:56.301Z",
+    "url": "https://query1.finance.yahoo.com/v7/finance/spark?symbols=GC%3DF,ZW%3DF,%5EGSPC,%5ESTOXX50E,%5EN225,000001.SS&range=6mo&interval=1d",
+    "retrieved_at": "2026-11-07T07:30:22.941Z",
     "status": "ok",
     "items": 126
    },
@@ -13787,9 +14317,19 @@
     "source": "yahoo",
     "name": "Yahoo Finance",
     "kind": "market",
+    "indicator": "ZW=F",
+    "url": "https://query1.finance.yahoo.com/v7/finance/spark?symbols=GC%3DF,ZW%3DF,%5EGSPC,%5ESTOXX50E,%5EN225,000001.SS&range=6mo&interval=1d",
+    "retrieved_at": "2026-11-07T07:30:22.941Z",
+    "status": "ok",
+    "items": 125
+   },
+   {
+    "source": "yahoo",
+    "name": "Yahoo Finance",
+    "kind": "market",
     "indicator": "^GSPC",
-    "url": "https://query1.finance.yahoo.com/v7/finance/spark?symbols=GC%3DF,%5EGSPC,%5ESTOXX50E,%5EN225,000001.SS&range=6mo&interval=1d",
-    "retrieved_at": "2026-11-06T23:06:56.301Z",
+    "url": "https://query1.finance.yahoo.com/v7/finance/spark?symbols=GC%3DF,ZW%3DF,%5EGSPC,%5ESTOXX50E,%5EN225,000001.SS&range=6mo&interval=1d",
+    "retrieved_at": "2026-11-07T07:30:22.941Z",
     "status": "ok",
     "items": 126
    },
@@ -13798,38 +14338,38 @@
     "name": "Yahoo Finance",
     "kind": "market",
     "indicator": "^STOXX50E",
-    "url": "https://query1.finance.yahoo.com/v7/finance/spark?symbols=GC%3DF,%5EGSPC,%5ESTOXX50E,%5EN225,000001.SS&range=6mo&interval=1d",
-    "retrieved_at": "2026-11-06T23:06:56.301Z",
+    "url": "https://query1.finance.yahoo.com/v7/finance/spark?symbols=GC%3DF,ZW%3DF,%5EGSPC,%5ESTOXX50E,%5EN225,000001.SS&range=6mo&interval=1d",
+    "retrieved_at": "2026-11-07T07:30:22.941Z",
     "status": "ok",
-    "items": 127
+    "items": 128
    },
    {
     "source": "yahoo",
     "name": "Yahoo Finance",
     "kind": "market",
     "indicator": "^N225",
-    "url": "https://query1.finance.yahoo.com/v7/finance/spark?symbols=GC%3DF,%5EGSPC,%5ESTOXX50E,%5EN225,000001.SS&range=6mo&interval=1d",
-    "retrieved_at": "2026-11-06T23:06:56.301Z",
+    "url": "https://query1.finance.yahoo.com/v7/finance/spark?symbols=GC%3DF,ZW%3DF,%5EGSPC,%5ESTOXX50E,%5EN225,000001.SS&range=6mo&interval=1d",
+    "retrieved_at": "2026-11-07T07:30:22.941Z",
     "status": "ok",
-    "items": 122
+    "items": 123
    },
    {
     "source": "yahoo",
     "name": "Yahoo Finance",
     "kind": "market",
     "indicator": "000001.SS",
-    "url": "https://query1.finance.yahoo.com/v7/finance/spark?symbols=GC%3DF,%5EGSPC,%5ESTOXX50E,%5EN225,000001.SS&range=6mo&interval=1d",
-    "retrieved_at": "2026-11-06T23:06:56.301Z",
+    "url": "https://query1.finance.yahoo.com/v7/finance/spark?symbols=GC%3DF,ZW%3DF,%5EGSPC,%5ESTOXX50E,%5EN225,000001.SS&range=6mo&interval=1d",
+    "retrieved_at": "2026-11-07T07:30:22.941Z",
     "status": "ok",
-    "items": 122
+    "items": 123
    },
    {
     "source": "federal-reserve",
     "name": "Federal Reserve Board",
     "kind": "market",
     "indicator": "JRXWTFB_N.B, JRXWTFO_N.B",
-    "url": "https://www.federalreserve.gov/datadownload/Output.aspx?rel=H10&series=122e3bcb627e8e53f1bf72a1a09cfb81&from=2026-05-10&to=2026-11-06&filetype=csv&label=include&layout=seriescolumn",
-    "retrieved_at": "2026-11-06T23:06:56.301Z",
+    "url": "https://www.federalreserve.gov/datadownload/Output.aspx?rel=H10&series=122e3bcb627e8e53f1bf72a1a09cfb81&from=2026-05-11&to=2026-11-07&filetype=csv&label=include&layout=seriescolumn",
+    "retrieved_at": "2026-11-07T07:30:22.941Z",
     "status": "ok",
     "items": 125
    },
@@ -13838,8 +14378,8 @@
     "name": "Federal Reserve Board",
     "kind": "market",
     "indicator": "RIFLGFCY10_N.B",
-    "url": "https://www.federalreserve.gov/datadownload/Output.aspx?rel=H15&series=bf17364827e38702b42a58cf8eaa3f78&from=2026-05-10&to=2026-11-06&filetype=csv&label=include&layout=seriescolumn",
-    "retrieved_at": "2026-11-06T23:06:56.711Z",
+    "url": "https://www.federalreserve.gov/datadownload/Output.aspx?rel=H15&series=bf17364827e38702b42a58cf8eaa3f78&from=2026-05-11&to=2026-11-07&filetype=csv&label=include&layout=seriescolumn",
+    "retrieved_at": "2026-11-07T07:30:23.287Z",
     "status": "ok",
     "items": 129
    },
@@ -13848,8 +14388,8 @@
     "name": "European Central Bank",
     "kind": "market",
     "indicator": "EXR USD",
-    "url": "https://data-api.ecb.europa.eu/service/data/EXR/D.USD.EUR.SP00.A?format=csvdata&startPeriod=2026-05-10&endPeriod=2026-11-06",
-    "retrieved_at": "2026-11-06T23:06:57.108Z",
+    "url": "https://data-api.ecb.europa.eu/service/data/EXR/D.USD.EUR.SP00.A?format=csvdata&startPeriod=2026-05-11&endPeriod=2026-11-07",
+    "retrieved_at": "2026-11-07T07:30:23.655Z",
     "status": "ok",
     "items": 130
    }

@@ -310,6 +310,13 @@
         "note": "COMEX gold futures, front month, dollars per troy ounce."
       },
       {
+        "id": "wheat",
+        "label": "Wheat",
+        "unit": "USc",
+        "symbol": "ZW=F",
+        "note": "CBOT wheat futures, front month, US cents per bushel."
+      },
+      {
         "id": "spx",
         "label": "S&P 500 (New York)",
         "unit": "index",
@@ -346,7 +353,7 @@
         "release": "H.10",
         "package": "122e3bcb627e8e53f1bf72a1a09cfb81",
         "column": "JRXWTFB_N.B",
-        "note": "Nominal broad dollar index, Jan 2006 = 100. Rises when the dollar strengthens."
+        "note": "Nominal broad dollar index. Rises when the dollar strengthens."
       },
       {
         "id": "usd_eme",
