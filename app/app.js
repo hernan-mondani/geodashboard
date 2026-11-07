@@ -99,20 +99,15 @@
       .on('pointerleave', () => tip.hide())
       .on('click', (ev, f) => { const iso = isoByNumeric.get(f.id); if (iso) { selectCountry(iso); zoomTo(iso); } });
 
-    // pointer: a ring around the weighted centre of the region of interest
+    // region of interest: outline its countries and label it, without a target marker
     const pts = S.focus.filter((f) => featureFor(f.iso3)).slice(0, 4);
     if (!pts.length) return;
+    svg.append('g').selectAll('path').data(pts.map((f) => featureFor(f.iso3))).join('path').attr('class', 'roi-outline').attr('d', path);
     const [x, y] = path.centroid(featureFor(pts[0].iso3));
-    const r = Math.max(14, W * 0.05);
-    const g = svg.append('g');
-    g.append('circle').attr('class', 'roi pulse').attr('cx', x).attr('cy', y).attr('r', r);
-    g.append('circle').attr('class', 'roi').attr('cx', x).attr('cy', y).attr('r', r);
-    g.append('circle').attr('class', 'roi-dot').attr('cx', x).attr('cy', y).attr('r', 3.5);
-    const right = x < W * 0.4;
-    const lx = right ? x + r + 12 : x - r - 12, ly = Math.max(16, y - r * 0.6);
-    g.append('line').attr('x1', x + (right ? r : -r) * 0.72).attr('y1', y - r * 0.7).attr('x2', lx + (right ? -4 : 4)).attr('y2', ly).attr('stroke', css('--bad')).attr('stroke-width', 1.2);
-    g.append('text').attr('class', 'callout').attr('x', lx).attr('y', ly - 2).attr('text-anchor', right ? 'start' : 'end').text('Region of interest');
-    g.append('text').attr('class', 'callout').attr('x', lx).attr('y', ly + 13).attr('text-anchor', right ? 'start' : 'end').style('font-weight', 400).text(listJoin(pts.slice(0, 3).map((f) => cname(f.iso3))));
+    const right = x < W * 0.6;
+    const lx = right ? x + 18 : x - 18, ly = Math.max(16, y - 22);
+    svg.append('text').attr('class', 'callout').attr('x', lx).attr('y', ly - 2).attr('text-anchor', right ? 'start' : 'end').text('Region of interest');
+    svg.append('text').attr('class', 'callout').attr('x', lx).attr('y', ly + 13).attr('text-anchor', right ? 'start' : 'end').style('font-weight', 400).text(listJoin(pts.slice(0, 3).map((f) => cname(f.iso3))));
   }
 
   function renderTopCountries() {
@@ -134,17 +129,21 @@
 
   // ---------- (ii) zoomable regional map ----------
   let zoomTo = () => {};
+  // The region map normally frames the region of interest; selecting a country outside it re-centres the map
+  // on that country (regionCenter), and the reset button returns to the region of interest.
+  let regionCenter = null;
   function renderRegion() {
     const el = $('#region-map');
     el.querySelectorAll('svg').forEach((n) => n.remove());
     const W = el.clientWidth || 700, H = Math.round(W * 0.78);
-    const feats = focusIsos.map(featureFor);
+    const feats = (regionCenter ? [regionCenter] : focusIsos).map(featureFor).filter(Boolean);
     if (!feats.length) return;
     const c = d3.geoCentroid(feats[0]);
     const proj = d3.geoMercator().rotate([-c[0], 0]);
     const a0 = d3.geoArea(feats[0]);
     const fc = { type: 'FeatureCollection', features: feats.filter((f, i) => i === 0 || d3.geoArea(f) < a0 * 6) };
-    proj.fitExtent([[30, 30], [W - 30, H - 30]], fc);
+    // a single country gets room around it so its neighbours show
+    if (regionCenter) proj.fitExtent([[W * 0.22, H * 0.22], [W * 0.78, H * 0.78]], fc); else proj.fitExtent([[30, 30], [W - 30, H - 30]], fc);
     const path = d3.geoPath(proj);
     const svg = d3.select(el).insert('svg', ':first-child').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img')
       .attr('aria-label', `Zoomable map of the region of interest: ${focusIsos.map(cname).join(', ')}`);
@@ -158,7 +157,7 @@
       .on('pointermove', (ev, f) => { const iso = isoByNumeric.get(f.id); if (iso) tip.show(ev, countryTip(iso)); else tip.hide(); })
       .on('pointerleave', () => tip.hide())
       .on('click', (ev, f) => { const iso = isoByNumeric.get(f.id); if (iso) selectCountry(iso); });
-    const labels = g.append('g').selectAll('text').data(focusIsos).join('text').attr('class', 'lbl')
+    const labels = g.append('g').selectAll('text').data([...new Set([...focusIsos, ...(regionCenter ? [regionCenter] : [])])].filter(featureFor)).join('text').attr('class', 'lbl')
       .attr('text-anchor', 'middle').text(cname)
       .each(function (iso) { const p = path.centroid(featureFor(iso)); d3.select(this).attr('x', p[0]).attr('y', p[1]); });
 
@@ -168,10 +167,13 @@
     const zb = $('.zoombar', el);
     zb.querySelector('[data-z="in"]').onclick = () => svg.transition().duration(300).call(zoom.scaleBy, 1.6);
     zb.querySelector('[data-z="out"]').onclick = () => svg.transition().duration(300).call(zoom.scaleBy, 1 / 1.6);
-    zb.querySelector('[data-z="reset"]').onclick = () => svg.transition().duration(400).call(zoom.transform, d3.zoomIdentity);
+    zb.querySelector('[data-z="reset"]').onclick = () => { if (regionCenter) { regionCenter = null; renderRegion(); if (S.focus[0]) selectCountry(S.focus[0].iso3); } else svg.transition().duration(400).call(zoom.transform, d3.zoomIdentity); };
     zoomTo = (iso) => {
       const f = featureFor(iso); if (!f) return;
       const [[x0, y0], [x1, y1]] = path.bounds(f);
+      // outside this frame (or cut by the projection): re-centre the map on the country first
+      const inside = isFinite(x0) && x0 > -W * 0.05 && x1 < W * 1.05 && y0 > -H * 0.05 && y1 < H * 1.05 && (x1 - x0) < W * 0.95;
+      if (!inside && regionCenter !== iso) { regionCenter = iso; renderRegion(); selectCountry(iso); el.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); return; }
       if (!isFinite(x0)) return;
       const k = Math.min(10, 0.8 / Math.max((x1 - x0) / W, (y1 - y0) / H));
       svg.transition().duration(600).call(zoom.transform, d3.zoomIdentity.translate(W / 2, H / 2).scale(Math.max(1, k)).translate(-(x0 + x1) / 2, -(y0 + y1) / 2));
@@ -339,8 +341,8 @@
           const sx = d3.scaleLinear(d3.extent(pts, (p) => p.year), [2, w - 3]);
           const sy = d3.scaleLinear(d3.extent([...pts.map((p) => p.value), 0]), [h - 2, 2]);
           const svg = d3.select(wrap).append('svg').attr('width', w).attr('height', h).attr('aria-label', `${c.short} ${pts[0].year} to ${pts.at(-1).year}`);
-          svg.append('path').attr('d', d3.line().x((p) => sx(p.year)).y((p) => sy(p.value))(pts)).attr('fill', 'none').attr('stroke', css('--ink-2')).attr('stroke-width', 1.25).attr('stroke-linejoin', 'round');
-          svg.append('circle').attr('cx', sx(pts.at(-1).year)).attr('cy', sy(pts.at(-1).value)).attr('r', 2.2).attr('fill', css('--ink'));
+          svg.append('path').attr('d', d3.line().x((p) => sx(p.year)).y((p) => sy(p.value))(pts)).attr('fill', 'none').attr('stroke', css('--div-neg')).attr('stroke-width', 1.5).attr('stroke-linejoin', 'round');
+          svg.append('circle').attr('cx', sx(pts.at(-1).year)).attr('cy', sy(pts.at(-1).value)).attr('r', 2.4).attr('fill', css('--div-neg'));
         }
         td.append(wrap); tr.append(td);
       });

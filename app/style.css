@@ -11,7 +11,7 @@
   --land-edge: #a7adb4;
   --water: #e3e8ed;
   --grat: #d2d8de;
-  --band: #e9eff7;
+  --band: #c9d9ee;
   --map-frame: #cfd4d9;
   --card-border: #d3d6da;
   --card-shadow: 0 1px 2px rgba(20, 26, 34, .05), 0 2px 8px rgba(20, 26, 34, .04);
@@ -109,8 +109,7 @@ section.band { padding-block: 18px; }
 .map .country.sel { stroke: var(--ink); stroke-width: 1.5; }
 .map .grat { fill: none; stroke: var(--grat); stroke-width: .5; vector-effect: non-scaling-stroke; }
 .map .lbl { font: 600 11px var(--f-body); fill: var(--ink); paint-order: stroke; stroke: var(--surface); stroke-width: 3px; stroke-linejoin: round; pointer-events: none; }
-.map .roi { fill: none; stroke: var(--bad); stroke-width: 2; vector-effect: non-scaling-stroke; }
-.map .roi-dot { fill: var(--bad); }
+.map .roi-outline { fill: none; stroke: var(--ink); stroke-width: 1.4; vector-effect: non-scaling-stroke; pointer-events: none; }
 .map .callout { font: 600 12px var(--f-body); fill: var(--ink); paint-order: stroke; stroke: var(--water); stroke-width: 4px; }
 @media (prefers-reduced-motion: no-preference) {
   .map .pulse { animation: pulse 2.4s ease-out infinite; transform-box: fill-box; transform-origin: center; }
